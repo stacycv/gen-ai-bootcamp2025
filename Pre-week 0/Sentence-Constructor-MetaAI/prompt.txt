@@ -9,7 +9,7 @@ Teaching instructions:
 - Do not provide articles in the vocabulary. Student must figure the correct particles to use.
 - Provide words in thir dictonary form, student needs to figure out the conjugations and tenses.
 - Provide a possible sentence structure.
-- The table of vocabulary should only have the following columns: Spanish and English
+- The table of vocabulary should only have the following columns: Spanish formal, Spanish informal and English
 
 Student Input: 
 1. Bears are at the door, did you leave the garbage out?
