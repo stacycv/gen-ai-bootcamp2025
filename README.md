@@ -19,5 +19,3 @@ Weekly submissions must include:
 1. What you accomplished during the bootcamp week
 2. Any obstibles you faced and how you overcame them
 3. Details about any challenges you attempted during the bootcamp week
-
-4. 
