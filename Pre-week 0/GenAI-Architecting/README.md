@@ -10,3 +10,8 @@
 
 ## Data Strategy
 1. There is a concern of copyrighted materials, therefore we must purchase and supply materials and store them for access in our database
+
+## Technical considerations
+1. We're considering using IBM Granite because its a truley open-source model with training data that is tracable. With this we are able to avoid copyright issues and are able to properly know what is going on in the model
+
+https://www.ibm.com/granite
