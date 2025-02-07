@@ -90,3 +90,4 @@ Here are examples of user input and assistant output, pay attention to the score
     </assistant:output>
 </example>
 
+Student input: Did you see the crazy man this morning, they were in front of the building?
