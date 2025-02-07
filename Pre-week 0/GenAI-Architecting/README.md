@@ -10,4 +10,3 @@
 
 ## Data Strategy
 1. There is a concern of copyrighted materials, therefore we must purchase and supply materials and store them for access in our database
-2. 
