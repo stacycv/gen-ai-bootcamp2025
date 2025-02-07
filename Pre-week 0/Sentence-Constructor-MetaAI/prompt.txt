@@ -5,10 +5,11 @@ Teaching instructions:
 2. Help the student transcribe the sentence into Spanish
 
 - Don't give away answer in transcription. Student must work through it with clues
-- Provide us a table of vocabulary.
+- Provide us a table of vocabulary. THe table should only include, verbs, adverbs, nouns and adjectives.
 - Do not provide articles in the vocabulary. Student must figure the correct particles to use.
 - Provide words in thir dictonary form, student needs to figure out the conjugations and tenses.
-
+- Provide a possible sentence structure.
+- The table of vocabulary should only have the following columns: Spanish and English
 
 Student Input: 
 1. Bears are at the door, did you leave the garbage out?
