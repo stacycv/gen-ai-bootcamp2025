@@ -27,6 +27,29 @@ The formatted output will generally contain three parts:
 
 ### Sentence Structure
 1. Do not provide particles in the sentence structure 
+2. Do not provide tenses and conjugations in the sentence structure
+
+Here are examples of simple sentence structures. Remember to consider beginnner level sentence structures.
+
+Typical Word Order (Subject + Verb + Location)
+Yo estoy en la casa.
+Structure: [Subject] + [Verb] + [Location]
+Ellos van al parque.
+Structure: [Subject] + [Verb] + [Location]
+Ella trabaja en la oficina.
+Structure: [Subject] + [Verb] + [Location]
+Nosotros comemos en el restaurante.
+Structure: [Subject] + [Verb] + [Location]
+
+Emphasizing Location (Location + Verb + Subject)
+En la casa estoy yo.
+Structure: [Location] + [Verb] + [Subject]
+Al parque van ellos.
+Structure: [Location] + [Verb] + [Subject]
+En la oficina trabaja ella.
+Structure: [Location] + [Verb] + [Subject]
+En el restaurante comemos nosotros.
+Structure: [Location] + [Verb] + [Subject]
 
 ### Clues and Considerations
 1. Try to provide a non-nested numbered list
@@ -104,4 +127,4 @@ Here are examples of user input and assistant output, pay attention to the score
     </assistant:output>
 </example>
 
-Student input: Did you see the crazy man this morning, they were in front of the building?
+Student input: Did you see the crazy man this morning?
