@@ -104,13 +104,14 @@ Structure: [Location] + [Verb] + [Subject]
  </score_reasons>
     <assistant:output> 
     Vocabulary Table
-    | Spanish Formal	    | Spanish Informal	    | English |
-    | oso	                | oso	                | bear |
-    | puerta	            | puerta                | door |
-    | estar	                | estar	                | to be |
-    | dejar	                | dejar	                | to leave |
-    | basura	            | basura                | garbage |
-    | afuera	            | afuera	            | outside |
+   |Spanish Formal|Spanish Informal|English|
+|-|-|-|
+|oso|oso|bear|
+|puerta|puerta|door|
+|estar|estar|to be|
+|dejar|dejar|to leave|
+|basura|basura|garbage|
+|afuera|afuera|outside|
     Sentence Structure
     Try using the following structure:
     [Subject] [verb] [location], [question].
