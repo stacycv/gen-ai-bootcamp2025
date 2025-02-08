@@ -144,11 +144,12 @@ Structure: [Location] + [Verb] + [Subject]
  <user:input>
     Bears are at the door, did you leave the garbage out?
  </user:input>
- <score>10</score>
+ <score>6</score>
  <score_reasons>
  - GOOD: Starts with vocabulary table, does not include introduction hello sentence
  - GOOD: Reminds at end that it will only give clues and not answer
- - GOOD: Clues are numbered
+ - BAD: Clues aren't numbered
+ - BAD: Only 2 Clues (there should be five)
  </score_reasons>
     <assistant:output> 
     Vocabulary Table
@@ -165,16 +166,83 @@ Structure: [Location] + [Verb] + [Subject]
     [Subject] [verb] [location], [question].
 
     Clues
-    1. Think about the verb conjugation for the subject "bears" (osos).
-    2. Use the correct preposition to indicate location (e.g., "at the door").
-    3. Consider the correct verb tense for the question (e.g., "did you leave").
-    4. Don't forget to use the formal form of "you" (usted).
+    - Think about the verb conjugation for the subject "bears" (osos).
+    - Use the correct preposition to indicate location (e.g., "at the door").
     
     Now, try translating the sentence using the vocabulary and structure provided. ¡Buena suerte!
     (Remember, I'm here to help with clues, but I won't give away the answer.)
     </assistant:output>
 </example>
+ 
+<example>
+ <user:input>
+    Did you see the crazy man this morning? They were in front of the building.
+ </user:input>
+ <score>10</score>
+ <score_reasons>
+ - GOOD: Starts with vocabulary table, does not include introduction hello sentence
+ - GOOD: Reminds at end that it will only give clues and not answer
+ - GOOD: There are. 5 clues listed
+ </score_reasons>
+    <assistant:output> 
+    Vocabulary Table
+   |Spanish Formal|Spanish Informal|English|
+|-|-|-|
+|ver|ver|to see|
+|loco|loco|crazy|
+|hombre|hombre|man|
+|mañana|mañana|morning|
+|estar|estar|to be|
+|edificio|edificio|building|
+|frente|frente|front|
 
+ Sentence Structure:
+Try using these structures:
+[Question word] [verb] [object] [time]?, [Subject] [verb] [location].
 
-Student input: Did you see the crazy man this morning? They were in front of the building.
+Clues:
+1. Remember to use the past tense for both parts of the sentence
+2. Consider which question word to use for "did"
+3. Think about the preposition needed to say "in front of"
+4. For the second part, remember the subject is "they"
+5. You'll need to decide between formal and informal "you"
+
+Now, try translating the sentence using the vocabulary and structure provided. ¡Buena suerte!
+(Remember, I'm here to help with clues, but I won't give away the answer.)
+    </assistant:output>
+
+<example>
+    <output>
+    Considerations and Next Steps:
+        1. When asking a question in Spanish, you need opening and closing question marks (¿?)
+        2. For "did you see" you'll need to use the preterite (past) tense of "ver"
+        3. "This morning" uses a specific preposition with "mañana"
+        4. For "in front of" you'll need to use "en" with "frente"
+        5. For the second part, consider that "they were" needs the past imperfect tense of "estar"
+        6. Remember to use appropriate articles before nouns
+        7. Pay attention to formal "you" conjugation in the question
+    </output>
+    <score>6</score>
+    <score_reasons>
+        This example outputscores 6 because the information is too verbose
+    </score_reasons>
+</example>
+
+<example>
+    <output>
+    Considerations and Next Steps:
+        1. Remember to use the past tense for both parts of the sentence
+        2. Consider which question word to use for "did"
+        3. Think about the preposition needed to say "in front of"
+        4. For the second part, remember the subject is "they"
+        5. You'll need to decide between formal and informal "you"
+    </output>
+    <score>10</score>
+    <score_reasons>
+        This example output scores 10 because the returned information is consise
+    </score_reasons>
+</example>
+
+</example>
+
 
