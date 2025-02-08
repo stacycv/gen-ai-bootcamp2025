@@ -106,6 +106,13 @@ Structure: [Location] + [Verb] + [Subject]
 1. Try to provide a non-nested numbered list
 2. You can talk about the vocabulary leave out the Spanish words because the student can refer to the vocabulary table
 
+## Teacher Tests
+1. Please view the examples below so you can provide a better output
+
+## Last Checks 
+1. Make sure to read all the examples given to you and be sure to tell me you have in your output
+2. Make sure you check how many clues you give in the output
+
 <example>
  <user:input>
     Bears are at the door, did you leave the garbage out?
