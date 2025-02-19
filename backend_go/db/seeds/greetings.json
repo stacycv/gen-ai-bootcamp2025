@@ -1,0 +1,20 @@
+{
+  "group_name": "Basic Greetings",
+  "words": [
+    {
+      "formal_spanish": "buenos días",
+      "informal_spanish": "buenos días",
+      "english": "good morning"
+    },
+    {
+      "formal_spanish": "buenas tardes",
+      "informal_spanish": "buenas tardes",
+      "english": "good afternoon"
+    },
+    {
+      "formal_spanish": "buenas noches",
+      "informal_spanish": "buenas noches",
+      "english": "good night"
+    }
+  ]
+} 

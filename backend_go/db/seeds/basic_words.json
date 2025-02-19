@@ -1,0 +1,20 @@
+{
+  "group_name": "Basic Verbs",
+  "words": [
+    {
+      "formal_spanish": "usted come",
+      "informal_spanish": "tú comes",
+      "english": "you eat"
+    },
+    {
+      "formal_spanish": "usted habla",
+      "informal_spanish": "tú hablas",
+      "english": "you speak"
+    },
+    {
+      "formal_spanish": "usted vive",
+      "informal_spanish": "tú vives",
+      "english": "you live"
+    }
+  ]
+} 
