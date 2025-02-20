@@ -1,6 +1,0 @@
-mkdir -p backend_go/cmd/server
-mkdir -p backend_go/internal/{models,handlers,service}
-mkdir -p backend_go/db/{migrations,seeds}
-cd backend_go
-go mod init backend_go
-go mod tidy
