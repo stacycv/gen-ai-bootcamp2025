@@ -30,3 +30,11 @@ curl http://localhost:11434/api/generate -d '{
     "model": "llama3.2:1B",
     "prompt": "why is the sky blue?"
 }'
+
+
+
+curl http://localhost:11434/api/generate -d '{
+    "model": "llama3.2:1B",
+    "prompt": "Give me a simple recipe for chocolate chip cookies"
+}'
+
