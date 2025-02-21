@@ -1,7 +1,5 @@
 from comps import MicroService, ServiceOrchestrator, ServiceType
 import os
-from fastapi import FastAPI
-from fastapi.responses import JSONResponse
 
 EMBEDDING_SERVICE_HOST_IP = os.getenv("EMBEDDING_SERVICE_HOST_IP", "0.0.0.0")
 EMBEDDING_SERVICE_PORT = os.getenv("EMBEDDING_SERVICE_PORT", 6000)
@@ -14,17 +12,6 @@ class ExampleService:
         self.host = host
         self.port = port
         self.megaservice = ServiceOrchestrator()
-        self.app = FastAPI()
-        self.setup_routes()
-
-    def setup_routes(self):
-        @self.app.post("/process")
-        async def process(request: dict):
-            try:
-                result = await self.megaservice.process(request)
-                return JSONResponse(content=result)
-            except Exception as e:
-                return JSONResponse(content={"error": str(e)}, status_code=500)
 
     def add_remote_service(self):
         embedding = MicroService(
@@ -48,8 +35,3 @@ class ExampleService:
 
 example = ExampleService()
 example.add_remote_service()
-app = example.app
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host=example.host, port=example.port)
