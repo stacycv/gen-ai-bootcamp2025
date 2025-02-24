@@ -9,6 +9,8 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from backend.chat import BedrockChat
+from backend.get_transcript import YouTubeTranscriptDownloader
+from backend.structured_data import TranscriptStructurer
 
 
 # Page config
@@ -239,17 +241,54 @@ def render_structured_stage():
     """Render the structured data stage"""
     st.header("Structured Data Processing")
     
+    if not st.session_state.transcript:
+        st.warning("Please load a transcript in the Raw Transcript stage first")
+        return
+        
+    # Initialize structurer
+    if 'structurer' not in st.session_state:
+        st.session_state.structurer = TranscriptStructurer()
+    
     col1, col2 = st.columns(2)
     
     with col1:
         st.subheader("Dialogue Extraction")
-        # Placeholder for dialogue processing
-        st.info("Dialogue extraction will be implemented here")
+        
+        if st.button("Process Transcript"):
+            with st.spinner("Processing transcript..."):
+                # Convert transcript text back to list of dicts format
+                transcript_entries = [
+                    {'text': line} 
+                    for line in st.session_state.transcript.split('\n')
+                ]
+                
+                # Structure the transcript
+                segments = st.session_state.structurer.structure_transcript(transcript_entries)
+                st.session_state.structured_segments = segments
+                
+                if segments:
+                    st.success("Transcript processed successfully!")
+                else:
+                    st.error("Failed to process transcript")
         
     with col2:
-        st.subheader("Data Structure")
-        # Placeholder for structured data view
-        st.info("Structured data view will be implemented here")
+        st.subheader("Structured Data")
+        
+        if 'structured_segments' in st.session_state:
+            for i, segment in enumerate(st.session_state.structured_segments, 1):
+                with st.expander(f"Segment {i}"):
+                    if segment.introduction:
+                        st.markdown("**Introduction:**")
+                        st.write(segment.introduction)
+                    
+                    st.markdown("**Conversation:**")
+                    for line in segment.conversation:
+                        st.write(line)
+                    
+                    st.markdown("**Question:**")
+                    st.write(segment.question)
+        else:
+            st.info("Click 'Process Transcript' to see structured data")
 
 def render_rag_stage():
     """Render the RAG implementation stage"""

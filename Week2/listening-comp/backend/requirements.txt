@@ -1,3 +1,4 @@
 chromadb
 streamlit
+youtube_transcript_api
 boto3
