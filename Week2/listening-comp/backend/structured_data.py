@@ -1,99 +1,140 @@
 from typing import Dict, List, Optional
 from dataclasses import dataclass
 import os
+import re
+
+@dataclass
+class Question:
+    number: int
+    context: str
+    question_text: str
+    answer_options: List[str] = None
 
 @dataclass
 class DialogueSegment:
     introduction: str
     conversation: List[str]
     question: str
+    answer_options: List[str] = None
+
+@dataclass
+class Section:
+    number: int
+    description: str
+    example: Optional[DialogueSegment]
+    segments: List[DialogueSegment]
 
 class TranscriptStructurer:
     def __init__(self):
         """Initialize structurer"""
-        pass  # No AWS client needed for now
+        pass
 
-    def structure_transcript(self, transcript: List[Dict]) -> List[DialogueSegment]:
-        """Structure the transcript into dialogue segments"""
-        segments = []
+    def structure_transcript(self, transcript: List[Dict]) -> List[Section]:
+        """Structure the transcript into sections with dialogue segments"""
+        sections = []
+        current_section = None
         current_intro = []
         current_conversation = []
         current_question = ""
-        
-        # States to track where we are in the transcript
-        IN_INTRO = "intro"
-        IN_CONVO = "conversation"
-        IN_QUESTION = "question"
-        current_state = IN_INTRO
+        current_options = []
+        in_example = False
         
         for entry in transcript:
             text = entry['text'].strip()
             
-            # Check for section markers
-            if text.lower().startswith('conversation:') or text.lower().startswith('dialogue:'):
-                current_state = IN_CONVO
+            # Skip empty lines and music markers
+            if not text or '[音楽]' in text:
                 continue
-            elif text.lower().startswith('question:'):
-                # Save current conversation and start new segment
+                
+            # Check for section markers
+            if '問題' in text:
+                try:
+                    section_num = re.search(r'問題(\d+)', text)
+                    if section_num:
+                        if current_section is not None:
+                            sections.append(Section(
+                                number=current_section,
+                                description=''.join(current_intro),
+                                example=None,
+                                segments=current_conversation.copy()
+                            ))
+                        
+                        current_section = int(section_num.group(1))
+                        current_intro = []
+                        current_conversation = []
+                        current_question = ""
+                        current_options = []
+                        in_example = False
+                        continue
+                except ValueError:
+                    current_intro.append(text)
+                    continue
+            
+            # Check for example marker
+            if '例' in text:
+                in_example = True
+                continue
+            
+            # Check for answer options (1-4 or multiple choice indicators)
+            if re.match(r'^[1-4]\.', text) or '選んでください' in text:
+                current_options.append(text)
+                continue
+            
+            # Check for new dialogue segment
+            if text.endswith('ます') or text.endswith('ください'):
                 if current_conversation:
                     segment = DialogueSegment(
                         introduction='\n'.join(current_intro),
                         conversation=current_conversation.copy(),
-                        question=text
+                        question=current_question,
+                        answer_options=current_options.copy()
                     )
-                    segments.append(segment)
-                    # Reset for next segment
+                    if in_example:
+                        if current_section is not None and sections:
+                            sections[-1].example = segment
+                        in_example = False
+                    else:
+                        current_conversation.append(segment)
                     current_intro = []
                     current_conversation = []
-                current_state = IN_QUESTION
+                    current_question = ""
+                    current_options = []
                 continue
-            elif text.lower().startswith('introduction:') or text.lower().startswith('context:'):
-                current_state = IN_INTRO
-                continue
-                
-            # Add text to appropriate section
-            if current_state == IN_INTRO:
-                current_intro.append(text)
-            elif current_state == IN_CONVO:
-                if text.strip():  # Only add non-empty lines
-                    current_conversation.append(text)
-            elif current_state == IN_QUESTION:
-                current_question = text
-        
-        # Add final segment if there's remaining content
-        if current_conversation or current_intro or current_question:
-            segments.append(DialogueSegment(
-                introduction='\n'.join(current_intro),
-                conversation=current_conversation,
-                question=current_question
-            ))
             
-        return segments
+            # Add to appropriate section
+            if text.endswith('か'):
+                current_question = text
+            else:
+                current_conversation.append(text)
+        
+        return sections
 
-    def save_structured_data(self, segments: List[DialogueSegment], filename: str) -> bool:
+    def save_structured_data(self, sections: List[Section], filename: str) -> bool:
         """Save structured data to file"""
         try:
-            # Create structured directory if it doesn't exist
             os.makedirs("./structured", exist_ok=True)
             
             output = []
-            for i, segment in enumerate(segments, 1):
-                output.append(f"\n=== Segment {i} ===\n")
+            for section in sections:
+                output.append(f"\n{'='*50}")
+                output.append(f"問題 {section.number}")
+                output.append('='*50)
                 
-                if segment.introduction:
-                    output.append("=== Introduction ===")
-                    output.append(segment.introduction)
-                    output.append("")
+                output.append("\n=== Description ===")
+                output.append(section.description)
                 
-                output.append("=== Conversation ===")
-                output.extend(segment.conversation)
-                output.append("")
+                if section.example:
+                    output.append("\n=== Example ===")
+                    output.append(f"Context: {section.example.context}")
+                    output.append(f"Question: {section.example.question_text}")
                 
-                if segment.question:
-                    output.append("=== Question ===")
-                    output.append(segment.question)
+                output.append("\n=== Questions ===")
+                for q in section.segments:
+                    output.append(f"\nQuestion {q.number}:")
+                    output.append(f"Context: {q.context}")
+                    output.append(f"Question: {q.question_text}")
                 
-                output.append("\n" + "="*30 + "\n")
+                output.append("\n" + "="*50 + "\n")
                 
             with open(f"./structured/{filename}.txt", 'w', encoding='utf-8') as f:
                 f.write('\n'.join(output))
@@ -103,7 +144,7 @@ class TranscriptStructurer:
             print(f"Error saving structured data: {str(e)}")
             return False
 
-    def load_transcript(self, filepath: str) -> List[DialogueSegment]:
+    def load_transcript(self, filepath: str) -> List[Section]:
         """Load transcript from file and structure it"""
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
@@ -113,25 +154,67 @@ class TranscriptStructurer:
             print(f"Error loading transcript: {str(e)}")
             return []
 
+    def save_to_questions(self, section: Section, filename: str) -> bool:
+        """Save individual section output to questions folder"""
+        try:
+            os.makedirs("../data/questions", exist_ok=True)
+            
+            output = []
+            output.append(f"{'='*50}")
+            output.append(f"問題 {section.number}")
+            output.append('='*50)
+            
+            output.append("\n=== Description ===")
+            output.append(section.description)
+            
+            if section.example:
+                output.append("\n=== Example ===")
+                output.append("Introduction:")
+                output.append(section.example.introduction)
+                output.append("\nConversation:")
+                for line in section.example.conversation:
+                    output.append(line)
+                output.append("\nQuestion:")
+                output.append(section.example.question)
+                if section.example.answer_options:
+                    output.append("\nPossible Answers:")
+                    for option in section.example.answer_options:
+                        output.append(option)
+            
+            output.append("\n=== Dialogues ===")
+            for segment in section.segments:
+                output.append("\nIntroduction:")
+                output.append(segment.introduction)
+                output.append("\nConversation:")
+                for line in segment.conversation:
+                    output.append(line)
+                output.append("\nQuestion:")
+                output.append(segment.question)
+                if segment.answer_options:
+                    output.append("\nPossible Answers:")
+                    for option in segment.answer_options:
+                        output.append(option)
+                output.append("\n" + "-"*30)
+            
+            with open(f"../data/questions/section_{section.number}_{filename}.txt", 'w', encoding='utf-8') as f:
+                f.write('\n'.join(output))
+            return True
+            
+        except Exception as e:
+            print(f"Error saving to questions folder: {str(e)}")
+            return False
+
 def main():
-    # Simple test using direct file path
     structurer = TranscriptStructurer()
-    structured_text = structurer.load_transcript("transcripts/sY7L5cfCWno.txt")
-    
-    # Print raw structured text
-    print("Raw structured text:")
-    print(structured_text)
-    print("\n---\n")
+    structured_text = structurer.load_transcript("../data/transcripts/sY7L5cfCWno.txt")
     
     if structured_text:
-        print("Successfully structured transcript:")
-        for i, segment in enumerate(structured_text, 1):
-            print(f"\nSegment {i}:")
-            print(f"Introduction: {segment.introduction}")
-            print("Conversation:")
-            for line in segment.conversation:
-                print(f"  {line}")
-            print(f"Question: {segment.question}")
+        print("Successfully structured transcript")
+        for section in structured_text:
+            if structurer.save_to_questions(section, "sY7L5cfCWno"):
+                print(f"Saved section {section.number} to questions folder")
+            else:
+                print(f"Failed to save section {section.number}")
     else:
         print("Failed to structure transcript")
 
