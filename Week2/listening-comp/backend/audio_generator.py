@@ -22,51 +22,36 @@ class VoiceConfig:
 class AudioGenerator:
     def __init__(self):
         """Initialize voice configurations"""
+        # Create output directory first
+        self.audio_dir = os.path.join(
+            os.path.dirname(os.path.dirname(__file__)),
+            "data",
+            "audio"
+        )
+        os.makedirs(self.audio_dir, exist_ok=True)
+
         try:
             # Configure different voices using different TLDs for variety
             self.voice_configs = {
                 "announcer": VoiceConfig(
                     language="es",
-                    tld="es",  # Spain Spanish
+                    tld="com.mx",  # Mexican Spanish
                     gender=VoiceGender.MALE
                 ),
-                "tourist": VoiceConfig(
+                "male": VoiceConfig(
                     language="es",
                     tld="com.mx",  # Mexican Spanish
                     gender=VoiceGender.MALE
                 ),
-                "staff": VoiceConfig(
+                "female": VoiceConfig(
                     language="es",
-                    tld="es",  # Spain Spanish
-                    gender=VoiceGender.FEMALE
-                ),
-                "male_1": VoiceConfig(
-                    language="es",
-                    tld="com.mx",
-                    gender=VoiceGender.MALE
-                ),
-                "female_1": VoiceConfig(
-                    language="es",
-                    tld="es",
+                    tld="com.mx",  # Mexican Spanish
                     gender=VoiceGender.FEMALE
                 )
             }
             
-            # Voice mapping for specific roles
-            self.role_voice_mapping = {
-                "Tourist": "tourist",
-                "Station Staff": "staff",
-                "Waiter": "male_1",
-                "Customer": "female_1"
-            }
-            
-            # Create output directory if it doesn't exist
-            self.audio_dir = os.path.join(
-                os.path.dirname(os.path.dirname(__file__)),
-                "data",
-                "audio"
-            )
-            os.makedirs(self.audio_dir, exist_ok=True)
+            # Simplified voice mapping - just alternate male/female
+            self.last_voice = "male"  # Track last used voice to alternate
             
         except Exception as e:
             logger.error(f"Error initializing AudioGenerator: {str(e)}")
@@ -74,42 +59,66 @@ class AudioGenerator:
 
     def get_voice_for_role(self, role: str) -> VoiceConfig:
         """Get appropriate voice configuration for a given role"""
-        voice_key = self.role_voice_mapping.get(role)
-        if voice_key:
-            return self.voice_configs[voice_key]
-        
-        # Default to male/female voices based on role name
-        if any(female_indicator in role.lower() for female_indicator in 
-               ['woman', 'girl', 'female', 'she', 'waitress', 'mother', 'sister']):
-            return self.voice_configs['female_1']
-        return self.voice_configs['male_1']
+        # Alternate between male and female voices
+        self.last_voice = "female" if self.last_voice == "male" else "male"
+        return self.voice_configs[self.last_voice]
 
     def generate_practice_audio(self, scenario_data: Dict) -> str:
         """Generate audio for a complete practice scenario"""
         try:
-            # Create a complete text with pauses
-            full_text = ""
-            
-            # Add introduction
+            # Create temporary directory for voice segments
+            temp_dir = os.path.join(self.audio_dir, "temp")
+            os.makedirs(temp_dir, exist_ok=True)
+            audio_segments = []
+
+            # Generate introduction with announcer voice
             if scenario_data.get('introduction'):
-                full_text += f"Ejercicio de práctica. {scenario_data['introduction']}\n\n"
-            
-            # Add conversation
-            for line in scenario_data.get('conversation', []):
-                full_text += f"{line['text']}\n"
-            
-            # Add question
+                intro_text = f"Ejercicio de práctica. {scenario_data['introduction']}"
+                intro_path = os.path.join(temp_dir, "intro.mp3")
+                tts = gTTS(text=intro_text, lang="es", tld="com.mx", slow=False)
+                tts.save(intro_path)
+                audio_segments.append(intro_path)
+
+            # Generate conversation with different voices
+            if scenario_data.get('conversation'):
+                for i, line in enumerate(scenario_data['conversation']):
+                    # Get voice config for this speaker
+                    voice_config = self.get_voice_for_role(line['speaker'])
+                    
+                    # Generate audio for this line
+                    line_path = os.path.join(temp_dir, f"line_{i}.mp3")
+                    tts = gTTS(
+                        text=f"{line['text']}", 
+                        lang="es",
+                        tld=voice_config.tld,
+                        slow=False
+                    )
+                    tts.save(line_path)
+                    audio_segments.append(line_path)
+
+            # Generate question with announcer voice
             if scenario_data.get('question'):
-                full_text += f"\nAhora, la pregunta: {scenario_data['question']}"
-            
-            # Generate audio file
+                question_text = f"\nAhora, la pregunta: {scenario_data['question']}"
+                question_path = os.path.join(temp_dir, "question.mp3")
+                tts = gTTS(text=question_text, lang="es", tld="com.mx", slow=False)
+                tts.save(question_path)
+                audio_segments.append(question_path)
+
+            # Combine all audio segments
             output_filename = f"practice_{hash(str(scenario_data))}.mp3"
             output_path = os.path.join(self.audio_dir, output_filename)
-            
-            # Generate speech using Mexican Spanish
-            tts = gTTS(text=full_text, lang="es", tld="com.mx")
-            tts.save(output_path)
-            
+
+            # Combine audio files using system command
+            with open(output_path, 'wb') as outfile:
+                for segment in audio_segments:
+                    with open(segment, 'rb') as infile:
+                        outfile.write(infile.read())
+
+            # Cleanup temp files
+            for segment in audio_segments:
+                if os.path.exists(segment):
+                    os.remove(segment)
+
             return output_path
             
         except Exception as e:

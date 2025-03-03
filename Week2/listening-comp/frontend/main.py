@@ -20,7 +20,7 @@ from backend.audio_generator import AudioGenerator
 # Page config
 st.set_page_config(
     page_title="Spanish Learning Assistant",
-    page_icon="🇪🇸",
+    page_icon="🇲🇽",
     layout="wide"
 )
 
@@ -34,7 +34,7 @@ if 'audio_generator' not in st.session_state:
 
 def render_header():
     """Render the header section"""
-    st.title("🇪🇸 Spanish Learning Assistant")
+    st.title("🇲🇽 Spanish Learning Assistant")
     st.markdown("""
     Transform YouTube transcripts into interactive Spanish learning experiences.
     
@@ -434,8 +434,7 @@ def render_interactive_stage():
                     scenario_data = {
                         'introduction': st.session_state.introduction,
                         'conversation': [
-                            {'speaker': speaker, 'text': text} 
-                            for speaker, text in st.session_state.dialogue
+                            *st.session_state.dialogue
                         ],
                         'question': st.session_state.current_question
                     }
@@ -503,14 +502,6 @@ def main():
         render_rag_stage()
     elif selected_stage == "5. Interactive Learning":
         render_interactive_stage()
-    
-    # Debug section at the bottom
-    with st.expander("Debug Information"):
-        st.json({
-            "selected_stage": selected_stage,
-            "transcript_loaded": st.session_state.transcript is not None,
-            "chat_messages": len(st.session_state.messages)
-        })
 
 if __name__ == "__main__":
     main()
