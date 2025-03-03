@@ -3,6 +3,7 @@ from typing import Dict
 import json
 from collections import Counter
 import re
+from datetime import datetime
 
 import sys
 import os
@@ -11,6 +12,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from backend.chat import BedrockChat
 from backend.get_transcript import YouTubeTranscriptDownloader
 from backend.structured_data import TranscriptStructurer
+from backend.app import generate_question
+from backend.vectorstore import get_similar_questions
 
 
 # Page config
@@ -316,31 +319,125 @@ def render_interactive_stage():
     """Render the interactive learning stage"""
     st.header("Interactive Learning")
     
-    # Practice type selection
-    practice_type = st.selectbox(
-        "Select Practice Type",
-        ["Dialogue Practice", "Vocabulary Quiz", "Listening Exercise"]
-    )
+    # Initialize question history in session state if it doesn't exist
+    if 'question_history' not in st.session_state:
+        st.session_state.question_history = []
     
-    col1, col2 = st.columns([2, 1])
+    # Create main content and sidebar
+    main_content, sidebar = st.columns([3, 1])
     
-    with col1:
-        st.subheader("Practice Scenario")
-        # Placeholder for scenario
-        st.info("Practice scenario will appear here")
+    with main_content:
+        # Practice type selection
+        practice_type = st.selectbox(
+            "Select Practice Type",
+            ["Listening Exercise", "Vocabulary Quiz", "Dialogue Practice"]
+        )
         
-        # Placeholder for multiple choice
-        options = ["Option 1", "Option 2", "Option 3", "Option 4"]
-        selected = st.radio("Choose your answer:", options)
+        # Topic selection based on practice type
+        topics = {
+            "Listening Exercise": ["Daily Conversations", "Business Japanese", "Travel Situations", "Academic Lectures"],
+            "Vocabulary Quiz": ["Basic Greetings", "Food & Dining", "Transportation", "Shopping", "Work & Office"],
+            "Dialogue Practice": ["Introducing Yourself", "Asking Directions", "Restaurant Orders", "Making Appointments"]
+        }
         
-    with col2:
-        st.subheader("Audio")
-        # Placeholder for audio player
-        st.info("Audio will appear here")
+        selected_topic = st.selectbox(
+            "Select Topic",
+            topics[practice_type]
+        )
         
-        st.subheader("Feedback")
-        # Placeholder for feedback
-        st.info("Feedback will appear here")
+        # Generate new question button
+        if st.button("Generate New Question"):
+            try:
+                similar_questions = get_similar_questions(practice_type, selected_topic)
+                question_data = similar_questions[0]  # Get the first question
+                
+                # Store in session state
+                st.session_state.current_question = question_data['question']
+                st.session_state.correct_answer = question_data['correct_answer']
+                st.session_state.options = question_data['options']
+                st.session_state.dialogue = question_data['conversation']
+                st.session_state.introduction = question_data['introduction']
+                st.session_state.feedback = None
+                
+                # Add to history with timestamp and metadata
+                history_entry = {
+                    'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    'practice_type': practice_type,
+                    'topic': selected_topic,
+                    'question_data': question_data
+                }
+                st.session_state.question_history.append(history_entry)
+                
+            except Exception as e:
+                st.error(f"Error getting questions: {str(e)}")
+        
+        # Display current question
+        if hasattr(st.session_state, 'current_question'):
+            st.subheader("Practice Scenario")
+            
+            # Display introduction
+            if hasattr(st.session_state, 'introduction'):
+                st.markdown("**Introduction:**")
+                st.write(st.session_state.introduction)
+                st.markdown("---")
+            
+            # Display conversation
+            if hasattr(st.session_state, 'dialogue'):
+                st.markdown("**Conversation:**")
+                for line in st.session_state.dialogue:
+                    st.markdown(f"**{line['speaker']}**: {line['text']}")
+                st.markdown("---")
+            
+            # Display question and options
+            st.markdown("**Question:**")
+            st.write(st.session_state.current_question)
+            
+            if hasattr(st.session_state, 'options'):
+                selected = st.radio("Choose your answer:", st.session_state.options, key="answer")
+                
+                if st.button("Check Answer"):
+                    if selected == st.session_state.correct_answer:
+                        st.session_state.feedback = "Correct! Well done! 🎉"
+                    else:
+                        st.session_state.feedback = f"Not quite. The correct answer was: {st.session_state.correct_answer}"
+            
+            # Display feedback
+            if hasattr(st.session_state, 'feedback') and st.session_state.feedback:
+                if "Correct" in st.session_state.feedback:
+                    st.success(st.session_state.feedback)
+                else:
+                    st.error(st.session_state.feedback)
+    
+    # Question History Sidebar
+    with sidebar:
+        st.header("Question History")
+        
+        if not st.session_state.question_history:
+            st.info("No questions generated yet")
+        else:
+            for i, entry in enumerate(reversed(st.session_state.question_history)):
+                with st.expander(f"Question {len(st.session_state.question_history) - i}"):
+                    st.write(f"**Time:** {entry['timestamp']}")
+                    st.write(f"**Type:** {entry['practice_type']}")
+                    st.write(f"**Topic:** {entry['topic']}")
+                    st.write("**Question:**")
+                    st.write(entry['question_data']['question'])
+                    
+                    # Button to reload this question
+                    if st.button("Load Question", key=f"load_{i}"):
+                        question_data = entry['question_data']
+                        st.session_state.dialogue = question_data['conversation']
+                        st.session_state.current_question = question_data['question']
+                        st.session_state.correct_answer = question_data['correct_answer']
+                        st.session_state.options = question_data['options']
+                        st.session_state.introduction = question_data['introduction']
+                        st.session_state.feedback = None
+                        st.rerun()
+        
+        # Clear history button
+        if st.button("Clear History"):
+            st.session_state.question_history = []
+            st.rerun()
 
 def main():
     render_header()

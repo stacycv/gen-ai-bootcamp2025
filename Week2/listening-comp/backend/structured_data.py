@@ -215,6 +215,18 @@ class TranscriptStructurer:
             print(f"Error saving to questions folder: {str(e)}")
             return False
 
+def format_question(similar_questions):
+    """
+    Format similar questions for RAG context
+    
+    Args:
+        similar_questions (list): List of similar questions
+        
+    Returns:
+        str: Formatted context for RAG
+    """
+    return "\n".join(similar_questions)
+
 def main():
     structurer = TranscriptStructurer()
     structured_text = structurer.load_transcript("../data/transcripts/sY7L5cfCWno.txt")
