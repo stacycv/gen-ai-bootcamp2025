@@ -37,6 +37,7 @@ class TranscriptStructurer:
         current_conversation = []
         current_question = ""
         current_options = []
+        current_segments = []  # Add this to store DialogueSegment objects
         in_example = False
         
         for entry in transcript:
@@ -56,7 +57,7 @@ class TranscriptStructurer:
                                 number=current_section,
                                 description=''.join(current_intro),
                                 example=None,
-                                segments=current_conversation.copy()
+                                segments=current_segments.copy()  # Use segments instead of conversation
                             ))
                         
                         current_section = int(section_num.group(1))
@@ -64,6 +65,7 @@ class TranscriptStructurer:
                         current_conversation = []
                         current_question = ""
                         current_options = []
+                        current_segments = []  # Reset segments
                         in_example = False
                         continue
                 except ValueError:
@@ -94,7 +96,7 @@ class TranscriptStructurer:
                             sections[-1].example = segment
                         in_example = False
                     else:
-                        current_conversation.append(segment)
+                        current_segments.append(segment)  # Append to segments instead of conversation
                     current_intro = []
                     current_conversation = []
                     current_question = ""
@@ -106,6 +108,15 @@ class TranscriptStructurer:
                 current_question = text
             else:
                 current_conversation.append(text)
+        
+        # Add final section
+        if current_section is not None:
+            sections.append(Section(
+                number=current_section,
+                description=''.join(current_intro),
+                example=None,
+                segments=current_segments.copy()
+            ))
         
         return sections
 
