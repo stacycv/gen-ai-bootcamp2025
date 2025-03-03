@@ -14,6 +14,7 @@ from backend.get_transcript import YouTubeTranscriptDownloader
 from backend.structured_data import TranscriptStructurer
 from backend.app import generate_question
 from backend.vectorstore import get_similar_questions
+from backend.audio_generator import AudioGenerator
 
 
 # Page config
@@ -28,6 +29,8 @@ if 'transcript' not in st.session_state:
     st.session_state.transcript = None
 if 'messages' not in st.session_state:
     st.session_state.messages = []
+if 'audio_generator' not in st.session_state:
+    st.session_state.audio_generator = AudioGenerator()
 
 def render_header():
     """Render the header section"""
@@ -407,6 +410,36 @@ def render_interactive_stage():
                     st.success(st.session_state.feedback)
                 else:
                     st.error(st.session_state.feedback)
+            
+            # Audio controls
+            if st.button("Generate Audio 🔊"):
+                with st.spinner("Generating audio..."):
+                    # Prepare scenario data
+                    scenario_data = {
+                        'introduction': st.session_state.introduction,
+                        'conversation': [
+                            {'speaker': speaker, 'text': text} 
+                            for speaker, text in st.session_state.dialogue
+                        ],
+                        'question': st.session_state.current_question
+                    }
+                    
+                    try:
+                        # Generate audio
+                        audio_path = st.session_state.audio_generator.generate_practice_audio(scenario_data)
+                        
+                        if audio_path and os.path.exists(audio_path):
+                            # Read and display audio immediately
+                            with open(audio_path, 'rb') as audio_file:
+                                st.success("Audio generated successfully!")
+                                st.audio(audio_file.read())
+                        else:
+                            st.error("Failed to generate audio")
+                    except Exception as e:
+                        st.error(f"Error generating audio: {str(e)}")
+            
+            # Add some spacing
+            st.write("---")
     
     # Question History Sidebar
     with sidebar:
