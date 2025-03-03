@@ -26,28 +26,28 @@ class AudioGenerator:
             # Configure different voices using different TLDs for variety
             self.voice_configs = {
                 "announcer": VoiceConfig(
-                    language="ja",
-                    tld="co.jp",
+                    language="es",
+                    tld="es",  # Spain Spanish
                     gender=VoiceGender.MALE
                 ),
                 "tourist": VoiceConfig(
-                    language="ja",
-                    tld="com",
+                    language="es",
+                    tld="com.mx",  # Mexican Spanish
                     gender=VoiceGender.MALE
                 ),
                 "staff": VoiceConfig(
-                    language="ja",
-                    tld="co.jp",
+                    language="es",
+                    tld="es",  # Spain Spanish
                     gender=VoiceGender.FEMALE
                 ),
                 "male_1": VoiceConfig(
-                    language="ja",
-                    tld="com",
+                    language="es",
+                    tld="com.mx",
                     gender=VoiceGender.MALE
                 ),
                 "female_1": VoiceConfig(
-                    language="ja",
-                    tld="co.jp",
+                    language="es",
+                    tld="es",
                     gender=VoiceGender.FEMALE
                 )
             }
@@ -92,7 +92,7 @@ class AudioGenerator:
             
             # Add introduction
             if scenario_data.get('introduction'):
-                full_text += f"練習問題です。{scenario_data['introduction']}\n\n"
+                full_text += f"Ejercicio de práctica. {scenario_data['introduction']}\n\n"
             
             # Add conversation
             for line in scenario_data.get('conversation', []):
@@ -100,14 +100,14 @@ class AudioGenerator:
             
             # Add question
             if scenario_data.get('question'):
-                full_text += f"\nでは、質問です。{scenario_data['question']}"
+                full_text += f"\nAhora, la pregunta: {scenario_data['question']}"
             
             # Generate audio file
             output_filename = f"practice_{hash(str(scenario_data))}.mp3"
             output_path = os.path.join(self.audio_dir, output_filename)
             
-            # Generate speech
-            tts = gTTS(text=full_text, lang="ja", tld="co.jp")
+            # Generate speech using Mexican Spanish
+            tts = gTTS(text=full_text, lang="es", tld="com.mx")
             tts.save(output_path)
             
             return output_path

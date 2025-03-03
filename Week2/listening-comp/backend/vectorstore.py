@@ -116,80 +116,77 @@ def get_similar_questions(practice_type, topic=None):
     # Define conversation templates for different scenarios
     conversation_templates = [
         {
-            'introduction': "A conversation at a Japanese restaurant",
+            'introduction': "Una conversación en un restaurante español",
             'conversation': [
-                {'speaker': 'Waiter', 'text': 'いらっしゃいませ。'},
-                {'speaker': 'Customer A', 'text': 'こんにちは。4人で来ました。'},
-                {'speaker': 'Waiter', 'text': 'かしこまりました。こちらのテーブルへどうぞ。'},
-                {'speaker': 'Customer B', 'text': 'ありがとうございます。今日の特別メニューはありますか？'},
-                {'speaker': 'Waiter', 'text': 'はい、本日は海鮮丼と天ぷら定食がおすすめです。'},
-                {'speaker': 'Customer A', 'text': '私は海鮮丼をお願いします。'},
-                {'speaker': 'Customer C', 'text': '天ぷら定食を2つお願いします。'},
-                {'speaker': 'Customer D', 'text': '私はラーメンでお願いします。'},
-                {'speaker': 'Waiter', 'text': 'かしこまりました。お飲み物はいかがですか？'},
-                {'speaker': 'Customer A', 'text': 'お茶をお願いします。'},
-                {'speaker': 'Customer B', 'text': '私もお茶で。'},
-                {'speaker': 'Waiter', 'text': 'ご注文を確認させていただきます。'}
+                {'speaker': 'Camarero', 'text': '¡Bienvenidos!'},
+                {'speaker': 'Cliente A', 'text': 'Hola, somos cuatro personas.'},
+                {'speaker': 'Camarero', 'text': 'Por aquí, por favor. Esta es su mesa.'},
+                {'speaker': 'Cliente B', 'text': 'Gracias. ¿Tienen menú del día?'},
+                {'speaker': 'Camarero', 'text': 'Sí, hoy tenemos paella y pescado fresco.'},
+                {'speaker': 'Cliente A', 'text': 'Para mí la paella, por favor.'},
+                {'speaker': 'Cliente C', 'text': 'Dos pescados, por favor.'},
+                {'speaker': 'Cliente D', 'text': 'Yo quiero la sopa.'},
+                {'speaker': 'Camarero', 'text': '¿Y para beber?'},
+                {'speaker': 'Cliente A', 'text': 'Agua mineral, por favor.'},
+                {'speaker': 'Cliente B', 'text': 'Lo mismo para mí.'},
+                {'speaker': 'Camarero', 'text': 'Muy bien, repito el pedido...'}
             ],
-            'question': "Customer Aは何を注文しましたか？",
+            'question': "¿Qué pidió el Cliente A?",
             'options': [
-                "海鮮丼",
-                "天ぷら定食",
-                "ラーメン",
-                "うどん"
+                "Paella",
+                "Pescado",
+                "Sopa",
+                "Ensalada"
             ],
-            'correct_answer': "海鮮丼"
+            'correct_answer': "Paella"
         },
         {
-            'introduction': "A conversation at a Japanese school",
+            'introduction': "Una conversación en una escuela española",
             'conversation': [
-                {'speaker': 'Teacher', 'text': 'おはようございます。'},
-                {'speaker': 'Students', 'text': 'おはようございます。'},
-                {'speaker': 'Teacher', 'text': '今日は校外学習について話します。'},
-                {'speaker': 'Student A', 'text': '先生、どこへ行きますか？'},
-                {'speaker': 'Teacher', 'text': '来週の水曜日に京都へ行きます。'},
-                {'speaker': 'Student B', 'text': '何時に学校に集まりますか？'},
-                {'speaker': 'Teacher', 'text': '朝7時に学校に集まってください。'},
-                {'speaker': 'Student C', 'text': 'お弁当は持って行きますか？'},
-                {'speaker': 'Teacher', 'text': 'はい、お弁当と水筒を持ってきてください。'},
-                {'speaker': 'Student A', 'text': 'カメラを持って行ってもいいですか？'},
-                {'speaker': 'Teacher', 'text': 'はい、大丈夫です。'},
-                {'speaker': 'Student D', 'text': '何時頃帰りますか？'},
-                {'speaker': 'Teacher', 'text': '午後5時頃に学校に戻る予定です。'}
+                {'speaker': 'Profesor', 'text': 'Buenos días.'},
+                {'speaker': 'Estudiantes', 'text': 'Buenos días, profesor.'},
+                {'speaker': 'Profesor', 'text': 'Hoy vamos a hablar sobre la excursión.'},
+                {'speaker': 'Estudiante A', 'text': '¿A dónde vamos?'},
+                {'speaker': 'Profesor', 'text': 'El miércoles que viene iremos a Madrid.'},
+                {'speaker': 'Estudiante B', 'text': '¿A qué hora nos encontramos?'},
+                {'speaker': 'Profesor', 'text': 'A las 7 de la mañana en la escuela.'},
+                {'speaker': 'Estudiante C', 'text': '¿Llevamos comida?'},
+                {'speaker': 'Profesor', 'text': 'Sí, traigan almuerzo y agua.'},
+                {'speaker': 'Estudiante A', 'text': '¿Podemos llevar cámara?'},
+                {'speaker': 'Profesor', 'text': 'Sí, está permitido.'}
             ],
-            'question': "校外学習はいつですか？",
+            'question': "¿Cuándo es la excursión?",
             'options': [
-                "来週の水曜日",
-                "今日",
-                "明日",
-                "来週の月曜日"
+                "El miércoles que viene",
+                "Hoy",
+                "Mañana",
+                "El lunes que viene"
             ],
-            'correct_answer': "来週の水曜日"
+            'correct_answer': "El miércoles que viene"
         },
         {
-            'introduction': "A conversation at a train station",
+            'introduction': "Una conversación en una estación de tren",
             'conversation': [
-                {'speaker': 'Tourist', 'text': 'すみません。'},
-                {'speaker': 'Station Staff', 'text': 'はい、いかがいたしましょうか？'},
-                {'speaker': 'Tourist', 'text': '東京駅までの切符を買いたいのですが。'},
-                {'speaker': 'Station Staff', 'text': '普通列車ですか、新幹線ですか？'},
-                {'speaker': 'Tourist', 'text': '新幹線で行きたいです。'},
-                {'speaker': 'Station Staff', 'text': '指定席と自由席がございますが、どちらにされますか？'},
-                {'speaker': 'Tourist', 'text': '指定席をお願いします。'},
-                {'speaker': 'Station Staff', 'text': '何時頃の電車をご希望ですか？'},
-                {'speaker': 'Tourist', 'text': '10時頃の電車を探しています。'},
-                {'speaker': 'Station Staff', 'text': '10時15分発がございますが、いかがでしょうか？'},
-                {'speaker': 'Tourist', 'text': 'はい、それでお願いします。'},
-                {'speaker': 'Station Staff', 'text': 'かしこまりました。窓側と通路側、どちらがよろしいですか？'}
+                {'speaker': 'Turista', 'text': 'Disculpe.'},
+                {'speaker': 'Empleado', 'text': '¿En qué puedo ayudarle?'},
+                {'speaker': 'Turista', 'text': 'Quiero comprar un billete para Barcelona.'},
+                {'speaker': 'Empleado', 'text': '¿Tren normal o AVE?'},
+                {'speaker': 'Turista', 'text': 'AVE, por favor.'},
+                {'speaker': 'Empleado', 'text': '¿Asiento de ventana o pasillo?'},
+                {'speaker': 'Turista', 'text': 'Ventana, por favor.'},
+                {'speaker': 'Empleado', 'text': '¿Para qué hora?'},
+                {'speaker': 'Turista', 'text': 'Para las 10 si es posible.'},
+                {'speaker': 'Empleado', 'text': 'Hay uno a las 10:15.'},
+                {'speaker': 'Turista', 'text': 'Perfecto, ese mismo.'}
             ],
-            'question': "お客様はどの種類の席を選びましたか？",
+            'question': "¿Qué tipo de asiento eligió el turista?",
             'options': [
-                "指定席",
-                "自由席",
-                "グリーン車",
-                "立ち席"
+                "Ventana",
+                "Pasillo",
+                "Primera clase",
+                "No especificado"
             ],
-            'correct_answer': "指定席"
+            'correct_answer': "Ventana"
         }
     ]
     
