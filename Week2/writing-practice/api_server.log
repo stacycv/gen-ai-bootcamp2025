@@ -608,3 +608,12 @@
 2025-03-04 13:50:04,904 - INFO - Returning data for group: Colors
 2025-03-04 13:50:04,904 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
 2025-03-04 13:50:04,904 - INFO - 127.0.0.1 - - [04/Mar/2025 13:50:04] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:50:54,877 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/print.py', reloading
+2025-03-04 13:50:55,237 - INFO -  * Restarting with stat
+2025-03-04 13:50:56,233 - INFO - Starting API server...
+2025-03-04 13:50:56,233 - INFO - Available endpoints:
+2025-03-04 13:50:56,233 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:50:56,233 - INFO -   - GET /api/groups
+2025-03-04 13:50:56,234 - INFO -   - GET / (health check)
+2025-03-04 13:50:56,374 - WARNING -  * Debugger is active!
+2025-03-04 13:50:56,428 - INFO -  * Debugger PIN: 679-579-881
