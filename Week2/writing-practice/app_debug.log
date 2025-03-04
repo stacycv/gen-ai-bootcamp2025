@@ -1,0 +1,2459 @@
+2025-03-04 12:09:33,025 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:09:33,070 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:09:33,112 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:09:33,128 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:09:33,185 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x118364b90>
+2025-03-04 12:09:33,192 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x1181e5640> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:09:33,288 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x118338b00>
+2025-03-04 12:09:33,294 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:09:33,295 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:09:33,323 - DEBUG - send_request_headers.complete
+2025-03-04 12:09:33,323 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:09:33,323 - DEBUG - send_request_body.complete
+2025-03-04 12:09:33,323 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:09:33,371 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:09:33 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:09:33,377 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:09:33,384 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:09:33,390 - DEBUG - receive_response_body.complete
+2025-03-04 12:09:33,397 - DEBUG - response_closed.started
+2025-03-04 12:09:33,397 - DEBUG - response_closed.complete
+2025-03-04 12:09:33,405 - DEBUG - close.started
+2025-03-04 12:09:33,414 - DEBUG - close.complete
+2025-03-04 12:09:33,461 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:09:33,538 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:09:33,539 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1186b9f30>
+2025-03-04 12:09:33,539 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:09:33,539 - DEBUG - send_request_headers.complete
+2025-03-04 12:09:33,539 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:09:33,539 - DEBUG - send_request_body.complete
+2025-03-04 12:09:33,540 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:09:33,541 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:09:33 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:09:33,542 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:09:33,542 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:09:33,542 - DEBUG - receive_response_body.complete
+2025-03-04 12:09:33,542 - DEBUG - response_closed.started
+2025-03-04 12:09:33,542 - DEBUG - response_closed.complete
+2025-03-04 12:09:33,542 - DEBUG - close.started
+2025-03-04 12:09:33,543 - DEBUG - close.complete
+2025-03-04 12:09:33,544 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:09:33,545 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x118682c30>
+2025-03-04 12:09:33,546 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:09:33,546 - DEBUG - send_request_headers.complete
+2025-03-04 12:09:33,550 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:09:33,552 - DEBUG - send_request_body.complete
+2025-03-04 12:09:33,553 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:09:33,575 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:09:33 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21250'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:09:33,576 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:09:33,576 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:09:33,576 - DEBUG - receive_response_body.complete
+2025-03-04 12:09:33,576 - DEBUG - response_closed.started
+2025-03-04 12:09:33,576 - DEBUG - response_closed.complete
+2025-03-04 12:09:33,576 - DEBUG - close.started
+2025-03-04 12:09:33,576 - DEBUG - close.complete
+2025-03-04 12:09:33,580 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:09:33,700 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:09:39,194 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:09:39,194 - INFO - Making API request to: http://localhost:5000/api/groups/1/words/raw
+2025-03-04 12:09:39,194 - DEBUG - Sending GET request...
+2025-03-04 12:09:39,196 - DEBUG - Starting new HTTP connection (1): localhost:5000
+2025-03-04 12:09:39,199 - DEBUG - http://localhost:5000 "GET /api/groups/1/words/raw HTTP/1.1" 403 0
+2025-03-04 12:09:39,199 - INFO - Received response with status code: 403
+2025-03-04 12:09:39,203 - ERROR - Invalid JSON response: ...
+2025-03-04 12:09:40,227 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:09:40,228 - INFO - Making API request to: http://localhost:5000/api/groups/1/words/raw
+2025-03-04 12:09:40,228 - DEBUG - Sending GET request...
+2025-03-04 12:09:40,230 - DEBUG - Starting new HTTP connection (1): localhost:5000
+2025-03-04 12:09:40,233 - DEBUG - http://localhost:5000 "GET /api/groups/1/words/raw HTTP/1.1" 403 0
+2025-03-04 12:09:40,233 - INFO - Received response with status code: 403
+2025-03-04 12:09:40,233 - ERROR - Invalid JSON response: ...
+2025-03-04 12:09:43,940 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:09:43,940 - INFO - Making API request to: http://localhost:5000/api/groups/1/words/raw
+2025-03-04 12:09:43,940 - DEBUG - Sending GET request...
+2025-03-04 12:09:43,942 - DEBUG - Starting new HTTP connection (1): localhost:5000
+2025-03-04 12:09:43,944 - DEBUG - http://localhost:5000 "GET /api/groups/1/words/raw HTTP/1.1" 403 0
+2025-03-04 12:09:43,944 - INFO - Received response with status code: 403
+2025-03-04 12:09:43,945 - ERROR - Invalid JSON response: ...
+2025-03-04 12:11:36,716 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:11:36,732 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:11:36,758 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:11:36,773 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:11:36,930 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ebde210>
+2025-03-04 12:11:36,930 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10ea5d640> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:11:37,036 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ebac9d0>
+2025-03-04 12:11:37,046 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:11:37,046 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:11:37,106 - DEBUG - send_request_headers.complete
+2025-03-04 12:11:37,112 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:11:37,112 - DEBUG - send_request_body.complete
+2025-03-04 12:11:37,112 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:11:37,155 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:11:37 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:11:37,161 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:11:37,168 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:11:37,173 - DEBUG - receive_response_body.complete
+2025-03-04 12:11:37,173 - DEBUG - response_closed.started
+2025-03-04 12:11:37,179 - DEBUG - response_closed.complete
+2025-03-04 12:11:37,187 - DEBUG - close.started
+2025-03-04 12:11:37,200 - DEBUG - close.complete
+2025-03-04 12:11:37,269 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:11:37,321 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:11:37,322 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ef35f30>
+2025-03-04 12:11:37,323 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:11:37,323 - DEBUG - send_request_headers.complete
+2025-03-04 12:11:37,323 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:11:37,323 - DEBUG - send_request_body.complete
+2025-03-04 12:11:37,324 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:11:37,326 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:11:37 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:11:37,326 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:11:37,326 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:11:37,326 - DEBUG - receive_response_body.complete
+2025-03-04 12:11:37,326 - DEBUG - response_closed.started
+2025-03-04 12:11:37,327 - DEBUG - response_closed.complete
+2025-03-04 12:11:37,327 - DEBUG - close.started
+2025-03-04 12:11:37,327 - DEBUG - close.complete
+2025-03-04 12:11:37,328 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:11:37,329 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10eefec30>
+2025-03-04 12:11:37,329 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:11:37,333 - DEBUG - send_request_headers.complete
+2025-03-04 12:11:37,333 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:11:37,334 - DEBUG - send_request_body.complete
+2025-03-04 12:11:37,334 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:11:37,361 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:11:37 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21250'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:11:37,361 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:11:37,361 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:11:37,361 - DEBUG - receive_response_body.complete
+2025-03-04 12:11:37,361 - DEBUG - response_closed.started
+2025-03-04 12:11:37,361 - DEBUG - response_closed.complete
+2025-03-04 12:11:37,362 - DEBUG - close.started
+2025-03-04 12:11:37,362 - DEBUG - close.complete
+2025-03-04 12:11:37,365 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:11:37,591 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:11:43,898 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:11:43,899 - INFO - Making API request to: http://localhost:5000/api/groups/1/words/raw
+2025-03-04 12:11:43,900 - DEBUG - Sending GET request...
+2025-03-04 12:11:43,902 - DEBUG - Starting new HTTP connection (1): localhost:5000
+2025-03-04 12:11:43,949 - DEBUG - http://localhost:5000 "GET /api/groups/1/words/raw HTTP/1.1" 403 0
+2025-03-04 12:11:43,949 - INFO - Received response with status code: 403
+2025-03-04 12:11:43,950 - ERROR - Invalid JSON response: ...
+2025-03-04 12:18:08,957 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:18:08,971 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:18:09,020 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:18:09,047 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:18:09,087 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10cec3d90>
+2025-03-04 12:18:09,093 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10cdcd520> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:18:09,198 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10cf349d0>
+2025-03-04 12:18:09,205 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:18:09,223 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:18:09,224 - DEBUG - send_request_headers.complete
+2025-03-04 12:18:09,237 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:18:09,237 - DEBUG - send_request_body.complete
+2025-03-04 12:18:09,237 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:18:09,267 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:18:09 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:18:09,273 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:18:09,280 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:18:09,287 - DEBUG - receive_response_body.complete
+2025-03-04 12:18:09,293 - DEBUG - response_closed.started
+2025-03-04 12:18:09,299 - DEBUG - response_closed.complete
+2025-03-04 12:18:09,311 - DEBUG - close.started
+2025-03-04 12:18:09,316 - DEBUG - close.complete
+2025-03-04 12:18:09,378 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:18:09,447 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:18:09,448 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10d2bdf30>
+2025-03-04 12:18:09,448 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:18:09,448 - DEBUG - send_request_headers.complete
+2025-03-04 12:18:09,448 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:18:09,449 - DEBUG - send_request_body.complete
+2025-03-04 12:18:09,449 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:18:09,451 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:18:09 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:18:09,452 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:18:09,452 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:18:09,452 - DEBUG - receive_response_body.complete
+2025-03-04 12:18:09,452 - DEBUG - response_closed.started
+2025-03-04 12:18:09,452 - DEBUG - response_closed.complete
+2025-03-04 12:18:09,452 - DEBUG - close.started
+2025-03-04 12:18:09,452 - DEBUG - close.complete
+2025-03-04 12:18:09,454 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:18:09,458 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10d1e1010>
+2025-03-04 12:18:09,458 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:18:09,459 - DEBUG - send_request_headers.complete
+2025-03-04 12:18:09,459 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:18:09,459 - DEBUG - send_request_body.complete
+2025-03-04 12:18:09,459 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:18:09,496 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:18:09 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21249'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:18:09,497 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:18:09,497 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:18:09,497 - DEBUG - receive_response_body.complete
+2025-03-04 12:18:09,497 - DEBUG - response_closed.started
+2025-03-04 12:18:09,497 - DEBUG - response_closed.complete
+2025-03-04 12:18:09,498 - DEBUG - close.started
+2025-03-04 12:18:09,498 - DEBUG - close.complete
+2025-03-04 12:18:09,501 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:18:09,621 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:18:15,781 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:18:15,782 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:18:15,784 - DEBUG - Sending GET request...
+2025-03-04 12:18:15,822 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:18:15,838 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:18:15,839 - INFO - Received response with status code: 200
+2025-03-04 12:18:15,840 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:18:15,842 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:18:15,846 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:20:00,997 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:20:00,998 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:20:00,999 - DEBUG - Sending GET request...
+2025-03-04 12:20:01,003 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:20:01,063 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:20:01,065 - INFO - Received response with status code: 200
+2025-03-04 12:20:01,067 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:20:01,071 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:20:01,071 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:20:46,001 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:20:46,030 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:20:46,039 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:20:46,045 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:20:46,132 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1186f4b90>
+2025-03-04 12:20:46,132 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x118565490> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:20:46,222 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:20:46,248 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11850fe10>
+2025-03-04 12:20:46,248 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:20:46,255 - DEBUG - send_request_headers.complete
+2025-03-04 12:20:46,255 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:20:46,255 - DEBUG - send_request_body.complete
+2025-03-04 12:20:46,255 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:20:46,307 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:20:46 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:20:46,307 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:20:46,307 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:20:46,307 - DEBUG - receive_response_body.complete
+2025-03-04 12:20:46,307 - DEBUG - response_closed.started
+2025-03-04 12:20:46,308 - DEBUG - response_closed.complete
+2025-03-04 12:20:46,314 - DEBUG - close.started
+2025-03-04 12:20:46,319 - DEBUG - close.complete
+2025-03-04 12:21:01,314 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:21:01,323 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:21:01,345 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:21:01,345 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:21:01,423 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115a64910>
+2025-03-04 12:21:01,429 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x1158d9490> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:21:01,505 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:21:01,538 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115a389d0>
+2025-03-04 12:21:01,544 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:21:01,551 - DEBUG - send_request_headers.complete
+2025-03-04 12:21:01,552 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:21:01,552 - DEBUG - send_request_body.complete
+2025-03-04 12:21:01,552 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:21:01,592 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:21:01 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:21:01,599 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:21:01,599 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:21:01,599 - DEBUG - receive_response_body.complete
+2025-03-04 12:21:01,600 - DEBUG - response_closed.started
+2025-03-04 12:21:01,600 - DEBUG - response_closed.complete
+2025-03-04 12:21:01,606 - DEBUG - close.started
+2025-03-04 12:21:01,612 - DEBUG - close.complete
+2025-03-04 12:21:01,673 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:21:01,725 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:21:01,725 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115db9ba0>
+2025-03-04 12:21:01,726 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:21:01,727 - DEBUG - send_request_headers.complete
+2025-03-04 12:21:01,727 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:21:01,727 - DEBUG - send_request_body.complete
+2025-03-04 12:21:01,727 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:21:01,731 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:21:01 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:21:01,732 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:21:01,733 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:21:01,734 - DEBUG - receive_response_body.complete
+2025-03-04 12:21:01,734 - DEBUG - response_closed.started
+2025-03-04 12:21:01,734 - DEBUG - response_closed.complete
+2025-03-04 12:21:01,734 - DEBUG - close.started
+2025-03-04 12:21:01,734 - DEBUG - close.complete
+2025-03-04 12:21:01,736 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:21:01,737 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115cdcef0>
+2025-03-04 12:21:01,737 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:21:01,738 - DEBUG - send_request_headers.complete
+2025-03-04 12:21:01,738 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:21:01,738 - DEBUG - send_request_body.complete
+2025-03-04 12:21:01,738 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:21:01,766 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:21:01 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21210'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:21:01,767 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:21:01,767 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:21:01,767 - DEBUG - receive_response_body.complete
+2025-03-04 12:21:01,767 - DEBUG - response_closed.started
+2025-03-04 12:21:01,767 - DEBUG - response_closed.complete
+2025-03-04 12:21:01,767 - DEBUG - close.started
+2025-03-04 12:21:01,768 - DEBUG - close.complete
+2025-03-04 12:21:01,771 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:21:01,905 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:21:08,779 - INFO - Starting sentence generation
+2025-03-04 12:21:08,780 - ERROR - No vocabulary loaded
+2025-03-04 12:21:12,545 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:21:12,546 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:21:12,546 - DEBUG - Sending GET request...
+2025-03-04 12:21:12,548 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:21:12,550 - ERROR - Connection error: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/groups/1/words/raw (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11998c2f0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-03-04 12:21:14,685 - INFO - Starting sentence generation
+2025-03-04 12:21:14,686 - ERROR - No vocabulary loaded
+2025-03-04 12:21:16,110 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:21:16,110 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:21:16,110 - DEBUG - Sending GET request...
+2025-03-04 12:21:16,112 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:21:16,113 - ERROR - Connection error: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/groups/1/words/raw (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x115da6710>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-03-04 12:22:31,363 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:22:31,366 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:22:31,367 - DEBUG - Sending GET request...
+2025-03-04 12:22:31,375 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:22:31,416 - ERROR - Connection error: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /api/groups/1/words/raw (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x115da6850>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-03-04 12:25:25,469 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:25:25,484 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:25:25,524 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:25:25,561 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:25:25,580 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x112688050>
+2025-03-04 12:25:25,586 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x1124f9490> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:25:25,754 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:25:25,801 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1124a3ce0>
+2025-03-04 12:25:25,808 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:25:25,825 - DEBUG - send_request_headers.complete
+2025-03-04 12:25:25,829 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:25:25,829 - DEBUG - send_request_body.complete
+2025-03-04 12:25:25,829 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:25:25,859 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:25:25,922 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:25:25,923 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1129e2520>
+2025-03-04 12:25:25,923 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:25:25,923 - DEBUG - send_request_headers.complete
+2025-03-04 12:25:25,924 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:25:25,924 - DEBUG - send_request_body.complete
+2025-03-04 12:25:25,924 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:25:25,926 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:25:25 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:25:25,927 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:25:25,928 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:25:25,928 - DEBUG - receive_response_body.complete
+2025-03-04 12:25:25,928 - DEBUG - response_closed.started
+2025-03-04 12:25:25,928 - DEBUG - response_closed.complete
+2025-03-04 12:25:25,928 - DEBUG - close.started
+2025-03-04 12:25:25,929 - DEBUG - close.complete
+2025-03-04 12:25:25,930 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:25:25,931 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1129b2d50>
+2025-03-04 12:25:25,934 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:25:25,935 - DEBUG - send_request_headers.complete
+2025-03-04 12:25:25,935 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:25:25,936 - DEBUG - send_request_body.complete
+2025-03-04 12:25:25,936 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:25:25,945 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:25:26 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:25:25,946 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:25:25,946 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:25:25,947 - DEBUG - receive_response_body.complete
+2025-03-04 12:25:25,947 - DEBUG - response_closed.started
+2025-03-04 12:25:25,947 - DEBUG - response_closed.complete
+2025-03-04 12:25:25,948 - DEBUG - close.started
+2025-03-04 12:25:25,948 - DEBUG - close.complete
+2025-03-04 12:25:25,965 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:25:25 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21209'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:25:25,965 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:25:25,965 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:25:25,966 - DEBUG - receive_response_body.complete
+2025-03-04 12:25:25,966 - DEBUG - response_closed.started
+2025-03-04 12:25:25,966 - DEBUG - response_closed.complete
+2025-03-04 12:25:25,966 - DEBUG - close.started
+2025-03-04 12:25:25,966 - DEBUG - close.complete
+2025-03-04 12:25:25,968 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:25:26,146 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:25:28,779 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:25:28,779 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:25:28,780 - DEBUG - Sending GET request...
+2025-03-04 12:25:28,792 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:25:28,821 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:25:28,822 - INFO - Received response with status code: 200
+2025-03-04 12:25:28,831 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:25:28,831 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:25:28,831 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:25:30,481 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:25:30,481 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:25:30,481 - DEBUG - Sending GET request...
+2025-03-04 12:25:30,486 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:25:30,509 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:25:30,516 - INFO - Received response with status code: 200
+2025-03-04 12:25:30,517 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:25:30,518 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:25:30,518 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:25:31,352 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:25:31,352 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:25:31,353 - DEBUG - Sending GET request...
+2025-03-04 12:25:31,355 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:25:31,369 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:25:31,370 - INFO - Received response with status code: 200
+2025-03-04 12:25:31,370 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:25:31,370 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:25:31,370 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:28:58,487 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:28:58,509 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:28:58,555 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:28:58,573 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:28:58,626 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x119651450>
+2025-03-04 12:28:58,631 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x119559640> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:28:58,736 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1196b83e0>
+2025-03-04 12:28:58,736 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:28:58,737 - DEBUG - send_request_headers.complete
+2025-03-04 12:28:58,737 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:28:58,738 - DEBUG - send_request_body.complete
+2025-03-04 12:28:58,738 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:28:58,755 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:28:58,784 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:28:58 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:28:58,789 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:28:58,795 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:28:58,801 - DEBUG - receive_response_body.complete
+2025-03-04 12:28:58,807 - DEBUG - response_closed.started
+2025-03-04 12:28:58,813 - DEBUG - response_closed.complete
+2025-03-04 12:28:58,819 - DEBUG - close.started
+2025-03-04 12:28:58,830 - DEBUG - close.complete
+2025-03-04 12:28:59,427 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:28:59,502 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:28:59,503 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x119a3dba0>
+2025-03-04 12:28:59,503 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:28:59,504 - DEBUG - send_request_headers.complete
+2025-03-04 12:28:59,505 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:28:59,505 - DEBUG - send_request_body.complete
+2025-03-04 12:28:59,505 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:28:59,507 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:28:59 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:28:59,508 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:28:59,508 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:28:59,508 - DEBUG - receive_response_body.complete
+2025-03-04 12:28:59,508 - DEBUG - response_closed.started
+2025-03-04 12:28:59,509 - DEBUG - response_closed.complete
+2025-03-04 12:28:59,509 - DEBUG - close.started
+2025-03-04 12:28:59,509 - DEBUG - close.complete
+2025-03-04 12:28:59,511 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:28:59,513 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x119a02b10>
+2025-03-04 12:28:59,513 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:28:59,513 - DEBUG - send_request_headers.complete
+2025-03-04 12:28:59,513 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:28:59,514 - DEBUG - send_request_body.complete
+2025-03-04 12:28:59,514 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:28:59,575 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:28:59 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21208'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:28:59,576 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:28:59,576 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:28:59,576 - DEBUG - receive_response_body.complete
+2025-03-04 12:28:59,576 - DEBUG - response_closed.started
+2025-03-04 12:28:59,576 - DEBUG - response_closed.complete
+2025-03-04 12:28:59,576 - DEBUG - close.started
+2025-03-04 12:28:59,576 - DEBUG - close.complete
+2025-03-04 12:28:59,593 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:28:59,705 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:29:04,836 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:29:04,837 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:29:04,837 - DEBUG - Sending GET request...
+2025-03-04 12:29:04,841 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:29:04,891 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:29:04,892 - INFO - Received response with status code: 200
+2025-03-04 12:29:04,893 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:29:04,897 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:29:04,904 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:29:06,981 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:29:06,982 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:29:06,983 - DEBUG - Sending GET request...
+2025-03-04 12:29:06,986 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:29:06,995 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:29:06,995 - INFO - Received response with status code: 200
+2025-03-04 12:29:06,996 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:29:06,998 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:29:06,999 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:29:07,940 - INFO - Starting sentence generation
+2025-03-04 12:29:07,941 - INFO - Selected word: gato
+2025-03-04 12:29:07,942 - DEBUG - Creating OpenAI client
+2025-03-04 12:29:08,038 - DEBUG - Sending request to OpenAI
+2025-03-04 12:29:08,059 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': "Generate a simple Spanish sentence using the word 'gato'.\n            The grammar should be scoped to Spanish A1 grammar level.\n            You can use the following vocabulary to construct a simple sentence:\n            - simple objects eg. book, car, taco, house\n            - simple verbs eg. to eat, to play, to sleep\n            - simple times eg. yesterday, tomorrow, next week\n            \n            Please provide the response in this format:\n            Spanish: [sentence in Spanish]\n            English: [English translation]\n            "}], 'model': 'gpt-4', 'max_tokens': 100, 'temperature': 0.7}}
+2025-03-04 12:29:08,137 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-03-04 12:29:08,137 - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-03-04 12:29:08,173 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x119a05ae0>
+2025-03-04 12:29:08,173 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x11d576180> server_hostname='api.openai.com' timeout=5.0
+2025-03-04 12:29:08,187 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x119a059d0>
+2025-03-04 12:29:08,187 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-03-04 12:29:08,188 - DEBUG - send_request_headers.complete
+2025-03-04 12:29:08,188 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-03-04 12:29:08,188 - DEBUG - send_request_body.complete
+2025-03-04 12:29:08,188 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-03-04 12:29:08,238 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Tue, 04 Mar 2025 20:29:08 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'274'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_536a0a8da95417059d3a7f9cce228a83'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=aDL.aXsQ9BQIQDNvKxgDDexspEAL5.2F_c.BB9ULEBs-1741120148-1.0.1.1-AOOpCf5aH1DL1sYLtSMpYMh5NeYchSJqrEkHyFDaf00Ti0VyOPE49GhqPm2w1q6Ky12o1WOCK0cEH89CHorlRMnzOC6MzB3tdVZM9TT6ZYk; path=/; expires=Tue, 04-Mar-25 20:59:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=J55smxH13sMM1kz_Qt0g7mqkB8spQbWJJR3xZIL9ayE-1741120148336-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'91b41fbedff669b7-LAX'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-03-04 12:29:08,239 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-03-04 12:29:08,239 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-03-04 12:29:08,239 - DEBUG - receive_response_body.complete
+2025-03-04 12:29:08,240 - DEBUG - response_closed.started
+2025-03-04 12:29:08,240 - DEBUG - response_closed.complete
+2025-03-04 12:29:08,240 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "401 Unauthorized" Headers([('date', 'Tue, 04 Mar 2025 20:29:08 GMT'), ('content-type', 'application/json; charset=utf-8'), ('content-length', '274'), ('connection', 'keep-alive'), ('vary', 'Origin'), ('x-request-id', 'req_536a0a8da95417059d3a7f9cce228a83'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=aDL.aXsQ9BQIQDNvKxgDDexspEAL5.2F_c.BB9ULEBs-1741120148-1.0.1.1-AOOpCf5aH1DL1sYLtSMpYMh5NeYchSJqrEkHyFDaf00Ti0VyOPE49GhqPm2w1q6Ky12o1WOCK0cEH89CHorlRMnzOC6MzB3tdVZM9TT6ZYk; path=/; expires=Tue, 04-Mar-25 20:59:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=J55smxH13sMM1kz_Qt0g7mqkB8spQbWJJR3xZIL9ayE-1741120148336-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '91b41fbedff669b7-LAX'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-03-04 12:29:08,240 - DEBUG - request_id: req_536a0a8da95417059d3a7f9cce228a83
+2025-03-04 12:29:08,240 - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1056, in _request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/venv/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-03-04 12:29:08,244 - DEBUG - Not retrying
+2025-03-04 12:29:08,244 - DEBUG - Re-raising status error
+2025-03-04 12:29:08,249 - ERROR - OpenAI Authentication Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-act************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-04 12:29:10,200 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:29:10,201 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:29:10,201 - DEBUG - Sending GET request...
+2025-03-04 12:29:10,205 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:29:10,230 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:29:10,231 - INFO - Received response with status code: 200
+2025-03-04 12:29:10,232 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:29:10,232 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:29:10,232 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:29:11,582 - INFO - Starting sentence generation
+2025-03-04 12:29:11,583 - INFO - Selected word: casa
+2025-03-04 12:29:11,584 - DEBUG - Creating OpenAI client
+2025-03-04 12:29:11,651 - DEBUG - Sending request to OpenAI
+2025-03-04 12:29:11,657 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': "Generate a simple Spanish sentence using the word 'casa'.\n            The grammar should be scoped to Spanish A1 grammar level.\n            You can use the following vocabulary to construct a simple sentence:\n            - simple objects eg. book, car, taco, house\n            - simple verbs eg. to eat, to play, to sleep\n            - simple times eg. yesterday, tomorrow, next week\n            \n            Please provide the response in this format:\n            Spanish: [sentence in Spanish]\n            English: [English translation]\n            "}], 'model': 'gpt-4', 'max_tokens': 100, 'temperature': 0.7}}
+2025-03-04 12:29:11,664 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-03-04 12:29:11,665 - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-03-04 12:29:11,681 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11d580250>
+2025-03-04 12:29:11,681 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x11d5747a0> server_hostname='api.openai.com' timeout=5.0
+2025-03-04 12:29:11,692 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11d582050>
+2025-03-04 12:29:11,692 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-03-04 12:29:11,693 - DEBUG - send_request_headers.complete
+2025-03-04 12:29:11,693 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-03-04 12:29:11,693 - DEBUG - send_request_body.complete
+2025-03-04 12:29:11,694 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-03-04 12:29:11,772 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Tue, 04 Mar 2025 20:29:11 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'274'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_10a67192ca44aaefb674852496f4cae1'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=SEIVu6PIwwvivRNttgfnHWgIdVXdBHb8Y41zXrPiQUY-1741120151-1.0.1.1-0Iack1ITeMTDuYcoxOsnPMnPFx3U.jIoctb0HVyD8lYEOW6qT0w7v6E3kvRBVb9sXrC6TdzzHiEs2IHoDyCUSDCbWAk0a7wdnm_KQmskczg; path=/; expires=Tue, 04-Mar-25 20:59:11 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=bnW5qK2LObKDeB0HqAn6k.5WOBU74OpNiPIGMVrBQ0A-1741120151868-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'91b41fd4bef72ed9-LAX'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-03-04 12:29:11,773 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-03-04 12:29:11,773 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-03-04 12:29:11,773 - DEBUG - receive_response_body.complete
+2025-03-04 12:29:11,773 - DEBUG - response_closed.started
+2025-03-04 12:29:11,773 - DEBUG - response_closed.complete
+2025-03-04 12:29:11,773 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "401 Unauthorized" Headers([('date', 'Tue, 04 Mar 2025 20:29:11 GMT'), ('content-type', 'application/json; charset=utf-8'), ('content-length', '274'), ('connection', 'keep-alive'), ('vary', 'Origin'), ('x-request-id', 'req_10a67192ca44aaefb674852496f4cae1'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=SEIVu6PIwwvivRNttgfnHWgIdVXdBHb8Y41zXrPiQUY-1741120151-1.0.1.1-0Iack1ITeMTDuYcoxOsnPMnPFx3U.jIoctb0HVyD8lYEOW6qT0w7v6E3kvRBVb9sXrC6TdzzHiEs2IHoDyCUSDCbWAk0a7wdnm_KQmskczg; path=/; expires=Tue, 04-Mar-25 20:59:11 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=bnW5qK2LObKDeB0HqAn6k.5WOBU74OpNiPIGMVrBQ0A-1741120151868-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '91b41fd4bef72ed9-LAX'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-03-04 12:29:11,773 - DEBUG - request_id: req_10a67192ca44aaefb674852496f4cae1
+2025-03-04 12:29:11,774 - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1056, in _request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/venv/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-03-04 12:29:11,775 - DEBUG - Not retrying
+2025-03-04 12:29:11,775 - DEBUG - Re-raising status error
+2025-03-04 12:29:11,775 - ERROR - OpenAI Authentication Error: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-act************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-04 12:31:09,504 - DEBUG - close.started
+2025-03-04 12:31:09,504 - DEBUG - close.complete
+2025-03-04 12:31:09,504 - DEBUG - close.started
+2025-03-04 12:31:09,505 - DEBUG - close.complete
+2025-03-04 12:31:27,971 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:31:27,981 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:31:28,028 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:31:28,029 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:31:28,090 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11a926990>
+2025-03-04 12:31:28,095 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x11a8c8e60> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:31:28,201 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:31:28,226 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11a8b1ba0>
+2025-03-04 12:31:28,232 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:31:28,256 - DEBUG - send_request_headers.complete
+2025-03-04 12:31:28,262 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:31:28,262 - DEBUG - send_request_body.complete
+2025-03-04 12:31:28,262 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:31:28,292 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:31:28 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:31:28,293 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:31:28,293 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:31:28,293 - DEBUG - receive_response_body.complete
+2025-03-04 12:31:28,293 - DEBUG - response_closed.started
+2025-03-04 12:31:28,293 - DEBUG - response_closed.complete
+2025-03-04 12:31:28,294 - DEBUG - close.started
+2025-03-04 12:31:28,294 - DEBUG - close.complete
+2025-03-04 12:31:28,438 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:31:28,512 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:31:28,514 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11ad4d0f0>
+2025-03-04 12:31:28,514 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:31:28,514 - DEBUG - send_request_headers.complete
+2025-03-04 12:31:28,514 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:31:28,515 - DEBUG - send_request_body.complete
+2025-03-04 12:31:28,515 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:31:28,517 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:31:28 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:31:28,517 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:31:28,518 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:31:28,518 - DEBUG - receive_response_body.complete
+2025-03-04 12:31:28,518 - DEBUG - response_closed.started
+2025-03-04 12:31:28,518 - DEBUG - response_closed.complete
+2025-03-04 12:31:28,518 - DEBUG - close.started
+2025-03-04 12:31:28,518 - DEBUG - close.complete
+2025-03-04 12:31:28,520 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:31:28,521 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11ad06330>
+2025-03-04 12:31:28,521 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:31:28,522 - DEBUG - send_request_headers.complete
+2025-03-04 12:31:28,522 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:31:28,523 - DEBUG - send_request_body.complete
+2025-03-04 12:31:28,523 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:31:28,551 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:31:28 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21209'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:31:28,551 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:31:28,552 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:31:28,552 - DEBUG - receive_response_body.complete
+2025-03-04 12:31:28,552 - DEBUG - response_closed.started
+2025-03-04 12:31:28,552 - DEBUG - response_closed.complete
+2025-03-04 12:31:28,552 - DEBUG - close.started
+2025-03-04 12:31:28,552 - DEBUG - close.complete
+2025-03-04 12:31:28,555 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:31:28,776 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:31:36,833 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:31:36,833 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:31:36,833 - DEBUG - Sending GET request...
+2025-03-04 12:31:36,836 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:31:36,852 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:31:36,860 - INFO - Received response with status code: 200
+2025-03-04 12:31:36,861 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:31:36,864 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:31:36,864 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:31:38,070 - INFO - Starting sentence generation
+2025-03-04 12:31:38,070 - INFO - Selected word: casa (house)
+2025-03-04 12:31:38,070 - DEBUG - Generated Spanish sentence: La casa está allí.
+2025-03-04 12:31:38,071 - DEBUG - Generated English sentence: The house is there.
+2025-03-04 12:32:17,763 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:32:17,764 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:32:17,764 - DEBUG - Sending GET request...
+2025-03-04 12:32:17,766 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:32:17,783 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 371
+2025-03-04 12:32:17,792 - INFO - Received response with status code: 200
+2025-03-04 12:32:17,793 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    }
+  ]
+}
+
+2025-03-04 12:32:17,793 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:32:17,793 - INFO - Loaded vocabulary group: Basic Spanish Words (5 words)
+2025-03-04 12:34:15,708 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:34:15,741 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:34:15,810 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:34:15,816 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:34:15,888 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11ac525d0>
+2025-03-04 12:34:15,894 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x11aac90a0> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:34:15,965 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:34:16,013 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11aab7a80>
+2025-03-04 12:34:16,019 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:34:16,038 - DEBUG - send_request_headers.complete
+2025-03-04 12:34:16,043 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:34:16,049 - DEBUG - send_request_body.complete
+2025-03-04 12:34:16,055 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:34:16,068 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:34:16 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:34:16,073 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:34:16,074 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:34:16,074 - DEBUG - receive_response_body.complete
+2025-03-04 12:34:16,080 - DEBUG - response_closed.started
+2025-03-04 12:34:16,080 - DEBUG - response_closed.complete
+2025-03-04 12:34:16,081 - DEBUG - close.started
+2025-03-04 12:34:16,081 - DEBUG - close.complete
+2025-03-04 12:34:16,231 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:34:16,288 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:34:16,289 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11b0750f0>
+2025-03-04 12:34:16,289 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:34:16,289 - DEBUG - send_request_headers.complete
+2025-03-04 12:34:16,290 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:34:16,290 - DEBUG - send_request_body.complete
+2025-03-04 12:34:16,290 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:34:16,292 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:34:16 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:34:16,292 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:34:16,292 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:34:16,293 - DEBUG - receive_response_body.complete
+2025-03-04 12:34:16,293 - DEBUG - response_closed.started
+2025-03-04 12:34:16,293 - DEBUG - response_closed.complete
+2025-03-04 12:34:16,293 - DEBUG - close.started
+2025-03-04 12:34:16,293 - DEBUG - close.complete
+2025-03-04 12:34:16,295 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:34:16,296 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11b032330>
+2025-03-04 12:34:16,296 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:34:16,297 - DEBUG - send_request_headers.complete
+2025-03-04 12:34:16,297 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:34:16,297 - DEBUG - send_request_body.complete
+2025-03-04 12:34:16,297 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:34:16,329 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:34:16 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21209'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:34:16,329 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:34:16,329 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:34:16,330 - DEBUG - receive_response_body.complete
+2025-03-04 12:34:16,330 - DEBUG - response_closed.started
+2025-03-04 12:34:16,330 - DEBUG - response_closed.complete
+2025-03-04 12:34:16,330 - DEBUG - close.started
+2025-03-04 12:34:16,331 - DEBUG - close.complete
+2025-03-04 12:34:16,334 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:34:16,436 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:34:21,313 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:34:21,313 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:34:21,315 - DEBUG - Sending GET request...
+2025-03-04 12:34:21,317 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:34:21,367 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:34:21,375 - INFO - Received response with status code: 200
+2025-03-04 12:34:21,375 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    },
+    {
+      "english": "food",
+      "spanish": "comida"
+    },
+    {
+      "english": "car",
+      "spanish": "coche"
+    },
+    {
+      "english": "table",
+      "spanish": "mesa"
+    },
+    {
+      "english": "chair",
+      "spanish": "silla"
+    },
+    {
+      "english": "phone",
+      "spanish": "tel\u00e9fono"
+    },
+    {
+      "english": "computer",
+      "spanish": "computadora"
+    },
+    {
+      "english": "pencil",
+      "spanish": "l\u00e1piz"
+    },
+    {
+      "english": "window",
+      "spanish": "ventana"
+    },
+    {
+      "english": "door",
+      "spanish": "puerta"
+    },
+    {
+      "english": "school",
+      "spanish": "escuela"
+    }
+  ]
+}
+
+2025-03-04 12:34:21,382 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:34:21,383 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+2025-03-04 12:34:25,805 - INFO - Attempting to load vocabulary for group_id: '2'
+2025-03-04 12:34:25,805 - INFO - Making API request to: http://localhost:5001/api/groups/2/words/raw
+2025-03-04 12:34:25,805 - DEBUG - Sending GET request...
+2025-03-04 12:34:25,807 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:34:25,827 - DEBUG - http://localhost:5001 "GET /api/groups/2/words/raw HTTP/1.1" 200 697
+2025-03-04 12:34:25,828 - INFO - Received response with status code: 200
+2025-03-04 12:34:25,829 - DEBUG - Raw response: {
+  "group_name": "Food and Drinks",
+  "words": [
+    {
+      "english": "apple",
+      "spanish": "manzana"
+    },
+    {
+      "english": "bread",
+      "spanish": "pan"
+    },
+    {
+      "english": "milk",
+      "spanish": "leche"
+    },
+    {
+      "english": "coffee",
+      "spanish": "caf\u00e9"
+    },
+    {
+      "english": "juice",
+      "spanish": "jugo"
+    },
+    {
+      "english": "rice",
+      "spanish": "arroz"
+    },
+    {
+      "english": "chicken",
+      "spanish": "pollo"
+    },
+    {
+      "english": "meat",
+      "spanish": "carne"
+    },
+    {
+      "english": "fish",
+      "spanish": "pescado"
+    },
+    {
+      "english": "soup",
+      "spanish": "sopa"
+    }
+  ]
+}
+
+2025-03-04 12:34:25,829 - DEBUG - Response parsed as JSON: {'group_name': 'Food and Drinks', 'words': [{'english': 'apple', 'spanish': 'manzana'}, {'english': 'bread', 'spanish': 'pan'}, {'english': 'milk', 'spanish': 'leche'}, {'english': 'coffee', 'spanish'...
+2025-03-04 12:34:25,830 - INFO - Loaded vocabulary group: Food and Drinks (10 words)
+2025-03-04 12:34:33,545 - INFO - Starting sentence generation
+2025-03-04 12:34:33,546 - INFO - Selected word: café (coffee)
+2025-03-04 12:34:33,546 - DEBUG - Generated Spanish sentence: El café está aquí.
+2025-03-04 12:34:33,546 - DEBUG - Generated English sentence: The coffee is here.
+2025-03-04 12:34:36,150 - INFO - Starting sentence generation
+2025-03-04 12:34:36,151 - INFO - Selected word: jugo (juice)
+2025-03-04 12:34:36,152 - DEBUG - Generated Spanish sentence: mañana voy a comprar jugo.
+2025-03-04 12:34:36,153 - DEBUG - Generated English sentence: tomorrow I am going to buy juice.
+2025-03-04 12:34:38,086 - INFO - Starting sentence generation
+2025-03-04 12:34:38,086 - INFO - Selected word: pollo (chicken)
+2025-03-04 12:34:38,087 - DEBUG - Generated Spanish sentence: La pollo está allí.
+2025-03-04 12:34:38,089 - DEBUG - Generated English sentence: The chicken is there.
+2025-03-04 12:34:39,007 - INFO - Starting sentence generation
+2025-03-04 12:34:39,008 - INFO - Selected word: manzana (apple)
+2025-03-04 12:34:39,008 - DEBUG - Generated Spanish sentence: Necesito leer manzana.
+2025-03-04 12:34:39,008 - DEBUG - Generated English sentence: I need to read apple.
+2025-03-04 12:34:44,923 - INFO - Starting sentence generation
+2025-03-04 12:34:44,923 - INFO - Selected word: carne (meat)
+2025-03-04 12:34:44,923 - DEBUG - Generated Spanish sentence: Quiero usar carne.
+2025-03-04 12:34:44,923 - DEBUG - Generated English sentence: I want to use meat.
+2025-03-04 12:34:46,918 - INFO - Starting sentence generation
+2025-03-04 12:34:46,919 - INFO - Selected word: pollo (chicken)
+2025-03-04 12:34:46,920 - DEBUG - Generated Spanish sentence: La pollo está allí.
+2025-03-04 12:34:46,920 - DEBUG - Generated English sentence: The chicken is there.
+2025-03-04 12:34:48,043 - INFO - Starting sentence generation
+2025-03-04 12:34:48,043 - INFO - Selected word: café (coffee)
+2025-03-04 12:34:48,044 - DEBUG - Generated Spanish sentence: hoy voy a comprar café.
+2025-03-04 12:34:48,044 - DEBUG - Generated English sentence: today I am going to buy coffee.
+2025-03-04 12:44:39,203 - INFO - Attempting to load vocabulary for group_id: '2'
+2025-03-04 12:44:39,204 - INFO - Making API request to: http://localhost:5001/api/groups/2/words/raw
+2025-03-04 12:44:39,205 - DEBUG - Sending GET request...
+2025-03-04 12:44:39,207 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:44:39,236 - DEBUG - http://localhost:5001 "GET /api/groups/2/words/raw HTTP/1.1" 200 697
+2025-03-04 12:44:39,237 - INFO - Received response with status code: 200
+2025-03-04 12:44:39,238 - DEBUG - Raw response: {
+  "group_name": "Food and Drinks",
+  "words": [
+    {
+      "english": "apple",
+      "spanish": "manzana"
+    },
+    {
+      "english": "bread",
+      "spanish": "pan"
+    },
+    {
+      "english": "milk",
+      "spanish": "leche"
+    },
+    {
+      "english": "coffee",
+      "spanish": "caf\u00e9"
+    },
+    {
+      "english": "juice",
+      "spanish": "jugo"
+    },
+    {
+      "english": "rice",
+      "spanish": "arroz"
+    },
+    {
+      "english": "chicken",
+      "spanish": "pollo"
+    },
+    {
+      "english": "meat",
+      "spanish": "carne"
+    },
+    {
+      "english": "fish",
+      "spanish": "pescado"
+    },
+    {
+      "english": "soup",
+      "spanish": "sopa"
+    }
+  ]
+}
+
+2025-03-04 12:44:39,240 - DEBUG - Response parsed as JSON: {'group_name': 'Food and Drinks', 'words': [{'english': 'apple', 'spanish': 'manzana'}, {'english': 'bread', 'spanish': 'pan'}, {'english': 'milk', 'spanish': 'leche'}, {'english': 'coffee', 'spanish'...
+2025-03-04 12:44:39,247 - INFO - Loaded vocabulary group: Food and Drinks (10 words)
+2025-03-04 12:45:29,532 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:45:29,549 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:45:29,582 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:45:29,603 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:45:29,661 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ae2e350>
+2025-03-04 12:45:29,667 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10adcce60> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:45:29,772 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10adb75c0>
+2025-03-04 12:45:29,772 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:45:29,773 - DEBUG - send_request_headers.complete
+2025-03-04 12:45:29,774 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:45:29,774 - DEBUG - send_request_body.complete
+2025-03-04 12:45:29,774 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:45:29,791 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:45:29,822 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:45:29 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:45:29,829 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:45:29,835 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:45:29,841 - DEBUG - receive_response_body.complete
+2025-03-04 12:45:29,848 - DEBUG - response_closed.started
+2025-03-04 12:45:29,853 - DEBUG - response_closed.complete
+2025-03-04 12:45:29,865 - DEBUG - close.started
+2025-03-04 12:45:29,871 - DEBUG - close.complete
+2025-03-04 12:45:30,068 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:45:30,140 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:45:30,141 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b251220>
+2025-03-04 12:45:30,142 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:45:30,142 - DEBUG - send_request_headers.complete
+2025-03-04 12:45:30,142 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:45:30,143 - DEBUG - send_request_body.complete
+2025-03-04 12:45:30,143 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:45:30,149 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:45:30 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:45:30,150 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:45:30,150 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:45:30,150 - DEBUG - receive_response_body.complete
+2025-03-04 12:45:30,150 - DEBUG - response_closed.started
+2025-03-04 12:45:30,150 - DEBUG - response_closed.complete
+2025-03-04 12:45:30,151 - DEBUG - close.started
+2025-03-04 12:45:30,151 - DEBUG - close.complete
+2025-03-04 12:45:30,157 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:45:30,158 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b2105f0>
+2025-03-04 12:45:30,158 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:45:30,163 - DEBUG - send_request_headers.complete
+2025-03-04 12:45:30,164 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:45:30,164 - DEBUG - send_request_body.complete
+2025-03-04 12:45:30,164 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:45:30,195 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:45:30 GMT'), (b'server', b'uvicorn'), (b'content-length', b'22158'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:45:30,195 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:45:30,196 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:45:30,196 - DEBUG - receive_response_body.complete
+2025-03-04 12:45:30,196 - DEBUG - response_closed.started
+2025-03-04 12:45:30,196 - DEBUG - response_closed.complete
+2025-03-04 12:45:30,196 - DEBUG - close.started
+2025-03-04 12:45:30,196 - DEBUG - close.complete
+2025-03-04 12:45:30,203 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:45:30,450 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:45:36,037 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:45:36,038 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:45:36,038 - DEBUG - Sending GET request...
+2025-03-04 12:45:36,041 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:45:36,099 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:45:36,107 - INFO - Received response with status code: 200
+2025-03-04 12:45:36,108 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    },
+    {
+      "english": "food",
+      "spanish": "comida"
+    },
+    {
+      "english": "car",
+      "spanish": "coche"
+    },
+    {
+      "english": "table",
+      "spanish": "mesa"
+    },
+    {
+      "english": "chair",
+      "spanish": "silla"
+    },
+    {
+      "english": "phone",
+      "spanish": "tel\u00e9fono"
+    },
+    {
+      "english": "computer",
+      "spanish": "computadora"
+    },
+    {
+      "english": "pencil",
+      "spanish": "l\u00e1piz"
+    },
+    {
+      "english": "window",
+      "spanish": "ventana"
+    },
+    {
+      "english": "door",
+      "spanish": "puerta"
+    },
+    {
+      "english": "school",
+      "spanish": "escuela"
+    }
+  ]
+}
+
+2025-03-04 12:45:36,112 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:45:36,114 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+2025-03-04 12:45:45,065 - INFO - Starting sentence generation
+2025-03-04 12:45:45,066 - INFO - Selected word: teléfono (phone)
+2025-03-04 12:45:45,067 - DEBUG - Generated Spanish sentence: Necesito escribir teléfono.
+2025-03-04 12:45:45,067 - DEBUG - Generated English sentence: I need to write phone.
+2025-03-04 12:47:17,144 - INFO - Starting sentence generation
+2025-03-04 12:47:17,145 - INFO - Selected word: computadora (computer)
+2025-03-04 12:47:17,145 - DEBUG - Generated Spanish sentence: El computadora está aquí.
+2025-03-04 12:47:17,146 - DEBUG - Generated English sentence: The computer is here.
+2025-03-04 12:47:18,453 - INFO - Starting sentence generation
+2025-03-04 12:47:18,454 - INFO - Selected word: coche (car)
+2025-03-04 12:47:18,455 - DEBUG - Generated Spanish sentence: El coche está aquí.
+2025-03-04 12:47:18,456 - DEBUG - Generated English sentence: The car is here.
+2025-03-04 12:47:19,204 - INFO - Starting sentence generation
+2025-03-04 12:47:19,205 - INFO - Selected word: puerta (door)
+2025-03-04 12:47:19,205 - DEBUG - Generated Spanish sentence: Me gusta comprar puerta.
+2025-03-04 12:47:19,206 - DEBUG - Generated English sentence: I like to buy door.
+2025-03-04 12:47:20,225 - INFO - Starting sentence generation
+2025-03-04 12:47:20,225 - INFO - Selected word: silla (chair)
+2025-03-04 12:47:20,226 - DEBUG - Generated Spanish sentence: Mi amigo tiene silla.
+2025-03-04 12:47:20,226 - DEBUG - Generated English sentence: My friend has chair.
+2025-03-04 12:47:21,342 - INFO - Starting sentence generation
+2025-03-04 12:47:21,343 - INFO - Selected word: silla (chair)
+2025-03-04 12:47:21,343 - DEBUG - Generated Spanish sentence: ahora voy a comprar silla.
+2025-03-04 12:47:21,343 - DEBUG - Generated English sentence: now I am going to buy chair.
+2025-03-04 12:47:22,971 - INFO - Starting sentence generation
+2025-03-04 12:47:22,971 - INFO - Selected word: perro (dog)
+2025-03-04 12:47:22,971 - DEBUG - Generated Spanish sentence: Necesito comer perro.
+2025-03-04 12:47:22,972 - DEBUG - Generated English sentence: I need to eat dog.
+2025-03-04 12:47:23,832 - INFO - Starting sentence generation
+2025-03-04 12:47:23,832 - INFO - Selected word: puerta (door)
+2025-03-04 12:47:23,833 - DEBUG - Generated Spanish sentence: Mi amigo tiene puerta.
+2025-03-04 12:47:23,833 - DEBUG - Generated English sentence: My friend has door.
+2025-03-04 12:47:24,803 - INFO - Starting sentence generation
+2025-03-04 12:47:24,804 - INFO - Selected word: ventana (window)
+2025-03-04 12:47:24,804 - DEBUG - Generated Spanish sentence: El ventana está aquí.
+2025-03-04 12:47:24,804 - DEBUG - Generated English sentence: The window is here.
+2025-03-04 12:47:25,524 - INFO - Starting sentence generation
+2025-03-04 12:47:25,524 - INFO - Selected word: silla (chair)
+2025-03-04 12:47:25,524 - DEBUG - Generated Spanish sentence: Quiero buscar silla.
+2025-03-04 12:47:25,524 - DEBUG - Generated English sentence: I want to look for chair.
+2025-03-04 12:47:26,395 - INFO - Starting sentence generation
+2025-03-04 12:47:26,395 - INFO - Selected word: gato (cat)
+2025-03-04 12:47:26,395 - DEBUG - Generated Spanish sentence: Quiero comer gato.
+2025-03-04 12:47:26,396 - DEBUG - Generated English sentence: I want to eat cat.
+2025-03-04 12:47:27,065 - INFO - Starting sentence generation
+2025-03-04 12:47:27,065 - INFO - Selected word: casa (house)
+2025-03-04 12:47:27,066 - DEBUG - Generated Spanish sentence: Me gusta ver casa.
+2025-03-04 12:47:27,066 - DEBUG - Generated English sentence: I like to see house.
+2025-03-04 12:47:27,777 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:47:27,777 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:47:27,777 - DEBUG - Sending GET request...
+2025-03-04 12:47:27,779 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:47:27,795 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:47:27,795 - INFO - Received response with status code: 200
+2025-03-04 12:47:27,795 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    },
+    {
+      "english": "food",
+      "spanish": "comida"
+    },
+    {
+      "english": "car",
+      "spanish": "coche"
+    },
+    {
+      "english": "table",
+      "spanish": "mesa"
+    },
+    {
+      "english": "chair",
+      "spanish": "silla"
+    },
+    {
+      "english": "phone",
+      "spanish": "tel\u00e9fono"
+    },
+    {
+      "english": "computer",
+      "spanish": "computadora"
+    },
+    {
+      "english": "pencil",
+      "spanish": "l\u00e1piz"
+    },
+    {
+      "english": "window",
+      "spanish": "ventana"
+    },
+    {
+      "english": "door",
+      "spanish": "puerta"
+    },
+    {
+      "english": "school",
+      "spanish": "escuela"
+    }
+  ]
+}
+
+2025-03-04 12:47:27,796 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:47:27,797 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+2025-03-04 12:47:34,839 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:47:34,840 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:47:34,841 - DEBUG - Sending GET request...
+2025-03-04 12:47:34,844 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:47:34,856 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:47:34,856 - INFO - Received response with status code: 200
+2025-03-04 12:47:34,857 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    },
+    {
+      "english": "food",
+      "spanish": "comida"
+    },
+    {
+      "english": "car",
+      "spanish": "coche"
+    },
+    {
+      "english": "table",
+      "spanish": "mesa"
+    },
+    {
+      "english": "chair",
+      "spanish": "silla"
+    },
+    {
+      "english": "phone",
+      "spanish": "tel\u00e9fono"
+    },
+    {
+      "english": "computer",
+      "spanish": "computadora"
+    },
+    {
+      "english": "pencil",
+      "spanish": "l\u00e1piz"
+    },
+    {
+      "english": "window",
+      "spanish": "ventana"
+    },
+    {
+      "english": "door",
+      "spanish": "puerta"
+    },
+    {
+      "english": "school",
+      "spanish": "escuela"
+    }
+  ]
+}
+
+2025-03-04 12:47:34,875 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:47:34,876 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+2025-03-04 12:47:35,059 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:47:35,059 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:47:35,059 - DEBUG - Sending GET request...
+2025-03-04 12:47:35,060 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:47:35,071 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:47:35,089 - INFO - Received response with status code: 200
+2025-03-04 12:47:35,090 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    },
+    {
+      "english": "food",
+      "spanish": "comida"
+    },
+    {
+      "english": "car",
+      "spanish": "coche"
+    },
+    {
+      "english": "table",
+      "spanish": "mesa"
+    },
+    {
+      "english": "chair",
+      "spanish": "silla"
+    },
+    {
+      "english": "phone",
+      "spanish": "tel\u00e9fono"
+    },
+    {
+      "english": "computer",
+      "spanish": "computadora"
+    },
+    {
+      "english": "pencil",
+      "spanish": "l\u00e1piz"
+    },
+    {
+      "english": "window",
+      "spanish": "ventana"
+    },
+    {
+      "english": "door",
+      "spanish": "puerta"
+    },
+    {
+      "english": "school",
+      "spanish": "escuela"
+    }
+  ]
+}
+
+2025-03-04 12:47:35,093 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:47:35,094 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+2025-03-04 12:49:13,641 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:49:13,642 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:49:13,642 - DEBUG - Sending GET request...
+2025-03-04 12:49:13,645 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:49:13,658 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:49:13,661 - INFO - Received response with status code: 200
+2025-03-04 12:49:13,664 - DEBUG - Raw response: {
+  "group_name": "Basic Spanish Words",
+  "words": [
+    {
+      "english": "house",
+      "spanish": "casa"
+    },
+    {
+      "english": "dog",
+      "spanish": "perro"
+    },
+    {
+      "english": "cat",
+      "spanish": "gato"
+    },
+    {
+      "english": "book",
+      "spanish": "libro"
+    },
+    {
+      "english": "water",
+      "spanish": "agua"
+    },
+    {
+      "english": "food",
+      "spanish": "comida"
+    },
+    {
+      "english": "car",
+      "spanish": "coche"
+    },
+    {
+      "english": "table",
+      "spanish": "mesa"
+    },
+    {
+      "english": "chair",
+      "spanish": "silla"
+    },
+    {
+      "english": "phone",
+      "spanish": "tel\u00e9fono"
+    },
+    {
+      "english": "computer",
+      "spanish": "computadora"
+    },
+    {
+      "english": "pencil",
+      "spanish": "l\u00e1piz"
+    },
+    {
+      "english": "window",
+      "spanish": "ventana"
+    },
+    {
+      "english": "door",
+      "spanish": "puerta"
+    },
+    {
+      "english": "school",
+      "spanish": "escuela"
+    }
+  ]
+}
+
+2025-03-04 12:49:13,667 - DEBUG - Response parsed as JSON: {'group_name': 'Basic Spanish Words', 'words': [{'english': 'house', 'spanish': 'casa'}, {'english': 'dog', 'spanish': 'perro'}, {'english': 'cat', 'spanish': 'gato'}, {'english': 'book', 'spanish': '...
+2025-03-04 12:49:13,667 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+2025-03-04 12:49:45,388 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:49:45,399 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:49:45,444 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:49:45,445 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:49:45,514 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x113f6f750>
+2025-03-04 12:49:45,533 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x113f18dd0> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:49:45,632 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11411c050>
+2025-03-04 12:49:45,638 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:49:45,650 - DEBUG - send_request_headers.complete
+2025-03-04 12:49:45,657 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:49:45,657 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:49:45,688 - DEBUG - send_request_body.complete
+2025-03-04 12:49:45,689 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:49:45,689 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:49:45 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:49:45,689 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:49:45,690 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:49:45,690 - DEBUG - receive_response_body.complete
+2025-03-04 12:49:45,690 - DEBUG - response_closed.started
+2025-03-04 12:49:45,690 - DEBUG - response_closed.complete
+2025-03-04 12:49:45,696 - DEBUG - close.started
+2025-03-04 12:49:45,697 - DEBUG - close.complete
+2025-03-04 12:49:45,826 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:49:45,897 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:49:45,900 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11439d220>
+2025-03-04 12:49:45,900 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:49:45,901 - DEBUG - send_request_headers.complete
+2025-03-04 12:49:45,901 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:49:45,901 - DEBUG - send_request_body.complete
+2025-03-04 12:49:45,902 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:49:45,903 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:49:45 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:49:45,904 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:49:45,904 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:49:45,905 - DEBUG - receive_response_body.complete
+2025-03-04 12:49:45,905 - DEBUG - response_closed.started
+2025-03-04 12:49:45,905 - DEBUG - response_closed.complete
+2025-03-04 12:49:45,905 - DEBUG - close.started
+2025-03-04 12:49:45,905 - DEBUG - close.complete
+2025-03-04 12:49:45,907 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:49:45,908 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11435c5f0>
+2025-03-04 12:49:45,908 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:49:45,909 - DEBUG - send_request_headers.complete
+2025-03-04 12:49:45,909 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:49:45,910 - DEBUG - send_request_body.complete
+2025-03-04 12:49:45,910 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:49:45,938 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:49:45 GMT'), (b'server', b'uvicorn'), (b'content-length', b'22157'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:49:45,939 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:49:45,939 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:49:45,939 - DEBUG - receive_response_body.complete
+2025-03-04 12:49:45,939 - DEBUG - response_closed.started
+2025-03-04 12:49:45,939 - DEBUG - response_closed.complete
+2025-03-04 12:49:45,939 - DEBUG - close.started
+2025-03-04 12:49:45,939 - DEBUG - close.complete
+2025-03-04 12:49:45,942 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:49:46,053 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:49:49,637 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:49:49,638 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:49:49,638 - DEBUG - Sending GET request...
+2025-03-04 12:49:49,640 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:49:49,651 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:49:49,652 - INFO - Received response with status code: 200
+2025-03-04 12:49:49,652 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+Example word: silla = chair
+2025-03-04 12:49:50,780 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:49:50,781 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:49:50,781 - DEBUG - Sending GET request...
+2025-03-04 12:49:50,782 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:49:50,787 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:49:50,788 - INFO - Received response with status code: 200
+2025-03-04 12:49:50,788 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+Example word: puerta = door
+2025-03-04 12:49:51,598 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:49:51,599 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:49:51,599 - DEBUG - Sending GET request...
+2025-03-04 12:49:51,602 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:49:51,611 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:49:51,612 - INFO - Received response with status code: 200
+2025-03-04 12:49:51,613 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+Example word: perro = dog
+2025-03-04 12:49:52,465 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:49:52,465 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:49:52,466 - DEBUG - Sending GET request...
+2025-03-04 12:49:52,469 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:49:52,482 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:49:52,482 - INFO - Received response with status code: 200
+2025-03-04 12:49:52,489 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+Example word: escuela = school
+2025-03-04 12:49:54,144 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:49:54,144 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:49:54,144 - DEBUG - Sending GET request...
+2025-03-04 12:49:54,146 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:49:54,163 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:49:54,164 - INFO - Received response with status code: 200
+2025-03-04 12:49:54,164 - INFO - Loaded vocabulary group: Basic Spanish Words (15 words)
+Example word: lápiz = pencil
+2025-03-04 12:49:59,286 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 12:49:59,286 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 12:49:59,286 - DEBUG - Sending GET request...
+2025-03-04 12:49:59,288 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:49:59,291 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 12:49:59,291 - INFO - Received response with status code: 200
+2025-03-04 12:49:59,291 - INFO - Loaded vocabulary group: Colors (10 words)
+Example word: rosa = pink
+2025-03-04 12:50:00,203 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 12:50:00,203 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 12:50:00,204 - DEBUG - Sending GET request...
+2025-03-04 12:50:00,205 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:50:00,222 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 12:50:00,223 - INFO - Received response with status code: 200
+2025-03-04 12:50:00,223 - INFO - Loaded vocabulary group: Colors (10 words)
+Example word: rosa = pink
+2025-03-04 12:50:00,969 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 12:50:00,969 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 12:50:00,969 - DEBUG - Sending GET request...
+2025-03-04 12:50:00,972 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:50:00,988 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 12:50:00,989 - INFO - Received response with status code: 200
+2025-03-04 12:50:00,993 - INFO - Loaded vocabulary group: Colors (10 words)
+Example word: rojo = red
+2025-03-04 12:50:01,734 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 12:50:01,734 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 12:50:01,734 - DEBUG - Sending GET request...
+2025-03-04 12:50:01,736 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:50:01,750 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 12:50:01,751 - INFO - Received response with status code: 200
+2025-03-04 12:50:01,752 - INFO - Loaded vocabulary group: Colors (10 words)
+Example word: verde = green
+2025-03-04 12:52:52,402 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:52:52,417 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:52:52,453 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:52:52,512 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:52:52,524 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ce8f4d0>
+2025-03-04 12:52:52,531 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10ce2cdd0> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:52:52,663 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10d08c180>
+2025-03-04 12:52:52,669 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:52:52,670 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:52:52,685 - DEBUG - send_request_headers.complete
+2025-03-04 12:52:52,685 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:52:52,685 - DEBUG - send_request_body.complete
+2025-03-04 12:52:52,686 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:52:52,733 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:52:52 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:52:52,740 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:52:52,746 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:52:52,752 - DEBUG - receive_response_body.complete
+2025-03-04 12:52:52,758 - DEBUG - response_closed.started
+2025-03-04 12:52:52,764 - DEBUG - response_closed.complete
+2025-03-04 12:52:52,777 - DEBUG - close.started
+2025-03-04 12:52:52,779 - DEBUG - close.complete
+2025-03-04 12:52:52,828 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:52:52,895 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:52:52,895 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10d2b55b0>
+2025-03-04 12:52:52,895 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:52:52,896 - DEBUG - send_request_headers.complete
+2025-03-04 12:52:52,896 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:52:52,897 - DEBUG - send_request_body.complete
+2025-03-04 12:52:52,897 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:52:52,898 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:52:52 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:52:52,898 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:52:52,898 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:52:52,899 - DEBUG - receive_response_body.complete
+2025-03-04 12:52:52,899 - DEBUG - response_closed.started
+2025-03-04 12:52:52,899 - DEBUG - response_closed.complete
+2025-03-04 12:52:52,899 - DEBUG - close.started
+2025-03-04 12:52:52,899 - DEBUG - close.complete
+2025-03-04 12:52:52,902 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:52:52,903 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10d270830>
+2025-03-04 12:52:52,904 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:52:52,904 - DEBUG - send_request_headers.complete
+2025-03-04 12:52:52,905 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:52:52,905 - DEBUG - send_request_body.complete
+2025-03-04 12:52:52,905 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:52:52,935 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:52:52 GMT'), (b'server', b'uvicorn'), (b'content-length', b'22158'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:52:52,935 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:52:52,935 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:52:52,935 - DEBUG - receive_response_body.complete
+2025-03-04 12:52:52,935 - DEBUG - response_closed.started
+2025-03-04 12:52:52,936 - DEBUG - response_closed.complete
+2025-03-04 12:52:52,936 - DEBUG - close.started
+2025-03-04 12:52:52,936 - DEBUG - close.complete
+2025-03-04 12:52:52,939 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:52:53,048 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:52:56,861 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:52:56,862 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:52:56,865 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:52:56,923 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:52:56,923 - INFO - Received response with status code: 200
+2025-03-04 12:52:56,925 - INFO - Loaded vocabulary and selected word: escuela
+2025-03-04 12:52:58,095 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:52:58,095 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:52:58,097 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:52:58,117 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:52:58,118 - INFO - Received response with status code: 200
+2025-03-04 12:52:58,119 - INFO - Loaded vocabulary and selected word: agua
+2025-03-04 12:52:58,809 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:52:58,810 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:52:58,816 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:52:58,828 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:52:58,828 - INFO - Received response with status code: 200
+2025-03-04 12:52:58,829 - INFO - Loaded vocabulary and selected word: agua
+2025-03-04 12:52:59,715 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:52:59,715 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:52:59,717 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:52:59,734 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:52:59,734 - INFO - Received response with status code: 200
+2025-03-04 12:52:59,734 - INFO - Loaded vocabulary and selected word: silla
+2025-03-04 12:53:00,421 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:53:00,421 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:53:00,424 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:53:00,432 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:53:00,433 - INFO - Received response with status code: 200
+2025-03-04 12:53:00,434 - INFO - Loaded vocabulary and selected word: comida
+2025-03-04 12:53:01,236 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:53:01,237 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:53:01,239 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:53:01,244 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:53:01,245 - INFO - Received response with status code: 200
+2025-03-04 12:53:01,252 - INFO - Loaded vocabulary and selected word: ventana
+2025-03-04 12:53:01,947 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:53:01,948 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:53:01,950 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:53:01,971 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:53:01,975 - INFO - Received response with status code: 200
+2025-03-04 12:53:01,976 - INFO - Loaded vocabulary and selected word: perro
+2025-03-04 12:53:05,258 - INFO - Starting sentence generation
+2025-03-04 12:53:05,259 - INFO - Selected word: agua (water)
+2025-03-04 12:53:05,260 - DEBUG - Generated Spanish sentence: Hay agua en la cocina.
+2025-03-04 12:53:05,260 - DEBUG - Generated English sentence: There is water in the kitchen.
+2025-03-04 12:53:07,701 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:53:07,701 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:53:07,704 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:53:07,718 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:53:07,718 - INFO - Received response with status code: 200
+2025-03-04 12:53:07,719 - INFO - Loaded vocabulary and selected word: perro
+2025-03-04 12:53:11,364 - INFO - Starting sentence generation
+2025-03-04 12:53:11,365 - INFO - Selected word: puerta (door)
+2025-03-04 12:53:11,366 - DEBUG - Generated Spanish sentence: Mi puerta está aquí.
+2025-03-04 12:53:11,366 - DEBUG - Generated English sentence: My door is here.
+2025-03-04 12:53:12,798 - INFO - Starting sentence generation
+2025-03-04 12:53:12,798 - INFO - Selected word: lápiz (pencil)
+2025-03-04 12:53:12,798 - DEBUG - Generated Spanish sentence: Estoy mirando lápiz.
+2025-03-04 12:53:12,799 - DEBUG - Generated English sentence: I am looking at pencil.
+2025-03-04 12:53:13,912 - INFO - Starting sentence generation
+2025-03-04 12:53:13,912 - INFO - Selected word: silla (chair)
+2025-03-04 12:53:13,912 - DEBUG - Generated Spanish sentence: Mi silla está aquí.
+2025-03-04 12:53:13,913 - DEBUG - Generated English sentence: My chair is here.
+2025-03-04 12:53:15,438 - INFO - Starting sentence generation
+2025-03-04 12:53:15,439 - INFO - Selected word: comida (food)
+2025-03-04 12:53:15,439 - DEBUG - Generated Spanish sentence: Quiero comida.
+2025-03-04 12:53:15,439 - DEBUG - Generated English sentence: I want food.
+2025-03-04 12:53:25,720 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:53:25,721 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:53:25,722 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:53:25,732 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:53:25,733 - INFO - Received response with status code: 200
+2025-03-04 12:53:25,734 - INFO - Loaded vocabulary and selected word: silla
+2025-03-04 12:53:26,742 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:53:26,743 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:53:26,745 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:53:26,756 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:53:26,757 - INFO - Received response with status code: 200
+2025-03-04 12:53:26,757 - INFO - Loaded vocabulary and selected word: ventana
+2025-03-04 12:53:32,748 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 12:53:32,748 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 12:53:32,750 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:53:32,760 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 12:53:32,761 - INFO - Received response with status code: 200
+2025-03-04 12:53:32,767 - INFO - Loaded vocabulary and selected word: blanco
+2025-03-04 12:54:47,552 - INFO - Initializing SpanishWritingApp
+2025-03-04 12:54:47,582 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:54:47,634 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:54:47,649 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:54:47,730 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c3f2850>
+2025-03-04 12:54:47,735 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c2e90a0> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:54:47,828 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:54:47,834 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c488510>
+2025-03-04 12:54:47,840 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:54:47,846 - DEBUG - send_request_headers.complete
+2025-03-04 12:54:47,847 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:54:47,847 - DEBUG - send_request_body.complete
+2025-03-04 12:54:47,847 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:54:47,895 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:54:48 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:54:47,902 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:54:47,907 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:54:47,913 - DEBUG - receive_response_body.complete
+2025-03-04 12:54:47,920 - DEBUG - response_closed.started
+2025-03-04 12:54:47,926 - DEBUG - response_closed.complete
+2025-03-04 12:54:47,939 - DEBUG - close.started
+2025-03-04 12:54:47,951 - DEBUG - close.complete
+2025-03-04 12:54:47,997 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:54:48,051 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:54:48,057 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c751810>
+2025-03-04 12:54:48,057 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:54:48,058 - DEBUG - send_request_headers.complete
+2025-03-04 12:54:48,058 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:54:48,059 - DEBUG - send_request_body.complete
+2025-03-04 12:54:48,059 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:54:48,060 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:54:48 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:54:48,061 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:54:48,061 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:54:48,061 - DEBUG - receive_response_body.complete
+2025-03-04 12:54:48,062 - DEBUG - response_closed.started
+2025-03-04 12:54:48,062 - DEBUG - response_closed.complete
+2025-03-04 12:54:48,062 - DEBUG - close.started
+2025-03-04 12:54:48,062 - DEBUG - close.complete
+2025-03-04 12:54:48,064 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:54:48,065 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c716450>
+2025-03-04 12:54:48,065 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:54:48,066 - DEBUG - send_request_headers.complete
+2025-03-04 12:54:48,066 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:54:48,067 - DEBUG - send_request_body.complete
+2025-03-04 12:54:48,067 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:54:48,103 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:54:48 GMT'), (b'server', b'uvicorn'), (b'content-length', b'22158'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:54:48,103 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:54:48,103 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:54:48,104 - DEBUG - receive_response_body.complete
+2025-03-04 12:54:48,104 - DEBUG - response_closed.started
+2025-03-04 12:54:48,104 - DEBUG - response_closed.complete
+2025-03-04 12:54:48,104 - DEBUG - close.started
+2025-03-04 12:54:48,104 - DEBUG - close.complete
+2025-03-04 12:54:48,113 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:54:48,241 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:54:54,980 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:54:54,980 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:54:54,984 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:54:55,023 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:54:56,009 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:54:56,009 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:54:56,013 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:54:56,058 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:54:56,620 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:54:56,620 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:54:56,623 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:54:56,646 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:54:57,182 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:54:57,182 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:54:57,184 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:54:57,201 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:54:57,748 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:54:57,748 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:54:57,751 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:54:57,768 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:54:58,364 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:54:58,365 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:54:58,367 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:54:58,385 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:55:00,187 - INFO - Starting sentence generation
+2025-03-04 12:55:00,188 - INFO - Selected word: perro (dog)
+2025-03-04 12:55:00,188 - DEBUG - Generated Spanish sentence: Quiero perro.
+2025-03-04 12:55:00,188 - DEBUG - Generated English sentence: I want dog.
+2025-03-04 12:56:08,993 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:56:08,994 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:56:08,996 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:56:09,014 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:56:14,592 - INFO - Starting sentence generation
+2025-03-04 12:56:14,592 - INFO - Selected word: escuela (school)
+2025-03-04 12:56:14,593 - DEBUG - Generated Spanish sentence: Mi escuela está aquí.
+2025-03-04 12:56:14,593 - DEBUG - Generated English sentence: My school is here.
+2025-03-04 12:56:16,012 - INFO - Starting sentence generation
+2025-03-04 12:56:16,012 - INFO - Selected word: teléfono (phone)
+2025-03-04 12:56:16,012 - DEBUG - Generated Spanish sentence: el lunes voy a comprar teléfono.
+2025-03-04 12:56:16,013 - DEBUG - Generated English sentence: on Monday am going to buy phone.
+2025-03-04 12:56:16,669 - INFO - Starting sentence generation
+2025-03-04 12:56:16,670 - INFO - Selected word: computadora (computer)
+2025-03-04 12:56:16,670 - DEBUG - Generated Spanish sentence: Hay computadora en la cocina.
+2025-03-04 12:56:16,670 - DEBUG - Generated English sentence: There is computer in the kitchen.
+2025-03-04 12:56:25,236 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 12:56:25,237 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 12:56:25,243 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 12:56:25,250 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 12:58:21,647 - DEBUG - Calling on_part_begin with no data
+2025-03-04 12:58:21,648 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-04 12:58:21,648 - DEBUG - Calling on_header_value with data[63:141]
+2025-03-04 12:58:21,648 - DEBUG - Calling on_header_end with no data
+2025-03-04 12:58:21,649 - DEBUG - Calling on_header_field with data[143:155]
+2025-03-04 12:58:21,649 - DEBUG - Calling on_header_value with data[157:166]
+2025-03-04 12:58:21,649 - DEBUG - Calling on_header_end with no data
+2025-03-04 12:58:21,649 - DEBUG - Calling on_headers_finished with no data
+2025-03-04 12:58:21,651 - DEBUG - Calling on_part_data with data[170:24909]
+2025-03-04 12:58:21,651 - DEBUG - Calling on_part_end with no data
+2025-03-04 12:58:21,652 - DEBUG - Calling on_end with no data
+2025-03-04 12:58:23,279 - DEBUG - STREAM b'IHDR' 16 13
+2025-03-04 12:58:23,279 - DEBUG - STREAM b'iCCP' 41 2731
+2025-03-04 12:58:23,279 - DEBUG - iCCP profile name b'ICC Profile'
+2025-03-04 12:58:23,282 - DEBUG - Compression method 0
+2025-03-04 12:58:23,282 - DEBUG - STREAM b'eXIf' 2784 138
+2025-03-04 12:58:23,283 - DEBUG - STREAM b'pHYs' 2934 9
+2025-03-04 12:58:23,283 - DEBUG - STREAM b'iTXt' 2955 469
+2025-03-04 12:58:23,283 - DEBUG - STREAM b'iDOT' 3436 28
+2025-03-04 12:58:23,283 - DEBUG - b'iDOT' 3436 28 (unknown)
+2025-03-04 12:58:23,283 - DEBUG - STREAM b'IDAT' 3476 11895
+2025-03-04 12:58:23,284 - DEBUG - tag: XResolution (282) - type: rational (5) Tag Location: 22 - Data Location: 62 - value: b'\x00\x00\x00\x90\x00\x00\x00\x01'
+2025-03-04 12:58:23,285 - DEBUG - tag: YResolution (283) - type: rational (5) Tag Location: 34 - Data Location: 70 - value: b'\x00\x00\x00\x90\x00\x00\x00\x01'
+2025-03-04 12:58:23,285 - DEBUG - tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+2025-03-04 12:58:23,285 - DEBUG - tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00N'
+2025-03-04 13:03:34,626 - INFO - Initializing SpanishWritingApp
+2025-03-04 13:03:34,634 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:03:34,681 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 13:03:34,701 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:03:34,743 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x114aebb10>
+2025-03-04 13:03:34,748 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x114a8cef0> server_hostname='api.gradio.app' timeout=3
+2025-03-04 13:03:34,842 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x114c183e0>
+2025-03-04 13:03:34,849 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:03:34,866 - DEBUG - send_request_headers.complete
+2025-03-04 13:03:34,873 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:03:34,879 - DEBUG - send_request_body.complete
+2025-03-04 13:03:34,886 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:03:34,893 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 13:03:34,905 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 21:03:35 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 13:03:34,910 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 13:03:34,911 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:03:34,911 - DEBUG - receive_response_body.complete
+2025-03-04 13:03:34,913 - DEBUG - response_closed.started
+2025-03-04 13:03:34,913 - DEBUG - response_closed.complete
+2025-03-04 13:03:34,913 - DEBUG - close.started
+2025-03-04 13:03:34,914 - DEBUG - close.complete
+2025-03-04 13:03:35,065 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:03:35,131 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 13:03:35,132 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x114eed480>
+2025-03-04 13:03:35,132 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:03:35,133 - DEBUG - send_request_headers.complete
+2025-03-04 13:03:35,133 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:03:35,133 - DEBUG - send_request_body.complete
+2025-03-04 13:03:35,134 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:03:35,135 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:03:35 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 13:03:35,136 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 13:03:35,136 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:03:35,136 - DEBUG - receive_response_body.complete
+2025-03-04 13:03:35,136 - DEBUG - response_closed.started
+2025-03-04 13:03:35,136 - DEBUG - response_closed.complete
+2025-03-04 13:03:35,137 - DEBUG - close.started
+2025-03-04 13:03:35,137 - DEBUG - close.complete
+2025-03-04 13:03:35,138 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 13:03:35,139 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x114eaa0f0>
+2025-03-04 13:03:35,140 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:03:35,141 - DEBUG - send_request_headers.complete
+2025-03-04 13:03:35,141 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 13:03:35,141 - DEBUG - send_request_body.complete
+2025-03-04 13:03:35,141 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:03:35,168 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:03:35 GMT'), (b'server', b'uvicorn'), (b'content-length', b'17624'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 13:03:35,168 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 13:03:35,169 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 13:03:35,169 - DEBUG - receive_response_body.complete
+2025-03-04 13:03:35,169 - DEBUG - response_closed.started
+2025-03-04 13:03:35,169 - DEBUG - response_closed.complete
+2025-03-04 13:03:35,169 - DEBUG - close.started
+2025-03-04 13:03:35,169 - DEBUG - close.complete
+2025-03-04 13:03:35,172 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:03:35,308 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 13:03:47,196 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:03:47,197 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:03:47,200 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:03:47,251 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:03:49,342 - INFO - Starting sentence generation
+2025-03-04 13:03:49,342 - INFO - Selected word: gato (cat)
+2025-03-04 13:03:49,344 - DEBUG - Generated Spanish sentence: Mi gato está aquí.
+2025-03-04 13:03:49,344 - DEBUG - Generated English sentence: My cat is here.
+2025-03-04 13:04:13,178 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:04:13,178 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:04:13,180 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:04:13,184 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:04:18,983 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:04:18,984 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:04:18,986 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:04:19,004 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:04:22,756 - INFO - Starting sentence generation
+2025-03-04 13:04:22,757 - INFO - Selected word: blanco (white)
+2025-03-04 13:04:22,758 - DEBUG - Generated Spanish sentence: Quiero blanco.
+2025-03-04 13:04:22,758 - DEBUG - Generated English sentence: I want white.
+2025-03-04 13:04:28,615 - INFO - Starting sentence generation
+2025-03-04 13:04:28,615 - INFO - Selected word: verde (green)
+2025-03-04 13:04:28,617 - DEBUG - Generated Spanish sentence: Hay verde en la cocina.
+2025-03-04 13:04:28,617 - DEBUG - Generated English sentence: There is green in the kitchen.
+2025-03-04 13:20:57,888 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:20:57,890 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:20:57,893 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:20:57,929 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:21:00,425 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:21:00,425 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:21:00,430 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:21:00,457 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:24:22,090 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:24:22,090 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:24:22,094 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:24:22,118 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:24:47,447 - INFO - Initializing SpanishWritingApp
+2025-03-04 13:24:47,461 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:24:47,500 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 13:24:47,525 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:24:47,567 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1113e7b10>
+2025-03-04 13:24:47,580 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x1111ed010> server_hostname='api.gradio.app' timeout=3
+2025-03-04 13:24:47,683 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1115103e0>
+2025-03-04 13:24:47,689 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:24:47,691 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 13:24:47,694 - DEBUG - send_request_headers.complete
+2025-03-04 13:24:47,694 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:24:47,694 - DEBUG - send_request_body.complete
+2025-03-04 13:24:47,694 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:24:47,738 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 21:24:47 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 13:24:47,745 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 13:24:47,751 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:24:47,757 - DEBUG - receive_response_body.complete
+2025-03-04 13:24:47,763 - DEBUG - response_closed.started
+2025-03-04 13:24:47,769 - DEBUG - response_closed.complete
+2025-03-04 13:24:47,770 - DEBUG - close.started
+2025-03-04 13:24:47,771 - DEBUG - close.complete
+2025-03-04 13:24:47,828 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:24:47,892 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 13:24:47,893 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1117f5810>
+2025-03-04 13:24:47,893 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:24:47,893 - DEBUG - send_request_headers.complete
+2025-03-04 13:24:47,893 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:24:47,893 - DEBUG - send_request_body.complete
+2025-03-04 13:24:47,893 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:24:47,896 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:24:47 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 13:24:47,897 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 13:24:47,898 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:24:47,898 - DEBUG - receive_response_body.complete
+2025-03-04 13:24:47,898 - DEBUG - response_closed.started
+2025-03-04 13:24:47,899 - DEBUG - response_closed.complete
+2025-03-04 13:24:47,899 - DEBUG - close.started
+2025-03-04 13:24:47,899 - DEBUG - close.complete
+2025-03-04 13:24:47,900 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 13:24:47,901 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1117b2330>
+2025-03-04 13:24:47,901 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:24:47,902 - DEBUG - send_request_headers.complete
+2025-03-04 13:24:47,902 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 13:24:47,902 - DEBUG - send_request_body.complete
+2025-03-04 13:24:47,902 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:24:47,932 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:24:47 GMT'), (b'server', b'uvicorn'), (b'content-length', b'17625'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 13:24:47,933 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 13:24:47,933 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 13:24:47,933 - DEBUG - receive_response_body.complete
+2025-03-04 13:24:47,933 - DEBUG - response_closed.started
+2025-03-04 13:24:47,933 - DEBUG - response_closed.complete
+2025-03-04 13:24:47,934 - DEBUG - close.started
+2025-03-04 13:24:47,934 - DEBUG - close.complete
+2025-03-04 13:24:47,937 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:24:48,045 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 13:25:22,579 - INFO - Starting sentence generation
+2025-03-04 13:25:22,580 - ERROR - No vocabulary loaded
+2025-03-04 13:25:24,071 - INFO - Starting sentence generation
+2025-03-04 13:25:24,072 - ERROR - No vocabulary loaded
+2025-03-04 13:25:25,642 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:25:25,643 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:25:25,644 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:25:25,667 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:25:27,426 - INFO - Starting sentence generation
+2025-03-04 13:25:27,426 - INFO - Selected word: casa (house)
+2025-03-04 13:25:27,426 - DEBUG - Generated Spanish sentence: Me gusta casa.
+2025-03-04 13:25:27,427 - DEBUG - Generated English sentence: I like house.
+2025-03-04 13:25:45,472 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:25:45,472 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:25:45,474 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:25:45,491 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:25:47,108 - INFO - Starting sentence generation
+2025-03-04 13:25:47,109 - INFO - Selected word: ventana (window)
+2025-03-04 13:25:47,109 - DEBUG - Generated Spanish sentence: Hay ventana en la cocina.
+2025-03-04 13:25:47,111 - DEBUG - Generated English sentence: There is window in the kitchen.
+2025-03-04 13:25:51,799 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:25:51,800 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:25:51,801 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:25:51,814 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:25:53,121 - INFO - Starting sentence generation
+2025-03-04 13:25:53,122 - INFO - Selected word: casa (house)
+2025-03-04 13:25:53,122 - DEBUG - Generated Spanish sentence: Tengo casa.
+2025-03-04 13:25:53,123 - DEBUG - Generated English sentence: I have house.
+2025-03-04 13:27:39,645 - INFO - Initializing SpanishWritingApp
+2025-03-04 13:27:39,654 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:27:39,700 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 13:27:39,701 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:27:39,793 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115bd39d0>
+2025-03-04 13:27:39,793 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x115ac5010> server_hostname='api.gradio.app' timeout=3
+2025-03-04 13:27:39,882 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 13:27:39,882 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115ab5ba0>
+2025-03-04 13:27:39,883 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:27:39,890 - DEBUG - send_request_headers.complete
+2025-03-04 13:27:39,896 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:27:39,903 - DEBUG - send_request_body.complete
+2025-03-04 13:27:39,909 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:27:39,935 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 21:27:40 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 13:27:39,942 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 13:27:39,948 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:27:39,954 - DEBUG - receive_response_body.complete
+2025-03-04 13:27:39,959 - DEBUG - response_closed.started
+2025-03-04 13:27:39,960 - DEBUG - response_closed.complete
+2025-03-04 13:27:39,960 - DEBUG - close.started
+2025-03-04 13:27:39,960 - DEBUG - close.complete
+2025-03-04 13:27:40,005 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:27:40,070 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 13:27:40,072 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115f356e0>
+2025-03-04 13:27:40,072 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:27:40,073 - DEBUG - send_request_headers.complete
+2025-03-04 13:27:40,073 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:27:40,074 - DEBUG - send_request_body.complete
+2025-03-04 13:27:40,074 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:27:40,076 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:27:40 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 13:27:40,076 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 13:27:40,077 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:27:40,077 - DEBUG - receive_response_body.complete
+2025-03-04 13:27:40,077 - DEBUG - response_closed.started
+2025-03-04 13:27:40,078 - DEBUG - response_closed.complete
+2025-03-04 13:27:40,078 - DEBUG - close.started
+2025-03-04 13:27:40,078 - DEBUG - close.complete
+2025-03-04 13:27:40,080 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 13:27:40,081 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115eee330>
+2025-03-04 13:27:40,081 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:27:40,082 - DEBUG - send_request_headers.complete
+2025-03-04 13:27:40,082 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 13:27:40,082 - DEBUG - send_request_body.complete
+2025-03-04 13:27:40,083 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:27:40,105 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:27:40 GMT'), (b'server', b'uvicorn'), (b'content-length', b'18305'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 13:27:40,106 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 13:27:40,106 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 13:27:40,106 - DEBUG - receive_response_body.complete
+2025-03-04 13:27:40,106 - DEBUG - response_closed.started
+2025-03-04 13:27:40,106 - DEBUG - response_closed.complete
+2025-03-04 13:27:40,106 - DEBUG - close.started
+2025-03-04 13:27:40,106 - DEBUG - close.complete
+2025-03-04 13:27:40,109 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:27:40,214 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 13:27:44,530 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:27:44,532 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:27:44,534 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:27:44,578 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:27:45,798 - INFO - Starting sentence generation
+2025-03-04 13:27:45,799 - INFO - Selected word: libro (book)
+2025-03-04 13:27:45,799 - DEBUG - Generated Spanish sentence: Quiero libro.
+2025-03-04 13:27:45,799 - DEBUG - Generated English sentence: I want book.
+2025-03-04 13:29:02,468 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:29:02,472 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:29:02,476 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:29:02,497 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:44:48,842 - INFO - Starting sentence generation
+2025-03-04 13:44:48,843 - INFO - Selected word: libro (book)
+2025-03-04 13:44:48,844 - DEBUG - Generated Spanish sentence: Estoy mirando libro.
+2025-03-04 13:44:48,845 - DEBUG - Generated English sentence: I am looking at book.
+2025-03-04 13:45:23,457 - INFO - Initializing SpanishWritingApp
+2025-03-04 13:45:23,471 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:45:23,519 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 13:45:23,569 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:45:23,579 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115ecbd90>
+2025-03-04 13:45:23,596 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x115e5d010> server_hostname='api.gradio.app' timeout=3
+2025-03-04 13:45:23,707 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115ff83e0>
+2025-03-04 13:45:23,713 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 13:45:23,713 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:45:23,723 - DEBUG - send_request_headers.complete
+2025-03-04 13:45:23,723 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:45:23,724 - DEBUG - send_request_body.complete
+2025-03-04 13:45:23,724 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:45:23,770 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 21:45:23 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 13:45:23,776 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 13:45:23,782 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:45:23,788 - DEBUG - receive_response_body.complete
+2025-03-04 13:45:23,788 - DEBUG - response_closed.started
+2025-03-04 13:45:23,789 - DEBUG - response_closed.complete
+2025-03-04 13:45:23,801 - DEBUG - close.started
+2025-03-04 13:45:23,813 - DEBUG - close.complete
+2025-03-04 13:45:23,877 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:45:23,936 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 13:45:23,937 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1162dd6e0>
+2025-03-04 13:45:23,937 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:45:23,937 - DEBUG - send_request_headers.complete
+2025-03-04 13:45:23,938 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:45:23,938 - DEBUG - send_request_body.complete
+2025-03-04 13:45:23,938 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:45:23,939 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:45:23 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 13:45:23,944 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 13:45:23,945 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:45:23,945 - DEBUG - receive_response_body.complete
+2025-03-04 13:45:23,946 - DEBUG - response_closed.started
+2025-03-04 13:45:23,946 - DEBUG - response_closed.complete
+2025-03-04 13:45:23,948 - DEBUG - close.started
+2025-03-04 13:45:23,948 - DEBUG - close.complete
+2025-03-04 13:45:23,949 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 13:45:23,950 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x116296330>
+2025-03-04 13:45:23,951 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:45:23,951 - DEBUG - send_request_headers.complete
+2025-03-04 13:45:23,951 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 13:45:23,952 - DEBUG - send_request_body.complete
+2025-03-04 13:45:23,952 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:45:23,981 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:45:23 GMT'), (b'server', b'uvicorn'), (b'content-length', b'18556'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 13:45:23,981 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 13:45:23,982 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 13:45:23,982 - DEBUG - receive_response_body.complete
+2025-03-04 13:45:23,982 - DEBUG - response_closed.started
+2025-03-04 13:45:23,982 - DEBUG - response_closed.complete
+2025-03-04 13:45:23,982 - DEBUG - close.started
+2025-03-04 13:45:23,982 - DEBUG - close.complete
+2025-03-04 13:45:23,985 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:45:24,092 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 13:45:31,728 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:45:31,728 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:45:31,731 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:45:31,764 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:45:33,765 - INFO - Starting sentence generation
+2025-03-04 13:45:33,765 - INFO - Selected word: perro (dog)
+2025-03-04 13:45:33,765 - DEBUG - Generated Spanish sentence: Mi perro está aquí.
+2025-03-04 13:45:33,766 - DEBUG - Generated English sentence: My dog is here.
+2025-03-04 13:47:14,655 - INFO - Initializing SpanishWritingApp
+2025-03-04 13:47:14,668 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:47:14,711 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:47:14,733 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 13:47:14,784 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b3e1e50>
+2025-03-04 13:47:14,785 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10b230f80> server_hostname='api.gradio.app' timeout=3
+2025-03-04 13:47:14,897 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 13:47:14,897 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b27f6f0>
+2025-03-04 13:47:14,903 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:47:14,904 - DEBUG - send_request_headers.complete
+2025-03-04 13:47:14,904 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:47:14,905 - DEBUG - send_request_body.complete
+2025-03-04 13:47:14,905 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:47:14,953 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 21:47:14 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 13:47:14,959 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 13:47:14,965 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:47:14,971 - DEBUG - receive_response_body.complete
+2025-03-04 13:47:14,976 - DEBUG - response_closed.started
+2025-03-04 13:47:14,983 - DEBUG - response_closed.complete
+2025-03-04 13:47:14,995 - DEBUG - close.started
+2025-03-04 13:47:15,007 - DEBUG - close.complete
+2025-03-04 13:47:15,296 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:47:15,365 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 13:47:15,366 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b7f9350>
+2025-03-04 13:47:15,366 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:47:15,366 - DEBUG - send_request_headers.complete
+2025-03-04 13:47:15,367 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:47:15,367 - DEBUG - send_request_body.complete
+2025-03-04 13:47:15,368 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:47:15,376 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:47:15 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 13:47:15,376 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 13:47:15,377 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:47:15,377 - DEBUG - receive_response_body.complete
+2025-03-04 13:47:15,377 - DEBUG - response_closed.started
+2025-03-04 13:47:15,377 - DEBUG - response_closed.complete
+2025-03-04 13:47:15,377 - DEBUG - close.started
+2025-03-04 13:47:15,377 - DEBUG - close.complete
+2025-03-04 13:47:15,381 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 13:47:15,383 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b7b2210>
+2025-03-04 13:47:15,384 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:47:15,384 - DEBUG - send_request_headers.complete
+2025-03-04 13:47:15,384 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 13:47:15,384 - DEBUG - send_request_body.complete
+2025-03-04 13:47:15,384 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:47:15,416 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:47:15 GMT'), (b'server', b'uvicorn'), (b'content-length', b'18555'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 13:47:15,416 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 13:47:15,416 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 13:47:15,416 - DEBUG - receive_response_body.complete
+2025-03-04 13:47:15,416 - DEBUG - response_closed.started
+2025-03-04 13:47:15,417 - DEBUG - response_closed.complete
+2025-03-04 13:47:15,417 - DEBUG - close.started
+2025-03-04 13:47:15,417 - DEBUG - close.complete
+2025-03-04 13:47:15,423 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:47:15,536 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 13:47:22,306 - INFO - Starting sentence generation
+2025-03-04 13:47:22,307 - ERROR - No vocabulary loaded
+2025-03-04 13:47:24,505 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:47:24,505 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:47:24,506 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:47:24,520 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:47:25,927 - INFO - Starting sentence generation
+2025-03-04 13:47:25,928 - INFO - Selected word: ventana (window)
+2025-03-04 13:47:25,928 - DEBUG - Generated Spanish sentence: Me gusta ventana.
+2025-03-04 13:47:25,928 - DEBUG - Generated English sentence: I like window.
+2025-03-04 13:48:55,839 - INFO - Initializing SpanishWritingApp
+2025-03-04 13:48:55,857 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:48:55,902 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:48:55,909 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 13:48:55,984 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1118f2350>
+2025-03-04 13:48:55,998 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x1117e4f80> server_hostname='api.gradio.app' timeout=3
+2025-03-04 13:48:56,088 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 13:48:56,094 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11197c2b0>
+2025-03-04 13:48:56,097 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:48:56,098 - DEBUG - send_request_headers.complete
+2025-03-04 13:48:56,103 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:48:56,110 - DEBUG - send_request_body.complete
+2025-03-04 13:48:56,116 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:48:56,147 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 21:48:56 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 13:48:56,154 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 13:48:56,160 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:48:56,166 - DEBUG - receive_response_body.complete
+2025-03-04 13:48:56,172 - DEBUG - response_closed.started
+2025-03-04 13:48:56,178 - DEBUG - response_closed.complete
+2025-03-04 13:48:56,190 - DEBUG - close.started
+2025-03-04 13:48:56,202 - DEBUG - close.complete
+2025-03-04 13:48:56,256 - DEBUG - Using selector: KqueueSelector
+2025-03-04 13:48:56,313 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 13:48:56,314 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x111c656e0>
+2025-03-04 13:48:56,314 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 13:48:56,315 - DEBUG - send_request_headers.complete
+2025-03-04 13:48:56,315 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 13:48:56,315 - DEBUG - send_request_body.complete
+2025-03-04 13:48:56,315 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 13:48:56,320 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:48:56 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 13:48:56,321 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 13:48:56,321 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 13:48:56,322 - DEBUG - receive_response_body.complete
+2025-03-04 13:48:56,322 - DEBUG - response_closed.started
+2025-03-04 13:48:56,322 - DEBUG - response_closed.complete
+2025-03-04 13:48:56,323 - DEBUG - close.started
+2025-03-04 13:48:56,323 - DEBUG - close.complete
+2025-03-04 13:48:56,325 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 13:48:56,326 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x111c1a450>
+2025-03-04 13:48:56,326 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:48:56,327 - DEBUG - send_request_headers.complete
+2025-03-04 13:48:56,327 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 13:48:56,327 - DEBUG - send_request_body.complete
+2025-03-04 13:48:56,327 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 13:48:56,357 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 21:48:56 GMT'), (b'server', b'uvicorn'), (b'content-length', b'18556'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 13:48:56,357 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 13:48:56,357 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 13:48:56,357 - DEBUG - receive_response_body.complete
+2025-03-04 13:48:56,357 - DEBUG - response_closed.started
+2025-03-04 13:48:56,357 - DEBUG - response_closed.complete
+2025-03-04 13:48:56,358 - DEBUG - close.started
+2025-03-04 13:48:56,358 - DEBUG - close.complete
+2025-03-04 13:48:56,361 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 13:48:56,478 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 13:49:01,788 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:49:01,788 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:49:01,790 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:49:01,801 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:49:03,225 - INFO - Starting sentence generation
+2025-03-04 13:49:03,226 - INFO - Selected word: teléfono (phone)
+2025-03-04 13:49:03,226 - DEBUG - Generated Spanish sentence: Hay teléfono en la cocina.
+2025-03-04 13:49:03,227 - DEBUG - Generated English sentence: There is phone in the kitchen.
+2025-03-04 13:49:45,505 - INFO - Attempting to load vocabulary for group_id: '1'
+2025-03-04 13:49:45,506 - INFO - Making API request to: http://localhost:5001/api/groups/1/words/raw
+2025-03-04 13:49:45,508 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:49:45,519 - DEBUG - http://localhost:5001 "GET /api/groups/1/words/raw HTTP/1.1" 200 1037
+2025-03-04 13:49:51,923 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:49:51,924 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:49:51,926 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:49:51,958 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:49:53,042 - INFO - Starting sentence generation
+2025-03-04 13:49:53,043 - INFO - Selected word: rosa (pink)
+2025-03-04 13:49:53,043 - DEBUG - Generated Spanish sentence: el fin de semana voy a usar rosa.
+2025-03-04 13:49:53,044 - DEBUG - Generated English sentence: on the weekend am going to use pink.
+2025-03-04 13:49:58,798 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:49:58,799 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:49:58,801 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:49:58,820 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:50:00,071 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:50:00,071 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:50:00,073 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:50:00,083 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:50:02,869 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:50:02,870 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:50:02,872 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:50:02,888 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:50:03,529 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:50:03,530 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:50:03,531 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:50:03,538 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:50:04,089 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:50:04,090 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:50:04,092 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:50:04,101 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690
+2025-03-04 13:50:04,900 - INFO - Attempting to load vocabulary for group_id: '4'
+2025-03-04 13:50:04,900 - INFO - Making API request to: http://localhost:5001/api/groups/4/words/raw
+2025-03-04 13:50:04,902 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-03-04 13:50:04,905 - DEBUG - http://localhost:5001 "GET /api/groups/4/words/raw HTTP/1.1" 200 690

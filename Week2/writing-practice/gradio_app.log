@@ -1,0 +1,216 @@
+2025-03-04 11:56:18,328 - DEBUG - Using selector: KqueueSelector
+2025-03-04 11:56:18,348 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 11:56:18,357 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 11:56:18,410 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10d79fc50>
+2025-03-04 11:56:18,417 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10d6a1490> server_hostname='api.gradio.app' timeout=3
+2025-03-04 11:56:18,524 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10d898770>
+2025-03-04 11:56:18,530 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 11:56:18,537 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 11:56:18,544 - DEBUG - send_request_headers.complete
+2025-03-04 11:56:18,573 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 11:56:18,579 - DEBUG - send_request_body.complete
+2025-03-04 11:56:18,579 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 11:56:18,580 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 19:56:18 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 11:56:18,581 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 11:56:18,581 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 11:56:18,581 - DEBUG - receive_response_body.complete
+2025-03-04 11:56:18,581 - DEBUG - response_closed.started
+2025-03-04 11:56:18,581 - DEBUG - response_closed.complete
+2025-03-04 11:56:18,581 - DEBUG - close.started
+2025-03-04 11:56:18,588 - DEBUG - close.complete
+2025-03-04 11:56:18,783 - DEBUG - Using selector: KqueueSelector
+2025-03-04 11:56:18,841 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 11:56:18,842 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10dbad810>
+2025-03-04 11:56:18,842 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 11:56:18,842 - DEBUG - send_request_headers.complete
+2025-03-04 11:56:18,842 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 11:56:18,843 - DEBUG - send_request_body.complete
+2025-03-04 11:56:18,843 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 11:56:18,844 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 19:56:18 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 11:56:18,844 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 11:56:18,845 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 11:56:18,845 - DEBUG - receive_response_body.complete
+2025-03-04 11:56:18,845 - DEBUG - response_closed.started
+2025-03-04 11:56:18,845 - DEBUG - response_closed.complete
+2025-03-04 11:56:18,846 - DEBUG - close.started
+2025-03-04 11:56:18,846 - DEBUG - close.complete
+2025-03-04 11:56:18,848 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 11:56:18,849 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10db867b0>
+2025-03-04 11:56:18,850 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 11:56:18,855 - DEBUG - send_request_headers.complete
+2025-03-04 11:56:18,855 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 11:56:18,856 - DEBUG - send_request_body.complete
+2025-03-04 11:56:18,856 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 11:56:18,886 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 19:56:18 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21177'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 11:56:18,886 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 11:56:18,886 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 11:56:18,886 - DEBUG - receive_response_body.complete
+2025-03-04 11:56:18,886 - DEBUG - response_closed.started
+2025-03-04 11:56:18,886 - DEBUG - response_closed.complete
+2025-03-04 11:56:18,886 - DEBUG - close.started
+2025-03-04 11:56:18,886 - DEBUG - close.complete
+2025-03-04 11:56:18,890 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 11:56:19,006 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:02:16,374 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:02:16,386 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:02:16,408 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:02:16,497 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11800c910>
+2025-03-04 12:02:16,503 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x117e85520> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:02:16,551 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:02:16,616 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1180703e0>
+2025-03-04 12:02:16,621 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:02:16,647 - DEBUG - send_request_headers.complete
+2025-03-04 12:02:16,653 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:02:16,659 - DEBUG - send_request_body.complete
+2025-03-04 12:02:16,662 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:02:16,686 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:02:16 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:02:16,692 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:02:16,699 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:02:16,705 - DEBUG - receive_response_body.complete
+2025-03-04 12:02:16,711 - DEBUG - response_closed.started
+2025-03-04 12:02:16,717 - DEBUG - response_closed.complete
+2025-03-04 12:02:16,729 - DEBUG - close.started
+2025-03-04 12:02:16,742 - DEBUG - close.complete
+2025-03-04 12:02:16,812 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:02:16,849 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:02:16,850 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x118365ba0>
+2025-03-04 12:02:16,850 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:02:16,850 - DEBUG - send_request_headers.complete
+2025-03-04 12:02:16,850 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:02:16,851 - DEBUG - send_request_body.complete
+2025-03-04 12:02:16,851 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:02:16,854 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:02:16 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:02:16,855 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:02:16,855 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:02:16,855 - DEBUG - receive_response_body.complete
+2025-03-04 12:02:16,855 - DEBUG - response_closed.started
+2025-03-04 12:02:16,855 - DEBUG - response_closed.complete
+2025-03-04 12:02:16,855 - DEBUG - close.started
+2025-03-04 12:02:16,856 - DEBUG - close.complete
+2025-03-04 12:02:16,857 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:02:16,858 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x118288ef0>
+2025-03-04 12:02:16,858 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:02:16,858 - DEBUG - send_request_headers.complete
+2025-03-04 12:02:16,859 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:02:16,859 - DEBUG - send_request_body.complete
+2025-03-04 12:02:16,859 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:02:16,884 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:02:16 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21176'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:02:16,884 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:02:16,884 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:02:16,884 - DEBUG - receive_response_body.complete
+2025-03-04 12:02:16,885 - DEBUG - response_closed.started
+2025-03-04 12:02:16,885 - DEBUG - response_closed.complete
+2025-03-04 12:02:16,885 - DEBUG - close.started
+2025-03-04 12:02:16,885 - DEBUG - close.complete
+2025-03-04 12:02:16,887 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:02:16,989 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:03:54,419 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:03:54,442 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:03:54,443 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:03:54,526 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ca91310>
+2025-03-04 12:03:54,532 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c905640> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:03:54,630 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:03:54,649 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c8ab5c0>
+2025-03-04 12:03:54,655 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:03:54,672 - DEBUG - send_request_headers.complete
+2025-03-04 12:03:54,672 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:03:54,673 - DEBUG - send_request_body.complete
+2025-03-04 12:03:54,673 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:03:54,717 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:03:54 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:03:54,724 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:03:54,732 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:03:54,738 - DEBUG - receive_response_body.complete
+2025-03-04 12:03:54,745 - DEBUG - response_closed.started
+2025-03-04 12:03:54,751 - DEBUG - response_closed.complete
+2025-03-04 12:03:54,755 - DEBUG - close.started
+2025-03-04 12:03:54,755 - DEBUG - close.complete
+2025-03-04 12:03:54,801 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:03:54,857 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:03:54,858 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10cdf5ba0>
+2025-03-04 12:03:54,858 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:03:54,860 - DEBUG - send_request_headers.complete
+2025-03-04 12:03:54,860 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:03:54,860 - DEBUG - send_request_body.complete
+2025-03-04 12:03:54,861 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:03:54,862 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:03:54 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:03:54,862 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:03:54,862 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:03:54,863 - DEBUG - receive_response_body.complete
+2025-03-04 12:03:54,863 - DEBUG - response_closed.started
+2025-03-04 12:03:54,863 - DEBUG - response_closed.complete
+2025-03-04 12:03:54,863 - DEBUG - close.started
+2025-03-04 12:03:54,863 - DEBUG - close.complete
+2025-03-04 12:03:54,868 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:03:54,869 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10cc96210>
+2025-03-04 12:03:54,870 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:03:54,871 - DEBUG - send_request_headers.complete
+2025-03-04 12:03:54,872 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:03:54,872 - DEBUG - send_request_body.complete
+2025-03-04 12:03:54,872 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:03:54,925 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:03:54 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21178'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:03:54,925 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:03:54,925 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:03:54,925 - DEBUG - receive_response_body.complete
+2025-03-04 12:03:54,926 - DEBUG - response_closed.started
+2025-03-04 12:03:54,926 - DEBUG - response_closed.complete
+2025-03-04 12:03:54,926 - DEBUG - close.started
+2025-03-04 12:03:54,926 - DEBUG - close.complete
+2025-03-04 12:03:54,929 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:03:55,044 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:06:32,661 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:06:32,682 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-03-04 12:06:32,697 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:06:32,855 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b7fb110>
+2025-03-04 12:06:32,862 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10b551640> server_hostname='api.gradio.app' timeout=3
+2025-03-04 12:06:32,958 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b738770>
+2025-03-04 12:06:32,961 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-03-04 12:06:32,962 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:06:32,963 - DEBUG - send_request_headers.complete
+2025-03-04 12:06:32,963 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:06:32,963 - DEBUG - send_request_body.complete
+2025-03-04 12:06:32,963 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:06:33,000 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Mar 2025 20:06:32 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-03-04 12:06:33,001 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-04 12:06:33,001 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:06:33,001 - DEBUG - receive_response_body.complete
+2025-03-04 12:06:33,002 - DEBUG - response_closed.started
+2025-03-04 12:06:33,005 - DEBUG - response_closed.complete
+2025-03-04 12:06:33,005 - DEBUG - close.started
+2025-03-04 12:06:33,006 - DEBUG - close.complete
+2025-03-04 12:06:33,012 - DEBUG - Using selector: KqueueSelector
+2025-03-04 12:06:33,066 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=None socket_options=None
+2025-03-04 12:06:33,067 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ba25ba0>
+2025-03-04 12:06:33,067 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-04 12:06:33,067 - DEBUG - send_request_headers.complete
+2025-03-04 12:06:33,068 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-04 12:06:33,068 - DEBUG - send_request_body.complete
+2025-03-04 12:06:33,071 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-04 12:06:33,072 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:06:33 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-03-04 12:06:33,073 - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-04 12:06:33,073 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-04 12:06:33,073 - DEBUG - receive_response_body.complete
+2025-03-04 12:06:33,073 - DEBUG - response_closed.started
+2025-03-04 12:06:33,073 - DEBUG - response_closed.complete
+2025-03-04 12:06:33,073 - DEBUG - close.started
+2025-03-04 12:06:33,074 - DEBUG - close.complete
+2025-03-04 12:06:33,075 - DEBUG - connect_tcp.started host='localhost' port=7860 local_address=None timeout=3 socket_options=None
+2025-03-04 12:06:33,076 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b954b90>
+2025-03-04 12:06:33,076 - DEBUG - send_request_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:06:33,076 - DEBUG - send_request_headers.complete
+2025-03-04 12:06:33,076 - DEBUG - send_request_body.started request=<Request [b'HEAD']>
+2025-03-04 12:06:33,076 - DEBUG - send_request_body.complete
+2025-03-04 12:06:33,077 - DEBUG - receive_response_headers.started request=<Request [b'HEAD']>
+2025-03-04 12:06:33,116 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 04 Mar 2025 20:06:33 GMT'), (b'server', b'uvicorn'), (b'content-length', b'21177'), (b'content-type', b'text/html; charset=utf-8')])
+2025-03-04 12:06:33,116 - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-03-04 12:06:33,116 - DEBUG - receive_response_body.started request=<Request [b'HEAD']>
+2025-03-04 12:06:33,117 - DEBUG - receive_response_body.complete
+2025-03-04 12:06:33,117 - DEBUG - response_closed.started
+2025-03-04 12:06:33,117 - DEBUG - response_closed.complete
+2025-03-04 12:06:33,117 - DEBUG - close.started
+2025-03-04 12:06:33,117 - DEBUG - close.complete
+2025-03-04 12:06:33,122 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-03-04 12:06:33,441 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-03-04 12:06:39,126 - DEBUG - Starting load_vocabulary with group_id: 
+2025-03-04 12:06:39,126 - DEBUG - No group_id provided
+2025-03-04 12:06:39,938 - DEBUG - Starting load_vocabulary with group_id: 
+2025-03-04 12:06:39,938 - DEBUG - No group_id provided
