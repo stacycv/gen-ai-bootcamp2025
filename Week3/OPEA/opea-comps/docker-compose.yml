@@ -6,7 +6,7 @@ services:
     image: ollama/ollama
     container_name: ollama-server
     ports:
-      - ${LLM_ENDPOINT_PORT:-8008}:11434
+      - ${LLM_ENDPOINT_PORT:-9000}:11434
     environment:
       no_proxy: ${no_proxy}
       http_proxy: ${http_proxy}
