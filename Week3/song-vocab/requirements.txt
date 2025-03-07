@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+ollama
+instructor
+duckduckgo-search
+httpx
+beautifulsoup4 
