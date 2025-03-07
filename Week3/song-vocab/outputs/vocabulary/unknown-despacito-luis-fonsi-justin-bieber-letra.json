@@ -1,4 +1,218 @@
 {
   "song_id": "unknown-despacito-luis-fonsi-justin-bieber-letra",
-  "vocabulary": []
+  "vocabulary": [
+    {
+      "spanish": "allá",
+      "english": "there",
+      "parts": [
+        {
+          "spanish": "allá",
+          "type": "word",
+          "meaning": "there"
+        }
+      ]
+    },
+    {
+      "spanish": "bailar",
+      "english": "to dance",
+      "parts": [
+        {
+          "spanish": "bailar",
+          "type": "word",
+          "meaning": "to dance"
+        }
+      ]
+    },
+    {
+      "spanish": "bailas",
+      "english": "",
+      "parts": [
+        {
+          "spanish": "bail",
+          "type": "word root"
+        },
+        {
+          "spanish": "as",
+          "type": "feminine plural"
+        }
+      ]
+    },
+    {
+      "spanish": "bajo",
+      "english": "under",
+      "parts": [
+        {
+          "spanish": "bajo",
+          "type": "word",
+          "meaning": "under"
+        }
+      ]
+    },
+    {
+      "spanish": "carro",
+      "english": "car",
+      "parts": [
+        {
+          "spanish": "carro",
+          "type": "word",
+          "meaning": "car"
+        }
+      ]
+    },
+    {
+      "spanish": "cielo",
+      "english": "sky",
+      "parts": [
+        {
+          "spanish": "cielo",
+          "type": "word",
+          "meaning": "sky"
+        }
+      ]
+    },
+    {
+      "spanish": "cuerpo",
+      "english": "body",
+      "parts": [
+        {
+          "spanish": "cuerpo",
+          "type": "word",
+          "meaning": "body"
+        }
+      ]
+    },
+    {
+      "spanish": "cómo",
+      "english": "how",
+      "parts": [
+        {
+          "spanish": "cómo",
+          "type": "word",
+          "meaning": "how"
+        }
+      ]
+    },
+    {
+      "spanish": "despacito",
+      "english": "slowly (diminutive)",
+      "parts": [
+        {
+          "spanish": "despacito",
+          "type": "word",
+          "meaning": "slowly (diminutive)"
+        }
+      ]
+    },
+    {
+      "spanish": "discoteca",
+      "english": "disco/club",
+      "parts": [
+        {
+          "spanish": "discoteca",
+          "type": "word",
+          "meaning": "disco/club"
+        }
+      ]
+    },
+    {
+      "spanish": "encanta",
+      "english": "",
+      "parts": [
+        {
+          "spanish": "encant",
+          "type": "word root"
+        },
+        {
+          "spanish": "a",
+          "type": "feminine noun"
+        }
+      ]
+    },
+    {
+      "spanish": "llevo",
+      "english": "take/carry",
+      "parts": [
+        {
+          "spanish": "llevo",
+          "type": "word",
+          "meaning": "take/carry"
+        }
+      ]
+    },
+    {
+      "spanish": "metes",
+      "english": "put/place",
+      "parts": [
+        {
+          "spanish": "metes",
+          "type": "word",
+          "meaning": "put/place"
+        }
+      ]
+    },
+    {
+      "spanish": "más",
+      "english": "",
+      "parts": [
+        {
+          "spanish": "más",
+          "type": "word"
+        }
+      ]
+    },
+    {
+      "spanish": "propia",
+      "english": "own",
+      "parts": [
+        {
+          "spanish": "propia",
+          "type": "word",
+          "meaning": "own"
+        }
+      ]
+    },
+    {
+      "spanish": "quiero",
+      "english": "want/love",
+      "parts": [
+        {
+          "spanish": "quiero",
+          "type": "word",
+          "meaning": "want/love"
+        }
+      ]
+    },
+    {
+      "spanish": "ritmo",
+      "english": "rhythm",
+      "parts": [
+        {
+          "spanish": "ritmo",
+          "type": "word",
+          "meaning": "rhythm"
+        }
+      ]
+    },
+    {
+      "spanish": "siente",
+      "english": "feels",
+      "parts": [
+        {
+          "spanish": "siente",
+          "type": "word",
+          "meaning": "feels"
+        }
+      ]
+    },
+    {
+      "spanish": "tú",
+      "english": "",
+      "parts": [
+        {
+          "spanish": "tú",
+          "type": "word"
+        }
+      ]
+    }
+  ]
 }

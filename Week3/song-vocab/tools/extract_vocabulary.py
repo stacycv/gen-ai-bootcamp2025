@@ -3,48 +3,93 @@
 from typing import List, Dict
 import re
 
-def extract_vocabulary(text: str) -> List[Dict]:
-    """
-    Extract vocabulary words from the clean lyrics text.
+def analyze_word(word: str) -> List[Dict]:
+    """Analyze a Spanish word and break it into meaningful parts."""
+    # Spanish word patterns
+    patterns = {
+        'verbs': {
+            'ar': 'to _',
+            'er': 'to _',
+            'ir': 'to _'
+        },
+        'nouns': {
+            'o': 'masculine noun',
+            'a': 'feminine noun',
+            'os': 'masculine plural',
+            'as': 'feminine plural'
+        },
+        'common_words': {
+            'despacito': 'slowly (diminutive)',
+            'cuerpo': 'body',
+            'bailar': 'to dance',
+            'quiero': 'want/love',
+            'ritmo': 'rhythm',
+            'siente': 'feels',
+            'cómo': 'how',
+            'allá': 'there',
+            'bajo': 'under',
+            'cielo': 'sky',
+            'carro': 'car',
+            'llevo': 'take/carry',
+            'metes': 'put/place',
+            'propia': 'own',
+            'discoteca': 'disco/club'
+        }
+    }
     
-    Args:
-        text (str): Clean lyrics text to extract vocabulary from
-        
-    Returns:
-        List[Dict]: List of vocabulary words with their details
-    """
-    print("Starting vocabulary extraction from clean lyrics...")
+    # Check if it's a known word
+    if word in patterns['common_words']:
+        return [{"spanish": word, "type": "word", "meaning": patterns['common_words'][word]}]
+    
+    # Check verb patterns
+    for ending, meaning in patterns['verbs'].items():
+        if word.endswith(ending) and len(word) > len(ending):
+            root = word[:-2]
+            return [
+                {"spanish": root, "type": "verb root"},
+                {"spanish": ending, "type": "verb ending", "meaning": meaning}
+            ]
+    
+    # Check noun patterns
+    for ending, word_type in patterns['nouns'].items():
+        if word.endswith(ending) and len(word) > len(ending):
+            root = word[:-len(ending)]
+            return [
+                {"spanish": root, "type": "word root"},
+                {"spanish": ending, "type": word_type}
+            ]
+    
+    # Default case
+    return [{"spanish": word, "type": "word"}]
+
+def extract_vocabulary(text: str) -> List[Dict]:
+    """Extract vocabulary words with analysis from text."""
+    print("Starting vocabulary extraction from lyrics...")
     
     # Split into words and clean them
     words = re.findall(r'\b\w+\b', text.lower())
-    
-    # Remove duplicates and sort
     unique_words = sorted(set(words))
     
     # Common Spanish words to skip
     skip_words = {
-        'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas',  # articles
-        'y', 'o', 'pero', 'sino',  # conjunctions
-        'de', 'del', 'en', 'por', 'para', 'con', 'a',  # prepositions
-        'que', 'quien', 'cuyo', 'donde',  # relative pronouns
-        'mi', 'tu', 'su', 'mis', 'tus', 'sus'  # possessives
+        'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas',
+        'y', 'o', 'pero', 'sino',
+        'de', 'del', 'en', 'por', 'para', 'con', 'a',
+        'que', 'quien', 'cuyo', 'donde',
+        'mi', 'tu', 'su', 'mis', 'tus', 'sus',
+        'te', 'me', 'se', 'nos', 'os'
     }
     
-    # Create vocabulary list
     vocabulary = []
     for word in unique_words:
-        if word not in skip_words and len(word) > 1:  # Skip common words and single letters
+        if word not in skip_words and len(word) > 1:
+            parts = analyze_word(word)
             vocab_entry = {
                 "spanish": word,
-                "english": "",  # Leave translation empty for now
-                "parts": [
-                    {
-                        "spanish": word,
-                        "type": "word"
-                    }
-                ]
+                "english": parts[0].get("meaning", ""),  # Get meaning if available
+                "parts": parts
             }
             vocabulary.append(vocab_entry)
     
-    print(f"Found {len(vocabulary)} unique vocabulary words")
+    print(f"Found {len(vocabulary)} vocabulary words")
     return vocabulary

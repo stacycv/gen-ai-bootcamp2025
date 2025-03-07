@@ -61,6 +61,8 @@ def save_song_files(song_id: str, lyrics: str, vocabulary: List[Dict]) -> bool:
         with open(vocab_path, "w", encoding="utf-8") as f:
             json.dump(vocab_data, f, indent=2, ensure_ascii=False)
             
+        print(f"Vocabulary to be saved: {vocabulary}")
+        
         return True
     except Exception as e:
         print(f"Error saving files: {e}")

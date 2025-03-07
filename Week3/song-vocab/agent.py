@@ -117,17 +117,18 @@ class SongLyricsAgent:
                 # Extract vocabulary
                 print("Extracting vocabulary...")
                 try:
-                    vocabulary = await extract_vocabulary(clean_lyrics)
+                    vocabulary = extract_vocabulary(clean_lyrics)
                     if not vocabulary:
                         print("Warning: No vocabulary items were extracted")
-                        vocabulary = []  # Ensure we have a list even if empty
+                        vocabulary = []
                     print(f"Found {len(vocabulary)} vocabulary items")
                 except Exception as e:
                     print(f"Error in vocabulary extraction: {str(e)}")
-                    vocabulary = []  # Fallback to empty list on error
+                    vocabulary = []
 
                 # Save files
                 print("Saving files...")
+                print(f"Vocabulary to be saved: {vocabulary}")  # Debug print
                 if save_song_files(song_id, clean_lyrics, vocabulary):
                     print("Files saved successfully")
                     return song_id
