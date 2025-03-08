@@ -169,8 +169,8 @@ class WhisperWorker(AsyncWorker):
         )
         whisper_config.max_new_tokens = 256  # increase this based on your speech length
         # 'task' and 'language' parameters are supported for multilingual models only
-        whisper_config.language = "<|en|>"  # can switch to <|zh|> for Chinese language
-        whisper_config.task = "transcribe"
+        whisper_config.language = "<|zh|>"  # can switch to <|zh|> for Chinese language
+        whisper_config.task = "translate"
         whisper_config.return_timestamps = False
         print("done creating whisper LLM")
         
