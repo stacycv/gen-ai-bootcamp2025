@@ -1,0 +1,1 @@
+mkdir -p WeekFinal/listening-comp/{backend,frontend,data/{audio,questions,transcripts}} 
