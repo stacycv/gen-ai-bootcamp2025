@@ -11,27 +11,103 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS
+# Enhanced Custom CSS
 st.markdown("""
     <style>
-    .main {
-        background-color: #F1FAEE;
+    /* Main theme colors */
+    :root {
+        --spanish-red: #E63946;
+        --spanish-blue: #457B9D;
+        --spanish-cream: #F1FAEE;
+        --spanish-navy: #1D3557;
+        --spanish-yellow: #FCBF49;
     }
+    
+    .main {
+        background-color: var(--spanish-cream);
+    }
+    
+    /* Button styling */
     .stButton>button {
-        background-color: #E63946;
+        background-color: var(--spanish-red);
         color: white;
         border: none;
-        padding: 10px 24px;
-        border-radius: 4px;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.2s ease;
     }
+    
+    .stButton>button:hover {
+        background-color: #d63340;
+        transform: translateY(-1px);
+    }
+    
+    /* Card styling */
     .lesson-card {
         background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin: 16px 0;
+        border: 1px solid #eee;
     }
-    h1, h2, h3 {
-        color: #1D3557;
+    
+    /* Typography */
+    h1 {
+        color: var(--spanish-navy);
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    
+    h2, h3 {
+        color: var(--spanish-navy);
+        font-weight: 600;
+    }
+    
+    /* Progress bar */
+    .stProgress > div > div {
+        background-color: var(--spanish-red);
+    }
+    
+    /* Info boxes */
+    .stInfo {
+        background-color: var(--spanish-cream);
+        color: var(--spanish-navy);
+    }
+    
+    /* Success/Error messages */
+    .stSuccess {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    
+    .stError {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        background-color: white;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 12px;
+    }
+    
+    /* Container styling */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    /* Spanish flag gradient */
+    .spanish-flag-gradient {
+        background: linear-gradient(to right, var(--spanish-red), var(--spanish-yellow), var(--spanish-red));
+        height: 4px;
+        width: 100%;
+        margin: 1rem 0;
     }
     </style>
 """, unsafe_allow_html=True)

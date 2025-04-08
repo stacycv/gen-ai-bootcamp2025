@@ -34,4 +34,4 @@ def show_lesson():
     if st.button("Return to Level"):
         st.session_state.page = "level"
         st.session_state.current_lesson = None
-        st.experimental_rerun() 
+        st.rerun() 
