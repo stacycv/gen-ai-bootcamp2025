@@ -1,3 +1,6 @@
-chromedb
 streamlit
-boto3
+chromadb
+sentence-transformers
+nltk
+youtube-transcript-api
+pandas

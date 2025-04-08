@@ -3,10 +3,16 @@ from typing import Dict
 import json
 from collections import Counter
 import re
+import os
+import sys
 
+# Get the absolute path to the project directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_dir = os.path.dirname(os.path.dirname(current_dir))
+sys.path.insert(0, project_dir)
 
-from backend.chat import BedrockChat
-
+from project.backend.chat import SimpleJapaneseChat
+from project.backend.get_transcript import YouTubeTranscriptDownloader
 
 # Page config
 st.set_page_config(
@@ -28,10 +34,10 @@ def render_header():
     Transform YouTube transcripts into interactive Japanese learning experiences.
     
     This tool demonstrates:
-    - Base LLM Capabilities
+    - Basic Language Learning
     - RAG (Retrieval Augmented Generation)
-    - Amazon Bedrock Integration
-    - Agent-based Learning Systems
+    - Sentence Transformers
+    - Interactive Learning Systems
     """)
 
 def render_sidebar():
@@ -43,7 +49,7 @@ def render_sidebar():
         selected_stage = st.radio(
             "Select Stage:",
             [
-                "1. Chat with Nova",
+                "1. Simple Chat",
                 "2. Raw Transcript",
                 "3. Structured Data",
                 "4. RAG Implementation",
@@ -53,7 +59,7 @@ def render_sidebar():
         
         # Stage descriptions
         stage_info = {
-            "1. Chat with Nova": """
+            "1. Simple Chat": """
             **Current Focus:**
             - Basic Japanese learning
             - Understanding LLM capabilities
@@ -76,7 +82,7 @@ def render_sidebar():
             
             "4. RAG Implementation": """
             **Current Focus:**
-            - Bedrock embeddings
+            - Sentence Transformer embeddings
             - Vector storage
             - Context retrieval
             """,
@@ -96,16 +102,18 @@ def render_sidebar():
 
 def render_chat_stage():
     """Render an improved chat interface"""
-    st.header("Chat with Nova")
+    st.header("Chat with Japanese Assistant")
 
-    # Initialize BedrockChat instance if not in session state
-    if 'bedrock_chat' not in st.session_state:
-        st.session_state.bedrock_chat = BedrockChat()
+    # Initialize SimpleJapaneseChat instance if not in session state
+    if 'chat_bot' not in st.session_state:
+        st.session_state.chat_bot = SimpleJapaneseChat()
 
     # Introduction text
     st.markdown("""
-    Start by exploring Nova's base Japanese language capabilities. Try asking questions about Japanese grammar, 
-    vocabulary, or cultural aspects.
+    Start by exploring basic Japanese language capabilities. Try asking questions about Japanese greetings, 
+    basic phrases, or common expressions.
+    
+    Example: "How do you say hello in Japanese?"
     """)
 
     # Initialize chat history if not exists
@@ -114,30 +122,46 @@ def render_chat_stage():
 
     # Display chat messages
     for message in st.session_state.messages:
-        with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🤖"):
+        with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    # Chat input area
+    # Chat input
     if prompt := st.chat_input("Ask about Japanese language..."):
-        # Process the user input
-        process_message(prompt)
+        # Add user message to chat history
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        
+        # Get bot response
+        response = st.session_state.chat_bot.generate_response(prompt)
+        
+        # Add bot response to chat history
+        st.session_state.messages.append({"role": "assistant", "content": response})
+        
+        # Force a rerun to update the chat display
+        st.rerun()
 
     # Example questions in sidebar
     with st.sidebar:
         st.markdown("### Try These Examples")
         example_questions = [
-            "How do I say 'Where is the train station?' in Japanese?",
-            "Explain the difference between は and が",
-            "What's the polite form of 食べる?",
-            "How do I count objects in Japanese?",
-            "What's the difference between こんにちは and こんばんは?",
-            "How do I ask for directions politely?"
+            "How do you say hello?",
+            "What is thank you in Japanese?",
+            "How do you say goodbye?",
+            "What is good morning in Japanese?",
+            "How do you say please?",
+            "What is excuse me in Japanese?"
         ]
         
         for q in example_questions:
             if st.button(q, use_container_width=True, type="secondary"):
-                # Process the example question
-                process_message(q)
+                # Add user message to chat history
+                st.session_state.messages.append({"role": "user", "content": q})
+                
+                # Get bot response
+                response = st.session_state.chat_bot.generate_response(q)
+                
+                # Add bot response to chat history
+                st.session_state.messages.append({"role": "assistant", "content": response})
+                
                 st.rerun()
 
     # Add a clear chat button
@@ -145,22 +169,6 @@ def render_chat_stage():
         if st.button("Clear Chat", type="primary"):
             st.session_state.messages = []
             st.rerun()
-
-def process_message(message: str):
-    """Process a message and generate a response"""
-    # Add user message to state and display
-    st.session_state.messages.append({"role": "user", "content": message})
-    with st.chat_message("user", avatar="🧑‍💻"):
-        st.markdown(message)
-
-    # Generate and display assistant's response
-    with st.chat_message("assistant", avatar="🤖"):
-        response = st.session_state.bedrock_chat.generate_response(message)
-        if response:
-            st.markdown(response)
-            st.session_state.messages.append({"role": "assistant", "content": response})
-
-
 
 def count_characters(text):
     """Count Japanese and total characters in text"""
@@ -305,7 +313,7 @@ def main():
     selected_stage = render_sidebar()
     
     # Render appropriate stage
-    if selected_stage == "1. Chat with Nova":
+    if selected_stage == "1. Simple Chat":
         render_chat_stage()
     elif selected_stage == "2. Raw Transcript":
         render_transcript_stage()

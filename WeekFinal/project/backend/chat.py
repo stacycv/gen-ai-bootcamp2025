@@ -1,46 +1,63 @@
-# Create BedrockChat
-# bedrock_chat.py
-import boto3
-import streamlit as st
+# Japanese Language Assistant
+# chat.py
 from typing import Optional, Dict, Any
+import random
+from sentence_transformers import SentenceTransformer
+import nltk
+nltk.download('punkt')
 
 
-# Model ID
-MODEL_ID = "amazon.nova-micro-v1:0"
+class SimpleJapaneseChat:
+    def __init__(self):
+        """Initialize simple Japanese chat responses"""
+        self.basic_responses = {
+            "greetings": {
+                "hello": "こんにちは (Konnichiwa)",
+                "goodbye": "さようなら (Sayounara)",
+                "good morning": "おはようございます (Ohayou gozaimasu)",
+                "good evening": "こんばんは (Konbanwa)"
+            },
+            "basic_phrases": {
+                "thank you": "ありがとうございます (Arigatou gozaimasu)",
+                "please": "お願いします (Onegaishimasu)",
+                "excuse me": "すみません (Sumimasen)",
+                "you're welcome": "どういたしまして (Douitashimashite)"
+            }
+        }
+        
+        # Initialize sentence transformer for more advanced matching
+        self.model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
-
-
-class BedrockChat:
-    def __init__(self, model_id: str = MODEL_ID):
-        """Initialize Bedrock chat client"""
-        self.bedrock_client = boto3.client('bedrock-runtime', region_name="us-east-1")
-        self.model_id = model_id
-
-    def generate_response(self, message: str, inference_config: Optional[Dict[str, Any]] = None) -> Optional[str]:
-        """Generate a response using Amazon Bedrock"""
-        if inference_config is None:
-            inference_config = {"temperature": 0.7}
-
-        messages = [{
-            "role": "user",
-            "content": [{"text": message}]
-        }]
-
-        try:
-            response = self.bedrock_client.converse(
-                modelId=self.model_id,
-                messages=messages,
-                inferenceConfig=inference_config
-            )
-            return response['output']['message']['content'][0]['text']
+    def generate_response(self, message: str) -> str:
+        """Generate a simple response based on user input"""
+        message = message.lower()
+        
+        # Check for greetings
+        for key, response in self.basic_responses["greetings"].items():
+            if key in message:
+                return response
+                
+        # Check for basic phrases
+        for key, response in self.basic_responses["basic_phrases"].items():
+            if key in message:
+                return response
+        
+        # Default responses for different types of questions
+        if "how do you say" in message:
+            return "I can help with basic Japanese phrases. Try asking about greetings or common expressions!"
             
-        except Exception as e:
-            st.error(f"Error generating response: {str(e)}")
-            return None
+        if "what is" in message or "what's" in message:
+            return "That's an interesting question! In Japanese, it's important to consider the context. Could you provide more details?"
+            
+        if "explain" in message:
+            return "I can explain basic Japanese concepts. What specific aspect would you like to know more about?"
+            
+        # Default fallback response
+        return "申し訳ありません (Moushiwake arimasen). I'm a simple chat bot. Try asking about basic greetings or phrases!"
 
 
 if __name__ == "__main__":
-    chat = BedrockChat()
+    chat = SimpleJapaneseChat()
     while True:
         user_input = input("You: ")
         if user_input.lower() == '/exit':
