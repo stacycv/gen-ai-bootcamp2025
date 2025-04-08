@@ -1,6 +1,0 @@
-streamlit
-chromadb
-sentence-transformers
-nltk
-youtube-transcript-api
-pandas
