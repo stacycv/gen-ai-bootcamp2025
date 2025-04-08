@@ -2,96 +2,153 @@ import streamlit as st
 
 # Basic page setup
 st.set_page_config(
-    page_title="Learn Spanish",
+    page_title="¡Hola Español!",
     layout="wide"
 )
 
-# Custom CSS with purple and sky blue colors
+# Custom CSS
 st.markdown("""
     <style>
+    /* Main styles */
     .stApp {
-        background-color: #E6E6FA;
+        background-color: #1a2b4e;  /* Navy background */
     }
     
-    .welcome-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #E6E6FA;
+    /* Landing page styles */
+    .landing-header {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        cursor: pointer;
-        z-index: 1000;
-    }
-    
-    .welcome-image {
-        width: 80%;
-        max-width: 800px;
-        margin-bottom: 20px;
-    }
-    
-    .click-message {
-        color: #483D8B;
-        font-size: 24px;
-        margin-top: 20px;
-    }
-    
-    /* Rest of your existing CSS */
-    .lesson-card {
-        background-color: white;
         padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin: 10px 0;
-        border-left: 5px solid #87CEEB;
-    }
-    
-    .level-section {
         background-color: white;
-        padding: 30px;
-        border-radius: 15px;
-        margin: 20px 0;
-        border: 2px solid #87CEEB;
     }
     
-    h1, h2, h3 {
-        color: #483D8B;
+    .logo {
+        color: #1a2b4e;
+        font-size: 24px;
+        font-weight: bold;
     }
     
-    .stButton>button {
-        background-color: #87CEEB;
-        color: #483D8B;
-        border: none;
-        border-radius: 5px;
+    .logo span {
+        color: #e94747;  /* Red color for "Español" */
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .nav-link {
+        color: #1a2b4e;
+        text-decoration: none;
+    }
+    
+    .signup-btn {
+        background-color: #e94747;
+        color: white;
         padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+    }
+    
+    .hero-section {
+        text-align: center;
+        padding: 100px 20px;
+        color: white;
+    }
+    
+    .hero-title {
+        font-size: 64px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-subtitle {
+        font-size: 24px;
+        margin-bottom: 50px;
+        color: #ffffff99;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .cta-primary {
+        background-color: #e94747;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+    .cta-secondary {
+        background-color: transparent;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 25px;
+        border: 2px solid white;
+        text-decoration: none;
+        font-size: 20px;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Initialize session state for welcome screen
+# Initialize session state
 if 'show_welcome' not in st.session_state:
     st.session_state.show_welcome = True
 
-# Welcome screen
+# Landing page
 if st.session_state.show_welcome:
+    # Header
     st.markdown("""
-        <div class="welcome-screen" onclick="document.querySelector('.welcome-screen').style.display='none'; window.location.reload();">
-            <img src="https://i.imgur.com/YourImageURL.jpg" class="welcome-image" alt="Learn Spanish">
-            <div class="click-message">Click anywhere to start learning Spanish</div>
+        <div class="landing-header">
+            <div class="logo">¡Hola <span>Español!</span></div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Beginner</a>
+                <a href="#" class="nav-link">Intermediate</a>
+                <a href="#" class="nav-link">Expert</a>
+            </div>
+            <a href="#" class="signup-btn">Sign Up</a>
         </div>
+        
+        <div class="hero-section">
+            <h1 class="hero-title">Learn Spanish the Natural Way</h1>
+            <p class="hero-subtitle">¡Hola Español! makes learning Spanish fun, interactive, and effective with lessons tailored to your skill level.</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-primary" onclick="handleStart()">Start as Beginner</a>
+                <a href="#" class="cta-secondary" onclick="handleTest()">Take Placement Test</a>
+            </div>
+        </div>
+        
+        <script>
+            function handleStart() {
+                window.location.href = '#start';
+            }
+            
+            function handleTest() {
+                window.location.href = '#test';
+            }
+        </script>
     """, unsafe_allow_html=True)
     
-    # Button to enter the app
-    if st.button("Enter App", key="enter_app"):
-        st.session_state.show_welcome = False
-        st.experimental_rerun()
+    # Hidden buttons to handle navigation
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("Start as Beginner", key="start_btn"):
+            st.session_state.show_welcome = False
+            st.session_state.level = "Beginner"
+            st.experimental_rerun()
+    with col2:
+        if st.button("Take Placement Test", key="test_btn"):
+            st.session_state.show_welcome = False
+            st.session_state.show_test = True
+            st.experimental_rerun()
 
-# Main app content (only shown after welcome screen)
-if not st.session_state.show_welcome:
+# Rest of your app code goes here (when show_welcome is False)
+else:
     # Lesson content organized by levels
     lessons = {
         "Beginner": {
