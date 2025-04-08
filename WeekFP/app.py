@@ -9,88 +9,120 @@ st.set_page_config(
 # Custom CSS
 st.markdown("""
     <style>
-    /* Main styles */
+    /* Reset and main styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
     .stApp {
         background-color: #1a2b4e;  /* Navy background */
     }
     
-    /* Landing page styles */
+    /* Header styles */
     .landing-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px;
+        padding: 20px 40px;
         background-color: white;
+        width: 100%;
+        margin-bottom: 100px;  /* Add space between header and hero section */
     }
     
     .logo {
         color: #1a2b4e;
-        font-size: 24px;
+        font-size: 32px;
         font-weight: bold;
     }
     
     .logo span {
-        color: #e94747;  /* Red color for "Español" */
+        color: #e94747;
     }
     
     .nav-links {
         display: flex;
-        gap: 30px;
+        gap: 40px;
+        margin-left: auto;
+        margin-right: 40px;
     }
     
     .nav-link {
         color: #1a2b4e;
         text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
     }
     
     .signup-btn {
         background-color: #e94747;
         color: white;
-        padding: 10px 20px;
-        border-radius: 25px;
+        padding: 12px 30px;
+        border-radius: 50px;
         text-decoration: none;
+        font-weight: 500;
+        font-size: 18px;
     }
     
+    /* Hero section styles */
     .hero-section {
         text-align: center;
-        padding: 100px 20px;
-        color: white;
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     
     .hero-title {
-        font-size: 64px;
-        margin-bottom: 30px;
+        font-size: 72px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 40px;
+        line-height: 1.2;
     }
     
     .hero-subtitle {
         font-size: 24px;
-        margin-bottom: 50px;
-        color: #ffffff99;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 60px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
     }
     
     .cta-buttons {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 30px;
+        margin-top: 40px;
     }
     
     .cta-primary {
         background-color: #e94747;
         color: white;
-        padding: 15px 30px;
-        border-radius: 25px;
+        padding: 16px 40px;
+        border-radius: 50px;
         text-decoration: none;
         font-size: 20px;
+        font-weight: 500;
+        transition: background-color 0.3s;
     }
     
     .cta-secondary {
         background-color: transparent;
         color: white;
-        padding: 15px 30px;
-        border-radius: 25px;
+        padding: 16px 40px;
+        border-radius: 50px;
         border: 2px solid white;
         text-decoration: none;
         font-size: 20px;
+        font-weight: 500;
+    }
+
+    /* Hide Streamlit elements */
+    .stButton, footer, header {
+        display: none !important;
     }
     </style>
 """, unsafe_allow_html=True)
