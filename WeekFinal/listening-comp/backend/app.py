@@ -35,4 +35,12 @@ def generate_question(similar_questions, practice_type):
                 })
         question_data['dialogue'] = formatted_dialogue
     
-    return question_data 
+    return question_data
+
+# Initialize vector store (this should probably be done in vectorstore.py instead)
+# vector_store = QuestionVectorStore()
+# questions = load_questions_from_files()  # You'll need to implement this
+# vector_store.create_vector_store(questions)
+
+# When you need to find similar questions
+# similar_questions = vector_store.find_similar_questions("Where is the restroom?") 

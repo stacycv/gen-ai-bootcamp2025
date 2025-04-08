@@ -1,0 +1,619 @@
+2025-03-04 12:10:45,926 - INFO - Starting API server...
+2025-03-04 12:10:46,020 - WARNING -  * Debugger is active!
+2025-03-04 12:10:46,045 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:11:02,821 - INFO - Starting API server...
+2025-03-04 12:11:02,892 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-04 12:11:02,893 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 12:11:02,894 - INFO -  * Restarting with stat
+2025-03-04 12:11:03,157 - INFO - Starting API server...
+2025-03-04 12:11:03,208 - WARNING -  * Debugger is active!
+2025-03-04 12:11:03,221 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:16:20,538 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 12:16:20,633 - INFO -  * Restarting with stat
+2025-03-04 12:16:21,720 - INFO - Starting API server...
+2025-03-04 12:16:21,720 - INFO - Available endpoints:
+2025-03-04 12:16:21,721 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:16:21,721 - INFO -   - GET / (health check)
+2025-03-04 12:16:21,855 - WARNING -  * Debugger is active!
+2025-03-04 12:16:21,889 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:16:45,826 - INFO - Starting API server...
+2025-03-04 12:16:45,827 - INFO - Available endpoints:
+2025-03-04 12:16:45,827 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:16:45,827 - INFO -   - GET / (health check)
+2025-03-04 12:17:30,952 - INFO - Starting API server...
+2025-03-04 12:17:30,952 - INFO - Available endpoints:
+2025-03-04 12:17:30,952 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:17:30,952 - INFO -   - GET / (health check)
+2025-03-04 12:17:31,036 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.140.0.89:5001
+2025-03-04 12:17:31,036 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 12:17:31,038 - INFO -  * Restarting with stat
+2025-03-04 12:17:31,352 - INFO - Starting API server...
+2025-03-04 12:17:31,352 - INFO - Available endpoints:
+2025-03-04 12:17:31,352 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:17:31,352 - INFO -   - GET / (health check)
+2025-03-04 12:17:31,423 - WARNING -  * Debugger is active!
+2025-03-04 12:17:31,446 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:17:45,089 - INFO - Received request for group_id: 1
+2025-03-04 12:17:45,090 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'curl/8.7.1', 'Accept': '*/*'}
+2025-03-04 12:17:45,090 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:17:45,091 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:17:45,092 - INFO - 127.0.0.1 - - [04/Mar/2025 12:17:45] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:18:15,828 - INFO - Received request for group_id: 1
+2025-03-04 12:18:15,829 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:18:15,835 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:18:15,836 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:18:15,837 - INFO - 127.0.0.1 - - [04/Mar/2025 12:18:15] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:19:45,948 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 12:19:46,072 - INFO -  * Restarting with stat
+2025-03-04 12:19:46,990 - INFO - Starting API server...
+2025-03-04 12:19:46,991 - INFO - Available endpoints:
+2025-03-04 12:19:46,991 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:19:46,991 - INFO -   - GET / (health check)
+2025-03-04 12:19:47,118 - WARNING -  * Debugger is active!
+2025-03-04 12:19:47,153 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:20:01,041 - INFO - Received request for group_id: 1
+2025-03-04 12:20:01,042 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:20:01,042 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:20:01,043 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:20:01,044 - INFO - 127.0.0.1 - - [04/Mar/2025 12:20:01] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:23:41,229 - INFO - Starting API server...
+2025-03-04 12:23:41,229 - INFO - Available endpoints:
+2025-03-04 12:23:41,229 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:23:41,229 - INFO -   - GET / (health check)
+2025-03-04 12:23:41,354 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.140.0.89:5001
+2025-03-04 12:23:41,354 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 12:23:41,356 - INFO -  * Restarting with stat
+2025-03-04 12:23:41,659 - INFO - Starting API server...
+2025-03-04 12:23:41,659 - INFO - Available endpoints:
+2025-03-04 12:23:41,659 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:23:41,659 - INFO -   - GET / (health check)
+2025-03-04 12:23:41,724 - WARNING -  * Debugger is active!
+2025-03-04 12:23:41,747 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:24:53,885 - INFO - Received request for group_id: 1
+2025-03-04 12:24:53,885 - DEBUG - Request headers: {'Host': '127.0.0.1:5001', 'User-Agent': 'curl/8.7.1', 'Accept': '*/*'}
+2025-03-04 12:24:53,886 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:24:53,886 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:24:53,886 - INFO - 127.0.0.1 - - [04/Mar/2025 12:24:53] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:25:28,805 - INFO - Received request for group_id: 1
+2025-03-04 12:25:28,805 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:25:28,805 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:25:28,816 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:25:28,819 - INFO - 127.0.0.1 - - [04/Mar/2025 12:25:28] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:25:30,493 - INFO - Received request for group_id: 1
+2025-03-04 12:25:30,494 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:25:30,494 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:25:30,495 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:25:30,496 - INFO - 127.0.0.1 - - [04/Mar/2025 12:25:30] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:25:31,363 - INFO - Received request for group_id: 1
+2025-03-04 12:25:31,363 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:25:31,364 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:25:31,364 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:25:31,368 - INFO - 127.0.0.1 - - [04/Mar/2025 12:25:31] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:27:33,566 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/app.py', reloading
+2025-03-04 12:27:33,679 - INFO -  * Restarting with stat
+2025-03-04 12:27:34,668 - INFO - Starting API server...
+2025-03-04 12:27:34,669 - INFO - Available endpoints:
+2025-03-04 12:27:34,669 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:27:34,669 - INFO -   - GET / (health check)
+2025-03-04 12:27:34,812 - WARNING -  * Debugger is active!
+2025-03-04 12:27:34,840 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:28:25,543 - INFO - Starting API server...
+2025-03-04 12:28:25,543 - INFO - Available endpoints:
+2025-03-04 12:28:25,543 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:28:25,543 - INFO -   - GET / (health check)
+2025-03-04 12:28:25,670 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.140.0.89:5001
+2025-03-04 12:28:25,671 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 12:28:25,672 - INFO -  * Restarting with stat
+2025-03-04 12:28:25,970 - INFO - Starting API server...
+2025-03-04 12:28:25,971 - INFO - Available endpoints:
+2025-03-04 12:28:25,971 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:28:25,971 - INFO -   - GET / (health check)
+2025-03-04 12:28:26,040 - WARNING -  * Debugger is active!
+2025-03-04 12:28:26,059 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:28:44,065 - INFO - Received request for group_id: 1
+2025-03-04 12:28:44,066 - DEBUG - Request headers: {'Host': '127.0.0.1:5001', 'User-Agent': 'curl/8.7.1', 'Accept': '*/*'}
+2025-03-04 12:28:44,067 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:28:44,067 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:28:44,068 - INFO - 127.0.0.1 - - [04/Mar/2025 12:28:44] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:29:04,872 - INFO - Received request for group_id: 1
+2025-03-04 12:29:04,875 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:29:04,876 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:29:04,876 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:29:04,877 - INFO - 127.0.0.1 - - [04/Mar/2025 12:29:04] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:29:06,990 - INFO - Received request for group_id: 1
+2025-03-04 12:29:06,991 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:29:06,991 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:29:06,992 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:29:06,993 - INFO - 127.0.0.1 - - [04/Mar/2025 12:29:06] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:29:10,211 - INFO - Received request for group_id: 1
+2025-03-04 12:29:10,212 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:29:10,212 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:29:10,212 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:29:10,213 - INFO - 127.0.0.1 - - [04/Mar/2025 12:29:10] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:30:03,729 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 12:30:03,817 - INFO -  * Restarting with stat
+2025-03-04 12:30:04,581 - INFO - Starting API server...
+2025-03-04 12:30:04,582 - INFO - Available endpoints:
+2025-03-04 12:30:04,582 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:30:04,582 - INFO -   - GET / (health check)
+2025-03-04 12:30:04,677 - WARNING -  * Debugger is active!
+2025-03-04 12:30:04,708 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:30:56,950 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 12:30:57,105 - INFO -  * Restarting with stat
+2025-03-04 12:30:58,092 - INFO - Starting API server...
+2025-03-04 12:30:58,092 - INFO - Available endpoints:
+2025-03-04 12:30:58,093 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:30:58,093 - INFO -   - GET / (health check)
+2025-03-04 12:30:58,230 - WARNING -  * Debugger is active!
+2025-03-04 12:30:58,263 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:31:14,889 - INFO - Starting API server...
+2025-03-04 12:31:14,889 - INFO - Available endpoints:
+2025-03-04 12:31:14,889 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:31:14,889 - INFO -   - GET / (health check)
+2025-03-04 12:31:15,011 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.140.0.89:5001
+2025-03-04 12:31:15,011 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 12:31:15,013 - INFO -  * Restarting with stat
+2025-03-04 12:31:15,321 - INFO - Starting API server...
+2025-03-04 12:31:15,321 - INFO - Available endpoints:
+2025-03-04 12:31:15,321 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:31:15,322 - INFO -   - GET / (health check)
+2025-03-04 12:31:15,398 - WARNING -  * Debugger is active!
+2025-03-04 12:31:15,421 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:31:36,847 - INFO - Received request for group_id: 1
+2025-03-04 12:31:36,849 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:31:36,849 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:31:36,849 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:31:36,851 - INFO - 127.0.0.1 - - [04/Mar/2025 12:31:36] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:32:17,778 - INFO - Received request for group_id: 1
+2025-03-04 12:32:17,778 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:32:17,779 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:32:17,779 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}]}
+2025-03-04 12:32:17,780 - INFO - 127.0.0.1 - - [04/Mar/2025 12:32:17] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:33:36,897 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/api_server.py', reloading
+2025-03-04 12:33:37,068 - INFO -  * Restarting with stat
+2025-03-04 12:33:37,833 - INFO - Starting API server...
+2025-03-04 12:33:37,833 - INFO - Available endpoints:
+2025-03-04 12:33:37,833 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:33:37,834 - INFO -   - GET / (health check)
+2025-03-04 12:33:37,924 - WARNING -  * Debugger is active!
+2025-03-04 12:33:37,942 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:33:43,545 - INFO - Starting API server...
+2025-03-04 12:33:43,546 - INFO - Available endpoints:
+2025-03-04 12:33:43,546 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:33:43,546 - INFO -   - GET / (health check)
+2025-03-04 12:33:51,722 - INFO - Starting API server...
+2025-03-04 12:33:51,722 - INFO - Available endpoints:
+2025-03-04 12:33:51,722 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:33:51,722 - INFO -   - GET / (health check)
+2025-03-04 12:33:51,800 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.140.0.89:5001
+2025-03-04 12:33:51,801 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 12:33:51,803 - INFO -  * Restarting with stat
+2025-03-04 12:33:52,101 - INFO - Starting API server...
+2025-03-04 12:33:52,102 - INFO - Available endpoints:
+2025-03-04 12:33:52,102 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:33:52,102 - INFO -   - GET / (health check)
+2025-03-04 12:33:52,165 - WARNING -  * Debugger is active!
+2025-03-04 12:33:52,208 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:34:21,347 - INFO - Received request for group_id: 1
+2025-03-04 12:34:21,348 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:34:21,349 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:34:21,350 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:34:21,365 - INFO - 127.0.0.1 - - [04/Mar/2025 12:34:21] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:34:25,809 - INFO - Received request for group_id: 2
+2025-03-04 12:34:25,810 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:34:25,810 - INFO - Returning data for group: Food and Drinks
+2025-03-04 12:34:25,810 - DEBUG - Response data: {'group_name': 'Food and Drinks', 'words': [{'spanish': 'manzana', 'english': 'apple'}, {'spanish': 'pan', 'english': 'bread'}, {'spanish': 'leche', 'english': 'milk'}, {'spanish': 'café', 'english': 'coffee'}, {'spanish': 'jugo', 'english': 'juice'}, {'spanish': 'arroz', 'english': 'rice'}, {'spanish': 'pollo', 'english': 'chicken'}, {'spanish': 'carne', 'english': 'meat'}, {'spanish': 'pescado', 'english': 'fish'}, {'spanish': 'sopa', 'english': 'soup'}]}
+2025-03-04 12:34:25,811 - INFO - 127.0.0.1 - - [04/Mar/2025 12:34:25] "GET /api/groups/2/words/raw HTTP/1.1" 200 -
+2025-03-04 12:44:39,220 - INFO - Received request for group_id: 2
+2025-03-04 12:44:39,220 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:44:39,220 - INFO - Returning data for group: Food and Drinks
+2025-03-04 12:44:39,220 - DEBUG - Response data: {'group_name': 'Food and Drinks', 'words': [{'spanish': 'manzana', 'english': 'apple'}, {'spanish': 'pan', 'english': 'bread'}, {'spanish': 'leche', 'english': 'milk'}, {'spanish': 'café', 'english': 'coffee'}, {'spanish': 'jugo', 'english': 'juice'}, {'spanish': 'arroz', 'english': 'rice'}, {'spanish': 'pollo', 'english': 'chicken'}, {'spanish': 'carne', 'english': 'meat'}, {'spanish': 'pescado', 'english': 'fish'}, {'spanish': 'sopa', 'english': 'soup'}]}
+2025-03-04 12:44:39,221 - INFO - 127.0.0.1 - - [04/Mar/2025 12:44:39] "GET /api/groups/2/words/raw HTTP/1.1" 200 -
+2025-03-04 12:45:11,874 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/api_server.py', reloading
+2025-03-04 12:45:12,033 - INFO -  * Restarting with stat
+2025-03-04 12:45:12,655 - INFO - Starting API server...
+2025-03-04 12:45:12,655 - INFO - Available endpoints:
+2025-03-04 12:45:12,655 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:45:12,656 - INFO -   - GET /api/groups
+2025-03-04 12:45:12,656 - INFO -   - GET / (health check)
+2025-03-04 12:45:12,751 - WARNING -  * Debugger is active!
+2025-03-04 12:45:12,769 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:45:36,058 - INFO - Received request for group_id: 1
+2025-03-04 12:45:36,075 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:45:36,096 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:45:36,096 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:45:36,097 - INFO - 127.0.0.1 - - [04/Mar/2025 12:45:36] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:47:13,840 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 12:47:13,954 - INFO -  * Restarting with stat
+2025-03-04 12:47:14,526 - INFO - Starting API server...
+2025-03-04 12:47:14,527 - INFO - Available endpoints:
+2025-03-04 12:47:14,527 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:47:14,527 - INFO -   - GET /api/groups
+2025-03-04 12:47:14,527 - INFO -   - GET / (health check)
+2025-03-04 12:47:14,633 - WARNING -  * Debugger is active!
+2025-03-04 12:47:14,650 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:47:27,782 - INFO - Received request for group_id: 1
+2025-03-04 12:47:27,782 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:47:27,787 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:47:27,792 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:47:27,793 - INFO - 127.0.0.1 - - [04/Mar/2025 12:47:27] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:47:34,847 - INFO - Received request for group_id: 1
+2025-03-04 12:47:34,850 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:47:34,852 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:47:34,853 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:47:34,854 - INFO - 127.0.0.1 - - [04/Mar/2025 12:47:34] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:47:35,062 - INFO - Received request for group_id: 1
+2025-03-04 12:47:35,063 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:47:35,063 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:47:35,063 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:47:35,064 - INFO - 127.0.0.1 - - [04/Mar/2025 12:47:35] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:49:05,426 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 12:49:05,558 - INFO -  * Restarting with stat
+2025-03-04 12:49:06,332 - INFO - Starting API server...
+2025-03-04 12:49:06,332 - INFO - Available endpoints:
+2025-03-04 12:49:06,333 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:49:06,333 - INFO -   - GET /api/groups
+2025-03-04 12:49:06,333 - INFO -   - GET / (health check)
+2025-03-04 12:49:06,430 - WARNING -  * Debugger is active!
+2025-03-04 12:49:06,454 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:49:13,651 - INFO - Received request for group_id: 1
+2025-03-04 12:49:13,652 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:49:13,652 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:49:13,653 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:49:13,654 - INFO - 127.0.0.1 - - [04/Mar/2025 12:49:13] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:49:49,644 - INFO - Received request for group_id: 1
+2025-03-04 12:49:49,644 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:49:49,645 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:49:49,647 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:49:49,648 - INFO - 127.0.0.1 - - [04/Mar/2025 12:49:49] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:49:50,784 - INFO - Received request for group_id: 1
+2025-03-04 12:49:50,784 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:49:50,786 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:49:50,786 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:49:50,787 - INFO - 127.0.0.1 - - [04/Mar/2025 12:49:50] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:49:51,606 - INFO - Received request for group_id: 1
+2025-03-04 12:49:51,606 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:49:51,606 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:49:51,606 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:49:51,610 - INFO - 127.0.0.1 - - [04/Mar/2025 12:49:51] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:49:52,477 - INFO - Received request for group_id: 1
+2025-03-04 12:49:52,478 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:49:52,479 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:49:52,480 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:49:52,481 - INFO - 127.0.0.1 - - [04/Mar/2025 12:49:52] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:49:54,149 - INFO - Received request for group_id: 1
+2025-03-04 12:49:54,150 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:49:54,150 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:49:54,150 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:49:54,161 - INFO - 127.0.0.1 - - [04/Mar/2025 12:49:54] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:49:59,289 - INFO - Received request for group_id: 4
+2025-03-04 12:49:59,290 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:49:59,290 - INFO - Returning data for group: Colors
+2025-03-04 12:49:59,290 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 12:49:59,290 - INFO - 127.0.0.1 - - [04/Mar/2025 12:49:59] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 12:50:00,220 - INFO - Received request for group_id: 4
+2025-03-04 12:50:00,221 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:50:00,221 - INFO - Returning data for group: Colors
+2025-03-04 12:50:00,221 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 12:50:00,222 - INFO - 127.0.0.1 - - [04/Mar/2025 12:50:00] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 12:50:00,975 - INFO - Received request for group_id: 4
+2025-03-04 12:50:00,977 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:50:00,979 - INFO - Returning data for group: Colors
+2025-03-04 12:50:00,983 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 12:50:00,984 - INFO - 127.0.0.1 - - [04/Mar/2025 12:50:00] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 12:50:01,739 - INFO - Received request for group_id: 4
+2025-03-04 12:50:01,739 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:50:01,739 - INFO - Returning data for group: Colors
+2025-03-04 12:50:01,739 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 12:50:01,741 - INFO - 127.0.0.1 - - [04/Mar/2025 12:50:01] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 12:52:26,174 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 12:52:26,292 - INFO -  * Restarting with stat
+2025-03-04 12:52:26,847 - INFO - Starting API server...
+2025-03-04 12:52:26,847 - INFO - Available endpoints:
+2025-03-04 12:52:26,847 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:52:26,847 - INFO -   - GET /api/groups
+2025-03-04 12:52:26,847 - INFO -   - GET / (health check)
+2025-03-04 12:52:26,964 - WARNING -  * Debugger is active!
+2025-03-04 12:52:27,053 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:52:56,894 - INFO - Received request for group_id: 1
+2025-03-04 12:52:56,895 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:52:56,895 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:52:56,895 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:52:56,918 - INFO - 127.0.0.1 - - [04/Mar/2025 12:52:56] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:52:58,099 - INFO - Received request for group_id: 1
+2025-03-04 12:52:58,099 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:52:58,100 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:52:58,100 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:52:58,102 - INFO - 127.0.0.1 - - [04/Mar/2025 12:52:58] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:52:58,825 - INFO - Received request for group_id: 1
+2025-03-04 12:52:58,825 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:52:58,826 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:52:58,826 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:52:58,827 - INFO - 127.0.0.1 - - [04/Mar/2025 12:52:58] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:52:59,719 - INFO - Received request for group_id: 1
+2025-03-04 12:52:59,720 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:52:59,720 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:52:59,720 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:52:59,732 - INFO - 127.0.0.1 - - [04/Mar/2025 12:52:59] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:53:00,426 - INFO - Received request for group_id: 1
+2025-03-04 12:53:00,426 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:53:00,426 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:53:00,426 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:53:00,429 - INFO - 127.0.0.1 - - [04/Mar/2025 12:53:00] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:53:01,241 - INFO - Received request for group_id: 1
+2025-03-04 12:53:01,241 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:53:01,241 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:53:01,241 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:53:01,242 - INFO - 127.0.0.1 - - [04/Mar/2025 12:53:01] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:53:01,965 - INFO - Received request for group_id: 1
+2025-03-04 12:53:01,966 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:53:01,967 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:53:01,967 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:53:01,968 - INFO - 127.0.0.1 - - [04/Mar/2025 12:53:01] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:53:07,707 - INFO - Received request for group_id: 1
+2025-03-04 12:53:07,715 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:53:07,716 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:53:07,716 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:53:07,717 - INFO - 127.0.0.1 - - [04/Mar/2025 12:53:07] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:53:25,724 - INFO - Received request for group_id: 1
+2025-03-04 12:53:25,724 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:53:25,725 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:53:25,730 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:53:25,731 - INFO - 127.0.0.1 - - [04/Mar/2025 12:53:25] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:53:26,747 - INFO - Received request for group_id: 1
+2025-03-04 12:53:26,748 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:53:26,748 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:53:26,749 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:53:26,750 - INFO - 127.0.0.1 - - [04/Mar/2025 12:53:26] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:53:32,751 - INFO - Received request for group_id: 4
+2025-03-04 12:53:32,752 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:53:32,752 - INFO - Returning data for group: Colors
+2025-03-04 12:53:32,752 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 12:53:32,753 - INFO - 127.0.0.1 - - [04/Mar/2025 12:53:32] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 12:54:37,610 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 12:54:37,770 - INFO -  * Restarting with stat
+2025-03-04 12:54:38,319 - INFO - Starting API server...
+2025-03-04 12:54:38,319 - INFO - Available endpoints:
+2025-03-04 12:54:38,319 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 12:54:38,320 - INFO -   - GET /api/groups
+2025-03-04 12:54:38,320 - INFO -   - GET / (health check)
+2025-03-04 12:54:38,405 - WARNING -  * Debugger is active!
+2025-03-04 12:54:38,435 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 12:54:54,991 - INFO - Received request for group_id: 1
+2025-03-04 12:54:54,999 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:54:55,000 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:54:55,000 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:54:55,002 - INFO - 127.0.0.1 - - [04/Mar/2025 12:54:55] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:54:56,035 - INFO - Received request for group_id: 1
+2025-03-04 12:54:56,040 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:54:56,042 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:54:56,042 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:54:56,048 - INFO - 127.0.0.1 - - [04/Mar/2025 12:54:56] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:54:56,625 - INFO - Received request for group_id: 1
+2025-03-04 12:54:56,625 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:54:56,629 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:54:56,629 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:54:56,630 - INFO - 127.0.0.1 - - [04/Mar/2025 12:54:56] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:54:57,197 - INFO - Received request for group_id: 1
+2025-03-04 12:54:57,198 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:54:57,198 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:54:57,199 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:54:57,200 - INFO - 127.0.0.1 - - [04/Mar/2025 12:54:57] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:54:57,757 - INFO - Received request for group_id: 1
+2025-03-04 12:54:57,758 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:54:57,759 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:54:57,760 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:54:57,766 - INFO - 127.0.0.1 - - [04/Mar/2025 12:54:57] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:54:58,370 - INFO - Received request for group_id: 1
+2025-03-04 12:54:58,382 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:54:58,383 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:54:58,383 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:54:58,384 - INFO - 127.0.0.1 - - [04/Mar/2025 12:54:58] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:56:08,998 - INFO - Received request for group_id: 1
+2025-03-04 12:56:09,010 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:56:09,011 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:56:09,011 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:56:09,012 - INFO - 127.0.0.1 - - [04/Mar/2025 12:56:09] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 12:56:25,247 - INFO - Received request for group_id: 1
+2025-03-04 12:56:25,248 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 12:56:25,248 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 12:56:25,249 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 12:56:25,249 - INFO - 127.0.0.1 - - [04/Mar/2025 12:56:25] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:01:22,015 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 13:01:22,188 - INFO -  * Restarting with stat
+2025-03-04 13:01:22,831 - INFO - Starting API server...
+2025-03-04 13:01:22,831 - INFO - Available endpoints:
+2025-03-04 13:01:22,831 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:01:22,831 - INFO -   - GET /api/groups
+2025-03-04 13:01:22,831 - INFO -   - GET / (health check)
+2025-03-04 13:01:22,919 - WARNING -  * Debugger is active!
+2025-03-04 13:01:22,938 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 13:03:23,147 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 13:03:23,329 - INFO -  * Restarting with stat
+2025-03-04 13:03:24,065 - INFO - Starting API server...
+2025-03-04 13:03:24,066 - INFO - Available endpoints:
+2025-03-04 13:03:24,066 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:03:24,066 - INFO -   - GET /api/groups
+2025-03-04 13:03:24,066 - INFO -   - GET / (health check)
+2025-03-04 13:03:24,139 - WARNING -  * Debugger is active!
+2025-03-04 13:03:24,163 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 13:03:47,229 - INFO - Received request for group_id: 1
+2025-03-04 13:03:47,232 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:03:47,233 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:03:47,234 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:03:47,235 - INFO - 127.0.0.1 - - [04/Mar/2025 13:03:47] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:04:13,181 - INFO - Received request for group_id: 1
+2025-03-04 13:04:13,182 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:04:13,182 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:04:13,182 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:04:13,182 - INFO - 127.0.0.1 - - [04/Mar/2025 13:04:13] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:04:18,990 - INFO - Received request for group_id: 4
+2025-03-04 13:04:18,991 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:04:18,994 - INFO - Returning data for group: Colors
+2025-03-04 13:04:18,994 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:04:18,997 - INFO - 127.0.0.1 - - [04/Mar/2025 13:04:18] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:20:57,924 - INFO - Received request for group_id: 4
+2025-03-04 13:20:57,925 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:20:57,926 - INFO - Returning data for group: Colors
+2025-03-04 13:20:57,926 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:20:57,928 - INFO - 127.0.0.1 - - [04/Mar/2025 13:20:57] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:21:00,441 - INFO - Received request for group_id: 4
+2025-03-04 13:21:00,441 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:21:00,442 - INFO - Returning data for group: Colors
+2025-03-04 13:21:00,442 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:21:00,446 - INFO - 127.0.0.1 - - [04/Mar/2025 13:21:00] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:23:10,668 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 13:23:10,803 - INFO -  * Restarting with stat
+2025-03-04 13:23:11,402 - INFO - Starting API server...
+2025-03-04 13:23:11,402 - INFO - Available endpoints:
+2025-03-04 13:23:11,403 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:23:11,403 - INFO -   - GET /api/groups
+2025-03-04 13:23:11,403 - INFO -   - GET / (health check)
+2025-03-04 13:23:11,491 - WARNING -  * Debugger is active!
+2025-03-04 13:23:11,508 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 13:24:22,109 - INFO - Received request for group_id: 4
+2025-03-04 13:24:22,110 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:24:22,111 - INFO - Returning data for group: Colors
+2025-03-04 13:24:22,111 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:24:22,116 - INFO - 127.0.0.1 - - [04/Mar/2025 13:24:22] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:25:25,654 - INFO - Received request for group_id: 1
+2025-03-04 13:25:25,657 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:25:25,657 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:25:25,658 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:25:25,662 - INFO - 127.0.0.1 - - [04/Mar/2025 13:25:25] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:25:45,476 - INFO - Received request for group_id: 1
+2025-03-04 13:25:45,476 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:25:45,477 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:25:45,489 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:25:45,490 - INFO - 127.0.0.1 - - [04/Mar/2025 13:25:45] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:25:51,803 - INFO - Received request for group_id: 1
+2025-03-04 13:25:51,804 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:25:51,807 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:25:51,810 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:25:51,813 - INFO - 127.0.0.1 - - [04/Mar/2025 13:25:51] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:27:17,610 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 13:27:17,684 - INFO -  * Restarting with stat
+2025-03-04 13:27:18,446 - INFO - Starting API server...
+2025-03-04 13:27:18,446 - INFO - Available endpoints:
+2025-03-04 13:27:18,446 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:27:18,447 - INFO -   - GET /api/groups
+2025-03-04 13:27:18,447 - INFO -   - GET / (health check)
+2025-03-04 13:27:18,544 - WARNING -  * Debugger is active!
+2025-03-04 13:27:18,562 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 13:27:44,545 - INFO - Received request for group_id: 1
+2025-03-04 13:27:44,549 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:27:44,566 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:27:44,571 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:27:44,576 - INFO - 127.0.0.1 - - [04/Mar/2025 13:27:44] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:29:02,484 - INFO - Received request for group_id: 1
+2025-03-04 13:29:02,485 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:29:02,488 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:29:02,489 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:29:02,492 - INFO - 127.0.0.1 - - [04/Mar/2025 13:29:02] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:44:44,067 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 13:44:44,507 - INFO -  * Restarting with stat
+2025-03-04 13:44:45,449 - INFO - Starting API server...
+2025-03-04 13:44:45,450 - INFO - Available endpoints:
+2025-03-04 13:44:45,450 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:44:45,450 - INFO -   - GET /api/groups
+2025-03-04 13:44:45,450 - INFO -   - GET / (health check)
+2025-03-04 13:44:45,528 - WARNING -  * Debugger is active!
+2025-03-04 13:44:45,549 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 13:45:31,746 - INFO - Received request for group_id: 1
+2025-03-04 13:45:31,756 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:45:31,760 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:45:31,761 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:45:31,762 - INFO - 127.0.0.1 - - [04/Mar/2025 13:45:31] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:46:59,719 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 13:46:59,982 - INFO -  * Restarting with stat
+2025-03-04 13:47:00,774 - INFO - Starting API server...
+2025-03-04 13:47:00,775 - INFO - Available endpoints:
+2025-03-04 13:47:00,775 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:47:00,775 - INFO -   - GET /api/groups
+2025-03-04 13:47:00,776 - INFO -   - GET / (health check)
+2025-03-04 13:47:00,844 - WARNING -  * Debugger is active!
+2025-03-04 13:47:00,867 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 13:47:24,509 - INFO - Received request for group_id: 1
+2025-03-04 13:47:24,509 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:47:24,510 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:47:24,513 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:47:24,519 - INFO - 127.0.0.1 - - [04/Mar/2025 13:47:24] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:48:41,994 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/gradio_app.py', reloading
+2025-03-04 13:48:42,248 - INFO -  * Restarting with stat
+2025-03-04 13:48:42,871 - INFO - Starting API server...
+2025-03-04 13:48:42,871 - INFO - Available endpoints:
+2025-03-04 13:48:42,871 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:48:42,871 - INFO -   - GET /api/groups
+2025-03-04 13:48:42,871 - INFO -   - GET / (health check)
+2025-03-04 13:48:42,994 - WARNING -  * Debugger is active!
+2025-03-04 13:48:43,023 - INFO -  * Debugger PIN: 679-579-881
+2025-03-04 13:49:01,793 - INFO - Received request for group_id: 1
+2025-03-04 13:49:01,797 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:49:01,798 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:49:01,798 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:49:01,799 - INFO - 127.0.0.1 - - [04/Mar/2025 13:49:01] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:49:45,513 - INFO - Received request for group_id: 1
+2025-03-04 13:49:45,514 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:49:45,515 - INFO - Returning data for group: Basic Spanish Words
+2025-03-04 13:49:45,515 - DEBUG - Response data: {'group_name': 'Basic Spanish Words', 'words': [{'spanish': 'casa', 'english': 'house'}, {'spanish': 'perro', 'english': 'dog'}, {'spanish': 'gato', 'english': 'cat'}, {'spanish': 'libro', 'english': 'book'}, {'spanish': 'agua', 'english': 'water'}, {'spanish': 'comida', 'english': 'food'}, {'spanish': 'coche', 'english': 'car'}, {'spanish': 'mesa', 'english': 'table'}, {'spanish': 'silla', 'english': 'chair'}, {'spanish': 'teléfono', 'english': 'phone'}, {'spanish': 'computadora', 'english': 'computer'}, {'spanish': 'lápiz', 'english': 'pencil'}, {'spanish': 'ventana', 'english': 'window'}, {'spanish': 'puerta', 'english': 'door'}, {'spanish': 'escuela', 'english': 'school'}]}
+2025-03-04 13:49:45,518 - INFO - 127.0.0.1 - - [04/Mar/2025 13:49:45] "GET /api/groups/1/words/raw HTTP/1.1" 200 -
+2025-03-04 13:49:51,930 - INFO - Received request for group_id: 4
+2025-03-04 13:49:51,947 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:49:51,947 - INFO - Returning data for group: Colors
+2025-03-04 13:49:51,948 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:49:51,956 - INFO - 127.0.0.1 - - [04/Mar/2025 13:49:51] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:49:58,805 - INFO - Received request for group_id: 4
+2025-03-04 13:49:58,805 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:49:58,806 - INFO - Returning data for group: Colors
+2025-03-04 13:49:58,807 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:49:58,818 - INFO - 127.0.0.1 - - [04/Mar/2025 13:49:58] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:50:00,076 - INFO - Received request for group_id: 4
+2025-03-04 13:50:00,078 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:50:00,080 - INFO - Returning data for group: Colors
+2025-03-04 13:50:00,081 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:50:00,082 - INFO - 127.0.0.1 - - [04/Mar/2025 13:50:00] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:50:02,874 - INFO - Received request for group_id: 4
+2025-03-04 13:50:02,874 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:50:02,875 - INFO - Returning data for group: Colors
+2025-03-04 13:50:02,884 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:50:02,886 - INFO - 127.0.0.1 - - [04/Mar/2025 13:50:02] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:50:03,534 - INFO - Received request for group_id: 4
+2025-03-04 13:50:03,534 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:50:03,534 - INFO - Returning data for group: Colors
+2025-03-04 13:50:03,534 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:50:03,535 - INFO - 127.0.0.1 - - [04/Mar/2025 13:50:03] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:50:04,097 - INFO - Received request for group_id: 4
+2025-03-04 13:50:04,097 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:50:04,098 - INFO - Returning data for group: Colors
+2025-03-04 13:50:04,100 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:50:04,100 - INFO - 127.0.0.1 - - [04/Mar/2025 13:50:04] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:50:04,903 - INFO - Received request for group_id: 4
+2025-03-04 13:50:04,904 - DEBUG - Request headers: {'Host': 'localhost:5001', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+2025-03-04 13:50:04,904 - INFO - Returning data for group: Colors
+2025-03-04 13:50:04,904 - DEBUG - Response data: {'group_name': 'Colors', 'words': [{'spanish': 'rojo', 'english': 'red'}, {'spanish': 'azul', 'english': 'blue'}, {'spanish': 'verde', 'english': 'green'}, {'spanish': 'amarillo', 'english': 'yellow'}, {'spanish': 'negro', 'english': 'black'}, {'spanish': 'blanco', 'english': 'white'}, {'spanish': 'gris', 'english': 'gray'}, {'spanish': 'marrón', 'english': 'brown'}, {'spanish': 'morado', 'english': 'purple'}, {'spanish': 'rosa', 'english': 'pink'}]}
+2025-03-04 13:50:04,904 - INFO - 127.0.0.1 - - [04/Mar/2025 13:50:04] "GET /api/groups/4/words/raw HTTP/1.1" 200 -
+2025-03-04 13:50:54,877 - INFO -  * Detected change in '/Users/stacyvasquez/Desktop/gen-ai-bootcamp2025/Week2/writing-practice/print.py', reloading
+2025-03-04 13:50:55,237 - INFO -  * Restarting with stat
+2025-03-04 13:50:56,233 - INFO - Starting API server...
+2025-03-04 13:50:56,233 - INFO - Available endpoints:
+2025-03-04 13:50:56,233 - INFO -   - GET /api/groups/<group_id>/words/raw
+2025-03-04 13:50:56,233 - INFO -   - GET /api/groups
+2025-03-04 13:50:56,234 - INFO -   - GET / (health check)
+2025-03-04 13:50:56,374 - WARNING -  * Debugger is active!
+2025-03-04 13:50:56,428 - INFO -  * Debugger PIN: 679-579-881

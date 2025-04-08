@@ -2,4 +2,4 @@ chromadb
 streamlit
 youtube_transcript_api
 boto3
-gTTS 
+gTTS
