@@ -73,6 +73,27 @@
   line-height: 1.5;
 }
 
+.back-button {
+  background-color: transparent;
+  color: #e94747;
+  border: 2px solid #e94747;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  background-color: #e94747;
+  color: white;
+  transform: translateX(-3px);
+}
+
 @media (max-width: 768px) {
   .nav-buttons {
     gap: 1rem;
@@ -90,5 +111,11 @@
   
   .landing-container {
     padding: 1rem;
+  }
+  
+  .back-button {
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
   }
 } 

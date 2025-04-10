@@ -81,12 +81,15 @@ def show_hero():
     
     col1, col2, col3 = st.columns(3)
     with col1:
-        if st.button("Start as Beginner"):
+        if st.button("Beginner"):
             st.session_state.current_lesson = "beginner"
     with col2:
-        if st.button("Start as Intermediate"):
+        if st.button("Intermediate"):
             st.session_state.current_lesson = "intermediate"
     with col3:
+        if st.button("Advanced"):
+            st.session_state.current_lesson = "intermediate"
+    with col4:
         st.button("Take Placement Test")
 
 def show_lesson(level, lesson):
