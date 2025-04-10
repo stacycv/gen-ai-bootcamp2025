@@ -1,7 +1,7 @@
 .word-container {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   margin: 1rem 0;
 }
@@ -20,7 +20,7 @@
   justify-content: center;
   gap: 2rem;
   margin: 2rem 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 0 1rem;
 }
 
