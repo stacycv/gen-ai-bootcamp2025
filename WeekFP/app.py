@@ -142,14 +142,22 @@ def show_lesson(level, lesson):
     
     # Check answer button
     if st.button("Check Answer"):
-        if current_translation.strip().lower() == lesson["content"]["spanish"].lower():
+        # Clean up both answers for comparison by removing extra spaces and normalizing case
+        user_translation = " ".join(current_translation.strip().lower().split())
+        correct_translation = " ".join(lesson["content"]["spanish"].lower().split())
+        
+        # Debug info to help see what's being compared
+        st.write("Your answer:", user_translation)
+        st.write("Correct answer:", correct_translation)
+        
+        if user_translation == correct_translation:
             st.success("¡Correcto! Well done!")
             st.session_state.completed_lessons.add(lesson["id"])
             st.session_state.user_answer = []
             st.session_state.shuffled_words = None
             st.rerun()
         else:
-            st.error("Not quite right. Try again!")
+            st.error(f"Not quite right. Try again! Make sure your answer matches exactly: '{lesson['content']['spanish']}'")
     
     if st.button("Show Hint"):
         st.info("Pay attention to word order and spelling.")
