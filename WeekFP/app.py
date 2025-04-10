@@ -93,6 +93,11 @@ def show_hero():
         st.button("Take Placement Test")
 
 def show_lesson(level, lesson):
+    # Add back button at the top
+    if st.button("← Back", key="back_button"):
+        st.session_state.current_lesson = None
+        st.experimental_rerun()
+        
     st.subheader(lesson["title"])
     st.write("Translate this sentence:")
     st.info(lesson["content"]["english"])
@@ -137,10 +142,6 @@ def main():
         for lesson in lessons[level]:
             with st.expander(f"Lesson: {lesson['title']}", expanded=True):
                 show_lesson(level, lesson)
-        
-        if st.sidebar.button("Return to Home"):
-            st.session_state.current_lesson = None
-            st.experimental_rerun()
 
 if __name__ == "__main__":
     main() 
