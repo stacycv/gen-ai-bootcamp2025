@@ -38,6 +38,12 @@ if 'current_lesson' not in st.session_state:
     st.session_state.current_lesson = None
 if 'completed_lessons' not in st.session_state:
     st.session_state.completed_lessons = set()
+if 'user_answer' not in st.session_state:
+    st.session_state.user_answer = []
+if 'shuffled_words' not in st.session_state:
+    st.session_state.shuffled_words = None
+if 'previous_lesson' not in st.session_state:
+    st.session_state.previous_lesson = None
 
 # Sample lesson data
 lessons = {
@@ -83,30 +89,33 @@ def show_hero():
     with col1:
         if st.button("Beginner"):
             st.session_state.current_lesson = "beginner"
+            st.rerun()
     with col2:
         if st.button("Intermediate"):
             st.session_state.current_lesson = "intermediate"
+            st.rerun()
     with col3:
         if st.button("Advanced"):
             st.session_state.current_lesson = "intermediate"
+            st.rerun()
     with col4:
-        st.button("Take Placement Test")
+        if st.button("Take Placement Test"):
+            st.info("Placement test coming soon!")
 
 def show_lesson(level, lesson):
     # Add back button at the top
     if st.button("← Back", key="back_button"):
         st.session_state.current_lesson = None
-        st.experimental_rerun()
+        st.session_state.user_answer = []
+        st.session_state.shuffled_words = None
+        st.rerun()
     
     st.subheader(lesson["title"])
     st.write("Translate this sentence:")
     st.info(lesson["content"]["english"])
     
-    # Initialize all session state variables at the start
-    if 'user_answer' not in st.session_state:
-        st.session_state.user_answer = []
-        
-    if 'shuffled_words' not in st.session_state or st.session_state.shuffled_words is None:
+    # Initialize shuffled words if needed
+    if st.session_state.shuffled_words is None:
         st.session_state.shuffled_words = list(lesson["content"]["words"])
         random.shuffle(st.session_state.shuffled_words)
     
@@ -119,7 +128,7 @@ def show_lesson(level, lesson):
         with cols[i]:
             if st.button(word, key=f"word_{i}"):
                 st.session_state.user_answer.append(word)
-                st.experimental_rerun()
+                st.rerun()
     
     # Show current translation and clear button
     current_translation = " ".join(st.session_state.user_answer)
@@ -128,18 +137,17 @@ def show_lesson(level, lesson):
     # Add clear button
     if st.button("Clear Translation"):
         st.session_state.user_answer = []
-        st.session_state.shuffled_words = None  # Reset shuffled words too
-        st.experimental_rerun()
+        st.session_state.shuffled_words = None
+        st.rerun()
     
     # Check answer button
     if st.button("Check Answer"):
         if current_translation.strip().lower() == lesson["content"]["spanish"].lower():
             st.success("¡Correcto! Well done!")
             st.session_state.completed_lessons.add(lesson["id"])
-            # Reset for next attempt
             st.session_state.user_answer = []
             st.session_state.shuffled_words = None
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Not quite right. Try again!")
     
@@ -147,10 +155,6 @@ def show_lesson(level, lesson):
         st.info("Pay attention to word order and spelling.")
 
 def main():
-    # Add this at the start of main() to reset session state when changing lessons
-    if 'previous_lesson' not in st.session_state:
-        st.session_state.previous_lesson = None
-    
     if st.session_state.current_lesson is None:
         # Reset session state when returning to home
         st.session_state.user_answer = []
