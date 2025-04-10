@@ -97,28 +97,47 @@ def show_lesson(level, lesson):
     if st.button("← Back", key="back_button"):
         st.session_state.current_lesson = None
         st.experimental_rerun()
-        
+    
     st.subheader(lesson["title"])
     st.write("Translate this sentence:")
     st.info(lesson["content"]["english"])
     
+    # Initialize session state for user's answer if not exists
+    if 'user_answer' not in st.session_state:
+        st.session_state.user_answer = []
+    
+    # Randomize words if not already in session state
+    if 'shuffled_words' not in st.session_state:
+        st.session_state.shuffled_words = list(lesson["content"]["words"])
+        random.shuffle(st.session_state.shuffled_words)
+    
     # Create columns for word selection
-    cols = st.columns(len(lesson["content"]["words"]))
-    user_answer = []
+    cols = st.columns(len(st.session_state.shuffled_words))
     
     # Display word buttons
-    for i, word in enumerate(lesson["content"]["words"]):
+    for i, word in enumerate(st.session_state.shuffled_words):
         with cols[i]:
             if st.button(word, key=f"word_{i}"):
-                user_answer.append(word)
+                st.session_state.user_answer.append(word)
+                st.experimental_rerun()
     
-    # Show answer input
-    answer = st.text_input("Your translation:", " ".join(user_answer))
+    # Show current translation and clear button
+    current_translation = " ".join(st.session_state.user_answer)
+    st.text_input("Your translation:", value=current_translation, disabled=True)
     
+    # Add clear button
+    if st.button("Clear Translation"):
+        st.session_state.user_answer = []
+        st.experimental_rerun()
+    
+    # Check answer button
     if st.button("Check Answer"):
-        if answer.strip().lower() == lesson["content"]["spanish"].lower():
+        if current_translation.strip().lower() == lesson["content"]["spanish"].lower():
             st.success("¡Correcto! Well done!")
             st.session_state.completed_lessons.add(lesson["id"])
+            # Reset for next attempt
+            st.session_state.user_answer = []
+            st.session_state.shuffled_words = None
         else:
             st.error("Not quite right. Try again!")
     
@@ -126,9 +145,23 @@ def show_lesson(level, lesson):
         st.info("Pay attention to word order and spelling.")
 
 def main():
+    # Add this at the start of main() to reset session state when changing lessons
+    if 'previous_lesson' not in st.session_state:
+        st.session_state.previous_lesson = None
+    
     if st.session_state.current_lesson is None:
+        # Reset session state when returning to home
+        st.session_state.user_answer = []
+        st.session_state.shuffled_words = None
+        st.session_state.previous_lesson = None
         show_hero()
     else:
+        # Reset answer when changing lessons
+        if st.session_state.previous_lesson != st.session_state.current_lesson:
+            st.session_state.user_answer = []
+            st.session_state.shuffled_words = None
+            st.session_state.previous_lesson = st.session_state.current_lesson
+            
         level = st.session_state.current_lesson
         st.sidebar.title(f"{level.title()} Level")
         
