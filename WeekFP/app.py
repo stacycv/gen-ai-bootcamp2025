@@ -102,20 +102,20 @@ def show_lesson(level, lesson):
     st.write("Translate this sentence:")
     st.info(lesson["content"]["english"])
     
-    # Initialize session state for user's answer if not exists
+    # Initialize all session state variables at the start
     if 'user_answer' not in st.session_state:
         st.session_state.user_answer = []
-    
-    # Randomize words if not already in session state
-    if 'shuffled_words' not in st.session_state:
+        
+    if 'shuffled_words' not in st.session_state or st.session_state.shuffled_words is None:
         st.session_state.shuffled_words = list(lesson["content"]["words"])
         random.shuffle(st.session_state.shuffled_words)
     
-    # Create columns for word selection
-    cols = st.columns(len(st.session_state.shuffled_words))
+    # Now we can safely use shuffled_words since it's guaranteed to be initialized
+    words = st.session_state.shuffled_words
+    cols = st.columns(len(words))
     
     # Display word buttons
-    for i, word in enumerate(st.session_state.shuffled_words):
+    for i, word in enumerate(words):
         with cols[i]:
             if st.button(word, key=f"word_{i}"):
                 st.session_state.user_answer.append(word)
@@ -128,6 +128,7 @@ def show_lesson(level, lesson):
     # Add clear button
     if st.button("Clear Translation"):
         st.session_state.user_answer = []
+        st.session_state.shuffled_words = None  # Reset shuffled words too
         st.experimental_rerun()
     
     # Check answer button
@@ -138,6 +139,7 @@ def show_lesson(level, lesson):
             # Reset for next attempt
             st.session_state.user_answer = []
             st.session_state.shuffled_words = None
+            st.experimental_rerun()
         else:
             st.error("Not quite right. Try again!")
     
