@@ -1087,82 +1087,81 @@ def show_lesson(level, lesson):
             # Reset translation state
             st.session_state.user_answer = []
             st.session_state.shuffled_words = None
-            # Clear any stored answers
-            for key in list(st.session_state.keys()):
-                if key.startswith(f"{lesson_id}"):
-                    del st.session_state[key]
+            # Clear current sentence
+            if f"current_sentence_{lesson_id}" in st.session_state:
+                del st.session_state[f"current_sentence_{lesson_id}"]
             st.rerun()
     
     # Show completion status
     with col1:
         if lesson_id in st.session_state.completed_lessons:
             st.success("✅ Completed!")
-        if lesson_id in st.session_state.last_attempt_time:
-            st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    
+    # Select a random sentence if not already selected
+    if f"current_sentence_{lesson_id}" not in st.session_state:
+        available_sentences = [
+            {
+                "english": lesson["content"]["english"],
+                "spanish": lesson["content"]["spanish"],
+                "words": lesson["content"]["words"]
+            }
+        ]
+        st.session_state[f"current_sentence_{lesson_id}"] = random.choice(available_sentences)
+    
+    current_sentence = st.session_state[f"current_sentence_{lesson_id}"]
     
     st.subheader(lesson["title"])
     st.write("Translate this sentence:")
-    st.info(lesson["content"]["english"])
+    st.info(current_sentence["english"])
     
     # Initialize shuffled words if needed
     if st.session_state.shuffled_words is None:
-        st.session_state.shuffled_words = list(lesson["content"]["words"])
+        st.session_state.shuffled_words = list(current_sentence["words"])
         random.shuffle(st.session_state.shuffled_words)
     
-    # Now we can safely use shuffled_words since it's guaranteed to be initialized
+    # Display word buttons
     words = st.session_state.shuffled_words
     cols = st.columns(len(words))
     
-    # Display word buttons with unique keys per lesson
     for i, word in enumerate(words):
         with cols[i]:
-            # Make the key unique by including the lesson_id
             if st.button(word, key=f"word_{lesson_id}_{i}"):
                 st.session_state.user_answer.append(word)
                 st.rerun()
     
-    # Show current translation and clear button with unique key
+    # Rest of the function remains the same...
     current_translation = " ".join(st.session_state.user_answer)
     st.text_input("Your translation:", 
                   value=current_translation, 
                   disabled=True, 
                   key=f"translation_input_{lesson_id}")
     
-    # Add clear button with unique key (already has one, but let's make it consistent)
     if st.button("Clear Translation", key=f"clear_button_{lesson_id}"):
         st.session_state.user_answer = []
         st.session_state.shuffled_words = None
         st.rerun()
     
-    # Modify the Check Answer button section
     if st.button("Check Answer", key=f"check_{lesson_id}"):
         # Update last attempt time
         st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
-        # Clean up both answers by:
-        # 1. Converting to lowercase
-        # 2. Removing punctuation
-        # 3. Removing extra spaces
         def clean_text(text):
-            # Remove punctuation and convert to lowercase
             text = text.lower()
             text = text.translate(str.maketrans("", "", string.punctuation))
-            # Remove extra spaces
             text = " ".join(text.split())
             return text
         
         user_translation = clean_text(current_translation)
-        correct_translation = clean_text(lesson["content"]["spanish"])
+        correct_translation = clean_text(current_sentence["spanish"])
         
-        # Add to history
         attempt_result = {
             "lesson_id": lesson_id,
             "lesson_title": lesson["title"],
             "level": level,
             "timestamp": st.session_state.last_attempt_time[lesson_id],
             "correct": user_translation == correct_translation,
-            "user_answer": current_translation,  # Keep original for history
-            "correct_answer": lesson["content"]["spanish"]  # Keep original for history
+            "user_answer": current_translation,
+            "correct_answer": current_sentence["spanish"]
         }
         st.session_state.lesson_history.append(attempt_result)
         
@@ -1173,10 +1172,7 @@ def show_lesson(level, lesson):
             st.session_state.shuffled_words = None
             st.rerun()
         else:
-            st.error(f"Not quite right. Try again! Make sure your answer matches: '{lesson['content']['spanish']}'")
-    
-    if st.button("Show Hint", key=f"hint_button_{lesson_id}"):
-        st.info("Pay attention to word order and spelling.")
+            st.error(f"Not quite right. Try again! Make sure your answer matches: '{current_sentence['spanish']}'")
 
 def show_placement_test():
     st.title("Spanish Placement Test")
