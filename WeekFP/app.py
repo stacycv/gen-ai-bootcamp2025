@@ -487,18 +487,20 @@ lessons = {
             {
                 "id": "int-audio-1",
                 "type": "audio",
-                "title": "Intermediate Pronunciation",
-                "audio_url": "https://example.com/audio/intermediate_pronunciation.mp3",
+                "title": "Intermediate Spanish Pronunciation",
+                "video_url": "https://www.youtube.com/embed/P5CxKS6MHRk",  # Spanish Pronunciation Practice
                 "exercises": [
                     {
                         "word": "desarrollador",
                         "translation": "developer",
-                        "pronunciation": "des-a-rro-ya-DOR"
+                        "pronunciation": "des-a-rro-ya-DOR",
+                        "timestamp": "Practice rolling your R's"
                     },
                     {
                         "word": "biblioteca",
                         "translation": "library",
-                        "pronunciation": "bee-blee-o-TE-ka"
+                        "pronunciation": "bee-blee-o-TE-ka",
+                        "timestamp": "Notice the stress on TE"
                     }
                 ]
             }
@@ -628,18 +630,20 @@ lessons = {
             {
                 "id": "adv-audio-1",
                 "type": "audio",
-                "title": "Advanced Pronunciation",
-                "audio_url": "https://example.com/audio/advanced_pronunciation.mp3",
+                "title": "Advanced Spanish Pronunciation",
+                "video_url": "https://www.youtube.com/embed/7dSc5PXxYZc",  # Advanced Spanish Pronunciation
                 "exercises": [
                     {
                         "word": "desarrollándose",
                         "translation": "developing oneself",
-                        "pronunciation": "des-a-rro-YAN-do-se"
+                        "pronunciation": "des-a-rro-YAN-do-se",
+                        "timestamp": "Focus on the reflexive ending"
                     },
                     {
                         "word": "estadounidense",
                         "translation": "American",
-                        "pronunciation": "es-ta-do-u-ni-DEN-se"
+                        "pronunciation": "es-ta-do-u-ni-DEN-se",
+                        "timestamp": "Practice the diphthongs"
                     }
                 ]
             }
