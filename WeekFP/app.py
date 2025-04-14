@@ -1541,12 +1541,13 @@ def show_progress_sidebar(level=None):
         # Level progress if in a specific level
         if level:
             st.subheader(f"{level.title()} Level Progress")
-            level_lessons = sum(len(lessons[level][lesson_type]) for lesson_type in lessons[level])
+            # Count actual number of lesson types in the level
+            level_lesson_types = len(lessons[level])  # This will count the actual number of lesson types
             completed = len(st.session_state.completed_lessons)
-            progress = (completed / level_lessons) * 100 if level_lessons > 0 else 0
+            progress = (completed / level_lesson_types) * 100
             
             st.progress(progress / 100)
-            st.write(f"Completed: {completed}/{level_lessons} lessons ({progress:.1f}%)")
+            st.write(f"Completed: {completed}/{level_lesson_types} lessons ({progress:.1f}%)")
         
         # Recent activity
         st.subheader("Recent Activity")
