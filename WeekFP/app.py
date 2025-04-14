@@ -331,10 +331,10 @@ lessons = {
         ],
         "video_vocabulary": [
             {
-                "id": "beg-pic-1",
-                "type": "picture",
-                "title": "Colors in Spanish",
-                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",  # Spanish Colors
+                "id": "beg-vid-1",
+                "type": "video",
+                "title": "Basic Colors and Numbers",
+                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",
                 "exercises": [
                     {
                         "question": "What is 'red' in Spanish?",
@@ -345,26 +345,6 @@ lessons = {
                         "question": "How do you say 'blue'?",
                         "options": ["verde", "amarillo", "azul", "rojo"],
                         "correct": 2
-                    },
-                    {
-                        "question": "Which color is 'amarillo'?",
-                        "options": ["Red", "Green", "Blue", "Yellow"],
-                        "correct": 3
-                    },
-                    {
-                        "question": "What is 'green' in Spanish?",
-                        "options": ["azul", "verde", "rojo", "blanco"],
-                        "correct": 1
-                    },
-                    {
-                        "question": "How do you say 'white'?",
-                        "options": ["negro", "gris", "blanco", "marrón"],
-                        "correct": 2
-                    },
-                    {
-                        "question": "Which color is 'negro'?",
-                        "options": ["White", "Gray", "Brown", "Black"],
-                        "correct": 3
                     }
                 ]
             }
@@ -450,17 +430,22 @@ lessons = {
             {
                 "id": "int-vid-1",
                 "type": "video",
-                "title": "Advanced Colors and Descriptions",
+                "title": "Weather and Seasons",
                 "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",
                 "exercises": [
                     {
-                        "question": "What is 'dark blue' in Spanish?",
-                        "options": ["azul oscuro", "azul claro", "azul marino", "azul celeste"],
+                        "question": "Complete: 'En primavera, suele ____ mucho'",
+                        "options": ["llover", "llueve", "lloviendo", "lluvioso"],
                         "correct": 0
                     },
                     {
-                        "question": "How do you say 'light green'?",
-                        "options": ["verde oscuro", "verde claro", "verde olivo", "verde lima"],
+                        "question": "What's the meaning of 'hace buen tiempo'?",
+                        "options": [
+                            "it's raining",
+                            "the weather is nice",
+                            "it's cold",
+                            "it's windy"
+                        ],
                         "correct": 1
                     }
                 ]
@@ -596,18 +581,24 @@ lessons = {
             {
                 "id": "adv-vid-1",
                 "type": "video",
-                "title": "Color Expressions and Idioms",
+                "title": "Spanish Idioms and Expressions",
                 "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",
                 "exercises": [
                     {
-                        "question": "What does 'ponerse rojo' mean?",
-                        "options": ["to get red", "to blush", "to paint red", "to wear red"],
+                        "question": "What does the expression 'meter la pata' mean?",
+                        "options": [
+                            "to put your foot down",
+                            "to make a mistake",
+                            "to walk quickly",
+                            "to dance"
+                        ],
                         "correct": 1
                     },
                     {
-                        "question": "Complete: 'No todo es ____ o negro'",
-                        "options": ["gris", "azul", "blanco", "verde"],
-                        "correct": 2
+                        "question": "Complete this saying: 'No hay mal que ___ años dure'",
+                        "options": ["cien", "mil", "diez", "muchos"],
+                        "correct": 0,
+                        "explanation": "This saying means 'No hardship lasts a hundred years'"
                     }
                 ]
             }
