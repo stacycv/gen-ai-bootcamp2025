@@ -23,10 +23,27 @@ st.markdown("""
         --accent-blue: #4A90E2;
     }
 
+    /* Cool gradient background */
     .main {
-        background-color: var(--neutral-light);
+        background: linear-gradient(135deg, #fff6e5 0%, #fff9ec 100%);
         color: var(--neutral-dark);
         font-family: 'Helvetica Neue', sans-serif;
+        min-height: 100vh;
+        background-attachment: fixed;
+    }
+
+    /* Add subtle pattern overlay */
+    .main::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 50% 50%, rgba(255, 196, 0, 0.05) 0%, transparent 100%),
+            radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.025) 0%, transparent 100%);
+        pointer-events: none;
     }
 
     /* Modern educational headers */
