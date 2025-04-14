@@ -201,10 +201,11 @@ def show_lesson(level, lesson):
     words = st.session_state.shuffled_words
     cols = st.columns(len(words))
     
-    # Display word buttons
+    # Display word buttons with unique keys per lesson
     for i, word in enumerate(words):
         with cols[i]:
-            if st.button(word, key=f"word_{i}"):
+            # Make the key unique by including the lesson_id
+            if st.button(word, key=f"word_{lesson_id}_{i}"):
                 st.session_state.user_answer.append(word)
                 st.rerun()
     
