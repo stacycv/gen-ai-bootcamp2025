@@ -341,24 +341,7 @@ lessons = {
                 "id": "beg-story-1",
                 "type": "story",
                 "title": "A Day in Madrid",
-                "content": [
-                    {
-                        "text": "María camina por el parque.",
-                        "translation": "Maria walks through the park.",
-                        "choices": [
-                            {
-                                "text": "Ella ve un perro",
-                                "translation": "She sees a dog",
-                                "leads_to": 1
-                            },
-                            {
-                                "text": "Ella compra un helado",
-                                "translation": "She buys an ice cream",
-                                "leads_to": 2
-                            }
-                        ]
-                    }
-                ]
+                "content": {}  # The content is now handled within the show_interactive_story function
             }
         ]
     },
@@ -997,18 +980,104 @@ def show_picture_lesson(lesson):
 
 def show_interactive_story(lesson):
     st.subheader(lesson["title"])
+    lesson_id = lesson["id"]
     
+    # Initialize story position if not exists
     if "story_position" not in st.session_state:
         st.session_state.story_position = 0
     
-    current_scene = lesson["content"][st.session_state.story_position]
+    # Add completion tracking
+    if lesson_id in st.session_state.completed_lessons:
+        st.success("✅ Completed!")
     
-    st.write(current_scene["text"])
-    st.write(current_scene["translation"])
+    # Update the story content structure
+    story_content = {
+        0: {
+            "text": "María camina por el parque.",
+            "translation": "Maria walks through the park.",
+            "choices": [
+                {
+                    "text": "Ella ve un perro",
+                    "translation": "She sees a dog",
+                    "leads_to": 1
+                },
+                {
+                    "text": "Ella compra un helado",
+                    "translation": "She buys an ice cream",
+                    "leads_to": 2
+                }
+            ]
+        },
+        1: {
+            "text": "El perro es muy amigable.",
+            "translation": "The dog is very friendly.",
+            "choices": [
+                {
+                    "text": "Ella acaricia al perro",
+                    "translation": "She pets the dog",
+                    "leads_to": 3
+                },
+                {
+                    "text": "Ella sigue caminando",
+                    "translation": "She keeps walking",
+                    "leads_to": 4
+                }
+            ]
+        },
+        2: {
+            "text": "El helado es de chocolate.",
+            "translation": "The ice cream is chocolate.",
+            "choices": [
+                {
+                    "text": "Está delicioso",
+                    "translation": "It's delicious",
+                    "leads_to": 5
+                },
+                {
+                    "text": "Está muy frío",
+                    "translation": "It's very cold",
+                    "leads_to": 5
+                }
+            ]
+        },
+        3: {
+            "text": "¡Has llegado al final de la historia!",
+            "translation": "You've reached the end of the story!",
+            "is_ending": True
+        },
+        4: {
+            "text": "¡Has llegado al final de la historia!",
+            "translation": "You've reached the end of the story!",
+            "is_ending": True
+        },
+        5: {
+            "text": "¡Has llegado al final de la historia!",
+            "translation": "You've reached the end of the story!",
+            "is_ending": True
+        }
+    }
     
-    if "choices" in current_scene:
+    # Get current scene
+    current_scene = story_content[st.session_state.story_position]
+    
+    # Display current scene
+    st.write("📖 " + current_scene["text"])
+    st.caption("🔤 " + current_scene["translation"])
+    
+    # If it's an ending, show completion and reset option
+    if current_scene.get("is_ending", False):
+        st.success("¡Felicitaciones! Has completado la historia.")
+        st.session_state.completed_lessons.add(lesson_id)
+        if st.button("Start Over", key=f"restart_{lesson_id}"):
+            st.session_state.story_position = 0
+            st.rerun()
+    # Otherwise show choices
+    elif "choices" in current_scene:
+        st.write("Choose what happens next:")
         for choice in current_scene["choices"]:
-            if st.button(choice["text"], key=f"choice_{choice['leads_to']}"):
+            if st.button(f"👉 {choice['text']}", 
+                        key=f"choice_{lesson_id}_{choice['leads_to']}",
+                        help=choice["translation"]):
                 st.session_state.story_position = choice["leads_to"]
                 st.rerun()
 
