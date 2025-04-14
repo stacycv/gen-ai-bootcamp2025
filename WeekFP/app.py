@@ -304,24 +304,69 @@ lessons = {
                 "type": "conversation",
                 "title": "At the Café",
                 "dialogue": [
-                    {
-                        "speaker": "Waiter",
-                        "text": "¡Buenos días! ¿Qué desea?",
-                        "translation": "Good morning! What would you like?"
-                    },
-                    {
-                        "speaker": "You",
-                        "options": [
-                            "Un café, por favor",
-                            "Quiero un té",
-                            "Nada, gracias"
-                        ],
-                        "translations": [
-                            "A coffee, please",
-                            "I want a tea",
-                            "Nothing, thank you"
-                        ]
-                    }
+                    # First dialogue set
+                    [
+                        {
+                            "speaker": "Waiter",
+                            "text": "¡Buenos días! ¿Qué desea?",
+                            "translation": "Good morning! What would you like?"
+                        },
+                        {
+                            "speaker": "You",
+                            "options": [
+                                "Un café, por favor",
+                                "Quiero un té",
+                                "Nada, gracias"
+                            ],
+                            "translations": [
+                                "A coffee, please",
+                                "I want a tea",
+                                "Nothing, thank you"
+                            ]
+                        }
+                    ],
+                    # Second dialogue set
+                    [
+                        {
+                            "speaker": "Waiter",
+                            "text": "¿Algo más con su bebida?",
+                            "translation": "Anything else with your drink?"
+                        },
+                        {
+                            "speaker": "You",
+                            "options": [
+                                "Un croissant, por favor",
+                                "No, gracias",
+                                "¿Tiene pasteles?"
+                            ],
+                            "translations": [
+                                "A croissant, please",
+                                "No, thank you",
+                                "Do you have cakes?"
+                            ]
+                        }
+                    ],
+                    # Third dialogue set
+                    [
+                        {
+                            "speaker": "Waiter",
+                            "text": "¿Cómo quiere su café?",
+                            "translation": "How would you like your coffee?"
+                        },
+                        {
+                            "speaker": "You",
+                            "options": [
+                                "Con leche, por favor",
+                                "Negro, sin azúcar",
+                                "Con azúcar y leche"
+                            ],
+                            "translations": [
+                                "With milk, please",
+                                "Black, no sugar",
+                                "With sugar and milk"
+                            ]
+                        }
+                    ]
                 ]
             }
         ],
@@ -1287,16 +1332,17 @@ def show_conversation_lesson(lesson):
     lesson_id = lesson["id"]
     st.subheader(lesson["title"])
     
-    # Add refresh button at the top
+    # Add refresh button
     col1, col2 = st.columns([4, 1])
     with col2:
         if st.button("🔄 New Conversation", key=f"refresh_{lesson_id}"):
-            # Clear conversation state
+            # Select a random dialogue set when refreshing
+            if f"current_dialogue_{lesson_id}" in st.session_state:
+                del st.session_state[f"current_dialogue_{lesson_id}"]
+            # Clear any stored responses
             for key in list(st.session_state.keys()):
                 if key.startswith(f"conv_{lesson_id}"):
                     del st.session_state[key]
-            if f"current_dialogue_{lesson_id}" in st.session_state:
-                del st.session_state[f"current_dialogue_{lesson_id}"]
             st.rerun()
     
     # Show completion status
@@ -1304,47 +1350,26 @@ def show_conversation_lesson(lesson):
         if lesson_id in st.session_state.completed_lessons:
             st.success("✅ Completed!")
     
-    # Randomize dialogue if not already set
+    # Select a random dialogue set if not already selected
     if f"current_dialogue_{lesson_id}" not in st.session_state:
-        # Select a subset of the dialogue to show
-        dialogue_length = len(lesson["dialogue"])
-        start_idx = random.randint(0, max(0, dialogue_length - 4))  # Show 4 exchanges at a time
-        st.session_state[f"current_dialogue_{lesson_id}"] = lesson["dialogue"][start_idx:start_idx + 4]
+        st.session_state[f"current_dialogue_{lesson_id}"] = random.choice(lesson["dialogue"])
     
-    all_responses_correct = True
-    
-    for i, dialogue in enumerate(st.session_state[f"current_dialogue_{lesson_id}"]):
-        # Check if it's the system/instructor speaking
-        if "text" in dialogue and "translation" in dialogue:
-            with st.chat_message(dialogue["speaker"]):
-                st.write(dialogue["text"])
-                st.caption(dialogue["translation"])
-        
-        # Check if it's the user's turn to respond
-        if "options" in dialogue and "translations" in dialogue:
+    # Show the current dialogue
+    for i, exchange in enumerate(st.session_state[f"current_dialogue_{lesson_id}"]):
+        if "text" in exchange:
+            with st.chat_message(exchange["speaker"]):
+                st.write(exchange["text"])
+                st.caption(exchange["translation"])
+        if "options" in exchange:
             with st.chat_message("You"):
                 response = st.radio(
                     "Choose your response:",
-                    dialogue["options"],
+                    exchange["options"],
                     key=f"conv_{lesson_id}_{i}"
                 )
                 if st.button("Respond", key=f"respond_{lesson_id}_{i}"):
-                    st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    
-                    idx = dialogue["options"].index(response)
-                    
-                    attempt_result = {
-                        "lesson_id": lesson_id,
-                        "lesson_title": lesson["title"],
-                        "level": st.session_state.current_lesson,
-                        "timestamp": st.session_state.last_attempt_time[lesson_id],
-                        "correct": True,  # For conversation, we consider all responses valid
-                        "user_answer": response,
-                        "correct_answer": dialogue["translations"][idx]
-                    }
-                    st.session_state.lesson_history.append(attempt_result)
-                    
-                    st.success(f"Translation: {dialogue['translations'][idx]}")
+                    idx = exchange["options"].index(response)
+                    st.success(f"Translation: {exchange['translations'][idx]}")
                     st.session_state.completed_lessons.add(lesson_id)
 
 def show_audio_lesson(lesson):
