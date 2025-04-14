@@ -460,6 +460,26 @@ lessons = {
                     }
                 ]
             }
+        ],
+        "audio_practice": [
+            {
+                "id": "int-audio-1",
+                "type": "audio",
+                "title": "Intermediate Pronunciation",
+                "audio_url": "https://example.com/audio/intermediate_pronunciation.mp3",
+                "exercises": [
+                    {
+                        "word": "desarrollador",
+                        "translation": "developer",
+                        "pronunciation": "des-a-rro-ya-DOR"
+                    },
+                    {
+                        "word": "biblioteca",
+                        "translation": "library",
+                        "pronunciation": "bee-blee-o-TE-ka"
+                    }
+                ]
+            }
         ]
     },
     "advanced": {
@@ -546,6 +566,26 @@ lessons = {
                         "question": "Complete: 'No todo es ____ o negro'",
                         "options": ["gris", "azul", "blanco", "verde"],
                         "correct": 2
+                    }
+                ]
+            }
+        ],
+        "audio_practice": [
+            {
+                "id": "adv-audio-1",
+                "type": "audio",
+                "title": "Advanced Pronunciation",
+                "audio_url": "https://example.com/audio/advanced_pronunciation.mp3",
+                "exercises": [
+                    {
+                        "word": "desarrollándose",
+                        "translation": "developing oneself",
+                        "pronunciation": "des-a-rro-YAN-do-se"
+                    },
+                    {
+                        "word": "estadounidense",
+                        "translation": "American",
+                        "pronunciation": "es-ta-do-u-ni-DEN-se"
                     }
                 ]
             }
