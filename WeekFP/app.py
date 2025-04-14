@@ -1253,50 +1253,33 @@ def show_placement_test():
                 st.rerun()
 
 def show_lesson_menu(level):
-    st.title(f"{level.title()} Level - Choose Your Learning Style")
+    st.title(f"{level.title()} Level Lessons")
     
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("🔤 Translation Exercises")
-        if st.button("Practice Translation", key=f"{level}_trans"):
-            st.session_state.lesson_type = "translation"
-            st.rerun()
-            
-        st.subheader("📝 Multiple Choice")
-        if st.button("Multiple Choice Questions", key=f"{level}_mc"):
-            st.session_state.lesson_type = "multiple_choice"
-            st.rerun()
-            
-        st.subheader("🎵 Audio Lessons")
-        if st.button("Practice Pronunciation", key=f"{level}_audio"):
-            st.session_state.lesson_type = "audio_practice"
-            st.rerun()
-            
-        st.subheader("🎼 Learn with Songs")
-        if st.button("Song Lessons", key=f"{level}_song"):
-            st.session_state.lesson_type = "song_lessons"
-            st.rerun()
-            
-    with col2:
-        st.subheader("✍️ Fill in the Blanks")
-        if st.button("Fill in the Blanks", key=f"{level}_fb"):
-            st.session_state.lesson_type = "fill_blank"
-            st.rerun()
-            
-        st.subheader("💭 Conversation Practice")
-        if st.button("Practice Conversations", key=f"{level}_conv"):
-            st.session_state.lesson_type = "conversation"
-            st.rerun()
-            
-        st.subheader("🎥 Video Vocabulary")
-        if st.button("Learn with Videos", key=f"{level}_vid"):
-            st.session_state.lesson_type = "video_vocabulary"
-            st.rerun()
-            
-        st.subheader("📖 Interactive Stories")
-        if st.button("Story Adventures", key=f"{level}_story"):
-            st.session_state.lesson_type = "interactive_stories"
-            st.rerun()
+    # Group lessons by type
+    for lesson_type in lessons[level]:
+        # Convert lesson type to display name
+        display_name = lesson_type.replace("_", " ").title()
+        
+        # Create a section for each lesson type
+        st.header(display_name)
+        
+        # Show lessons of this type
+        for lesson in lessons[level][lesson_type]:
+            col1, col2 = st.columns([4, 1])
+            with col1:
+                if st.button(f"Start: {lesson['title']}", key=f"start_{lesson['id']}"):
+                    st.session_state.lesson_type = lesson_type
+                    st.session_state.current_lesson_title = lesson['title']  # Store the title
+                    st.rerun()
+            with col2:
+                if lesson["id"] in st.session_state.completed_lessons:
+                    st.success("✅ Completed")
+
+def show_lesson_header():
+    # Show the lesson title at the top
+    if hasattr(st.session_state, 'current_lesson_title'):
+        st.title(st.session_state.current_lesson_title)
+        st.divider()
 
 def show_multiple_choice_lesson(lesson):
     lesson_id = lesson["id"]
@@ -1747,17 +1730,18 @@ def main():
         show_placement_test()
     elif st.session_state.current_lesson is None:
         show_hero()
-        show_progress_sidebar()  # Show overall progress on home page
+        show_progress_sidebar()
     else:
         level = st.session_state.current_lesson
-        show_progress_sidebar(level)  # Show level-specific progress
+        show_progress_sidebar(level)
         
         # Show back button to return to level selection
         if st.button("← Back to Level Selection", key="back_to_levels"):
-            st.session_state.current_lesson = None  # Reset current lesson
-            st.session_state.lesson_type = None    # Reset lesson type
-            st.session_state.user_answer = []      # Reset any user answers
-            st.session_state.shuffled_words = None # Reset shuffled words
+            st.session_state.current_lesson = None
+            st.session_state.lesson_type = None
+            st.session_state.user_answer = []
+            st.session_state.shuffled_words = None
+            st.session_state.current_lesson_title = None  # Clear the title
             st.rerun()
         
         if st.session_state.lesson_type is None:
@@ -1766,11 +1750,15 @@ def main():
             # Show back button to return to lesson type selection
             if st.button("← Back to Lesson Types", key="back_to_types"):
                 st.session_state.lesson_type = None
+                st.session_state.current_lesson_title = None  # Clear the title
                 st.rerun()
+            
+            # Show the lesson title at the top
+            show_lesson_header()
             
             lesson_type = st.session_state.lesson_type
             for lesson in lessons[level][lesson_type]:
-                with st.expander(f"Lesson: {lesson['title']}", expanded=True):
+                with st.expander(f"Lesson Content", expanded=True):
                     if lesson_type == "translation":
                         show_lesson(level, lesson)
                     elif lesson_type == "multiple_choice":
