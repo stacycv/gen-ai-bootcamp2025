@@ -230,6 +230,21 @@ lessons = {
                         "question": "Which means 'good morning'?",
                         "options": ["buenas noches", "buenos días", "buenas tardes", "adiós"],
                         "correct": 1
+                    },
+                    {
+                        "question": "How do you say 'thank you'?",
+                        "options": ["gracias", "por favor", "de nada", "hola"],
+                        "correct": 0
+                    },
+                    {
+                        "question": "What is 'water' in Spanish?",
+                        "options": ["vino", "agua", "leche", "café"],
+                        "correct": 1
+                    },
+                    {
+                        "question": "Which means 'hello'?",
+                        "options": ["adiós", "hasta luego", "hola", "chao"],
+                        "correct": 2
                     }
                 ]
             }
@@ -249,6 +264,21 @@ lessons = {
                         "sentence": "Ella ___ en Madrid (vivir)",
                         "correct": "vive",
                         "hint": "Third person singular of 'vivir'"
+                    },
+                    {
+                        "sentence": "Nosotros ___ pizza (comer)",
+                        "correct": "comemos",
+                        "hint": "First person plural of 'comer'"
+                    },
+                    {
+                        "sentence": "Tú ___ español (hablar)",
+                        "correct": "hablas",
+                        "hint": "Second person singular of 'hablar'"
+                    },
+                    {
+                        "sentence": "Ellos ___ música (escuchar)",
+                        "correct": "escuchan",
+                        "hint": "Third person plural of 'escuchar'"
                     }
                 ]
             }
@@ -977,17 +1007,41 @@ def show_multiple_choice_lesson(lesson):
     lesson_id = lesson["id"]
     st.subheader(lesson["title"])
     
-    # Show completion status
-    if lesson_id in st.session_state.completed_lessons:
-        st.success("✅ Completed!")
-    if lesson_id in st.session_state.last_attempt_time:
-        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    # Add refresh button at the top
+    col1, col2 = st.columns([4, 1])
+    with col2:
+        if st.button("🔄 New Questions", key=f"refresh_{lesson_id}"):
+            # Reset any stored answers
+            for key in list(st.session_state.keys()):
+                if key.startswith(f"mc_{lesson_id}"):
+                    del st.session_state[key]
+            st.rerun()
     
-    for i, q in enumerate(lesson["questions"]):
+    # Show completion status
+    with col1:
+        if lesson_id in st.session_state.completed_lessons:
+            st.success("✅ Completed!")
+        if lesson_id in st.session_state.last_attempt_time:
+            st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    
+    # Randomize questions order if not already set
+    if f"shuffled_questions_{lesson_id}" not in st.session_state:
+        st.session_state[f"shuffled_questions_{lesson_id}"] = random.sample(lesson["questions"], len(lesson["questions"]))
+    
+    # Show randomized questions
+    for i, q in enumerate(st.session_state[f"shuffled_questions_{lesson_id}"]):
         st.write(f"Question {i+1}: {q['question']}")
+        
+        # Randomize options too
+        if f"shuffled_options_{lesson_id}_{i}" not in st.session_state:
+            options = list(enumerate(q["options"]))
+            random.shuffle(options)
+            st.session_state[f"shuffled_options_{lesson_id}_{i}"] = options
+        
+        # Show randomized options
         answer = st.radio(
             "Select your answer:",
-            q["options"],
+            [opt[1] for opt in st.session_state[f"shuffled_options_{lesson_id}_{i}"]],
             key=f"mc_{lesson_id}_{i}"
         )
         
@@ -1152,12 +1206,24 @@ def show_audio_lesson(lesson):
             st.rerun()
 
 def show_song_lesson(lesson):
+    lesson_id = lesson["id"]
     st.subheader(lesson["title"])
     
-    # Show YouTube video
+    # Add refresh button
+    col1, col2 = st.columns([4, 1])
+    with col2:
+        if st.button("🔄 New Questions", key=f"refresh_{lesson_id}"):
+            for key in list(st.session_state.keys()):
+                if key.startswith(f"song_{lesson_id}"):
+                    del st.session_state[key]
+            if f"shuffled_exercises_{lesson_id}" in st.session_state:
+                del st.session_state[f"shuffled_exercises_{lesson_id}"]
+            st.rerun()
+    
+    # Show video
     st.video(lesson["video_url"])
     
-    # Show lyrics side by side
+    # Show lyrics
     st.subheader("Lyrics")
     for line in lesson["lyrics"]:
         col1, col2 = st.columns(2)
@@ -1166,14 +1232,20 @@ def show_song_lesson(lesson):
         with col2:
             st.write(f"🇬🇧 {line['english']}")
     
-    # Simple practice exercises
+    # Randomize exercises
+    if f"shuffled_exercises_{lesson_id}" not in st.session_state:
+        st.session_state[f"shuffled_exercises_{lesson_id}"] = random.sample(
+            lesson["exercises"], len(lesson["exercises"])
+        )
+    
+    # Show exercises
     st.subheader("Practice")
-    for i, ex in enumerate(lesson["exercises"]):
+    for i, ex in enumerate(st.session_state[f"shuffled_exercises_{lesson_id}"]):
         user_answer = st.text_input(
             ex["question"],
-            key=f"song_ex_{lesson['id']}_{i}"
+            key=f"song_{lesson_id}_{i}"
         )
-        if st.button("Check Answer", key=f"check_song_{lesson['id']}_{i}"):
+        if st.button("Check Answer", key=f"check_song_{lesson_id}_{i}"):
             if user_answer.lower().strip() == ex["answer"].lower():
                 st.success("¡Correcto! 🎉")
             else:
@@ -1183,28 +1255,53 @@ def show_video_lesson(lesson):
     lesson_id = lesson["id"]
     st.subheader(lesson["title"])
     
-    # Show completion status
-    if lesson_id in st.session_state.completed_lessons:
-        st.success("✅ Completed!")
-    if lesson_id in st.session_state.last_attempt_time:
-        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    # Add refresh button at the top
+    col1, col2 = st.columns([4, 1])
+    with col2:
+        if st.button("🔄 New Questions", key=f"refresh_{lesson_id}"):
+            # Reset stored answers and shuffled questions
+            for key in list(st.session_state.keys()):
+                if key.startswith(f"vid_{lesson_id}"):
+                    del st.session_state[key]
+            if f"shuffled_exercises_{lesson_id}" in st.session_state:
+                del st.session_state[f"shuffled_exercises_{lesson_id}"]
+            st.rerun()
     
-    # Show video first
+    # Show completion status
+    with col1:
+        if lesson_id in st.session_state.completed_lessons:
+            st.success("✅ Completed!")
+    
+    # Show video
     st.video(lesson["video_url"])
+    
+    # Randomize exercises if not already shuffled
+    if f"shuffled_exercises_{lesson_id}" not in st.session_state:
+        st.session_state[f"shuffled_exercises_{lesson_id}"] = random.sample(
+            lesson["exercises"], len(lesson["exercises"])
+        )
     
     # Show exercises
     st.subheader("Practice What You Learned")
-    all_correct = True  # Track if all answers are correct
+    all_correct = True
     
-    for i, ex in enumerate(lesson["exercises"]):
+    for i, ex in enumerate(st.session_state[f"shuffled_exercises_{lesson_id}"]):
         st.write(f"Question {i+1}: {ex['question']}")
+        
+        # Randomize options for each question
+        if f"shuffled_options_{lesson_id}_{i}" not in st.session_state:
+            options = list(enumerate(ex["options"]))
+            random.shuffle(options)
+            st.session_state[f"shuffled_options_{lesson_id}_{i}"] = options
+        
         answer = st.radio(
             "Select your answer:",
-            ex["options"],
+            [opt[1] for opt in st.session_state[f"shuffled_options_{lesson_id}_{i}"]],
             key=f"vid_{lesson_id}_{i}"
         )
         
-        if st.button("Check Answer", key=f"check_vid_{lesson_id}_{i}"):
+        check_key = f"check_vid_{lesson_id}_{i}"
+        if st.button("Check Answer", key=check_key):
             st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             
             is_correct = ex["options"].index(answer) == ex["correct"]
