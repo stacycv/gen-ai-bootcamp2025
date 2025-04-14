@@ -488,6 +488,30 @@ lessons = {
                 "title": "At the Restaurant",
                 "content": {}  # Content handled in show_interactive_story function
             }
+        ],
+        "song_lessons": [
+            {
+                "id": "int-song-1",
+                "type": "song",
+                "title": "Spanish Verb Tenses Song",
+                "video_url": "https://www.youtube.com/embed/DsRKoZGaoEM",
+                "lyrics": [
+                    {
+                        "spanish": "Presente, pasado, futuro",
+                        "english": "Present, past, future"
+                    },
+                    {
+                        "spanish": "Aprendo español cantando",
+                        "english": "I learn Spanish by singing"
+                    }
+                ],
+                "exercises": [
+                    {
+                        "question": "What does 'presente' mean?",
+                        "answer": "present"
+                    }
+                ]
+            }
         ]
     },
     "advanced": {
@@ -604,6 +628,30 @@ lessons = {
                 "type": "story",
                 "title": "Business Meeting",
                 "content": {}  # Content handled in show_interactive_story function
+            }
+        ],
+        "song_lessons": [
+            {
+                "id": "adv-song-1",
+                "type": "song",
+                "title": "Advanced Spanish Expressions",
+                "video_url": "https://www.youtube.com/embed/DsRKoZGaoEM",
+                "lyrics": [
+                    {
+                        "spanish": "Modismos y expresiones",
+                        "english": "Idioms and expressions"
+                    },
+                    {
+                        "spanish": "Cada día aprendo más",
+                        "english": "Every day I learn more"
+                    }
+                ],
+                "exercises": [
+                    {
+                        "question": "What does 'cada día' mean?",
+                        "answer": "every day"
+                    }
+                ]
             }
         ]
     }
