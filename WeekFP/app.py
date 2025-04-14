@@ -309,22 +309,22 @@ lessons = {
             {
                 "id": "beg-song-1",
                 "type": "song",
-                "title": "Colors and Numbers Song",
-                "video_url": "https://www.youtube.com/embed/DsRKoZGaoEM",  # Spanish Colors Song
+                "title": "La Bamba - Traditional Mexican Song",
+                "video_url": "https://www.youtube.com/embed/Jp6j5HJ-Cok",
                 "lyrics": [
                     {
-                        "spanish": "Los colores, los colores",
-                        "english": "The colors, the colors"
+                        "spanish": "Para bailar la bamba",
+                        "english": "To dance the bamba"
                     },
                     {
-                        "spanish": "Rojo, azul y verde",
-                        "english": "Red, blue and green"
+                        "spanish": "Se necesita una poca de gracia",
+                        "english": "You need a little grace"
                     }
                 ],
                 "exercises": [
                     {
-                        "question": "What does 'rojo' mean?",
-                        "answer": "red"
+                        "question": "What does 'bailar' mean?",
+                        "answer": "dance"
                     }
                 ]
             }
@@ -488,22 +488,22 @@ lessons = {
             {
                 "id": "int-song-1",
                 "type": "song",
-                "title": "Spanish Verb Tenses Song",
-                "video_url": "https://www.youtube.com/embed/DsRKoZGaoEM",
+                "title": "Despacito - Luis Fonsi",
+                "video_url": "https://www.youtube.com/embed/kJQP7kiw5Fk",
                 "lyrics": [
                     {
-                        "spanish": "Presente, pasado, futuro",
-                        "english": "Present, past, future"
+                        "spanish": "Despacito, quiero respirar tu cuello despacito",
+                        "english": "Slowly, I want to breathe your neck slowly"
                     },
                     {
-                        "spanish": "Aprendo español cantando",
-                        "english": "I learn Spanish by singing"
+                        "spanish": "Deja que te diga cosas al oído",
+                        "english": "Let me whisper things in your ear"
                     }
                 ],
                 "exercises": [
                     {
-                        "question": "What does 'presente' mean?",
-                        "answer": "present"
+                        "question": "What does 'despacito' mean?",
+                        "answer": "slowly"
                     }
                 ]
             }
@@ -640,22 +640,22 @@ lessons = {
             {
                 "id": "adv-song-1",
                 "type": "song",
-                "title": "Advanced Spanish Expressions",
-                "video_url": "https://www.youtube.com/embed/DsRKoZGaoEM",
+                "title": "Vivir Mi Vida - Marc Anthony",
+                "video_url": "https://www.youtube.com/embed/YXnjy5YlDwk",
                 "lyrics": [
                     {
-                        "spanish": "Modismos y expresiones",
-                        "english": "Idioms and expressions"
+                        "spanish": "Voy a reír, voy a bailar",
+                        "english": "I'm going to laugh, I'm going to dance"
                     },
                     {
-                        "spanish": "Cada día aprendo más",
-                        "english": "Every day I learn more"
+                        "spanish": "Vivir mi vida lalalalá",
+                        "english": "Live my life lalalalá"
                     }
                 ],
                 "exercises": [
                     {
-                        "question": "What does 'cada día' mean?",
-                        "answer": "every day"
+                        "question": "What does 'vivir mi vida' mean?",
+                        "answer": "live my life"
                     }
                 ]
             }
