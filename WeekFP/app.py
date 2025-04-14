@@ -440,6 +440,26 @@ lessons = {
                     }
                 ]
             }
+        ],
+        "video_vocabulary": [
+            {
+                "id": "int-vid-1",
+                "type": "video",
+                "title": "Advanced Colors and Descriptions",
+                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",
+                "exercises": [
+                    {
+                        "question": "What is 'dark blue' in Spanish?",
+                        "options": ["azul oscuro", "azul claro", "azul marino", "azul celeste"],
+                        "correct": 0
+                    },
+                    {
+                        "question": "How do you say 'light green'?",
+                        "options": ["verde oscuro", "verde claro", "verde olivo", "verde lima"],
+                        "correct": 1
+                    }
+                ]
+            }
         ]
     },
     "advanced": {
@@ -506,6 +526,26 @@ lessons = {
                             "I have a lot of experience in this area",
                             "I'm looking for new professional challenges"
                         ]
+                    }
+                ]
+            }
+        ],
+        "video_vocabulary": [
+            {
+                "id": "adv-vid-1",
+                "type": "video",
+                "title": "Color Expressions and Idioms",
+                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",
+                "exercises": [
+                    {
+                        "question": "What does 'ponerse rojo' mean?",
+                        "options": ["to get red", "to blush", "to paint red", "to wear red"],
+                        "correct": 1
+                    },
+                    {
+                        "question": "Complete: 'No todo es ____ o negro'",
+                        "options": ["gris", "azul", "blanco", "verde"],
+                        "correct": 2
                     }
                 ]
             }
