@@ -3,185 +3,147 @@ import random
 from datetime import datetime
 import string
 
-# Configure page settings with modern emojis
+# Configure page settings
 st.set_page_config(
-    page_title="¡Aprende Español! ✨",
-    page_icon="🌮",
+    page_title="¡Aprende Español! 🇪🇸",
+    page_icon="🇪🇸",
     layout="wide"
 )
 
-# Modern Gen Z-inspired CSS
+# Spanish-themed modern educational CSS
 st.markdown("""
     <style>
-    /* Modern color palette */
+    /* Spanish flag-inspired color palette */
     :root {
-        --neon-pink: #FF2E63;
-        --electric-purple: #A239EA;
-        --cyber-blue: #4FFFB0;
-        --sunny-yellow: #FFE867;
-        --dark-mode: #1A1A1A;
-        --light-text: #FFFFFF;
+        --spain-red: #FF0000;
+        --spain-yellow: #FFC400;
+        --spain-dark-red: #C60001;
+        --neutral-light: #F8F9FA;
+        --neutral-dark: #2C3E50;
+        --accent-blue: #4A90E2;
     }
 
-    /* Dark mode inspired main background */
     .main {
-        background-color: var(--dark-mode);
-        color: var(--light-text);
-        font-family: 'Inter', sans-serif;
+        background-color: var(--neutral-light);
+        color: var(--neutral-dark);
+        font-family: 'Helvetica Neue', sans-serif;
     }
 
-    /* Gradient text headers */
+    /* Modern educational headers */
     h1 {
-        background: linear-gradient(120deg, var(--neon-pink), var(--cyber-blue));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 3.5rem;
-        font-weight: 800;
-        text-align: center;
-        margin: 2rem 0;
+        color: var(--spain-dark-red);
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        border-bottom: 3px solid var(--spain-yellow);
+        padding-bottom: 0.5rem;
     }
 
     h2, h3 {
-        color: var(--cyber-blue);
-        font-weight: 700;
+        color: var(--neutral-dark);
+        font-weight: 600;
     }
 
-    /* Modern neon buttons */
+    /* Clean, modern buttons */
     .stButton>button {
-        background: var(--neon-pink);
-        border: 2px solid var(--cyber-blue);
+        background-color: var(--spain-red);
         color: white;
-        padding: 15px 30px;
-        border-radius: 15px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 15px rgba(255, 46, 99, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .stButton>button:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 0 25px rgba(255, 46, 99, 0.5);
-        background: linear-gradient(45deg, var(--neon-pink), var(--electric-purple));
+        background-color: var(--spain-dark-red);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    /* Cool card design */
+    /* Educational cards */
     .lesson-card {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 25px;
-        margin: 20px 0;
-        transition: all 0.3s ease;
+        background-color: white;
+        border-left: 4px solid var(--spain-red);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
-    .lesson-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 30px rgba(74, 255, 176, 0.2);
-    }
-
-    /* Modern progress bars */
+    /* Progress indicators */
     .stProgress > div > div {
-        background: linear-gradient(90deg, var(--neon-pink), var(--cyber-blue));
+        background: linear-gradient(90deg, var(--spain-red), var(--spain-yellow));
         border-radius: 10px;
-        height: 10px;
     }
 
-    /* Stylish metrics */
-    .stMetric {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 15px;
-        padding: 20px;
-        border-left: 4px solid var(--cyber-blue);
-        backdrop-filter: blur(10px);
+    /* Metrics in sidebar */
+    .sidebar .stMetric {
+        background-color: white;
+        border-radius: 8px;
+        padding: 1rem;
+        border-left: 3px solid var(--spain-yellow);
+        margin: 0.5rem 0;
     }
 
-    /* Cool chat bubbles */
+    /* Chat messages */
     .stChatMessage {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--cyber-blue);
-        border-radius: 20px;
-        padding: 15px;
-        margin: 10px 0;
-        backdrop-filter: blur(5px);
+        background-color: white;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 1rem;
     }
 
-    /* Success/Error messages with modern style */
+    /* Success/Error messages */
     .stSuccess {
-        background: linear-gradient(45deg, #00f2c3, #0098f0);
-        border: none;
-        border-radius: 15px;
-        padding: 15px;
+        background-color: #28A745;
         color: white;
-        font-weight: 600;
+        border-radius: 8px;
+        padding: 0.75rem;
     }
 
     .stError {
-        background: linear-gradient(45deg, var(--neon-pink), #ff6b6b);
-        border: none;
-        border-radius: 15px;
-        padding: 15px;
+        background-color: var(--spain-red);
         color: white;
-        font-weight: 600;
+        border-radius: 8px;
+        padding: 0.75rem;
     }
 
-    /* Modern radio buttons */
+    /* Info messages */
+    .stInfo {
+        background-color: var(--spain-yellow);
+        color: var(--neutral-dark);
+        border-radius: 8px;
+        padding: 0.75rem;
+    }
+
+    /* Radio buttons */
     .stRadio > label {
-        color: var(--cyber-blue) !important;
-        font-weight: 600;
-        font-size: 1.1rem;
+        color: var(--neutral-dark) !important;
+        font-weight: 500;
     }
 
-    /* Sleek text inputs */
+    /* Text inputs */
     .stTextInput > div > div > input {
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px solid var(--cyber-blue);
-        border-radius: 12px;
-        color: white;
-        padding: 15px;
-        font-size: 1.1rem;
+        border: 2px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 0.75rem;
     }
 
-    /* Cool expander headers */
+    /* Expander headers */
     .streamlit-expanderHeader {
-        background: linear-gradient(45deg, var(--neon-pink), var(--electric-purple));
-        border-radius: 12px;
-        padding: 15px;
-        color: white !important;
-        font-weight: 600;
+        background-color: white;
+        border-left: 3px solid var(--spain-red);
+        border-radius: 8px;
+        padding: 0.75rem;
+        font-weight: 500;
     }
 
-    /* Emoji animations */
-    .emoji {
-        display: inline-block;
-        animation: float 2s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: var(--dark-mode);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: var(--neon-pink);
-        border-radius: 5px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: var(--electric-purple);
+    /* Sidebar styling */
+    .sidebar {
+        background-color: var(--neutral-light);
+        border-right: 1px solid #E0E0E0;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -500,10 +462,10 @@ placement_test = {
 
 def show_hero():
     st.markdown("""
-        <div style='text-align: center; padding: 40px 0;'>
-            <h1>¡Aprende Español! ✨</h1>
-            <p style='font-size: 1.5em; color: #4FFFB0; margin: 20px 0;'>
-                Level up your Spanish game! 🚀
+        <div style='text-align: center; padding: 2rem 0;'>
+            <h1>¡Bienvenidos a Español! 🇪🇸</h1>
+            <p style='font-size: 1.25rem; color: #2C3E50; margin: 1rem 0;'>
+                Start your Spanish learning journey today
             </p>
         </div>
     """, unsafe_allow_html=True)
