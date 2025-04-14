@@ -1057,23 +1057,23 @@ def show_hero():
         </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("### Choose Your Vibe 💫")
+    st.markdown("### Select Your Level")
     
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        if st.button("🌱 Rookie\n(Beginner)"):
+        if st.button("🌱 Beginner\n(Basic Level)"):
             st.session_state.current_lesson = "beginner"
             st.rerun()
     with col2:
-        if st.button("💪 Skilled\n(Intermediate)"):
+        if st.button("💪 Intermediate\n(Medium Level)"):
             st.session_state.current_lesson = "intermediate"
             st.rerun()
     with col3:
-        if st.button("🔥 Pro\n(Advanced)"):
+        if st.button("🔥 Advanced\n(High Level)"):
             st.session_state.current_lesson = "advanced"
             st.rerun()
     with col4:
-        if st.button("✨ Find Your Level\n(Placement Test)"):
+        if st.button("✨ Not Sure?\n(Take Placement Test)"):
             st.session_state.placement_test_active = True
             st.rerun()
 
