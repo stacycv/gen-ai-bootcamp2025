@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 from datetime import datetime
+import string
 
 # Configure page settings
 st.set_page_config(
@@ -330,13 +331,25 @@ def show_lesson(level, lesson):
         st.session_state.shuffled_words = None
         st.rerun()
     
-    # Modify the Check Answer button section to track history
+    # Modify the Check Answer button section
     if st.button("Check Answer", key=f"check_{lesson_id}"):
         # Update last attempt time
         st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
-        user_translation = " ".join(current_translation.strip().lower().split())
-        correct_translation = " ".join(lesson["content"]["spanish"].lower().split())
+        # Clean up both answers by:
+        # 1. Converting to lowercase
+        # 2. Removing punctuation
+        # 3. Removing extra spaces
+        def clean_text(text):
+            # Remove punctuation and convert to lowercase
+            text = text.lower()
+            text = text.translate(str.maketrans("", "", string.punctuation))
+            # Remove extra spaces
+            text = " ".join(text.split())
+            return text
+        
+        user_translation = clean_text(current_translation)
+        correct_translation = clean_text(lesson["content"]["spanish"])
         
         # Add to history
         attempt_result = {
@@ -345,8 +358,8 @@ def show_lesson(level, lesson):
             "level": level,
             "timestamp": st.session_state.last_attempt_time[lesson_id],
             "correct": user_translation == correct_translation,
-            "user_answer": user_translation,
-            "correct_answer": correct_translation
+            "user_answer": current_translation,  # Keep original for history
+            "correct_answer": lesson["content"]["spanish"]  # Keep original for history
         }
         st.session_state.lesson_history.append(attempt_result)
         
@@ -357,7 +370,7 @@ def show_lesson(level, lesson):
             st.session_state.shuffled_words = None
             st.rerun()
         else:
-            st.error(f"Not quite right. Try again! Make sure your answer matches exactly: '{lesson['content']['spanish']}'")
+            st.error(f"Not quite right. Try again! Make sure your answer matches: '{lesson['content']['spanish']}'")
     
     if st.button("Show Hint", key=f"hint_button_{lesson_id}"):
         st.info("Pay attention to word order and spelling.")
