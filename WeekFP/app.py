@@ -673,34 +673,38 @@ def show_conversation_lesson(lesson):
     all_responses_correct = True
     
     for i, dialogue in enumerate(lesson["dialogue"]):
-        with st.chat_message(dialogue["speaker"]):
-            st.write(dialogue["text"])
-            st.caption(dialogue["translation"])
+        # Check if it's the system/instructor speaking
+        if "text" in dialogue and "translation" in dialogue:
+            with st.chat_message(dialogue["speaker"]):
+                st.write(dialogue["text"])
+                st.caption(dialogue["translation"])
         
-        if "options" in dialogue:
-            response = st.radio(
-                "Choose your response:",
-                dialogue["options"],
-                key=f"conv_{lesson_id}_{i}"
-            )
-            if st.button("Respond", key=f"respond_{lesson_id}_{i}"):
-                st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                
-                idx = dialogue["options"].index(response)
-                
-                attempt_result = {
-                    "lesson_id": lesson_id,
-                    "lesson_title": lesson["title"],
-                    "level": st.session_state.current_lesson,
-                    "timestamp": st.session_state.last_attempt_time[lesson_id],
-                    "correct": True,  # For conversation, we consider all responses valid
-                    "user_answer": response,
-                    "correct_answer": dialogue["translations"][idx]
-                }
-                st.session_state.lesson_history.append(attempt_result)
-                
-                st.success(f"Translation: {dialogue['translations'][idx]}")
-                st.session_state.completed_lessons.add(lesson_id)
+        # Check if it's the user's turn to respond
+        if "options" in dialogue and "translations" in dialogue:
+            with st.chat_message("You"):
+                response = st.radio(
+                    "Choose your response:",
+                    dialogue["options"],
+                    key=f"conv_{lesson_id}_{i}"
+                )
+                if st.button("Respond", key=f"respond_{lesson_id}_{i}"):
+                    st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    
+                    idx = dialogue["options"].index(response)
+                    
+                    attempt_result = {
+                        "lesson_id": lesson_id,
+                        "lesson_title": lesson["title"],
+                        "level": st.session_state.current_lesson,
+                        "timestamp": st.session_state.last_attempt_time[lesson_id],
+                        "correct": True,  # For conversation, we consider all responses valid
+                        "user_answer": response,
+                        "correct_answer": dialogue["translations"][idx]
+                    }
+                    st.session_state.lesson_history.append(attempt_result)
+                    
+                    st.success(f"Translation: {dialogue['translations'][idx]}")
+                    st.session_state.completed_lessons.add(lesson_id)
 
 def show_progress_sidebar(level=None):
     """Show progress sidebar with history and statistics"""
