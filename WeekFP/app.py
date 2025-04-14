@@ -329,7 +329,7 @@ lessons = {
                 "id": "beg-pic-1",
                 "type": "picture",
                 "title": "Basic Spanish Animals",
-                "video_url": "https://www.youtube.com/embed/J9TtDlqgKtM",  # Spanish Animals for Beginners (new working link)
+                "video_url": "https://www.youtube.com/embed/qU06yINpPrQ",  # Spanish Animals by Why Not Spanish
                 "exercises": [
                     {
                         "question": "How do you say 'dog' in Spanish?",
