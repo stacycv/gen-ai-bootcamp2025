@@ -324,30 +324,12 @@ lessons = {
                 ]
             }
         ],
-        "picture_vocabulary": [
+        "video_vocabulary": [
             {
                 "id": "beg-pic-1",
                 "type": "picture",
-                "title": "Basic Spanish Animals",
-                "video_url": "https://www.youtube.com/embed/qU06yINpPrQ",  # Spanish Animals by Why Not Spanish
-                "exercises": [
-                    {
-                        "question": "How do you say 'dog' in Spanish?",
-                        "options": ["perro", "gato", "pájaro", "pez"],
-                        "correct": 0
-                    },
-                    {
-                        "question": "What is 'cat' in Spanish?",
-                        "options": ["pájaro", "gato", "perro", "conejo"],
-                        "correct": 1
-                    }
-                ]
-            },
-            {
-                "id": "beg-pic-2",
-                "type": "picture",
                 "title": "Colors in Spanish",
-                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",  # Spanish Colors (working)
+                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",  # Spanish Colors
                 "exercises": [
                     {
                         "question": "What is 'red' in Spanish?",
@@ -358,6 +340,26 @@ lessons = {
                         "question": "How do you say 'blue'?",
                         "options": ["verde", "amarillo", "azul", "rojo"],
                         "correct": 2
+                    },
+                    {
+                        "question": "Which color is 'amarillo'?",
+                        "options": ["Red", "Green", "Blue", "Yellow"],
+                        "correct": 3
+                    },
+                    {
+                        "question": "What is 'green' in Spanish?",
+                        "options": ["azul", "verde", "rojo", "blanco"],
+                        "correct": 1
+                    },
+                    {
+                        "question": "How do you say 'white'?",
+                        "options": ["negro", "gris", "blanco", "marrón"],
+                        "correct": 2
+                    },
+                    {
+                        "question": "Which color is 'negro'?",
+                        "options": ["White", "Gray", "Brown", "Black"],
+                        "correct": 3
                     }
                 ]
             }
@@ -811,9 +813,9 @@ def show_lesson_menu(level):
             st.session_state.lesson_type = "conversation"
             st.rerun()
             
-        st.subheader("🖼️ Picture Vocabulary")
-        if st.button("Visual Learning", key=f"{level}_pic"):
-            st.session_state.lesson_type = "picture_vocabulary"
+        st.subheader("🎥 Video Vocabulary")
+        if st.button("Learn with Videos", key=f"{level}_vid"):
+            st.session_state.lesson_type = "video_vocabulary"
             st.rerun()
             
         st.subheader("📖 Interactive Stories")
@@ -998,7 +1000,7 @@ def show_song_lesson(lesson):
             else:
                 st.error(f"Try again! The answer is: {ex['answer']}")
 
-def show_picture_lesson(lesson):
+def show_video_lesson(lesson):
     st.subheader(lesson["title"])
     
     # Show video first
@@ -1211,8 +1213,8 @@ def main():
                         show_audio_lesson(lesson)
                     elif lesson_type == "song_lessons":
                         show_song_lesson(lesson)
-                    elif lesson_type == "picture_vocabulary":
-                        show_picture_lesson(lesson)
+                    elif lesson_type == "video_vocabulary":
+                        show_video_lesson(lesson)
                     elif lesson_type == "interactive_stories":
                         show_interactive_story(lesson)
 
