@@ -1137,34 +1137,38 @@ def show_audio_lesson(lesson):
     
     # Show exercises
     st.subheader("Practice Pronunciation")
-    all_practiced = True
     
     for i, ex in enumerate(lesson["exercises"]):
-        with st.expander(f"Practice: {ex['word']}", expanded=True):
+        st.markdown("---")  # Divider between exercises
+        st.write(f"### Practice: {ex['word']}")
+        
+        col1, col2 = st.columns(2)
+        with col1:
             st.write(f"**Word**: {ex['word']}")
             st.write(f"**Translation**: {ex['translation']}")
+        with col2:
             st.write(f"**Pronunciation Guide**: {ex['pronunciation']}")
             st.info(f"💡 Tip: {ex['timestamp']}")
+        
+        # Add practice confirmation
+        if st.button("I've practiced this word!", key=f"practice_{lesson_id}_{i}"):
+            st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             
-            # Add practice confirmation
-            if st.button("I've practiced this word!", key=f"practice_{lesson_id}_{i}"):
-                st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                
-                # Add to history
-                attempt_result = {
-                    "lesson_id": lesson_id,
-                    "lesson_title": lesson["title"],
-                    "level": st.session_state.current_lesson,
-                    "timestamp": st.session_state.last_attempt_time[lesson_id],
-                    "correct": True,  # Since it's self-reported practice
-                    "user_answer": "Practiced pronunciation",
-                    "correct_answer": ex['word']
-                }
-                st.session_state.lesson_history.append(attempt_result)
-                
-                st.success("¡Bien hecho! Keep practicing! 🎉")
-                st.session_state.completed_lessons.add(lesson_id)
-                st.rerun()
+            # Add to history
+            attempt_result = {
+                "lesson_id": lesson_id,
+                "lesson_title": lesson["title"],
+                "level": st.session_state.current_lesson,
+                "timestamp": st.session_state.last_attempt_time[lesson_id],
+                "correct": True,  # Since it's self-reported practice
+                "user_answer": "Practiced pronunciation",
+                "correct_answer": ex['word']
+            }
+            st.session_state.lesson_history.append(attempt_result)
+            
+            st.success("¡Bien hecho! Keep practicing! 🎉")
+            st.session_state.completed_lessons.add(lesson_id)
+            st.rerun()
 
 def show_song_lesson(lesson):
     st.subheader(lesson["title"])
