@@ -55,56 +55,91 @@ if 'placement_test_score' not in st.session_state:
     st.session_state.placement_test_score = 0
 if 'current_question' not in st.session_state:
     st.session_state.current_question = 0
+if 'lesson_type' not in st.session_state:
+    st.session_state.lesson_type = None
 
 # Sample lesson data
 lessons = {
-    "beginner": [
-        {
-            "id": "beg-1",
-            "title": "Greetings and Introductions",
-            "content": {
-                "english": "Hello, my name is John.",
-                "spanish": "Hola, mi nombre es John.",
-                "words": ["Hola", "mi", "nombre", "es", "John"]
+    "beginner": {
+        "translation": [
+            {
+                "id": "beg-trans-1",
+                "type": "translation",
+                "title": "Basic Greetings",
+                "content": {
+                    "english": "Hello, my name is John.",
+                    "spanish": "Hola, mi nombre es John.",
+                    "words": ["Hola", "mi", "nombre", "es", "John"]
+                }
+            },
+            # Add more translation exercises...
+        ],
+        "multiple_choice": [
+            {
+                "id": "beg-mc-1",
+                "type": "multiple_choice",
+                "title": "Basic Vocabulary",
+                "questions": [
+                    {
+                        "question": "What is 'apple' in Spanish?",
+                        "options": ["manzana", "naranja", "plátano", "pera"],
+                        "correct": 0
+                    },
+                    {
+                        "question": "Which means 'good morning'?",
+                        "options": ["buenas noches", "buenos días", "buenas tardes", "adiós"],
+                        "correct": 1
+                    }
+                ]
             }
-        },
-        {
-            "id": "beg-2",
-            "title": "Numbers and Counting",
-            "content": {
-                "english": "I have twenty-five books.",
-                "spanish": "Yo tengo veinticinco libros.",
-                "words": ["yo", "tengo", "veinticinco", "libros"]
+        ],
+        "fill_blank": [
+            {
+                "id": "beg-fb-1",
+                "type": "fill_blank",
+                "title": "Basic Verbs",
+                "sentences": [
+                    {
+                        "sentence": "Yo ___ un estudiante (ser)",
+                        "correct": "soy",
+                        "hint": "First person singular of 'ser'"
+                    },
+                    {
+                        "sentence": "Ella ___ en Madrid (vivir)",
+                        "correct": "vive",
+                        "hint": "Third person singular of 'vivir'"
+                    }
+                ]
             }
-        },
-        {
-            "id": "beg-3",
-            "title": "Days of the Week",
-            "content": {
-                "english": "Today is Monday and tomorrow is Tuesday.",
-                "spanish": "Hoy es lunes y mañana es martes.",
-                "words": ["Hoy", "es", "lunes", "y", "mañana", "es", "martes"]
+        ],
+        "conversation": [
+            {
+                "id": "beg-conv-1",
+                "type": "conversation",
+                "title": "At the Café",
+                "dialogue": [
+                    {
+                        "speaker": "Waiter",
+                        "text": "¡Buenos días! ¿Qué desea?",
+                        "translation": "Good morning! What would you like?"
+                    },
+                    {
+                        "speaker": "You",
+                        "options": [
+                            "Un café, por favor",
+                            "Quiero un té",
+                            "Nada, gracias"
+                        ],
+                        "translations": [
+                            "A coffee, please",
+                            "I want a tea",
+                            "Nothing, thank you"
+                        ]
+                    }
+                ]
             }
-        },
-        {
-            "id": "beg-4",
-            "title": "Colors",
-            "content": {
-                "english": "The sky is blue and the grass is green.",
-                "spanish": "El cielo es azul y el pasto es verde.",
-                "words": ["El", "cielo", "es", "azul", "y", "el", "pasto", "es", "verde"]
-            }
-        },
-        {
-            "id": "beg-5",
-            "title": "Family Members",
-            "content": {
-                "english": "This is my mother and my father.",
-                "spanish": "Esta es mi madre y mi padre.",
-                "words": ["Esta", "es", "mi", "madre", "y", "mi", "padre"]
-            }
-        }
-    ],
+        ]
+    },
     "intermediate": [
         {
             "id": "int-1",
@@ -401,46 +436,121 @@ def show_placement_test():
                 st.session_state.current_question = 0
                 st.rerun()
 
+def show_lesson_menu(level):
+    st.title(f"{level.title()} Level - Choose Your Learning Style")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("🔤 Translation Exercises")
+        if st.button("Practice Translation", key=f"{level}_trans"):
+            st.session_state.lesson_type = "translation"
+            st.rerun()
+            
+        st.subheader("📝 Multiple Choice")
+        if st.button("Multiple Choice Questions", key=f"{level}_mc"):
+            st.session_state.lesson_type = "multiple_choice"
+            st.rerun()
+            
+    with col2:
+        st.subheader("✍️ Fill in the Blanks")
+        if st.button("Fill in the Blanks", key=f"{level}_fb"):
+            st.session_state.lesson_type = "fill_blank"
+            st.rerun()
+            
+        st.subheader("💭 Conversation Practice")
+        if st.button("Practice Conversations", key=f"{level}_conv"):
+            st.session_state.lesson_type = "conversation"
+            st.rerun()
+
+def show_multiple_choice_lesson(lesson):
+    st.subheader(lesson["title"])
+    
+    for i, q in enumerate(lesson["questions"]):
+        st.write(f"Question {i+1}: {q['question']}")
+        answer = st.radio(
+            "Select your answer:",
+            q["options"],
+            key=f"mc_{lesson['id']}_{i}"
+        )
+        
+        check_key = f"check_mc_{lesson['id']}_{i}"
+        if st.button("Check Answer", key=check_key):
+            if q["options"].index(answer) == q["correct"]:
+                st.success("¡Correcto! 🎉")
+            else:
+                st.error(f"Incorrect. The correct answer was: {q['options'][q['correct']]}")
+
+def show_fill_blank_lesson(lesson):
+    st.subheader(lesson["title"])
+    
+    for i, sentence in enumerate(lesson["sentences"]):
+        st.write(sentence["sentence"])
+        user_answer = st.text_input(
+            "Your answer:",
+            key=f"fb_{lesson['id']}_{i}"
+        )
+        
+        col1, col2 = st.columns([1, 4])
+        with col1:
+            if st.button("Hint", key=f"hint_{lesson['id']}_{i}"):
+                st.info(sentence["hint"])
+        with col2:
+            if st.button("Check", key=f"check_{lesson['id']}_{i}"):
+                if user_answer.lower().strip() == sentence["correct"].lower():
+                    st.success("¡Correcto! 🎉")
+                else:
+                    st.error(f"Incorrect. The correct answer was: {sentence['correct']}")
+
+def show_conversation_lesson(lesson):
+    st.subheader(lesson["title"])
+    
+    for i, dialogue in enumerate(lesson["dialogue"]):
+        with st.chat_message(dialogue["speaker"]):
+            st.write(dialogue["text"])
+            st.caption(dialogue["translation"])
+        
+        if "options" in dialogue:
+            response = st.radio(
+                "Choose your response:",
+                dialogue["options"],
+                key=f"conv_{lesson['id']}_{i}"
+            )
+            if st.button("Respond", key=f"respond_{lesson['id']}_{i}"):
+                idx = dialogue["options"].index(response)
+                st.success(f"Translation: {dialogue['translations'][idx]}")
+
 def main():
     if st.session_state.placement_test_active:
         show_placement_test()
     elif st.session_state.current_lesson is None:
-        # Reset session state when returning to home
-        st.session_state.user_answer = []
-        st.session_state.shuffled_words = None
-        st.session_state.previous_lesson = None
         show_hero()
     else:
-        # Reset answer when changing lessons
-        if st.session_state.previous_lesson != st.session_state.current_lesson:
-            st.session_state.user_answer = []
-            st.session_state.shuffled_words = None
-            st.session_state.previous_lesson = st.session_state.current_lesson
-            
         level = st.session_state.current_lesson
-        st.sidebar.title(f"{level.title()} Level")
         
-        # Show progress
-        completed = len([l for l in lessons[level] if l["id"] in st.session_state.completed_lessons])
-        total = len(lessons[level])
-        st.sidebar.progress(completed / total)
-        st.sidebar.write(f"Completed: {completed}/{total} lessons")
+        # Show back button to return to level selection
+        if st.button("← Back to Level Selection", key="back_to_levels"):
+            st.session_state.lesson_type = None
+            st.rerun()
         
-        # Show lesson history in sidebar
-        if st.session_state.lesson_history:
-            st.sidebar.title("Recent Activity")
-            for attempt in reversed(st.session_state.lesson_history[-5:]):  # Show last 5 attempts
-                with st.sidebar.expander(f"{attempt['lesson_title']} - {attempt['timestamp']}"):
-                    st.write("Level:", attempt['level'])
-                    st.write("Result:", "✅ Correct" if attempt['correct'] else "❌ Incorrect")
-                    if not attempt['correct']:
-                        st.write("Your answer:", attempt['user_answer'])
-                        st.write("Correct answer:", attempt['correct_answer'])
-        
-        # Show available lessons
-        for lesson in lessons[level]:
-            with st.expander(f"Lesson: {lesson['title']}", expanded=True):
-                show_lesson(level, lesson)
+        if st.session_state.lesson_type is None:
+            show_lesson_menu(level)
+        else:
+            # Show back button to return to lesson type selection
+            if st.button("← Back to Lesson Types", key="back_to_types"):
+                st.session_state.lesson_type = None
+                st.rerun()
+            
+            lesson_type = st.session_state.lesson_type
+            for lesson in lessons[level][lesson_type]:
+                with st.expander(f"Lesson: {lesson['title']}", expanded=True):
+                    if lesson_type == "translation":
+                        show_lesson(level, lesson)
+                    elif lesson_type == "multiple_choice":
+                        show_multiple_choice_lesson(lesson)
+                    elif lesson_type == "fill_blank":
+                        show_fill_blank_lesson(lesson)
+                    elif lesson_type == "conversation":
+                        show_conversation_lesson(lesson)
 
 if __name__ == "__main__":
     main() 
