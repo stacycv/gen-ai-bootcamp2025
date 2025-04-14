@@ -1080,43 +1080,17 @@ def show_hero():
 def show_lesson(level, lesson):
     lesson_id = lesson['id']
     
-    # Add refresh button at the top
-    col1, col2 = st.columns([4, 1])
-    with col2:
-        if st.button("🔄 New Sentence", key=f"refresh_{lesson_id}"):
-            # Reset translation state
-            st.session_state.user_answer = []
-            st.session_state.shuffled_words = None
-            # Clear current sentence
-            if f"current_sentence_{lesson_id}" in st.session_state:
-                del st.session_state[f"current_sentence_{lesson_id}"]
-            st.rerun()
-    
     # Show completion status
-    with col1:
-        if lesson_id in st.session_state.completed_lessons:
-            st.success("✅ Completed!")
-    
-    # Select a random sentence if not already selected
-    if f"current_sentence_{lesson_id}" not in st.session_state:
-        available_sentences = [
-            {
-                "english": lesson["content"]["english"],
-                "spanish": lesson["content"]["spanish"],
-                "words": lesson["content"]["words"]
-            }
-        ]
-        st.session_state[f"current_sentence_{lesson_id}"] = random.choice(available_sentences)
-    
-    current_sentence = st.session_state[f"current_sentence_{lesson_id}"]
+    if lesson_id in st.session_state.completed_lessons:
+        st.success("✅ Completed!")
     
     st.subheader(lesson["title"])
     st.write("Translate this sentence:")
-    st.info(current_sentence["english"])
+    st.info(lesson["content"]["english"])
     
     # Initialize shuffled words if needed
     if st.session_state.shuffled_words is None:
-        st.session_state.shuffled_words = list(current_sentence["words"])
+        st.session_state.shuffled_words = list(lesson["content"]["words"])
         random.shuffle(st.session_state.shuffled_words)
     
     # Display word buttons
@@ -1129,7 +1103,6 @@ def show_lesson(level, lesson):
                 st.session_state.user_answer.append(word)
                 st.rerun()
     
-    # Rest of the function remains the same...
     current_translation = " ".join(st.session_state.user_answer)
     st.text_input("Your translation:", 
                   value=current_translation, 
@@ -1142,7 +1115,6 @@ def show_lesson(level, lesson):
         st.rerun()
     
     if st.button("Check Answer", key=f"check_{lesson_id}"):
-        # Update last attempt time
         st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
         def clean_text(text):
@@ -1152,7 +1124,7 @@ def show_lesson(level, lesson):
             return text
         
         user_translation = clean_text(current_translation)
-        correct_translation = clean_text(current_sentence["spanish"])
+        correct_translation = clean_text(lesson["content"]["spanish"])
         
         attempt_result = {
             "lesson_id": lesson_id,
@@ -1161,7 +1133,7 @@ def show_lesson(level, lesson):
             "timestamp": st.session_state.last_attempt_time[lesson_id],
             "correct": user_translation == correct_translation,
             "user_answer": current_translation,
-            "correct_answer": current_sentence["spanish"]
+            "correct_answer": lesson["content"]["spanish"]
         }
         st.session_state.lesson_history.append(attempt_result)
         
@@ -1172,7 +1144,7 @@ def show_lesson(level, lesson):
             st.session_state.shuffled_words = None
             st.rerun()
         else:
-            st.error(f"Not quite right. Try again! Make sure your answer matches: '{current_sentence['spanish']}'")
+            st.error(f"Not quite right. Try again! Make sure your answer matches: '{lesson['content']['spanish']}'")
 
 def show_placement_test():
     st.title("Spanish Placement Test")
