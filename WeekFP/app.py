@@ -480,6 +480,14 @@ lessons = {
                     }
                 ]
             }
+        ],
+        "interactive_stories": [
+            {
+                "id": "int-story-1",
+                "type": "story",
+                "title": "At the Restaurant",
+                "content": {}  # Content handled in show_interactive_story function
+            }
         ]
     },
     "advanced": {
@@ -588,6 +596,14 @@ lessons = {
                         "pronunciation": "es-ta-do-u-ni-DEN-se"
                     }
                 ]
+            }
+        ],
+        "interactive_stories": [
+            {
+                "id": "adv-story-1",
+                "type": "story",
+                "title": "Business Meeting",
+                "content": {}  # Content handled in show_interactive_story function
             }
         ]
     }
