@@ -304,19 +304,44 @@ lessons = {
             {
                 "id": "beg-song-1",
                 "type": "song",
-                "title": "Learn with Music",
-                "video_url": "https://www.youtube.com/embed/...",  # Add YouTube embed URL
+                "title": "La Bamba - Learn Spanish with Music",
+                "video_url": "https://www.youtube.com/watch?v=Jp6j5HJ-Cok",
                 "lyrics": [
                     {
-                        "spanish": "La vida es un carnaval",
-                        "english": "Life is a carnival",
-                        "timestamp": "0:00"
+                        "spanish": "Para bailar la bamba",
+                        "english": "To dance the bamba"
+                    },
+                    {
+                        "spanish": "Se necesita una poca de gracia",
+                        "english": "You need a little grace"
                     }
                 ],
                 "exercises": [
                     {
-                        "question": "Fill in the missing word: 'La ___ es un carnaval'",
-                        "answer": "vida"
+                        "question": "Complete: Para ___ la bamba",
+                        "answer": "bailar"
+                    }
+                ]
+            },
+            {
+                "id": "beg-song-2",
+                "type": "song",
+                "title": "Despacito - Learn Numbers and Colors",
+                "video_url": "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+                "lyrics": [
+                    {
+                        "spanish": "Uno, dos, tres",
+                        "english": "One, two, three"
+                    },
+                    {
+                        "spanish": "Despacito",
+                        "english": "Slowly"
+                    }
+                ],
+                "exercises": [
+                    {
+                        "question": "What does 'despacito' mean?",
+                        "answer": "slowly"
                     }
                 ]
             }
@@ -947,23 +972,30 @@ def show_audio_lesson(lesson):
 def show_song_lesson(lesson):
     st.subheader(lesson["title"])
     
-    # Embed YouTube video
+    # Show YouTube video
     st.video(lesson["video_url"])
     
-    # Show lyrics with translations
+    # Show lyrics side by side
+    st.subheader("Lyrics")
     for line in lesson["lyrics"]:
         col1, col2 = st.columns(2)
         with col1:
-            st.write(line["spanish"])
+            st.write(f"🇪🇸 {line['spanish']}")
         with col2:
-            st.write(line["english"])
+            st.write(f"🇬🇧 {line['english']}")
     
-    # Practice exercises
-    for ex in lesson["exercises"]:
-        st.text_input(ex["question"])
-        if st.button("Check", key=f"check_{lesson['id']}"):
-            # Add checking logic
-            pass
+    # Simple practice exercises
+    st.subheader("Practice")
+    for i, ex in enumerate(lesson["exercises"]):
+        user_answer = st.text_input(
+            ex["question"],
+            key=f"song_ex_{lesson['id']}_{i}"
+        )
+        if st.button("Check Answer", key=f"check_song_{lesson['id']}_{i}"):
+            if user_answer.lower().strip() == ex["answer"].lower():
+                st.success("¡Correcto! 🎉")
+            else:
+                st.error(f"Try again! The answer is: {ex['answer']}")
 
 def show_picture_lesson(lesson):
     st.subheader(lesson["title"])
