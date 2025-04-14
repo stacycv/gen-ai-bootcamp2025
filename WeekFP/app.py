@@ -32,6 +32,15 @@ st.markdown("""
     h1, h2, h3 {
         color: #1D3557;
     }
+    .sidebar .stProgress > div > div {
+        background-color: #E63946;
+    }
+    .sidebar .stMetric {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px 0;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -532,13 +541,61 @@ def show_conversation_lesson(lesson):
                 idx = dialogue["options"].index(response)
                 st.success(f"Translation: {dialogue['translations'][idx]}")
 
+def show_progress_sidebar(level=None):
+    """Show progress sidebar with history and statistics"""
+    with st.sidebar:
+        st.title("Your Progress 📊")
+        
+        # Overall statistics
+        total_attempts = len(st.session_state.lesson_history)
+        if total_attempts > 0:
+            correct_attempts = len([h for h in st.session_state.lesson_history if h["correct"]])
+            accuracy = (correct_attempts / total_attempts) * 100
+            
+            st.metric("Total Lessons Attempted", total_attempts)
+            st.metric("Success Rate", f"{accuracy:.1f}%")
+            
+            # Show current streak
+            current_streak = 0
+            for attempt in reversed(st.session_state.lesson_history):
+                if attempt["correct"]:
+                    current_streak += 1
+                else:
+                    break
+            st.metric("Current Streak", f"{current_streak} ✨")
+        
+        # Level progress if in a specific level
+        if level:
+            st.subheader(f"{level.title()} Level Progress")
+            level_lessons = sum(len(lessons[level][lesson_type]) for lesson_type in lessons[level])
+            completed = len(st.session_state.completed_lessons)
+            progress = (completed / level_lessons) * 100 if level_lessons > 0 else 0
+            
+            st.progress(progress / 100)
+            st.write(f"Completed: {completed}/{level_lessons} lessons ({progress:.1f}%)")
+        
+        # Recent activity
+        st.subheader("Recent Activity")
+        if st.session_state.lesson_history:
+            for attempt in reversed(st.session_state.lesson_history[:5]):  # Show last 5 attempts
+                with st.expander(f"{attempt['lesson_title']} - {attempt['timestamp']}"):
+                    st.write("Level:", attempt['level'].title())
+                    st.write("Result:", "✅ Correct" if attempt['correct'] else "❌ Incorrect")
+                    if not attempt['correct']:
+                        st.write("Your answer:", attempt['user_answer'])
+                        st.write("Correct answer:", attempt['correct_answer'])
+        else:
+            st.info("No activity yet. Start learning!")
+
 def main():
     if st.session_state.placement_test_active:
         show_placement_test()
     elif st.session_state.current_lesson is None:
         show_hero()
+        show_progress_sidebar()  # Show overall progress on home page
     else:
         level = st.session_state.current_lesson
+        show_progress_sidebar(level)  # Show level-specific progress
         
         # Show back button to return to level selection
         if st.button("← Back to Level Selection", key="back_to_levels"):
