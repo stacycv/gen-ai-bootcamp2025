@@ -491,19 +491,22 @@ lessons = {
                 "id": "int-audio-1",
                 "type": "audio",
                 "title": "Intermediate Spanish Pronunciation",
-                "video_url": "https://www.youtube.com/embed/P5CxKS6MHRk",  # Spanish Pronunciation Practice
+                "audio_files": {
+                    "desarrollador": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/de/desarrollador_es_1.mp3",
+                    "biblioteca": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/bi/biblioteca_es_1.mp3"
+                },
                 "exercises": [
                     {
                         "word": "desarrollador",
                         "translation": "developer",
                         "pronunciation": "des-a-rro-ya-DOR",
-                        "timestamp": "Practice rolling your R's"
+                        "tip": "Practice rolling your R's"
                     },
                     {
                         "word": "biblioteca",
                         "translation": "library",
                         "pronunciation": "bee-blee-o-TE-ka",
-                        "timestamp": "Notice the stress on TE"
+                        "tip": "Notice the stress on TE"
                     }
                 ]
             }
@@ -634,19 +637,22 @@ lessons = {
                 "id": "adv-audio-1",
                 "type": "audio",
                 "title": "Advanced Spanish Pronunciation",
-                "video_url": "https://www.youtube.com/embed/7dSc5PXxYZc",  # Advanced Spanish Pronunciation
+                "audio_files": {
+                    "desarrollándose": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/de/desarrollandose_es_1.mp3",
+                    "estadounidense": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/es/estadounidense_es_1.mp3"
+                },
                 "exercises": [
                     {
                         "word": "desarrollándose",
                         "translation": "developing oneself",
                         "pronunciation": "des-a-rro-YAN-do-se",
-                        "timestamp": "Focus on the reflexive ending"
+                        "tip": "Focus on the reflexive ending"
                     },
                     {
                         "word": "estadounidense",
                         "translation": "American",
                         "pronunciation": "es-ta-do-u-ni-DEN-se",
-                        "timestamp": "Practice the diphthongs"
+                        "tip": "Practice the diphthongs"
                     }
                 ]
             }
