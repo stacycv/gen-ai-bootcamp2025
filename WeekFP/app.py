@@ -5,43 +5,150 @@ import string
 
 # Configure page settings
 st.set_page_config(
-    page_title="¡Hola Español! - Spanish Learning School",
-    page_icon="🇪🇸",
+    page_title="¡Hola Español! - Mexican Spanish School",
+    page_icon="🇲🇽",
     layout="wide"
 )
 
-# Custom CSS
+# Updated Custom CSS with Mexican-inspired colors and patterns
 st.markdown("""
     <style>
+    /* Mexican-inspired color palette */
+    :root {
+        --mexican-red: #D62828;
+        --mexican-green: #006847;
+        --mexican-gold: #FFB800;
+        --terracotta: #A44A3F;
+        --adobe: #CB8589;
+        --sand: #F4D03F;
+    }
+
     .main {
-        background-color: #F1FAEE;
+        background-color: #FFF5E6;
+        background-image: linear-gradient(45deg, #f9f9f9 25%, transparent 25%, transparent 75%, #f9f9f9 75%, #f9f9f9), 
+        linear-gradient(45deg, #f9f9f9 25%, transparent 25%, transparent 75%, #f9f9f9 75%, #f9f9f9);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
     }
+
+    /* Decorative header */
+    h1 {
+        color: var(--mexican-red);
+        text-shadow: 2px 2px var(--mexican-gold);
+        font-family: 'Georgia', serif;
+        padding: 20px;
+        border-bottom: 3px solid var(--mexican-green);
+        margin-bottom: 30px;
+    }
+
+    h2, h3 {
+        color: var(--terracotta);
+        font-family: 'Georgia', serif;
+    }
+
+    /* Styled buttons */
     .stButton>button {
-        background-color: #E63946;
+        background-color: var(--mexican-red);
         color: white;
-        border: none;
-        padding: 10px 24px;
-        border-radius: 4px;
+        border: 2px solid var(--mexican-gold);
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 3px 3px var(--mexican-gold);
     }
+
+    .stButton>button:hover {
+        transform: translateY(-2px);
+        box-shadow: 4px 4px var(--mexican-gold);
+        background-color: var(--terracotta);
+    }
+
+    /* Lesson cards with Mexican pattern border */
     .lesson-card {
         background-color: white;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border: 3px solid var(--mexican-green);
+        position: relative;
+        margin: 20px 0;
     }
-    h1, h2, h3 {
-        color: #1D3557;
-    }
+
+    /* Sidebar styling */
     .sidebar .stProgress > div > div {
-        background-color: #E63946;
+        background-color: var(--mexican-green);
+        background-image: linear-gradient(45deg, var(--mexican-red) 25%, transparent 25%, transparent 75%, var(--mexican-red) 75%, var(--mexican-red));
     }
+
     .sidebar .stMetric {
         background-color: white;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 10px 0;
+        border-left: 4px solid var(--mexican-gold);
+    }
+
+    /* Chat message styling */
+    .stChatMessage {
+        border-radius: 15px;
+        border: 2px solid var(--adobe);
+        background-color: white;
+    }
+
+    /* Success/Error messages with Mexican colors */
+    .stSuccess {
+        background-color: var(--mexican-green);
+        color: white;
+        border-radius: 8px;
         padding: 10px;
-        border-radius: 5px;
-        margin: 5px 0;
+    }
+
+    .stError {
+        background-color: var(--mexican-red);
+        color: white;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    /* Add decorative elements */
+    .decorative-border {
+        border: 10px solid transparent;
+        border-image: repeating-linear-gradient(
+            45deg,
+            var(--mexican-red),
+            var(--mexican-red) 10px,
+            var(--mexican-green) 10px,
+            var(--mexican-green) 20px
+        ) 10;
+    }
+
+    /* Radio buttons with Mexican colors */
+    .stRadio > label {
+        color: var(--terracotta) !important;
+        font-weight: bold;
+    }
+
+    /* Text inputs with Mexican styling */
+    .stTextInput > div > div > input {
+        border: 2px solid var(--adobe);
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    /* Add Mexican pattern to expanders */
+    .streamlit-expanderHeader {
+        background-color: var(--sand);
+        border-radius: 8px;
+        padding: 10px;
+        border-left: 4px solid var(--mexican-red);
     }
     </style>
+
+    <!-- Add decorative header -->
+    <div class="decorative-header">
+        <h1>¡Bienvenidos a Español Mexicano! 🌵</h1>
+    </div>
 """, unsafe_allow_html=True)
 
 # Initialize session state
