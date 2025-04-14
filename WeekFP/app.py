@@ -913,7 +913,10 @@ def main():
         
         # Show back button to return to level selection
         if st.button("← Back to Level Selection", key="back_to_levels"):
-            st.session_state.lesson_type = None
+            st.session_state.current_lesson = None  # Reset current lesson
+            st.session_state.lesson_type = None    # Reset lesson type
+            st.session_state.user_answer = []      # Reset any user answers
+            st.session_state.shuffled_words = None # Reset shuffled words
             st.rerun()
         
         if st.session_state.lesson_type is None:
