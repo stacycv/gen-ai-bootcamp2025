@@ -203,11 +203,11 @@ if 'lesson_type' not in st.session_state:
 lessons = {
     "beginner": {
         "translation": [
-            {
+        {
                 "id": "beg-trans-1",
                 "type": "translation",
                 "title": "Basic Sentences",
-                "content": {
+            "content": {
                     "english": "I want to eat pizza",
                     "spanish": "Yo quiero comer pizza",
                     "words": ["Yo", "quiero", "comer", "pizza"]
@@ -217,7 +217,7 @@ lessons = {
                 "id": "beg-trans-2",
                 "type": "translation",
                 "title": "Simple Present",
-                "content": {
+            "content": {
                     "english": "The cat drinks milk",
                     "spanish": "El gato bebe leche",
                     "words": ["El", "gato", "bebe", "leche"]
@@ -575,12 +575,12 @@ lessons = {
             {
                 "id": "int-trans-1",
                 "type": "translation",
-                "title": "Past Tense",
-                "content": {
+            "title": "Past Tense",
+            "content": {
                     "english": "I went to the store yesterday",
                     "spanish": "Yo fui a la tienda ayer",
-                    "words": ["Yo", "fui", "a", "la", "tienda", "ayer"]
-                }
+                "words": ["Yo", "fui", "a", "la", "tienda", "ayer"]
+            }
             },
             {
                 "id": "int-trans-2",
@@ -1313,7 +1313,6 @@ def show_multiple_choice_lesson(lesson):
 
 def show_fill_blank_lesson(lesson):
     lesson_id = lesson["id"]
-    st.subheader(lesson["title"])
     
     # Show completion status
     if lesson_id in st.session_state.completed_lessons:
@@ -1590,7 +1589,7 @@ def main():
             st.session_state.lesson_type = None
             st.session_state.user_answer = []
             st.session_state.shuffled_words = None
-            st.session_state.current_lesson_title = None  # Clear the title
+            st.session_state.current_lesson_title = None
             st.rerun()
         
         if st.session_state.lesson_type is None:
@@ -1599,33 +1598,29 @@ def main():
             # Show back button to return to lesson type selection
             if st.button("← Back to Lesson Types", key="back_to_types"):
                 st.session_state.lesson_type = None
-                st.session_state.current_lesson_title = None  # Clear the title
+                st.session_state.current_lesson_title = None
                 st.rerun()
             
-            # Show the lesson title at the top
-            show_lesson_header()
-            
-            lesson_type = st.session_state.lesson_type
             # Show the lesson type title
-            st.title(get_lesson_type_display_name(lesson_type))
+            st.title(get_lesson_type_display_name(st.session_state.lesson_type))
             
-            for lesson in lessons[level][lesson_type]:
+            for lesson in lessons[level][st.session_state.lesson_type]:
                 with st.expander(f"{lesson['title']}", expanded=True):
-                    if lesson_type == "translation":
+                    if st.session_state.lesson_type == "translation":
                         show_lesson(level, lesson)
-                    elif lesson_type == "multiple_choice":
+                    elif st.session_state.lesson_type == "multiple_choice":
                         show_multiple_choice_lesson(lesson)
-                    elif lesson_type == "fill_blank":
+                    elif st.session_state.lesson_type == "fill_blank":
                         show_fill_blank_lesson(lesson)
-                    elif lesson_type == "conversation":
+                    elif st.session_state.lesson_type == "conversation":
                         show_conversation_lesson(lesson)
-                    elif lesson_type == "audio_practice":
+                    elif st.session_state.lesson_type == "audio_practice":
                         show_audio_lesson(lesson)
-                    elif lesson_type == "song_lessons":
+                    elif st.session_state.lesson_type == "song_lessons":
                         show_song_lesson(lesson)
-                    elif lesson_type == "video_vocabulary":
+                    elif st.session_state.lesson_type == "video_vocabulary":
                         show_video_lesson(lesson)
-                    elif lesson_type == "interactive_stories":
+                    elif st.session_state.lesson_type == "interactive_stories":
                         show_interactive_story(lesson)
 
 if __name__ == "__main__":
