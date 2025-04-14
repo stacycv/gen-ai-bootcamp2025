@@ -485,46 +485,103 @@ def show_lesson_menu(level):
             st.rerun()
 
 def show_multiple_choice_lesson(lesson):
+    lesson_id = lesson["id"]
     st.subheader(lesson["title"])
+    
+    # Show completion status
+    if lesson_id in st.session_state.completed_lessons:
+        st.success("✅ Completed!")
+    if lesson_id in st.session_state.last_attempt_time:
+        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
     
     for i, q in enumerate(lesson["questions"]):
         st.write(f"Question {i+1}: {q['question']}")
         answer = st.radio(
             "Select your answer:",
             q["options"],
-            key=f"mc_{lesson['id']}_{i}"
+            key=f"mc_{lesson_id}_{i}"
         )
         
-        check_key = f"check_mc_{lesson['id']}_{i}"
+        check_key = f"check_mc_{lesson_id}_{i}"
         if st.button("Check Answer", key=check_key):
+            st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            
+            attempt_result = {
+                "lesson_id": lesson_id,
+                "lesson_title": lesson["title"],
+                "level": st.session_state.current_lesson,
+                "timestamp": st.session_state.last_attempt_time[lesson_id],
+                "correct": q["options"].index(answer) == q["correct"],
+                "user_answer": answer,
+                "correct_answer": q["options"][q["correct"]]
+            }
+            st.session_state.lesson_history.append(attempt_result)
+            
             if q["options"].index(answer) == q["correct"]:
                 st.success("¡Correcto! 🎉")
+                st.session_state.completed_lessons.add(lesson_id)
             else:
                 st.error(f"Incorrect. The correct answer was: {q['options'][q['correct']]}")
 
 def show_fill_blank_lesson(lesson):
+    lesson_id = lesson["id"]
     st.subheader(lesson["title"])
+    
+    # Show completion status
+    if lesson_id in st.session_state.completed_lessons:
+        st.success("✅ Completed!")
+    if lesson_id in st.session_state.last_attempt_time:
+        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    
+    all_correct = True  # Track if all answers are correct
     
     for i, sentence in enumerate(lesson["sentences"]):
         st.write(sentence["sentence"])
         user_answer = st.text_input(
             "Your answer:",
-            key=f"fb_{lesson['id']}_{i}"
+            key=f"fb_{lesson_id}_{i}"
         )
         
         col1, col2 = st.columns([1, 4])
         with col1:
-            if st.button("Hint", key=f"hint_{lesson['id']}_{i}"):
+            if st.button("Hint", key=f"hint_{lesson_id}_{i}"):
                 st.info(sentence["hint"])
         with col2:
-            if st.button("Check", key=f"check_{lesson['id']}_{i}"):
-                if user_answer.lower().strip() == sentence["correct"].lower():
+            if st.button("Check", key=f"check_{lesson_id}_{i}"):
+                st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+                is_correct = user_answer.lower().strip() == sentence["correct"].lower()
+                all_correct = all_correct and is_correct
+                
+                attempt_result = {
+                    "lesson_id": lesson_id,
+                    "lesson_title": lesson["title"],
+                    "level": st.session_state.current_lesson,
+                    "timestamp": st.session_state.last_attempt_time[lesson_id],
+                    "correct": is_correct,
+                    "user_answer": user_answer,
+                    "correct_answer": sentence["correct"]
+                }
+                st.session_state.lesson_history.append(attempt_result)
+                
+                if is_correct:
                     st.success("¡Correcto! 🎉")
+                    if all_correct:
+                        st.session_state.completed_lessons.add(lesson_id)
                 else:
                     st.error(f"Incorrect. The correct answer was: {sentence['correct']}")
 
 def show_conversation_lesson(lesson):
+    lesson_id = lesson["id"]
     st.subheader(lesson["title"])
+    
+    # Show completion status
+    if lesson_id in st.session_state.completed_lessons:
+        st.success("✅ Completed!")
+    if lesson_id in st.session_state.last_attempt_time:
+        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    
+    all_responses_correct = True
     
     for i, dialogue in enumerate(lesson["dialogue"]):
         with st.chat_message(dialogue["speaker"]):
@@ -535,11 +592,26 @@ def show_conversation_lesson(lesson):
             response = st.radio(
                 "Choose your response:",
                 dialogue["options"],
-                key=f"conv_{lesson['id']}_{i}"
+                key=f"conv_{lesson_id}_{i}"
             )
-            if st.button("Respond", key=f"respond_{lesson['id']}_{i}"):
+            if st.button("Respond", key=f"respond_{lesson_id}_{i}"):
+                st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
                 idx = dialogue["options"].index(response)
+                
+                attempt_result = {
+                    "lesson_id": lesson_id,
+                    "lesson_title": lesson["title"],
+                    "level": st.session_state.current_lesson,
+                    "timestamp": st.session_state.last_attempt_time[lesson_id],
+                    "correct": True,  # For conversation, we consider all responses valid
+                    "user_answer": response,
+                    "correct_answer": dialogue["translations"][idx]
+                }
+                st.session_state.lesson_history.append(attempt_result)
+                
                 st.success(f"Translation: {dialogue['translations'][idx]}")
+                st.session_state.completed_lessons.add(lesson_id)
 
 def show_progress_sidebar(level=None):
     """Show progress sidebar with history and statistics"""
