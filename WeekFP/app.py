@@ -150,55 +150,144 @@ lessons = {
             }
         ]
     },
-    "intermediate": [
-        {
-            "id": "int-1",
-            "title": "Past Tense",
-            "content": {
-                "english": "I went to the store yesterday.",
-                "spanish": "Yo fui a la tienda ayer.",
-                "words": ["Yo", "fui", "a", "la", "tienda", "ayer"]
+    "intermediate": {
+        "translation": [
+            {
+                "id": "int-trans-1",
+                "type": "translation",
+                "title": "Past Tense",
+                "content": {
+                    "english": "I went to the store yesterday.",
+                    "spanish": "Yo fui a la tienda ayer.",
+                    "words": ["Yo", "fui", "a", "la", "tienda", "ayer"]
+                }
             }
-        },
-        {
-            "id": "int-2",
-            "title": "Future Plans",
-            "content": {
-                "english": "Next week I will travel to Spain.",
-                "spanish": "La próxima semana viajaré a España.",
-                "words": ["La", "próxima", "semana", "viajaré", "a", "España"]
+        ],
+        "multiple_choice": [
+            {
+                "id": "int-mc-1",
+                "type": "multiple_choice",
+                "title": "Weather and Time",
+                "questions": [
+                    {
+                        "question": "How do you say 'It will rain'?",
+                        "options": ["Llueve", "Lloverá", "Llovió", "Lloviendo"],
+                        "correct": 1
+                    }
+                ]
             }
-        },
-        {
-            "id": "int-3",
-            "title": "Weather Expressions",
-            "content": {
-                "english": "It will rain tomorrow afternoon.",
-                "spanish": "Lloverá mañana por la tarde.",
-                "words": ["Lloverá", "mañana", "por", "la", "tarde"]
+        ],
+        "fill_blank": [
+            {
+                "id": "int-fb-1",
+                "type": "fill_blank",
+                "title": "Past Tense Practice",
+                "sentences": [
+                    {
+                        "sentence": "Ayer yo ___ al supermercado (ir)",
+                        "correct": "fui",
+                        "hint": "Past tense of 'ir'"
+                    }
+                ]
             }
-        }
-    ],
-    "advanced": [  # Adding advanced level
-        {
-            "id": "adv-1",
-            "title": "Subjunctive Mood",
-            "content": {
-                "english": "I hope that you can come to the party.",
-                "spanish": "Espero que puedas venir a la fiesta.",
-                "words": ["Espero", "que", "puedas", "venir", "a", "la", "fiesta"]
+        ],
+        "conversation": [
+            {
+                "id": "int-conv-1",
+                "type": "conversation",
+                "title": "At the Restaurant",
+                "dialogue": [
+                    {
+                        "speaker": "Waiter",
+                        "text": "¿Qué le gustaría ordenar?",
+                        "translation": "What would you like to order?"
+                    },
+                    {
+                        "speaker": "You",
+                        "options": [
+                            "Me gustaría la sopa, por favor",
+                            "Quiero el pescado",
+                            "El pollo, por favor"
+                        ],
+                        "translations": [
+                            "I would like the soup, please",
+                            "I want the fish",
+                            "The chicken, please"
+                        ]
+                    }
+                ]
             }
-        },
-        {
-            "id": "adv-2",
-            "title": "Conditional Tense",
-            "content": {
-                "english": "I would like to travel the world.",
-                "spanish": "Me gustaría viajar por el mundo.",
-                "words": ["Me", "gustaría", "viajar", "por", "el", "mundo"]
+        ]
+    },
+    "advanced": {
+        "translation": [
+            {
+                "id": "adv-trans-1",
+                "type": "translation",
+                "title": "Subjunctive Mood",
+                "content": {
+                    "english": "I hope that you can come to the party.",
+                    "spanish": "Espero que puedas venir a la fiesta.",
+                    "words": ["Espero", "que", "puedas", "venir", "a", "la", "fiesta"]
+                }
             }
-        }
-    ]
+        ],
+        "multiple_choice": [
+            {
+                "id": "adv-mc-1",
+                "type": "multiple_choice",
+                "title": "Complex Grammar",
+                "questions": [
+                    {
+                        "question": "Choose the correct subjunctive form: 'Quiero que ___ feliz'",
+                        "options": ["eres", "seas", "serás", "ser"],
+                        "correct": 1
+                    }
+                ]
+            }
+        ],
+        "fill_blank": [
+            {
+                "id": "adv-fb-1",
+                "type": "fill_blank",
+                "title": "Conditional Practice",
+                "sentences": [
+                    {
+                        "sentence": "Si tuviera tiempo, ___ al cine (ir)",
+                        "correct": "iría",
+                        "hint": "Conditional form of 'ir'"
+                    }
+                ]
+            }
+        ],
+        "conversation": [
+            {
+                "id": "adv-conv-1",
+                "type": "conversation",
+                "title": "Job Interview",
+                "dialogue": [
+                    {
+                        "speaker": "Interviewer",
+                        "text": "¿Por qué le interesa este trabajo?",
+                        "translation": "Why are you interested in this job?"
+                    },
+                    {
+                        "speaker": "You",
+                        "options": [
+                            "Me apasiona este campo de trabajo",
+                            "Tengo mucha experiencia en esta área",
+                            "Busco nuevos desafíos profesionales"
+                        ],
+                        "translations": [
+                            "I am passionate about this field",
+                            "I have a lot of experience in this area",
+                            "I'm looking for new professional challenges"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 }
 
 # Add this placement test questions dictionary
