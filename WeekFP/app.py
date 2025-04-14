@@ -286,8 +286,8 @@ lessons = {
                 "type": "audio",
                 "title": "Basic Spanish Pronunciation",
                 "audio_files": {
-                    "perro": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/pe/perro_es_gb_1.mp3",
-                    "gracias": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/gr/gracias_es_gb_1.mp3"
+                    "perro": "https://audio00.forvo.com/audios/mp3/p/e/pe_9074_76_407581_266179.mp3",
+                    "gracias": "https://audio00.forvo.com/audios/mp3/g/r/gr_9074_76_417740_266179.mp3"
                 },
                 "exercises": [
                     {
@@ -308,19 +308,22 @@ lessons = {
                 "id": "beg-audio-2",
                 "type": "audio",
                 "title": "Common Phrases Pronunciation",
-                "video_url": "https://www.youtube.com/embed/hfWnWvNk4pM",  # Common Phrases
+                "audio_files": {
+                    "buenos_dias": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/bu/buenos_dias_es_1.mp3",
+                    "como_estas": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/co/como_estas_es_1.mp3"
+                },
                 "exercises": [
                     {
                         "word": "buenos días",
                         "translation": "good morning",
                         "pronunciation": "BWEH-nos DEE-as",
-                        "timestamp": "Practice the 'ue' sound"
+                        "tip": "Practice the 'ue' sound"
                     },
                     {
                         "word": "¿cómo estás?",
                         "translation": "how are you?",
                         "pronunciation": "KO-mo es-TAS",
-                        "timestamp": "Notice the stress on the last syllable"
+                        "tip": "Notice the stress on the last syllable"
                     }
                 ]
             }
@@ -492,8 +495,8 @@ lessons = {
                 "type": "audio",
                 "title": "Intermediate Spanish Pronunciation",
                 "audio_files": {
-                    "desarrollador": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/de/desarrollador_es_1.mp3",
-                    "biblioteca": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/bi/biblioteca_es_1.mp3"
+                    "desarrollador": "https://audio00.forvo.com/audios/mp3/d/e/de_9074_76_423984_266179.mp3",
+                    "biblioteca": "https://audio00.forvo.com/audios/mp3/b/i/bi_9074_76_426753_266179.mp3"
                 },
                 "exercises": [
                     {
