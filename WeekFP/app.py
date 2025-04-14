@@ -209,12 +209,15 @@ def show_lesson(level, lesson):
                 st.session_state.user_answer.append(word)
                 st.rerun()
     
-    # Show current translation and clear button
+    # Show current translation and clear button with unique key
     current_translation = " ".join(st.session_state.user_answer)
-    st.text_input("Your translation:", value=current_translation, disabled=True)
+    st.text_input("Your translation:", 
+                  value=current_translation, 
+                  disabled=True, 
+                  key=f"translation_input_{lesson_id}")
     
-    # Add clear button
-    if st.button("Clear Translation"):
+    # Add clear button with unique key (already has one, but let's make it consistent)
+    if st.button("Clear Translation", key=f"clear_button_{lesson_id}"):
         st.session_state.user_answer = []
         st.session_state.shuffled_words = None
         st.rerun()
