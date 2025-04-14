@@ -23,27 +23,37 @@ st.markdown("""
         --accent-blue: #4A90E2;
     }
 
-    /* Cool gradient background */
+    /* Vibrant background with Spanish-inspired pattern */
     .main {
-        background: linear-gradient(135deg, #fff6e5 0%, #fff9ec 100%);
+        background: #FFF6E6;
+        background-image: 
+            linear-gradient(120deg, rgba(255, 196, 0, 0.1) 0%, rgba(255, 0, 0, 0.1) 100%),
+            repeating-linear-gradient(45deg, 
+                rgba(255, 196, 0, 0.05) 0px, 
+                rgba(255, 196, 0, 0.05) 2px,
+                transparent 2px, 
+                transparent 10px
+            );
+        background-attachment: fixed;
         color: var(--neutral-dark);
         font-family: 'Helvetica Neue', sans-serif;
         min-height: 100vh;
-        background-attachment: fixed;
+        position: relative;
     }
 
-    /* Add subtle pattern overlay */
+    /* Add a subtle border inspired by Spanish tiles */
     .main::before {
         content: '';
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: 
-            radial-gradient(circle at 50% 50%, rgba(255, 196, 0, 0.05) 0%, transparent 100%),
-            radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.025) 0%, transparent 100%);
-        pointer-events: none;
+        right: 0;
+        height: 8px;
+        background: linear-gradient(90deg, 
+            var(--spain-red) 0%, 
+            var(--spain-yellow) 50%, 
+            var(--spain-red) 100%
+        );
     }
 
     /* Modern educational headers */
