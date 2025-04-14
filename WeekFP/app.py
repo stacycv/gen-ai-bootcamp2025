@@ -245,6 +245,21 @@ lessons = {
                         "question": "Which means 'hello'?",
                         "options": ["adiós", "hasta luego", "hola", "chao"],
                         "correct": 2
+                    },
+                    {
+                        "question": "How do you say 'book'?",
+                        "options": ["libro", "mesa", "silla", "lápiz"],
+                        "correct": 0
+                    },
+                    {
+                        "question": "Which means 'goodbye'?",
+                        "options": ["hola", "adiós", "gracias", "por favor"],
+                        "correct": 1
+                    },
+                    {
+                        "question": "What is 'house' in Spanish?",
+                        "options": ["carro", "casa", "perro", "gato"],
+                        "correct": 1
                     }
                 ]
             }
@@ -1005,66 +1020,25 @@ def show_lesson_menu(level):
 
 def show_multiple_choice_lesson(lesson):
     lesson_id = lesson["id"]
-    st.subheader(lesson["title"])
     
-    # Add refresh button at the top
+    # Add refresh button
     col1, col2 = st.columns([4, 1])
     with col2:
         if st.button("🔄 New Questions", key=f"refresh_{lesson_id}"):
-            # Reset any stored answers
+            # Clear ALL session state for this lesson
             for key in list(st.session_state.keys()):
-                if key.startswith(f"mc_{lesson_id}"):
+                if key.startswith(f"{lesson_id}"):
                     del st.session_state[key]
             st.rerun()
-    
-    # Show completion status
-    with col1:
-        if lesson_id in st.session_state.completed_lessons:
-            st.success("✅ Completed!")
-        if lesson_id in st.session_state.last_attempt_time:
-            st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
-    
-    # Randomize questions order if not already set
-    if f"shuffled_questions_{lesson_id}" not in st.session_state:
-        st.session_state[f"shuffled_questions_{lesson_id}"] = random.sample(lesson["questions"], len(lesson["questions"]))
-    
-    # Show randomized questions
-    for i, q in enumerate(st.session_state[f"shuffled_questions_{lesson_id}"]):
-        st.write(f"Question {i+1}: {q['question']}")
-        
-        # Randomize options too
-        if f"shuffled_options_{lesson_id}_{i}" not in st.session_state:
-            options = list(enumerate(q["options"]))
-            random.shuffle(options)
-            st.session_state[f"shuffled_options_{lesson_id}_{i}"] = options
-        
-        # Show randomized options
-        answer = st.radio(
-            "Select your answer:",
-            [opt[1] for opt in st.session_state[f"shuffled_options_{lesson_id}_{i}"]],
-            key=f"mc_{lesson_id}_{i}"
+
+    # Randomize questions if not already set or after refresh
+    if f"current_questions_{lesson_id}" not in st.session_state:
+        # Select random subset of questions
+        num_questions = min(5, len(lesson["questions"]))  # Show 5 questions at a time
+        st.session_state[f"current_questions_{lesson_id}"] = random.sample(
+            lesson["questions"], 
+            num_questions
         )
-        
-        check_key = f"check_mc_{lesson_id}_{i}"
-        if st.button("Check Answer", key=check_key):
-            st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            
-            attempt_result = {
-                "lesson_id": lesson_id,
-                "lesson_title": lesson["title"],
-                "level": st.session_state.current_lesson,
-                "timestamp": st.session_state.last_attempt_time[lesson_id],
-                "correct": q["options"].index(answer) == q["correct"],
-                "user_answer": answer,
-                "correct_answer": q["options"][q["correct"]]
-            }
-            st.session_state.lesson_history.append(attempt_result)
-            
-            if q["options"].index(answer) == q["correct"]:
-                st.success("¡Correcto! 🎉")
-                st.session_state.completed_lessons.add(lesson_id)
-            else:
-                st.error(f"Incorrect. The correct answer was: {q['options'][q['correct']]}")
 
 def show_fill_blank_lesson(lesson):
     lesson_id = lesson["id"]
