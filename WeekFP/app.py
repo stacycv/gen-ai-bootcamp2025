@@ -303,29 +303,6 @@ lessons = {
                         "tip": "Practice the soft 'c' sound"
                     }
                 ]
-            },
-            {
-                "id": "beg-audio-2",
-                "type": "audio",
-                "title": "Common Phrases Pronunciation",
-                "audio_files": {
-                    "buenos_dias": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/bu/buenos_dias_es_1.mp3",
-                    "como_estas": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/co/como_estas_es_1.mp3"
-                },
-                "exercises": [
-                    {
-                        "word": "buenos días",
-                        "translation": "good morning",
-                        "pronunciation": "BWEH-nos DEE-as",
-                        "tip": "Practice the 'ue' sound"
-                    },
-                    {
-                        "word": "¿cómo estás?",
-                        "translation": "how are you?",
-                        "pronunciation": "KO-mo es-TAS",
-                        "tip": "Notice the stress on the last syllable"
-                    }
-                ]
             }
         ],
         "song_lessons": [
