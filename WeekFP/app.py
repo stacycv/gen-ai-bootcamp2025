@@ -329,7 +329,7 @@ lessons = {
                 "id": "beg-pic-1",
                 "type": "picture",
                 "title": "Basic Spanish Animals",
-                "video_url": "https://www.youtube.com/embed/YwYwM1FLYXY",  # Spanish Animals for Beginners
+                "video_url": "https://www.youtube.com/embed/J9TtDlqgKtM",  # Spanish Animals for Beginners (new working link)
                 "exercises": [
                     {
                         "question": "How do you say 'dog' in Spanish?",
@@ -347,7 +347,7 @@ lessons = {
                 "id": "beg-pic-2",
                 "type": "picture",
                 "title": "Colors in Spanish",
-                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",  # Spanish Colors
+                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",  # Spanish Colors (working)
                 "exercises": [
                     {
                         "question": "What is 'red' in Spanish?",
