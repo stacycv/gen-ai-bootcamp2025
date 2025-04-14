@@ -1351,7 +1351,8 @@ def show_conversation_lesson(lesson):
     if lesson_id in st.session_state.completed_lessons:
         st.success("✅ Completed!")
     
-    for exchange in lesson["dialogue"]:
+    # Handle flat dialogue structure
+    for i, exchange in enumerate(lesson["dialogue"][0]):  # Take first dialogue set
         if "text" in exchange:
             with st.chat_message(exchange["speaker"]):
                 st.write(exchange["text"])
@@ -1360,9 +1361,10 @@ def show_conversation_lesson(lesson):
             with st.chat_message("You"):
                 response = st.radio(
                     "Choose your response:",
-                    exchange["options"]
+                    exchange["options"],
+                    key=f"conv_{lesson_id}_{i}"
                 )
-                if st.button("Respond"):
+                if st.button("Respond", key=f"respond_{lesson_id}_{i}"):
                     idx = exchange["options"].index(response)
                     st.success(f"Translation: {exchange['translations'][idx]}")
                     st.session_state.completed_lessons.add(lesson_id)
