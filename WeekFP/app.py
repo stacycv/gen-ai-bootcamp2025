@@ -103,8 +103,8 @@ def show_hero():
             st.info("Placement test coming soon!")
 
 def show_lesson(level, lesson):
-    # Add back button at the top
-    if st.button("← Back", key="back_button"):
+    # Make the back button key unique by including the lesson id
+    if st.button("← Back", key=f"back_button_{lesson['id']}"):
         st.session_state.current_lesson = None
         st.session_state.user_answer = []
         st.session_state.shuffled_words = None
@@ -159,7 +159,7 @@ def show_lesson(level, lesson):
         else:
             st.error(f"Not quite right. Try again! Make sure your answer matches exactly: '{lesson['content']['spanish']}'")
     
-    if st.button("Show Hint"):
+    if st.button("Show Hint", key=f"hint_button_{lesson['id']}"):
         st.info("Pay attention to word order and spelling.")
 
 def main():
