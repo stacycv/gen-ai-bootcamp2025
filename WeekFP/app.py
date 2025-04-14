@@ -285,19 +285,22 @@ lessons = {
                 "id": "beg-audio-1",
                 "type": "audio",
                 "title": "Basic Spanish Pronunciation",
-                "video_url": "https://www.youtube.com/embed/4Af04ztZbKc",  # Spanish Alphabet & Pronunciation
+                "audio_files": {
+                    "perro": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/pe/perro_es_gb_1.mp3",
+                    "gracias": "https://ssl.gstatic.com/dictionary/static/pronunciation/2022-03-02/audio/gr/gracias_es_gb_1.mp3"
+                },
                 "exercises": [
                     {
                         "word": "perro",
                         "translation": "dog",
                         "pronunciation": "peh-RRo",
-                        "timestamp": "Learn the rolling 'R' sound"
+                        "tip": "Focus on rolling the 'R' sound"
                     },
                     {
                         "word": "gracias",
                         "translation": "thank you",
                         "pronunciation": "GRA-see-as",
-                        "timestamp": "Practice the soft 'c' sound"
+                        "tip": "Practice the soft 'c' sound"
                     }
                 ]
             },
@@ -1133,28 +1136,25 @@ def show_audio_lesson(lesson):
     # Show completion status
     if lesson_id in st.session_state.completed_lessons:
         st.success("✅ Completed!")
-    if lesson_id in st.session_state.last_attempt_time:
-        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
-    
-    # Show pronunciation video
-    st.video(lesson["video_url"])
     
     # Show exercises
     st.subheader("Practice Pronunciation")
     
     for i, ex in enumerate(lesson["exercises"]):
-        st.markdown("---")  # Divider between exercises
-        st.write(f"### Practice: {ex['word']}")
+        st.markdown("---")
+        st.write(f"### {ex['word']}")
         
         col1, col2 = st.columns(2)
         with col1:
-            st.write(f"**Word**: {ex['word']}")
             st.write(f"**Translation**: {ex['translation']}")
+            st.write(f"**Pronunciation**: {ex['pronunciation']}")
+            st.info(f"💡 Tip: {ex['tip']}")
         with col2:
-            st.write(f"**Pronunciation Guide**: {ex['pronunciation']}")
-            st.info(f"💡 Tip: {ex['timestamp']}")
+            # Play audio button
+            if ex['word'] in lesson['audio_files']:
+                st.audio(lesson['audio_files'][ex['word']], format='audio/mp3')
         
-        # Add practice confirmation
+        # Practice confirmation
         if st.button("I've practiced this word!", key=f"practice_{lesson_id}_{i}"):
             st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             
@@ -1164,7 +1164,7 @@ def show_audio_lesson(lesson):
                 "lesson_title": lesson["title"],
                 "level": st.session_state.current_lesson,
                 "timestamp": st.session_state.last_attempt_time[lesson_id],
-                "correct": True,  # Since it's self-reported practice
+                "correct": True,
                 "user_answer": "Practiced pronunciation",
                 "correct_answer": ex['word']
             }
