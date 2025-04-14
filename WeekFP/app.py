@@ -1074,9 +1074,10 @@ def show_interactive_story(lesson):
     # Otherwise show choices
     elif "choices" in current_scene:
         st.write("Choose what happens next:")
-        for choice in current_scene["choices"]:
+        for i, choice in enumerate(current_scene["choices"]):
+            # Make key unique by including position and choice index
             if st.button(f"👉 {choice['text']}", 
-                        key=f"choice_{lesson_id}_{choice['leads_to']}",
+                        key=f"choice_{lesson_id}_{st.session_state.story_position}_{i}",
                         help=choice["translation"]):
                 st.session_state.story_position = choice["leads_to"]
                 st.rerun()
