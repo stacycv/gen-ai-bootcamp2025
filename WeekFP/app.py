@@ -1560,6 +1560,20 @@ def show_progress_sidebar(level=None):
         else:
             st.info("No activity yet. Start learning!")
 
+def get_lesson_type_display_name(lesson_type):
+    """Convert lesson_type to a display friendly name"""
+    display_names = {
+        "translation": "Translation Exercises",
+        "multiple_choice": "Multiple Choice Questions",
+        "fill_blank": "Fill in the Blanks",
+        "conversation": "Conversation Practice",
+        "audio_practice": "Audio Lessons",
+        "song_lessons": "Song Lessons",
+        "video_vocabulary": "Video Vocabulary",
+        "interactive_stories": "Interactive Stories"
+    }
+    return display_names.get(lesson_type, lesson_type.replace("_", " ").title())
+
 def main():
     if st.session_state.placement_test_active:
         show_placement_test()
@@ -1592,8 +1606,11 @@ def main():
             show_lesson_header()
             
             lesson_type = st.session_state.lesson_type
+            # Show the lesson type title
+            st.title(get_lesson_type_display_name(lesson_type))
+            
             for lesson in lessons[level][lesson_type]:
-                with st.expander(f"Lesson Content", expanded=True):
+                with st.expander(f"{lesson['title']}", expanded=True):
                     if lesson_type == "translation":
                         show_lesson(level, lesson)
                     elif lesson_type == "multiple_choice":
