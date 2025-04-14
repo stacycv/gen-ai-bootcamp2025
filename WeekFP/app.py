@@ -398,8 +398,111 @@ lessons = {
             {
                 "id": "beg-story-1",
                 "type": "story",
-                "title": "A Day in Madrid",
-                "content": {}  # The content is now handled within the show_interactive_story function
+                "title": "A Day at the Park",
+                "content": {
+                    0: {
+                        "text": "María camina por el parque.",
+                        "translation": "Maria walks through the park.",
+                        "choices": [
+                            {
+                                "text": "Ella ve un perro",
+                                "translation": "She sees a dog",
+                                "leads_to": 1
+                            },
+                            {
+                                "text": "Ella compra un helado",
+                                "translation": "She buys an ice cream",
+                                "leads_to": 2
+                            }
+                        ]
+                    },
+                    1: {
+                        "text": "El perro es muy amigable.",
+                        "translation": "The dog is very friendly.",
+                        "choices": [
+                            {
+                                "text": "Ella acaricia al perro",
+                                "translation": "She pets the dog",
+                                "leads_to": 3
+                            },
+                            {
+                                "text": "Ella sigue caminando",
+                                "translation": "She keeps walking",
+                                "leads_to": 4
+                            }
+                        ]
+                    },
+                    2: {
+                        "text": "El helado es de chocolate.",
+                        "translation": "The ice cream is chocolate.",
+                        "choices": [
+                            {
+                                "text": "Está delicioso",
+                                "translation": "It's delicious",
+                                "leads_to": 5
+                            },
+                            {
+                                "text": "Está muy frío",
+                                "translation": "It's very cold",
+                                "leads_to": 5
+                            }
+                        ]
+                    },
+                    3: {
+                        "text": "¡Has llegado al final de la historia!",
+                        "translation": "You've reached the end of the story!",
+                        "is_ending": True
+                    },
+                    4: {
+                        "text": "¡Has llegado al final de la historia!",
+                        "translation": "You've reached the end of the story!",
+                        "is_ending": True
+                    },
+                    5: {
+                        "text": "¡Has llegado al final de la historia!",
+                        "translation": "You've reached the end of the story!",
+                        "is_ending": True
+                    }
+                }
+            },
+            {
+                "id": "beg-story-2",
+                "type": "story",
+                "title": "At the Supermarket",
+                "content": {
+                    0: {
+                        "text": "Juan está en el supermercado.",
+                        "translation": "Juan is at the supermarket.",
+                        "choices": [
+                            {
+                                "text": "Compra frutas",
+                                "translation": "He buys fruits",
+                                "leads_to": 1
+                            },
+                            {
+                                "text": "Compra verduras",
+                                "translation": "He buys vegetables",
+                                "leads_to": 2
+                            }
+                        ]
+                    },
+                    1: {
+                        "text": "Las manzanas están frescas.",
+                        "translation": "The apples are fresh.",
+                        "choices": [
+                            {
+                                "text": "Compra cinco manzanas",
+                                "translation": "He buys five apples",
+                                "leads_to": 3
+                            },
+                            {
+                                "text": "Busca más frutas",
+                                "translation": "He looks for more fruits",
+                                "leads_to": 4
+                            }
+                        ]
+                    }
+                }
             }
         ]
     },
@@ -525,8 +628,41 @@ lessons = {
             {
                 "id": "int-story-1",
                 "type": "story",
-                "title": "At the Restaurant",
-                "content": {}  # Content handled in show_interactive_story function
+                "title": "Planning a Trip",
+                "content": {
+                    0: {
+                        "text": "Necesitas planear tus vacaciones.",
+                        "translation": "You need to plan your vacation.",
+                        "choices": [
+                            {
+                                "text": "Ir a la playa",
+                                "translation": "Go to the beach",
+                                "leads_to": 1
+                            },
+                            {
+                                "text": "Visitar las montañas",
+                                "translation": "Visit the mountains",
+                                "leads_to": 2
+                            }
+                        ]
+                    },
+                    1: {
+                        "text": "Decides ir a la playa. ¿Qué harás primero?",
+                        "translation": "You decide to go to the beach. What will you do first?",
+                        "choices": [
+                            {
+                                "text": "Reservar un hotel",
+                                "translation": "Book a hotel",
+                                "leads_to": 3
+                            },
+                            {
+                                "text": "Comprar boletos de avión",
+                                "translation": "Buy plane tickets",
+                                "leads_to": 4
+                            }
+                        ]
+                    }
+                }
             }
         ],
         "song_lessons": [
@@ -677,8 +813,41 @@ lessons = {
             {
                 "id": "adv-story-1",
                 "type": "story",
-                "title": "Business Meeting",
-                "content": {}  # Content handled in show_interactive_story function
+                "title": "Business Negotiations",
+                "content": {
+                    0: {
+                        "text": "Tienes una reunión importante con un cliente internacional.",
+                        "translation": "You have an important meeting with an international client.",
+                        "choices": [
+                            {
+                                "text": "Presentar la propuesta formal",
+                                "translation": "Present the formal proposal",
+                                "leads_to": 1
+                            },
+                            {
+                                "text": "Comenzar con una conversación informal",
+                                "translation": "Start with informal conversation",
+                                "leads_to": 2
+                            }
+                        ]
+                    },
+                    1: {
+                        "text": "El cliente parece interesado en los detalles técnicos.",
+                        "translation": "The client seems interested in technical details.",
+                        "choices": [
+                            {
+                                "text": "Explicar las especificaciones del producto",
+                                "translation": "Explain product specifications",
+                                "leads_to": 3
+                            },
+                            {
+                                "text": "Discutir el precio y términos",
+                                "translation": "Discuss pricing and terms",
+                                "leads_to": 4
+                            }
+                        ]
+                    }
+                }
             }
         ],
         "song_lessons": [
@@ -807,18 +976,25 @@ def show_hero():
 def show_lesson(level, lesson):
     lesson_id = lesson['id']
     
-    # Make the back button key unique by including the lesson id
-    if st.button("← Back", key=f"back_button_{lesson_id}"):
-        st.session_state.current_lesson = None
-        st.session_state.user_answer = []
-        st.session_state.shuffled_words = None
-        st.rerun()
+    # Add refresh button at the top
+    col1, col2 = st.columns([4, 1])
+    with col2:
+        if st.button("🔄 New Sentence", key=f"refresh_{lesson_id}"):
+            # Reset translation state
+            st.session_state.user_answer = []
+            st.session_state.shuffled_words = None
+            # Clear any stored answers
+            for key in list(st.session_state.keys()):
+                if key.startswith(f"{lesson_id}"):
+                    del st.session_state[key]
+            st.rerun()
     
-    # Show completion status and last attempt
-    if lesson_id in st.session_state.completed_lessons:
-        st.success("✅ Completed!")
-    if lesson_id in st.session_state.last_attempt_time:
-        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    # Show completion status
+    with col1:
+        if lesson_id in st.session_state.completed_lessons:
+            st.success("✅ Completed!")
+        if lesson_id in st.session_state.last_attempt_time:
+            st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
     
     st.subheader(lesson["title"])
     st.write("Translate this sentence:")
@@ -1044,15 +1220,34 @@ def show_fill_blank_lesson(lesson):
     lesson_id = lesson["id"]
     st.subheader(lesson["title"])
     
+    # Add refresh button at the top
+    col1, col2 = st.columns([4, 1])
+    with col2:
+        if st.button("🔄 New Questions", key=f"refresh_{lesson_id}"):
+            # Clear all stored answers for this lesson
+            for key in list(st.session_state.keys()):
+                if key.startswith(f"fb_{lesson_id}"):
+                    del st.session_state[key]
+            # Reset shuffled sentences
+            if f"shuffled_sentences_{lesson_id}" in st.session_state:
+                del st.session_state[f"shuffled_sentences_{lesson_id}"]
+            st.rerun()
+    
     # Show completion status
-    if lesson_id in st.session_state.completed_lessons:
-        st.success("✅ Completed!")
-    if lesson_id in st.session_state.last_attempt_time:
-        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    with col1:
+        if lesson_id in st.session_state.completed_lessons:
+            st.success("✅ Completed!")
     
-    all_correct = True  # Track if all answers are correct
+    # Randomize sentences if not already shuffled
+    if f"shuffled_sentences_{lesson_id}" not in st.session_state:
+        st.session_state[f"shuffled_sentences_{lesson_id}"] = random.sample(
+            lesson["sentences"], 
+            min(3, len(lesson["sentences"]))  # Show 3 sentences at a time
+        )
     
-    for i, sentence in enumerate(lesson["sentences"]):
+    all_correct = True
+    
+    for i, sentence in enumerate(st.session_state[f"shuffled_sentences_{lesson_id}"]):
         st.write(sentence["sentence"])
         user_answer = st.text_input(
             "Your answer:",
@@ -1092,15 +1287,33 @@ def show_conversation_lesson(lesson):
     lesson_id = lesson["id"]
     st.subheader(lesson["title"])
     
+    # Add refresh button at the top
+    col1, col2 = st.columns([4, 1])
+    with col2:
+        if st.button("🔄 New Conversation", key=f"refresh_{lesson_id}"):
+            # Clear conversation state
+            for key in list(st.session_state.keys()):
+                if key.startswith(f"conv_{lesson_id}"):
+                    del st.session_state[key]
+            if f"current_dialogue_{lesson_id}" in st.session_state:
+                del st.session_state[f"current_dialogue_{lesson_id}"]
+            st.rerun()
+    
     # Show completion status
-    if lesson_id in st.session_state.completed_lessons:
-        st.success("✅ Completed!")
-    if lesson_id in st.session_state.last_attempt_time:
-        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    with col1:
+        if lesson_id in st.session_state.completed_lessons:
+            st.success("✅ Completed!")
+    
+    # Randomize dialogue if not already set
+    if f"current_dialogue_{lesson_id}" not in st.session_state:
+        # Select a subset of the dialogue to show
+        dialogue_length = len(lesson["dialogue"])
+        start_idx = random.randint(0, max(0, dialogue_length - 4))  # Show 4 exchanges at a time
+        st.session_state[f"current_dialogue_{lesson_id}"] = lesson["dialogue"][start_idx:start_idx + 4]
     
     all_responses_correct = True
     
-    for i, dialogue in enumerate(lesson["dialogue"]):
+    for i, dialogue in enumerate(st.session_state[f"current_dialogue_{lesson_id}"]):
         # Check if it's the system/instructor speaking
         if "text" in dialogue and "translation" in dialogue:
             with st.chat_message(dialogue["speaker"]):
@@ -1153,7 +1366,7 @@ def show_audio_lesson(lesson):
         with col1:
             st.write(f"**Translation**: {ex['translation']}")
             st.write(f"**Pronunciation**: {ex['pronunciation']}")
-            st.info(f"💡 Tip: {ex['tip']}")
+            st.info(f"Tip: {ex['tip']}")
         with col2:
             # Play audio button
             if ex['word'] in lesson['audio_files']:
@@ -1315,71 +1528,7 @@ def show_interactive_story(lesson):
         st.success("✅ Completed!")
     
     # Update the story content structure
-    story_content = {
-        0: {
-            "text": "María camina por el parque.",
-            "translation": "Maria walks through the park.",
-            "choices": [
-                {
-                    "text": "Ella ve un perro",
-                    "translation": "She sees a dog",
-                    "leads_to": 1
-                },
-                {
-                    "text": "Ella compra un helado",
-                    "translation": "She buys an ice cream",
-                    "leads_to": 2
-                }
-            ]
-        },
-        1: {
-            "text": "El perro es muy amigable.",
-            "translation": "The dog is very friendly.",
-            "choices": [
-                {
-                    "text": "Ella acaricia al perro",
-                    "translation": "She pets the dog",
-                    "leads_to": 3
-                },
-                {
-                    "text": "Ella sigue caminando",
-                    "translation": "She keeps walking",
-                    "leads_to": 4
-                }
-            ]
-        },
-        2: {
-            "text": "El helado es de chocolate.",
-            "translation": "The ice cream is chocolate.",
-            "choices": [
-                {
-                    "text": "Está delicioso",
-                    "translation": "It's delicious",
-                    "leads_to": 5
-                },
-                {
-                    "text": "Está muy frío",
-                    "translation": "It's very cold",
-                    "leads_to": 5
-                }
-            ]
-        },
-        3: {
-            "text": "¡Has llegado al final de la historia!",
-            "translation": "You've reached the end of the story!",
-            "is_ending": True
-        },
-        4: {
-            "text": "¡Has llegado al final de la historia!",
-            "translation": "You've reached the end of the story!",
-            "is_ending": True
-        },
-        5: {
-            "text": "¡Has llegado al final de la historia!",
-            "translation": "You've reached the end of the story!",
-            "is_ending": True
-        }
-    }
+    story_content = lesson["content"]
     
     # Get current scene
     current_scene = story_content[st.session_state.story_position]
