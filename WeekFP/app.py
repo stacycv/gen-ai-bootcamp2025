@@ -284,18 +284,40 @@ lessons = {
             {
                 "id": "beg-audio-1",
                 "type": "audio",
-                "title": "Basic Pronunciation",
-                "audio_url": "https://example.com/audio/basic_pronunciation.mp3",  # You'll need to host audio files
+                "title": "Basic Spanish Pronunciation",
+                "video_url": "https://www.youtube.com/embed/4Af04ztZbKc",  # Spanish Alphabet & Pronunciation
                 "exercises": [
                     {
                         "word": "perro",
                         "translation": "dog",
-                        "pronunciation": "peh-rro"
+                        "pronunciation": "peh-RRo",
+                        "timestamp": "Learn the rolling 'R' sound"
                     },
                     {
-                        "word": "casa",
-                        "translation": "house",
-                        "pronunciation": "kah-sah"
+                        "word": "gracias",
+                        "translation": "thank you",
+                        "pronunciation": "GRA-see-as",
+                        "timestamp": "Practice the soft 'c' sound"
+                    }
+                ]
+            },
+            {
+                "id": "beg-audio-2",
+                "type": "audio",
+                "title": "Common Phrases Pronunciation",
+                "video_url": "https://www.youtube.com/embed/hfWnWvNk4pM",  # Common Phrases
+                "exercises": [
+                    {
+                        "word": "buenos días",
+                        "translation": "good morning",
+                        "pronunciation": "BWEH-nos DEE-as",
+                        "timestamp": "Practice the 'ue' sound"
+                    },
+                    {
+                        "word": "¿cómo estás?",
+                        "translation": "how are you?",
+                        "pronunciation": "KO-mo es-TAS",
+                        "timestamp": "Notice the stress on the last syllable"
                     }
                 ]
             }
@@ -1101,20 +1123,48 @@ def show_conversation_lesson(lesson):
                     st.session_state.completed_lessons.add(lesson_id)
 
 def show_audio_lesson(lesson):
+    lesson_id = lesson["id"]
     st.subheader(lesson["title"])
     
-    # Audio player
-    st.audio(lesson["audio_url"])
+    # Show completion status
+    if lesson_id in st.session_state.completed_lessons:
+        st.success("✅ Completed!")
+    if lesson_id in st.session_state.last_attempt_time:
+        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
+    
+    # Show pronunciation video
+    st.video(lesson["video_url"])
     
     # Show exercises
-    for ex in lesson["exercises"]:
-        st.write(f"Word: {ex['word']}")
-        st.write(f"Translation: {ex['translation']}")
-        st.write(f"Pronunciation guide: {ex['pronunciation']}")
-        
-        # Add recording capability
-        if st.button("Record Your Pronunciation", key=f"record_{ex['word']}"):
-            st.write("Recording feature coming soon!")
+    st.subheader("Practice Pronunciation")
+    all_practiced = True
+    
+    for i, ex in enumerate(lesson["exercises"]):
+        with st.expander(f"Practice: {ex['word']}", expanded=True):
+            st.write(f"**Word**: {ex['word']}")
+            st.write(f"**Translation**: {ex['translation']}")
+            st.write(f"**Pronunciation Guide**: {ex['pronunciation']}")
+            st.info(f"💡 Tip: {ex['timestamp']}")
+            
+            # Add practice confirmation
+            if st.button("I've practiced this word!", key=f"practice_{lesson_id}_{i}"):
+                st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+                # Add to history
+                attempt_result = {
+                    "lesson_id": lesson_id,
+                    "lesson_title": lesson["title"],
+                    "level": st.session_state.current_lesson,
+                    "timestamp": st.session_state.last_attempt_time[lesson_id],
+                    "correct": True,  # Since it's self-reported practice
+                    "user_answer": "Practiced pronunciation",
+                    "correct_answer": ex['word']
+                }
+                st.session_state.lesson_history.append(attempt_result)
+                
+                st.success("¡Bien hecho! Keep practicing! 🎉")
+                st.session_state.completed_lessons.add(lesson_id)
+                st.rerun()
 
 def show_song_lesson(lesson):
     st.subheader(lesson["title"])
