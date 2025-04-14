@@ -1191,8 +1191,10 @@ def show_video_lesson(lesson):
                 st.success("¡Correcto! 🎉")
                 if all_correct:
                     st.session_state.completed_lessons.add(lesson_id)
+                    st.rerun()  # Rerun to update progress immediately
             else:
                 st.error(f"Try again! The correct answer is: {ex['options'][ex['correct']]}")
+                st.rerun()  # Rerun to update progress immediately
 
 def show_interactive_story(lesson):
     st.subheader(lesson["title"])
