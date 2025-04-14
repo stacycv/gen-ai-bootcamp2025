@@ -304,44 +304,22 @@ lessons = {
             {
                 "id": "beg-song-1",
                 "type": "song",
-                "title": "La Bamba - Learn Spanish with Music",
-                "video_url": "https://www.youtube.com/watch?v=Jp6j5HJ-Cok",
+                "title": "Colors and Numbers Song",
+                "video_url": "https://www.youtube.com/embed/DsRKoZGaoEM",  # Spanish Colors Song
                 "lyrics": [
                     {
-                        "spanish": "Para bailar la bamba",
-                        "english": "To dance the bamba"
+                        "spanish": "Los colores, los colores",
+                        "english": "The colors, the colors"
                     },
                     {
-                        "spanish": "Se necesita una poca de gracia",
-                        "english": "You need a little grace"
+                        "spanish": "Rojo, azul y verde",
+                        "english": "Red, blue and green"
                     }
                 ],
                 "exercises": [
                     {
-                        "question": "Complete: Para ___ la bamba",
-                        "answer": "bailar"
-                    }
-                ]
-            },
-            {
-                "id": "beg-song-2",
-                "type": "song",
-                "title": "Despacito - Learn Numbers and Colors",
-                "video_url": "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
-                "lyrics": [
-                    {
-                        "spanish": "Uno, dos, tres",
-                        "english": "One, two, three"
-                    },
-                    {
-                        "spanish": "Despacito",
-                        "english": "Slowly"
-                    }
-                ],
-                "exercises": [
-                    {
-                        "question": "What does 'despacito' mean?",
-                        "answer": "slowly"
+                        "question": "What does 'rojo' mean?",
+                        "answer": "red"
                     }
                 ]
             }
@@ -351,7 +329,7 @@ lessons = {
                 "id": "beg-pic-1",
                 "type": "picture",
                 "title": "Basic Spanish Animals",
-                "video_url": "https://www.youtube.com/watch?v=GZyF3M7VKUU",
+                "video_url": "https://www.youtube.com/embed/YwYwM1FLYXY",  # Spanish Animals for Beginners
                 "exercises": [
                     {
                         "question": "How do you say 'dog' in Spanish?",
@@ -362,6 +340,24 @@ lessons = {
                         "question": "What is 'cat' in Spanish?",
                         "options": ["pájaro", "gato", "perro", "conejo"],
                         "correct": 1
+                    }
+                ]
+            },
+            {
+                "id": "beg-pic-2",
+                "type": "picture",
+                "title": "Colors in Spanish",
+                "video_url": "https://www.youtube.com/embed/zpLQSdu4V94",  # Spanish Colors
+                "exercises": [
+                    {
+                        "question": "What is 'red' in Spanish?",
+                        "options": ["rojo", "azul", "verde", "amarillo"],
+                        "correct": 0
+                    },
+                    {
+                        "question": "How do you say 'blue'?",
+                        "options": ["verde", "amarillo", "azul", "rojo"],
+                        "correct": 2
                     }
                 ]
             }
