@@ -350,13 +350,18 @@ lessons = {
             {
                 "id": "beg-pic-1",
                 "type": "picture",
-                "title": "Animals and Colors",
+                "title": "Basic Spanish Animals",
+                "video_url": "https://www.youtube.com/watch?v=GZyF3M7VKUU",
                 "exercises": [
                     {
-                        "image_url": "https://example.com/images/red_dog.jpg",
-                        "question": "What color is the dog?",
-                        "options": ["rojo", "azul", "verde", "amarillo"],
+                        "question": "How do you say 'dog' in Spanish?",
+                        "options": ["perro", "gato", "pájaro", "pez"],
                         "correct": 0
+                    },
+                    {
+                        "question": "What is 'cat' in Spanish?",
+                        "options": ["pájaro", "gato", "perro", "conejo"],
+                        "correct": 1
                     }
                 ]
             }
@@ -1000,15 +1005,24 @@ def show_song_lesson(lesson):
 def show_picture_lesson(lesson):
     st.subheader(lesson["title"])
     
-    for ex in lesson["exercises"]:
-        st.image(ex["image_url"])
-        answer = st.radio(ex["question"], ex["options"])
+    # Show video first
+    st.video(lesson["video_url"])
+    
+    # Show exercises
+    st.subheader("Practice What You Learned")
+    for i, ex in enumerate(lesson["exercises"]):
+        st.write(f"Question {i+1}: {ex['question']}")
+        answer = st.radio(
+            "Select your answer:",
+            ex["options"],
+            key=f"pic_{lesson['id']}_{i}"
+        )
         
-        if st.button("Check", key=f"check_pic_{lesson['id']}"):
+        if st.button("Check Answer", key=f"check_pic_{lesson['id']}_{i}"):
             if ex["options"].index(answer) == ex["correct"]:
-                st.success("¡Correcto!")
+                st.success("¡Correcto! 🎉")
             else:
-                st.error("Try again!")
+                st.error(f"Try again! The correct answer is: {ex['options'][ex['correct']]}")
 
 def show_interactive_story(lesson):
     st.subheader(lesson["title"])
