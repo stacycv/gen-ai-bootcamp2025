@@ -3,152 +3,187 @@ import random
 from datetime import datetime
 import string
 
-# Configure page settings
+# Configure page settings with modern emojis
 st.set_page_config(
-    page_title="¡Hola Español! - Mexican Spanish School",
-    page_icon="🇲🇽",
+    page_title="¡Aprende Español! ✨",
+    page_icon="🌮",
     layout="wide"
 )
 
-# Updated Custom CSS with Mexican-inspired colors and patterns
+# Modern Gen Z-inspired CSS
 st.markdown("""
     <style>
-    /* Mexican-inspired color palette */
+    /* Modern color palette */
     :root {
-        --mexican-red: #D62828;
-        --mexican-green: #006847;
-        --mexican-gold: #FFB800;
-        --terracotta: #A44A3F;
-        --adobe: #CB8589;
-        --sand: #F4D03F;
+        --neon-pink: #FF2E63;
+        --electric-purple: #A239EA;
+        --cyber-blue: #4FFFB0;
+        --sunny-yellow: #FFE867;
+        --dark-mode: #1A1A1A;
+        --light-text: #FFFFFF;
     }
 
+    /* Dark mode inspired main background */
     .main {
-        background-color: #FFF5E6;
-        background-image: linear-gradient(45deg, #f9f9f9 25%, transparent 25%, transparent 75%, #f9f9f9 75%, #f9f9f9), 
-        linear-gradient(45deg, #f9f9f9 25%, transparent 25%, transparent 75%, #f9f9f9 75%, #f9f9f9);
-        background-size: 60px 60px;
-        background-position: 0 0, 30px 30px;
+        background-color: var(--dark-mode);
+        color: var(--light-text);
+        font-family: 'Inter', sans-serif;
     }
 
-    /* Decorative header */
+    /* Gradient text headers */
     h1 {
-        color: var(--mexican-red);
-        text-shadow: 2px 2px var(--mexican-gold);
-        font-family: 'Georgia', serif;
-        padding: 20px;
-        border-bottom: 3px solid var(--mexican-green);
-        margin-bottom: 30px;
+        background: linear-gradient(120deg, var(--neon-pink), var(--cyber-blue));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3.5rem;
+        font-weight: 800;
+        text-align: center;
+        margin: 2rem 0;
     }
 
     h2, h3 {
-        color: var(--terracotta);
-        font-family: 'Georgia', serif;
+        color: var(--cyber-blue);
+        font-weight: 700;
     }
 
-    /* Styled buttons */
+    /* Modern neon buttons */
     .stButton>button {
-        background-color: var(--mexican-red);
+        background: var(--neon-pink);
+        border: 2px solid var(--cyber-blue);
         color: white;
-        border: 2px solid var(--mexican-gold);
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-weight: bold;
+        padding: 15px 30px;
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 1.1rem;
         transition: all 0.3s ease;
-        box-shadow: 3px 3px var(--mexican-gold);
+        box-shadow: 0 0 15px rgba(255, 46, 99, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     .stButton>button:hover {
-        transform: translateY(-2px);
-        box-shadow: 4px 4px var(--mexican-gold);
-        background-color: var(--terracotta);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 0 25px rgba(255, 46, 99, 0.5);
+        background: linear-gradient(45deg, var(--neon-pink), var(--electric-purple));
     }
 
-    /* Lesson cards with Mexican pattern border */
+    /* Cool card design */
     .lesson-card {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border: 3px solid var(--mexican-green);
-        position: relative;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 25px;
         margin: 20px 0;
+        transition: all 0.3s ease;
     }
 
-    /* Sidebar styling */
-    .sidebar .stProgress > div > div {
-        background-color: var(--mexican-green);
-        background-image: linear-gradient(45deg, var(--mexican-red) 25%, transparent 25%, transparent 75%, var(--mexican-red) 75%, var(--mexican-red));
+    .lesson-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px rgba(74, 255, 176, 0.2);
     }
 
-    .sidebar .stMetric {
-        background-color: white;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 10px 0;
-        border-left: 4px solid var(--mexican-gold);
+    /* Modern progress bars */
+    .stProgress > div > div {
+        background: linear-gradient(90deg, var(--neon-pink), var(--cyber-blue));
+        border-radius: 10px;
+        height: 10px;
     }
 
-    /* Chat message styling */
-    .stChatMessage {
+    /* Stylish metrics */
+    .stMetric {
+        background: rgba(255, 255, 255, 0.05);
         border-radius: 15px;
-        border: 2px solid var(--adobe);
-        background-color: white;
+        padding: 20px;
+        border-left: 4px solid var(--cyber-blue);
+        backdrop-filter: blur(10px);
     }
 
-    /* Success/Error messages with Mexican colors */
+    /* Cool chat bubbles */
+    .stChatMessage {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--cyber-blue);
+        border-radius: 20px;
+        padding: 15px;
+        margin: 10px 0;
+        backdrop-filter: blur(5px);
+    }
+
+    /* Success/Error messages with modern style */
     .stSuccess {
-        background-color: var(--mexican-green);
+        background: linear-gradient(45deg, #00f2c3, #0098f0);
+        border: none;
+        border-radius: 15px;
+        padding: 15px;
         color: white;
-        border-radius: 8px;
-        padding: 10px;
+        font-weight: 600;
     }
 
     .stError {
-        background-color: var(--mexican-red);
+        background: linear-gradient(45deg, var(--neon-pink), #ff6b6b);
+        border: none;
+        border-radius: 15px;
+        padding: 15px;
         color: white;
-        border-radius: 8px;
-        padding: 10px;
+        font-weight: 600;
     }
 
-    /* Add decorative elements */
-    .decorative-border {
-        border: 10px solid transparent;
-        border-image: repeating-linear-gradient(
-            45deg,
-            var(--mexican-red),
-            var(--mexican-red) 10px,
-            var(--mexican-green) 10px,
-            var(--mexican-green) 20px
-        ) 10;
-    }
-
-    /* Radio buttons with Mexican colors */
+    /* Modern radio buttons */
     .stRadio > label {
-        color: var(--terracotta) !important;
-        font-weight: bold;
+        color: var(--cyber-blue) !important;
+        font-weight: 600;
+        font-size: 1.1rem;
     }
 
-    /* Text inputs with Mexican styling */
+    /* Sleek text inputs */
     .stTextInput > div > div > input {
-        border: 2px solid var(--adobe);
-        border-radius: 8px;
-        padding: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid var(--cyber-blue);
+        border-radius: 12px;
+        color: white;
+        padding: 15px;
+        font-size: 1.1rem;
     }
 
-    /* Add Mexican pattern to expanders */
+    /* Cool expander headers */
     .streamlit-expanderHeader {
-        background-color: var(--sand);
-        border-radius: 8px;
-        padding: 10px;
-        border-left: 4px solid var(--mexican-red);
+        background: linear-gradient(45deg, var(--neon-pink), var(--electric-purple));
+        border-radius: 12px;
+        padding: 15px;
+        color: white !important;
+        font-weight: 600;
+    }
+
+    /* Emoji animations */
+    .emoji {
+        display: inline-block;
+        animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--dark-mode);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--neon-pink);
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--electric-purple);
     }
     </style>
-
-    <!-- Add decorative header -->
-    <div class="decorative-header">
-        <h1>¡Bienvenidos a Español Mexicano! 🌵</h1>
-    </div>
 """, unsafe_allow_html=True)
 
 # Initialize session state
@@ -464,25 +499,32 @@ placement_test = {
 }
 
 def show_hero():
-    st.title("¡Hola Español!")
-    st.markdown("### Learn Spanish the Natural Way")
-    st.write("Interactive lessons tailored to your skill level")
+    st.markdown("""
+        <div style='text-align: center; padding: 40px 0;'>
+            <h1>¡Aprende Español! ✨</h1>
+            <p style='font-size: 1.5em; color: #4FFFB0; margin: 20px 0;'>
+                Level up your Spanish game! 🚀
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("### Choose Your Vibe 💫")
     
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        if st.button("Beginner"):
+        if st.button("🌱 Rookie\n(Beginner)"):
             st.session_state.current_lesson = "beginner"
             st.rerun()
     with col2:
-        if st.button("Intermediate"):
+        if st.button("💪 Skilled\n(Intermediate)"):
             st.session_state.current_lesson = "intermediate"
             st.rerun()
     with col3:
-        if st.button("Advanced"):
+        if st.button("🔥 Pro\n(Advanced)"):
             st.session_state.current_lesson = "advanced"
             st.rerun()
     with col4:
-        if st.button("Take Placement Test"):
+        if st.button("✨ Find Your Level\n(Placement Test)"):
             st.session_state.placement_test_active = True
             st.rerun()
 
