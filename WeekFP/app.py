@@ -1001,24 +1001,52 @@ def show_song_lesson(lesson):
                 st.error(f"Try again! The answer is: {ex['answer']}")
 
 def show_video_lesson(lesson):
+    lesson_id = lesson["id"]
     st.subheader(lesson["title"])
+    
+    # Show completion status
+    if lesson_id in st.session_state.completed_lessons:
+        st.success("✅ Completed!")
+    if lesson_id in st.session_state.last_attempt_time:
+        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
     
     # Show video first
     st.video(lesson["video_url"])
     
     # Show exercises
     st.subheader("Practice What You Learned")
+    all_correct = True  # Track if all answers are correct
+    
     for i, ex in enumerate(lesson["exercises"]):
         st.write(f"Question {i+1}: {ex['question']}")
         answer = st.radio(
             "Select your answer:",
             ex["options"],
-            key=f"pic_{lesson['id']}_{i}"
+            key=f"vid_{lesson_id}_{i}"
         )
         
-        if st.button("Check Answer", key=f"check_pic_{lesson['id']}_{i}"):
-            if ex["options"].index(answer) == ex["correct"]:
+        if st.button("Check Answer", key=f"check_vid_{lesson_id}_{i}"):
+            st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            
+            is_correct = ex["options"].index(answer) == ex["correct"]
+            all_correct = all_correct and is_correct
+            
+            # Add to history
+            attempt_result = {
+                "lesson_id": lesson_id,
+                "lesson_title": lesson["title"],
+                "level": st.session_state.current_lesson,
+                "timestamp": st.session_state.last_attempt_time[lesson_id],
+                "correct": is_correct,
+                "user_answer": answer,
+                "correct_answer": ex["options"][ex["correct"]]
+            }
+            st.session_state.lesson_history.append(attempt_result)
+            
+            if is_correct:
                 st.success("¡Correcto! 🎉")
+                if all_correct:
+                    st.session_state.completed_lessons.add(lesson_id)
             else:
                 st.error(f"Try again! The correct answer is: {ex['options'][ex['correct']]}")
 
