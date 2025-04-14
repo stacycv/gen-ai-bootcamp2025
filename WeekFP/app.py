@@ -279,6 +279,87 @@ lessons = {
                     }
                 ]
             }
+        ],
+        "audio_practice": [
+            {
+                "id": "beg-audio-1",
+                "type": "audio",
+                "title": "Basic Pronunciation",
+                "audio_url": "https://example.com/audio/basic_pronunciation.mp3",  # You'll need to host audio files
+                "exercises": [
+                    {
+                        "word": "perro",
+                        "translation": "dog",
+                        "pronunciation": "peh-rro"
+                    },
+                    {
+                        "word": "casa",
+                        "translation": "house",
+                        "pronunciation": "kah-sah"
+                    }
+                ]
+            }
+        ],
+        "song_lessons": [
+            {
+                "id": "beg-song-1",
+                "type": "song",
+                "title": "Learn with Music",
+                "video_url": "https://www.youtube.com/embed/...",  # Add YouTube embed URL
+                "lyrics": [
+                    {
+                        "spanish": "La vida es un carnaval",
+                        "english": "Life is a carnival",
+                        "timestamp": "0:00"
+                    }
+                ],
+                "exercises": [
+                    {
+                        "question": "Fill in the missing word: 'La ___ es un carnaval'",
+                        "answer": "vida"
+                    }
+                ]
+            }
+        ],
+        "picture_vocabulary": [
+            {
+                "id": "beg-pic-1",
+                "type": "picture",
+                "title": "Animals and Colors",
+                "exercises": [
+                    {
+                        "image_url": "https://example.com/images/red_dog.jpg",
+                        "question": "What color is the dog?",
+                        "options": ["rojo", "azul", "verde", "amarillo"],
+                        "correct": 0
+                    }
+                ]
+            }
+        ],
+        "interactive_stories": [
+            {
+                "id": "beg-story-1",
+                "type": "story",
+                "title": "A Day in Madrid",
+                "content": [
+                    {
+                        "text": "María camina por el parque.",
+                        "translation": "Maria walks through the park.",
+                        "choices": [
+                            {
+                                "text": "Ella ve un perro",
+                                "translation": "She sees a dog",
+                                "leads_to": 1
+                            },
+                            {
+                                "text": "Ella compra un helado",
+                                "translation": "She buys an ice cream",
+                                "leads_to": 2
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
     },
     "intermediate": {
@@ -700,6 +781,16 @@ def show_lesson_menu(level):
             st.session_state.lesson_type = "multiple_choice"
             st.rerun()
             
+        st.subheader("🎵 Audio Lessons")
+        if st.button("Practice Pronunciation", key=f"{level}_audio"):
+            st.session_state.lesson_type = "audio_practice"
+            st.rerun()
+            
+        st.subheader("🎼 Learn with Songs")
+        if st.button("Song Lessons", key=f"{level}_song"):
+            st.session_state.lesson_type = "song_lessons"
+            st.rerun()
+            
     with col2:
         st.subheader("✍️ Fill in the Blanks")
         if st.button("Fill in the Blanks", key=f"{level}_fb"):
@@ -709,6 +800,16 @@ def show_lesson_menu(level):
         st.subheader("💭 Conversation Practice")
         if st.button("Practice Conversations", key=f"{level}_conv"):
             st.session_state.lesson_type = "conversation"
+            st.rerun()
+            
+        st.subheader("🖼️ Picture Vocabulary")
+        if st.button("Visual Learning", key=f"{level}_pic"):
+            st.session_state.lesson_type = "picture_vocabulary"
+            st.rerun()
+            
+        st.subheader("📖 Interactive Stories")
+        if st.button("Story Adventures", key=f"{level}_story"):
+            st.session_state.lesson_type = "interactive_stories"
             st.rerun()
 
 def show_multiple_choice_lesson(lesson):
@@ -844,6 +945,73 @@ def show_conversation_lesson(lesson):
                     st.success(f"Translation: {dialogue['translations'][idx]}")
                     st.session_state.completed_lessons.add(lesson_id)
 
+def show_audio_lesson(lesson):
+    st.subheader(lesson["title"])
+    
+    # Audio player
+    st.audio(lesson["audio_url"])
+    
+    # Show exercises
+    for ex in lesson["exercises"]:
+        st.write(f"Word: {ex['word']}")
+        st.write(f"Translation: {ex['translation']}")
+        st.write(f"Pronunciation guide: {ex['pronunciation']}")
+        
+        # Add recording capability
+        if st.button("Record Your Pronunciation", key=f"record_{ex['word']}"):
+            st.write("Recording feature coming soon!")
+
+def show_song_lesson(lesson):
+    st.subheader(lesson["title"])
+    
+    # Embed YouTube video
+    st.video(lesson["video_url"])
+    
+    # Show lyrics with translations
+    for line in lesson["lyrics"]:
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write(line["spanish"])
+        with col2:
+            st.write(line["english"])
+    
+    # Practice exercises
+    for ex in lesson["exercises"]:
+        st.text_input(ex["question"])
+        if st.button("Check", key=f"check_{lesson['id']}"):
+            # Add checking logic
+            pass
+
+def show_picture_lesson(lesson):
+    st.subheader(lesson["title"])
+    
+    for ex in lesson["exercises"]:
+        st.image(ex["image_url"])
+        answer = st.radio(ex["question"], ex["options"])
+        
+        if st.button("Check", key=f"check_pic_{lesson['id']}"):
+            if ex["options"].index(answer) == ex["correct"]:
+                st.success("¡Correcto!")
+            else:
+                st.error("Try again!")
+
+def show_interactive_story(lesson):
+    st.subheader(lesson["title"])
+    
+    if "story_position" not in st.session_state:
+        st.session_state.story_position = 0
+    
+    current_scene = lesson["content"][st.session_state.story_position]
+    
+    st.write(current_scene["text"])
+    st.write(current_scene["translation"])
+    
+    if "choices" in current_scene:
+        for choice in current_scene["choices"]:
+            if st.button(choice["text"], key=f"choice_{choice['leads_to']}"):
+                st.session_state.story_position = choice["leads_to"]
+                st.rerun()
+
 def show_progress_sidebar(level=None):
     """Show progress sidebar with history and statistics"""
     with st.sidebar:
@@ -927,6 +1095,14 @@ def main():
                         show_fill_blank_lesson(lesson)
                     elif lesson_type == "conversation":
                         show_conversation_lesson(lesson)
+                    elif lesson_type == "audio_practice":
+                        show_audio_lesson(lesson)
+                    elif lesson_type == "song_lessons":
+                        show_song_lesson(lesson)
+                    elif lesson_type == "picture_vocabulary":
+                        show_picture_lesson(lesson)
+                    elif lesson_type == "interactive_stories":
+                        show_interactive_story(lesson)
 
 if __name__ == "__main__":
     main() 
