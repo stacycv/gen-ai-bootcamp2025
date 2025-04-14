@@ -49,6 +49,12 @@ if 'lesson_history' not in st.session_state:
     st.session_state.lesson_history = []
 if 'last_attempt_time' not in st.session_state:
     st.session_state.last_attempt_time = {}
+if 'placement_test_active' not in st.session_state:
+    st.session_state.placement_test_active = False
+if 'placement_test_score' not in st.session_state:
+    st.session_state.placement_test_score = 0
+if 'current_question' not in st.session_state:
+    st.session_state.current_question = 0
 
 # Sample lesson data
 lessons = {
@@ -150,6 +156,72 @@ lessons = {
     ]
 }
 
+# Add this placement test questions dictionary
+placement_test = {
+    "questions": [
+        {
+            "id": 1,
+            "question": "Choose the correct translation for 'Hello, how are you?'",
+            "options": [
+                "Hola, ¿cómo estás?",
+                "Adiós, ¿qué tal?",
+                "Buenos días, ¿dónde estás?",
+                "Hola, ¿dónde vas?"
+            ],
+            "correct": 0,
+            "level": "beginner"
+        },
+        {
+            "id": 2,
+            "question": "Complete the sentence: 'Yo ___ estudiante.'",
+            "options": [
+                "es",
+                "soy",
+                "está",
+                "son"
+            ],
+            "correct": 1,
+            "level": "beginner"
+        },
+        {
+            "id": 3,
+            "question": "Which is the correct past tense of 'I went'?",
+            "options": [
+                "Yo voy",
+                "Yo iba",
+                "Yo fui",
+                "Yo iré"
+            ],
+            "correct": 2,
+            "level": "intermediate"
+        },
+        {
+            "id": 4,
+            "question": "Choose the correct subjunctive form: 'Espero que ___ bien.'",
+            "options": [
+                "estás",
+                "estar",
+                "estés",
+                "esté"
+            ],
+            "correct": 2,
+            "level": "advanced"
+        },
+        {
+            "id": 5,
+            "question": "Select the correct conditional tense: 'If I had time, I would travel.'",
+            "options": [
+                "Si tengo tiempo, viajo.",
+                "Si tuviera tiempo, viajaría.",
+                "Si tenía tiempo, viajaba.",
+                "Si tendré tiempo, viajaré."
+            ],
+            "correct": 1,
+            "level": "advanced"
+        }
+    ]
+}
+
 def show_hero():
     st.title("¡Hola Español!")
     st.markdown("### Learn Spanish the Natural Way")
@@ -166,11 +238,12 @@ def show_hero():
             st.rerun()
     with col3:
         if st.button("Advanced"):
-            st.session_state.current_lesson = "intermediate"
+            st.session_state.current_lesson = "advanced"
             st.rerun()
     with col4:
         if st.button("Take Placement Test"):
-            st.info("Placement test coming soon!")
+            st.session_state.placement_test_active = True
+            st.rerun()
 
 def show_lesson(level, lesson):
     lesson_id = lesson['id']
@@ -254,8 +327,84 @@ def show_lesson(level, lesson):
     if st.button("Show Hint", key=f"hint_button_{lesson_id}"):
         st.info("Pay attention to word order and spelling.")
 
+def show_placement_test():
+    st.title("Spanish Placement Test")
+    
+    # Add back button
+    if st.button("← Back to Home", key="back_to_home"):
+        st.session_state.placement_test_active = False
+        st.session_state.current_question = 0
+        st.session_state.placement_test_score = 0
+        st.rerun()
+    
+    # Show progress
+    progress = st.session_state.current_question / len(placement_test["questions"])
+    st.progress(progress)
+    st.write(f"Question {st.session_state.current_question + 1} of {len(placement_test['questions'])}")
+    
+    if st.session_state.current_question < len(placement_test["questions"]):
+        question = placement_test["questions"][st.session_state.current_question]
+        
+        st.subheader(question["question"])
+        
+        # Display options as radio buttons
+        answer = st.radio(
+            "Choose your answer:",
+            question["options"],
+            key=f"question_{question['id']}"
+        )
+        
+        # Submit button
+        if st.button("Submit Answer", key=f"submit_{question['id']}"):
+            if question["options"].index(answer) == question["correct"]:
+                st.session_state.placement_test_score += 1
+                st.success("¡Correcto! 🎉")
+            else:
+                st.error("Incorrect. The correct answer was: " + 
+                        question["options"][question["correct"]])
+            
+            # Move to next question
+            st.session_state.current_question += 1
+            st.rerun()
+    
+    else:
+        # Show results
+        score = st.session_state.placement_test_score
+        st.title("Test Complete!")
+        st.write(f"Your score: {score} out of {len(placement_test['questions'])}")
+        
+        # Determine level based on score
+        if score <= 1:
+            recommended_level = "beginner"
+            message = "We recommend starting with the Beginner level to build a strong foundation."
+        elif score <= 3:
+            recommended_level = "intermediate"
+            message = "You show good basic knowledge. The Intermediate level would be perfect for you."
+        else:
+            recommended_level = "advanced"
+            message = "Excellent! You're ready for the Advanced level."
+        
+        st.success(f"Recommended Level: {recommended_level.title()}")
+        st.write(message)
+        
+        # Add buttons to start recommended level or return home
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button(f"Start {recommended_level.title()} Level"):
+                st.session_state.current_lesson = recommended_level
+                st.session_state.placement_test_active = False
+                st.session_state.current_question = 0
+                st.rerun()
+        with col2:
+            if st.button("Return to Home"):
+                st.session_state.placement_test_active = False
+                st.session_state.current_question = 0
+                st.rerun()
+
 def main():
-    if st.session_state.current_lesson is None:
+    if st.session_state.placement_test_active:
+        show_placement_test()
+    elif st.session_state.current_lesson is None:
         # Reset session state when returning to home
         st.session_state.user_answer = []
         st.session_state.shuffled_words = None
