@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+from datetime import datetime
 
 # Configure page settings
 st.set_page_config(
@@ -44,6 +45,10 @@ if 'shuffled_words' not in st.session_state:
     st.session_state.shuffled_words = None
 if 'previous_lesson' not in st.session_state:
     st.session_state.previous_lesson = None
+if 'lesson_history' not in st.session_state:
+    st.session_state.lesson_history = []
+if 'last_attempt_time' not in st.session_state:
+    st.session_state.last_attempt_time = {}
 
 # Sample lesson data
 lessons = {
@@ -65,6 +70,33 @@ lessons = {
                 "spanish": "Yo tengo veinticinco libros.",
                 "words": ["yo", "tengo", "veinticinco", "libros"]
             }
+        },
+        {
+            "id": "beg-3",
+            "title": "Days of the Week",
+            "content": {
+                "english": "Today is Monday and tomorrow is Tuesday.",
+                "spanish": "Hoy es lunes y mañana es martes.",
+                "words": ["Hoy", "es", "lunes", "y", "mañana", "es", "martes"]
+            }
+        },
+        {
+            "id": "beg-4",
+            "title": "Colors",
+            "content": {
+                "english": "The sky is blue and the grass is green.",
+                "spanish": "El cielo es azul y el pasto es verde.",
+                "words": ["El", "cielo", "es", "azul", "y", "el", "pasto", "es", "verde"]
+            }
+        },
+        {
+            "id": "beg-5",
+            "title": "Family Members",
+            "content": {
+                "english": "This is my mother and my father.",
+                "spanish": "Esta es mi madre y mi padre.",
+                "words": ["Esta", "es", "mi", "madre", "y", "mi", "padre"]
+            }
         }
     ],
     "intermediate": [
@@ -75,6 +107,44 @@ lessons = {
                 "english": "I went to the store yesterday.",
                 "spanish": "Yo fui a la tienda ayer.",
                 "words": ["Yo", "fui", "a", "la", "tienda", "ayer"]
+            }
+        },
+        {
+            "id": "int-2",
+            "title": "Future Plans",
+            "content": {
+                "english": "Next week I will travel to Spain.",
+                "spanish": "La próxima semana viajaré a España.",
+                "words": ["La", "próxima", "semana", "viajaré", "a", "España"]
+            }
+        },
+        {
+            "id": "int-3",
+            "title": "Weather Expressions",
+            "content": {
+                "english": "It will rain tomorrow afternoon.",
+                "spanish": "Lloverá mañana por la tarde.",
+                "words": ["Lloverá", "mañana", "por", "la", "tarde"]
+            }
+        }
+    ],
+    "advanced": [  # Adding advanced level
+        {
+            "id": "adv-1",
+            "title": "Subjunctive Mood",
+            "content": {
+                "english": "I hope that you can come to the party.",
+                "spanish": "Espero que puedas venir a la fiesta.",
+                "words": ["Espero", "que", "puedas", "venir", "a", "la", "fiesta"]
+            }
+        },
+        {
+            "id": "adv-2",
+            "title": "Conditional Tense",
+            "content": {
+                "english": "I would like to travel the world.",
+                "spanish": "Me gustaría viajar por el mundo.",
+                "words": ["Me", "gustaría", "viajar", "por", "el", "mundo"]
             }
         }
     ]
@@ -103,12 +173,20 @@ def show_hero():
             st.info("Placement test coming soon!")
 
 def show_lesson(level, lesson):
+    lesson_id = lesson['id']
+    
     # Make the back button key unique by including the lesson id
-    if st.button("← Back", key=f"back_button_{lesson['id']}"):
+    if st.button("← Back", key=f"back_button_{lesson_id}"):
         st.session_state.current_lesson = None
         st.session_state.user_answer = []
         st.session_state.shuffled_words = None
         st.rerun()
+    
+    # Show completion status and last attempt
+    if lesson_id in st.session_state.completed_lessons:
+        st.success("✅ Completed!")
+    if lesson_id in st.session_state.last_attempt_time:
+        st.write(f"Last attempted: {st.session_state.last_attempt_time[lesson_id]}")
     
     st.subheader(lesson["title"])
     st.write("Translate this sentence:")
@@ -140,26 +218,36 @@ def show_lesson(level, lesson):
         st.session_state.shuffled_words = None
         st.rerun()
     
-    # Check answer button
-    if st.button("Check Answer"):
-        # Clean up both answers for comparison by removing extra spaces and normalizing case
+    # Modify the Check Answer button section to track history
+    if st.button("Check Answer", key=f"check_{lesson_id}"):
+        # Update last attempt time
+        st.session_state.last_attempt_time[lesson_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
         user_translation = " ".join(current_translation.strip().lower().split())
         correct_translation = " ".join(lesson["content"]["spanish"].lower().split())
         
-        # Debug info to help see what's being compared
-        st.write("Your answer:", user_translation)
-        st.write("Correct answer:", correct_translation)
+        # Add to history
+        attempt_result = {
+            "lesson_id": lesson_id,
+            "lesson_title": lesson["title"],
+            "level": level,
+            "timestamp": st.session_state.last_attempt_time[lesson_id],
+            "correct": user_translation == correct_translation,
+            "user_answer": user_translation,
+            "correct_answer": correct_translation
+        }
+        st.session_state.lesson_history.append(attempt_result)
         
         if user_translation == correct_translation:
             st.success("¡Correcto! Well done!")
-            st.session_state.completed_lessons.add(lesson["id"])
+            st.session_state.completed_lessons.add(lesson_id)
             st.session_state.user_answer = []
             st.session_state.shuffled_words = None
             st.rerun()
         else:
             st.error(f"Not quite right. Try again! Make sure your answer matches exactly: '{lesson['content']['spanish']}'")
     
-    if st.button("Show Hint", key=f"hint_button_{lesson['id']}"):
+    if st.button("Show Hint", key=f"hint_button_{lesson_id}"):
         st.info("Pay attention to word order and spelling.")
 
 def main():
@@ -184,6 +272,17 @@ def main():
         total = len(lessons[level])
         st.sidebar.progress(completed / total)
         st.sidebar.write(f"Completed: {completed}/{total} lessons")
+        
+        # Show lesson history in sidebar
+        if st.session_state.lesson_history:
+            st.sidebar.title("Recent Activity")
+            for attempt in reversed(st.session_state.lesson_history[-5:]):  # Show last 5 attempts
+                with st.sidebar.expander(f"{attempt['lesson_title']} - {attempt['timestamp']}"):
+                    st.write("Level:", attempt['level'])
+                    st.write("Result:", "✅ Correct" if attempt['correct'] else "❌ Incorrect")
+                    if not attempt['correct']:
+                        st.write("Your answer:", attempt['user_answer'])
+                        st.write("Correct answer:", attempt['correct_answer'])
         
         # Show available lessons
         for lesson in lessons[level]:
