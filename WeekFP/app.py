@@ -206,14 +206,33 @@ lessons = {
             {
                 "id": "beg-trans-1",
                 "type": "translation",
-                "title": "Basic Greetings",
+                "title": "Basic Sentences",
                 "content": {
-                    "english": "Hello, my name is John.",
-                    "spanish": "Hola, mi nombre es John.",
-                    "words": ["Hola", "mi", "nombre", "es", "John"]
+                    "english": "I want to eat pizza",
+                    "spanish": "Yo quiero comer pizza",
+                    "words": ["Yo", "quiero", "comer", "pizza"]
                 }
             },
-            # Add more translation exercises...
+            {
+                "id": "beg-trans-2",
+                "type": "translation",
+                "title": "Simple Present",
+                "content": {
+                    "english": "The cat drinks milk",
+                    "spanish": "El gato bebe leche",
+                    "words": ["El", "gato", "bebe", "leche"]
+                }
+            },
+            {
+                "id": "beg-trans-3",
+                "type": "translation",
+                "title": "Daily Activities",
+                "content": {
+                    "english": "I study Spanish every day",
+                    "spanish": "Yo estudio español todos los días",
+                    "words": ["Yo", "estudio", "español", "todos", "los", "días"]
+                }
+            }
         ],
         "multiple_choice": [
             {
@@ -558,9 +577,29 @@ lessons = {
                 "type": "translation",
                 "title": "Past Tense",
                 "content": {
-                    "english": "I went to the store yesterday.",
-                    "spanish": "Yo fui a la tienda ayer.",
+                    "english": "I went to the store yesterday",
+                    "spanish": "Yo fui a la tienda ayer",
                     "words": ["Yo", "fui", "a", "la", "tienda", "ayer"]
+                }
+            },
+            {
+                "id": "int-trans-2",
+                "type": "translation",
+                "title": "Future Plans",
+                "content": {
+                    "english": "Next week I will travel to Spain",
+                    "spanish": "La próxima semana viajaré a España",
+                    "words": ["La", "próxima", "semana", "viajaré", "a", "España"]
+                }
+            },
+            {
+                "id": "int-trans-3",
+                "type": "translation",
+                "title": "Daily Routines",
+                "content": {
+                    "english": "I usually wake up early and exercise",
+                    "spanish": "Normalmente me despierto temprano y hago ejercicio",
+                    "words": ["Normalmente", "me", "despierto", "temprano", "y", "hago", "ejercicio"]
                 }
             }
         ],
@@ -742,9 +781,29 @@ lessons = {
                 "type": "translation",
                 "title": "Subjunctive Mood",
                 "content": {
-                    "english": "I hope that you can come to the party.",
-                    "spanish": "Espero que puedas venir a la fiesta.",
+                    "english": "I hope that you can come to the party",
+                    "spanish": "Espero que puedas venir a la fiesta",
                     "words": ["Espero", "que", "puedas", "venir", "a", "la", "fiesta"]
+                }
+            },
+            {
+                "id": "adv-trans-2",
+                "type": "translation",
+                "title": "Complex Sentences",
+                "content": {
+                    "english": "If I had known, I would have helped you",
+                    "spanish": "Si lo hubiera sabido, te habría ayudado",
+                    "words": ["Si", "lo", "hubiera", "sabido", "te", "habría", "ayudado"]
+                }
+            },
+            {
+                "id": "adv-trans-3",
+                "type": "translation",
+                "title": "Business Language",
+                "content": {
+                    "english": "The meeting has been postponed until next week",
+                    "spanish": "La reunión ha sido pospuesta hasta la próxima semana",
+                    "words": ["La", "reunión", "ha", "sido", "pospuesta", "hasta", "la", "próxima", "semana"]
                 }
             }
         ],
